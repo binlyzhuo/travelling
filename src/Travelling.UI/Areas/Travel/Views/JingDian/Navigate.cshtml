@@ -1,0 +1,10 @@
+﻿@using Travelling.ViewModel.Dto.Ticket
+@using Travelling.Web.Helpers
+@model SceneryInfoDetail
+<div class="ndwz">
+    您的位置：<a href="/">卓家客栈</a> >
+    <a href="@SceneryTicketHelper.GetSceneryTicketHomeUrl()">门票预订</a> >
+    <a href="@SceneryTicketHelper.GetSceneryTicketByProvinceID(Model.ProvinceID,0)">@Html.Raw(string.Format("{0}门票", Model.ProvinceName))</a> >
+    <a href="@SceneryTicketHelper.GetSceneryTicketByProvinceID(Model.ProvinceID,Model.CityID)">@Html.Raw(string.Format("{0}门票",Model.CityName))</a> >
+    <span>@Model.SceneryName</span>
+</div>

@@ -1,0 +1,31 @@
+﻿@using Travelling.ViewModel.Ticket
+@using Travelling.Web.Helpers
+@model List<SceneryTicketPrimaryInfo>
+<div class="box280">
+    <div class="tit">
+        <strong>猜你喜欢</strong>
+    </div>
+    <div class="tj_hotel">
+        
+        @foreach (var s in Model)
+        {
+            <dl>
+                <dt>
+
+                    <a href="@SceneryTicketHelper.GetSceneryInfoLink(s.SceneryId)">
+                        <img src="@Html.Raw(s.ImgBaseUrl+s.Imgs)" alt="@s.SceneryName" width="90" height="60">
+                    </a>
+                </dt>
+                <dd>
+                    <div class="title">
+                        <a href="@SceneryTicketHelper.GetSceneryInfoLink(s.SceneryId)">@s.SceneryName</a><b></b>
+                    </div>
+                    <span class="price">
+                        <s>&yen;</s><b>@s.AmountAdvice</b>起
+                    </span>
+                   
+                </dd>
+            </dl>
+        }
+    </div>
+</div>

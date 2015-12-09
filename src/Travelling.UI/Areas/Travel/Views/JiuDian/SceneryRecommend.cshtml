@@ -1,0 +1,25 @@
+﻿@model List<SceneryInfoDetail>
+@using Travelling.ViewModel.Dto.Ticket
+<div class="box250 mt10">
+    <div class="tit">
+        <strong>热门景区</strong>
+    </div>
+    <div class="txt2 child-noborder">
+        @foreach (var h in Model)
+        {
+            <dl>
+                <dt>
+                    <a target="_blank" href="@Html.Raw(string.Format("/SceneryInfo_{0}.html",h.SceneryID))">
+                        <img title="@string.Format("{0}{1}门票预定",h.CityName,h.SceneryName)" alt="@string.Format("{0}{1}门票预定",h.CityName,h.SceneryName)" style="width:45px;height:30px;" data-original="@(h.ImgBaseUrl+h.Imgs)" class="lazy " src="@(h.ImgBaseUrl+h.Imgs)">
+                    </a>
+                </dt>
+                <dd>
+                    <a target="_blank" title="@string.Format("{0}{1}门票预定",h.CityName,h.SceneryName)" href="@Html.Raw(string.Format("/SceneryInfo_{0}.html",h.SceneryID))">@h.SceneryName</a>
+                    <span class="price">
+                        <em>￥<b>@h.AmountAdvice</b></em>
+                    </span>
+                </dd>
+            </dl>
+        }
+    </div>
+</div>

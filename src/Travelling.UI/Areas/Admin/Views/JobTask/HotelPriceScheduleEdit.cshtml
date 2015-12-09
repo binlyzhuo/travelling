@@ -1,0 +1,42 @@
+﻿@model HotelRoomRateJobScheduler
+@using Travelling.ViewModel.Dto.HotelSyncRecord
+
+<table class="formtable">
+    <tr>
+        <td class="data_title">开始时间：</td>
+        <td>
+            <div class="input-group">
+                <input type="text" data-date-format="dd-mm-yyyy" id="startDate" value="@Model.StartDate.ToString("yyyy-MM-dd")" class="form-control date-picker">
+                @Html.HiddenFor(u=>u.ID)
+                <span class="input-group-addon">
+                    <i class="icon-calendar bigger-110"></i>
+                </span>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="data_title">结束时间：</td>
+        <td>
+            <div class="input-group">
+                <input type="text" data-date-format="dd-mm-yyyy" value="@Model.EndDate.ToString("yyyy-MM-dd")" id="endDate" class="form-control date-picker">
+                <span class="input-group-addon">
+                    <i class="icon-calendar bigger-110"></i>
+                </span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">状态：</td>
+        <td>
+            <input id="jobStateCheckBox" type="checkbox" @Html.Raw(Model.State == 1 ? "checked" : "") />
+        </td>
+    </tr>
+
+</table>
+<script type="text/javascript">
+    $('.date-picker').datepicker({ autoclose: true, format: 'yyyy-mm-dd' }).next().on(ace.click_event, function () {
+        $(this).prev().focus();
+    });
+
+</script>

@@ -1,0 +1,62 @@
+﻿@using Travelling.ViewModel.Hotel
+@using Travelling.Domain
+@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@using Travelling.FrameWork
+@using Travelling.ViewModel.Dto.Hotel
+@model Tuple<List<HotelPrimaryInfo>, List<HotelCityDetailInfo>>
+<div class="TabCont">
+    <div class="HdBd">
+        <h2 class="Hd">热门酒店</h2>
+        <ul class="Tablist" id="recommendhotelcities">
+
+            @for (int index = 0; index < Model.Item2.Count; index++)
+            {
+                <li class="@Html.Raw(index == 0 ? "TabDefault GetTabDefault" : "")" id="tag_@Model.Item2[index].CityID">
+                    <a href="javascript:void(0)" data="@Model.Item2[index].CityID">@Model.Item2[index].CityName</a>
+                </li>
+            }
+            <li>
+                <a id="more" target="_blank" href="/jiudian">更多</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="TabContBd">
+
+        @for (int index = 0; index < Model.Item2.Count; index++)
+        {
+            string hideStyle = "";
+            if (index != 0)
+            {
+                hideStyle = "style=display:none;";
+            }
+            <ul id="@Html.Raw(string.Format("block_city{0}", Model.Item2[index].CityID))" class="CullHotelList HotelHotelList" @hideStyle>
+                @foreach (var h in HotelInfoHelper.GetHotelInfosByCityID(Model.Item1, Model.Item2[index].CityID))
+                {
+                    <li title="@h.HotelName">
+                        <div class="CullHotelImg">
+                            <a href="@HotelInfoHelper.GetHotelInfoLink(h.HotelID)" target="_blank" title="@string.Format("{0}{1}酒店预定", Model.Item2[index].CityName,h.HotelName)">
+                                <img width="150" alt="@string.Format("{0}图片",h.HotelName)" data-original="@h.HotelImg" height="98" src="~/Imgs/common/hotelplace.jpg" name="@h.HotelImg" class="lazy" />
+                            </a>
+                        </div>
+                        <div class="CullHotelCont">
+
+                            <h3 class="GpHd">
+                                <a href="@HotelInfoHelper.GetHotelInfoLink(h.HotelID)" target="_blank" title="@string.Format("{0}{1}酒店预定", Model.Item2[index].CityName,h.HotelName)">@h.HotelName 仅售元 @((int)h.AmountBeforeTax)！挂牌价 @((int)h.ListAmount) 元！</a>
+                            </h3>
+                            <p class="CullHotelCls">
+                                <span class="CullHotelPrice">
+                                    <a style="color:#f60;" href="#">
+                                        <span class="f14">¥</span>
+                                        <span class="Verdana">@((int)h.AmountBeforeTax)</span>
+                                    </a>
+                                </span>位置：@h.AddressLine
+                            </p>
+                        </div>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>

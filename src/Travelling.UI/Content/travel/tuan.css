@@ -1,0 +1,654 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input , button, textarea, p, blockquote, th, td {margin:0;padding:0;}
+ul,ol,li { list-style:none; }
+h1, h2, h3, h4, h5, h6 {font-size:100%;font-weight:normal;}
+table {border-collapse:collapse;border-spacing:0;}
+select, input, button, textarea {font:100% arial; outline:none; }
+img { border:0;}
+a{ color:#555; text-decoration:none; outline:none;}
+a:hover { color:#f60;}
+.c222 { color:#222;}
+.c555 { color:#555; }
+.c888 { color:#888; }
+.cf60 { color:#f60; }
+.bold { font-weight:700;}
+.f14 { font-size:14px; }
+.clear { height:0; overflow:hidden; clear:both; }
+.left { float:left; }
+.right { float:right; }
+.padtop5{ padding-top:5px; }
+.padtop10{ padding-top:10px; }
+.margtop5 { margin-top:5px; }
+.margtop10 { margin-top:10px; }
+.Verdana { font-family:Verdana; }
+.TextInput:focus { border:1px solid #96D1FF; box-shadow:0 0 2px rgba(109,209,255,.5); transition:border 0.1s linear 0s, box-shadow 0.1s linear 0s;}
+.clearfix:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+#PageCont { width:990px; background:#fff; margin:0 auto 20px auto; position:relative; padding-top:10px;}
+#page { width:970px; padding:10px; margin:0 auto; background:#fff; }
+.MainL660 { width:660px; float:left;}
+.MainR300 { float:right; width:300px;}
+.MainL728 { width:728px; float:left;}
+.MainR232 { float:right; width:232px;}
+
+.MiddleBox { width:990px; margin:0 auto; }
+.Header_r9 { background:#fff; }
+.KxHdTop_r9 { height:72px;}
+.KxLogo_r9 { width:281px; height:45px; float:left; margin:17px 0 0 8px; background:url(http://img1.www.kximg.cn/www/v20140728/images/kxlogo.png) no-repeat; }
+.KxUserCont_r9 { height:72px; float:right;}
+.KxHdAd_r9 { width:154px; height:55px; float:right; border:1px solid #c2e5ff; border-bottom:none; margin-top:16px;}
+.KxUserLink_r9 { float:right; padding-top:26px; margin-right:15px; line-height:18px; text-align:right; }
+
+.KxHdNav_r9 { height:43px; font:18px/43px Microsoft YaHei; background:#3b8de3; }
+.KxHdNav_r9 .NavList_r9 { height:43px; float:left;}
+.KxHdNav_r9 .NavList_r9 li { float:left; display:inline;}
+.KxHdNav_r9 .NavList_r9 li a { padding:0 28px; transition:all 0.3s ease;}
+.KxHdNav_r9 .NavList_r9 li a:hover,.KxHdNav_r9 .NavList_r9 li .current { background:#1d79d9;}
+.NavMobile { width:156px; height:43px; float:right; background:#499bf0; text-align:center; color:#fff;} 
+.KxHdNav_r9 a,.KxHdNav_r9 a:hover { display:block; color:#fff;} 
+
+#footer {padding-top:10px;border-top:1px #e6e6e6 solid; clear:both; margin-top:10px; background:#fff;}
+#footer p {text-align:center;line-height:24px;color:#555;}
+#footer p span {padding:0 4px;color:#888;}
+#footer p .cf60 {color:#ff6600;}
+#footer .fSpacing { word-spacing:1.2em; }
+#footer .fSpacing .Copy_style{display:block; word-spacing:0.1em; color:#555;}
+
+.serverinfo {clear: both;  height: 53px; overflow: hidden; padding:10px 0 0 10px; text-align:center;}
+.serverinfo a.serverinfo_1 {background-position:0 0;}
+.serverinfo a.serverinfo_2 {background-position: -110px 0;}
+.serverinfo a.serverinfo_3 {background-position: -220px 0;}
+.serverinfo a.serverinfo_4 {background-position: -330px 0;}
+.serverinfo a.serverinfo_5 {background-position: -440px 0;}
+.serverinfo a { background: url(http://img1.www.kximg.cn/public/images/kuxun_index.gif) no-repeat 0 0 transparent; display: inline-block; height: 53px; margin-right: 10px; width: 110px;}
+
+.FriendLink { background:#fff; padding-bottom:10px;}
+#youlian {color: #555; line-height: 24px; padding:20px 20px 8px; word-spacing: 0.4em; width:990px; margin:0 auto;}
+#youlian a {color: #555;  white-space: nowrap;}
+#youlian a:hover { color:#f60;}
+
+
+.clear { height:0; overflow:hidden; clear:both; }
+.left { float:left; }
+.right { float:right; }
+
+.bold { font-weight:700;}
+
+.display {display:;}
+.show {display:;}
+.hidden {display:none;}
+.hide {display: none;}
+.inline {display:-moz-inline-box; display:inline-block;}
+
+.o_hide {overflow:hidden;}
+.ox_hide {overflow:hidden;}
+.oy_hide {overflow:hidden;}
+
+.pt_xs {padding-top:2px;}
+.pt_s  {padding-top:5px;}
+.pt_m  {padding-top:10px;}
+.pt_l  {padding-top:15px;}
+.pt_xl {padding-top:25px;}
+
+.pl_xs {padding-left:2px;}
+.pl_s  {padding-left:5px;}
+.pl_m  {padding-left:10px;}
+.pl_l  {padding-left:15px;}
+.pl_xl {padding-left:25px;}
+
+.pr_xs {padding-right:2px;}
+.pr_s  {padding-right:5px;}
+.pr_m  {padding-right:10px;}
+.pr_l  {padding-right:15px;}
+.pr_xl {padding-right:25px;}
+
+.pb_xs {padding-bottom:2px;}
+.pb_s  {padding-bottom:5px;}
+.pb_m  {padding-bottom:10px;}
+.pb_l  {padding-bottom:15px;}
+.pb_xl {padding-bottom:25px;}
+
+.mt_xs {margin-top:2px;}
+.mt_s  {margin-top:5px;}
+.mt_m  {margin-top:10px;}
+.mt_l  {margin-top:15px;}
+.mt_xl {margin-top:25px;}
+
+.mb_xs {margin-bottom:2px;}
+.mb_s  {margin-bottom:5px;}
+.mb_m  {margin-bottom:10px;}
+.mb_l  {margin-bottom:15px;}
+.mb_xl {margin-bottom:25px;}
+
+.ml_xs {margin-left:2px;}
+.ml_s  {margin-left:5px;}
+.ml_m  {margin-left:10px;}
+.ml_l  {margin-left:15px;}
+.ml_xl {margin-left:25px;}
+
+.mr_xs {margin-right:2px;}
+.mr_s  {margin-right:5px;}
+.mr_m  {margin-right:10px;}
+.mr_l  {margin-right:15px;}
+.mr_xl {margin-right:25px;}
+
+@CHARSET "UTF-8";
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input , button, textarea, p, blockquote, th, td {margin:0;padding:0;}
+ul,ol,li { list-style:none; }
+h1, h2, h3, h4, h5, h6 {font-size:100%;font-weight:normal;}
+i { font-style:normal;}
+table {border-collapse:collapse;border-spacing:0;}
+select, input, button, textarea {font:100% arial; outline:none; }
+img { border:0;}
+a{ color:#555; text-decoration:none; outline:none;}
+a:hover { color:#f60;}
+.c222 { color:#222;}
+.c555 { color:#555; }
+.c888 { color:#888; }
+.cf60 { color:#f60; }
+.bold { font-weight:700;}
+.f14 { font-size:14px; }
+.clear { height:0; overflow:hidden; clear:both; }
+.left { float:left; }
+.right { float:right; }
+.padtop5{ padding-top:5px; }
+.padtop10{ padding-top:10px; }
+.margtop5 { margin-top:5px; }
+.margtop10 { margin-top:10px; }
+.Verdana { font-family:Verdana; }
+.TextInput:focus { border:1px solid #96D1FF; box-shadow:0 0 2px rgba(109,209,255,.5); transition:border 0.1s linear 0s, box-shadow 0.1s linear 0s;}
+.clearfix:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+.CityTip,
+.AreaTip,
+.SearchBtn,
+.PopTopTip,
+.PoPcloseIcon,
+.ShowListHot i,
+.HideListHot i,
+.Default i,
+.SequPrice i,
+.SequModTip i,
+.Sequdiscount i,
+.SequPriceUp i,
+.SequPriceDm i,
+.SequModTipClick i,
+.UpPage i,
+.NextPage i,
+.BdTitleArea i,
+.ListBdBtn span
+{ background:url(http://s1.static.hotel.kximg.cn/e1412121729/images/searchtuan/tg_bg.png) 0 0 no-repeat;}
+
+#PageCont { width:990px; background:#fff; margin:0 auto 20px auto; position:relative; padding-top:10px;}
+.SearchBoxTuan { background:url(http://s1.static.hotel.kximg.cn/e1412121729/images/searchv5/secbtm.gif) 0 bottom repeat-x; height:60px; padding:15px 0 0 36px; *padding-top:14px; *height:61px;}
+.FieldSchName { float:left; height:28px; line-height:28px; line-height:31px\9; overflow:hidden; color:#555; font-size:14px; padding-right:10px;}
+.SearchInputBox { position:relative; height:28px; width:104px;}
+.SearchInput { width:62px; height:15px; line-height:15px; line-height:18px\9; overflow:hidden; border:1px solid #ccc; padding:5px 25px 6px 5px; font-size:14px; font-weight:bold; color:#555;  overflow:hidden; cursor:pointer;} 
+
+.SearchCityPop { position:absolute; border:1px solid #c1c0a2; background:#ffffe0; box-shadow:1px 3px 3px rgba(229,229,229,1); left:0; top:31px; white-space:nowrap;}
+.PopTopTip { width:17px; height:9px; font-size:0; overflow:hidden; background-position:-22px -65px; display:block; position:absolute; top:-9px; left:12px;}
+.PopCityMain { color:#888; padding:5px 20px 5px 10px; line-height:18px; height:18px; line-height:21px\9; overflow:hidden;}
+.PoPcloseIcon { width:7px; height:7px; display:block; font-size:0; overflow:hidden; background-position:-41px -65px; position:absolute; right:5px; top:5px; cursor:pointer;}
+
+
+.CityTip { width:10px; height:5px; font-size:0; overflow:hidden; position:absolute; display:block; right:20px; background-position:-90px -65px; top:11px; _top:13px;} 
+.AreaInputCont { height:28px; width:340px; position:relative;}
+.InputArea { width:291px; height:15px; border:1px solid #ccc; color:#888; padding:5px 10px 6px 27px; line-height:15px; line-height:18px\9; overflow:hidden; font-size:14px;}
+.AreaTip { width:17px; height:17px; background-position:0 -65px; display:block; position:absolute; left:6px; top:6px;}
+
+.SearchBtn { width:100px; height:30px; background-position:0 0; border:none; cursor:pointer; float:left; position:relative; top:-1px; *top:0; margin-right:20px;}
+.SearchBtnHover { background-position:0 -31px;}
+.SearchOther { display:block; line-height:30px; height:30px; width:314px; overflow:hidden;}
+.SearchOther a { padding-right:10px;}
+
+.MainBox { width:1170px; margin:0 auto;}
+.BreadCrumb { line-height:40px; padding-left:10px;}
+.BreadCrumb span { font-family:SimSun; margin:0 6px;}
+.BreadCrumb b { margin:0 3px;}
+.BreadCrumb a { color:#0059b2;}
+.BreadCrumb a:hover { color:#f60;}
+
+.FilterBox { border:1px solid #e6e6e6; border-left:0; border-right:0; padding:15px 10px 0;}
+.FilterMod { padding-bottom:8px;}
+.FliterListName { display:block; font-weight:bold; padding:3px 4px 0 0; padding:3px 4px 2px 0; padding:5px 4px 2px 0\9; _padding:5px 4px 2px 0;}
+.UnSelect { cursor:pointer; display:block; padding:3px 4px 2px; padding:3px 4px 2px; padding:5px 4px 2px\9; _padding:5px 4px 2px;}
+.FliterList { padding-left:10px; width:790px;}
+.FliterList li { display:inline; float:left; padding:0 20px 5px 0; white-space:nowrap;}
+.FliterList span { cursor:pointer; display:block; padding:3px 4px 2px; padding:3px 4px 2px; padding:5px 4px 2px\9; _padding:5px 4px 2px;}
+.FliterList span:hover,.noneH:hover { background:#f7f7f7;}
+.FilterBox .UnFirst ,.FilterBox .UnFirst:hover { display:block; color:#fff; background:#53a3de; cursor:pointer; padding:3px 4px 2px; padding:5px 4px 2px\9; _padding:5px 4px 2px;}
+.ShowListHot { display:block; color:#888; padding:3px 4px 2px; padding:5px 4px 2px\9; _padding:5px 4px 2px; cursor:pointer;}
+.ShowListHot i { display:inline-block; font-size:0; overflow:hidden; width:9px; height:10px; background-position:-51px -65px; position:relative; top:1px; left:4px;}
+.HideListHot i { background-position:-64px -65px;}
+
+.Sequence { padding-top:15px;}
+.SequHd { height:30px; border:1px solid #e6e6e6; background:#f0f2f3;}
+.SequHdLeft li,.FlipHdRight li { display:inline;}
+.SequHdLeft a { display:block; padding:0 16px 0 12px; height:30px; border-right:1px solid #e6e6e6; float:left; cursor: pointer;}
+.SequHdLeft a .SequHdSpan,.FlipHdRight span { padding-top:8px; display:block; *padding-top:9px;}
+.SequHdLeft a:hover,.FlipHdRight a:hover { background:#fff; color:#555;}
+.SequHdLeft a i,.FlipHdRight i { font-size:0; overflow:hidden; position:relative; display:inline-block; left:4px; top:1px;}
+.SequNow { background:#fff;}
+.Default i { width:10px; height:10px; background-position:-47px -87px;}
+.SequPrice i { width:10px; height:10px; background-position:1px -87px;}
+.SequPriceUp i { background-position:-47px -87px;}
+.SequPriceDm i { background-position:-60px -87px;}
+.SequModTip i { width:10px; height:10px; background-position:-73px -87px;}
+.SequModTipClick i { background-position:-47px -87px;}
+.Sequdiscount i { width:10px; height:10px; background-position:-73px -87px;}
+
+.FlipHdRight li { float:left;}
+.FlipHdRight li a { cursor: pointer;}
+.FlipHdRight .Pages { padding:0 12px;}
+.FlipHdRight i { width:5px; height:9px; }
+.UpPageCk,.NextPageCk { display:block; height:30px; float:left; border-left:1px solid #e6e6e6; padding:0 12px;}
+.UpPage i { background-position:-20px -87px; left:auto; right:4px; top:0;}
+.NextPage i { background-position:-11px -87px; top:0;}
+.UpPageCk:hover .UpPage i { background-position:-29px -87px;}
+.NextPageCk:hover .NextPage i { background-position:-38px -87px;}
+
+.SequBdMod { width:312px; border:1px solid #e6e6e6; background:#fff; margin:14px 14px 0 0;}
+.SequBdImg { width:292px; height:187px; padding:10px 10px 0; position:relative; overflow:hidden;}
+.SequBdImg img { display:block;}
+.BdImgContBtm { position:absolute; width:292px; height:80px; background:#000; opacity:.80; filter:alpha(opacity=80); bottom:-80px; _bottom:-81px;}
+.BdImgContTop { position:absolute; z-index:1; bottom:-80px; _bottom:-81px; padding:10px; width:272px; height:60px; color:#fff; line-height:20px; overflow:hidden;}
+.BdImgContTop a{color: #FFFFFF;};
+.BdImgContTop a:hover { color:#f60;}
+.SequBdTitle { padding:10px; height:16px; border-bottom:1px solid #e6e6e6;}
+.SequBdTitle h2 { font:16px/16px Microsoft YaHei; padding-right:10px;}
+.HotelLevel { display:block; padding-top:3px; padding-top:4px\9; color:#888;}
+.BdTitleArea { display:block; padding-top:3px; padding-top:4px\9; cursor: pointer;}
+.BdTitleArea i { display:inline-block; width:12px; height:12px; font-size:0; overflow:hidden; background-position:-88px -87px; position:relative; top:2px; right:5px;}
+.BdTitleArea:hover{ color:#f60;}
+.SequBdList { background:#f0f2f3; border-bottom:1px solid #e6e6e6;}
+.BdListHd { padding:10px; line-height:20px;}
+.BdListPrice { color:#f60; font-size:20px; font-weight:bold;}
+.BdListPrice i { font-size:14px; font-weight:100;}
+.BdListRebate { padding-left:20px;}
+
+.SequBdBox { padding-bottom:50px;}
+.SequHiden { width:970px; overflow:hidden;}
+.SequBd { width:990px; overflow:visible;}
+.SequBdListShow { background:#fff;}
+.ListBdCont { display:block; font-weight:bold; line-height:20px; padding:0 10px; height:40px; overflow:hidden;}
+.ListBdBtm { padding:10px;}
+.ListBdLeft { color:#888; line-height:20px;}
+.ListBdBtn { height:30px; display:block; font:16px/30px Microsoft YaHei; color:#fff; background:#ff830a; padding-right:10px; margin-top:5px;}
+.ListBdBtn span { display:inline-block; width:13px; height:30px; background-position:0 -101px; float:left; margin-right:8px;}
+.ListBdBtn:hover { background:#ff6600; color:#fff;}
+.ListBdBtn:hover span { background-position:-17px -101px;}
+.SequBdModHover { border:1px solid #d6d6d6; box-shadow:0 0 3px rgba(0,0,0,.2);}
+.SequBdModHover .SequBdList,.SequBdModHover .SequBdTitle { border-bottom:1px solid #d6d6d6;}
+
+/*flip*/
+#Flip { text-align:center; margin-top:50px; clear:both; }
+#Flip span,#Flip a { margin-left:10px;   }
+#Flip .FlipCurrent { padding:4px 7px; background:#63a3e1; color:#fff; }
+#Flip a { border:1px solid #c3d1de; padding:3px 6px ; }
+#Flip .NextPage { border:1px solid #c3d1de; padding:3px 6px ; cursor:pointer; padding-right:15px; background:url(http://s2.static.hotel.kximg.cn/e1412121729/images/public/Flip.gif) 48px -32px no-repeat; background-position:48px -31px\9;  }
+#Flip .UnNextPage { border:1px solid #d9d9d9; padding:3px 6px ; padding-right:15px; background:url(http://s2.static.hotel.kximg.cn/e1412121729/images/public/Flip.gif) 48px -13px no-repeat; background-position:48px -12px\9; color:#d9d9d9;  }
+#Flip .UnUpPage { border:1px solid #d9d9d9; padding:3px 6px ; padding-left:15px; background:url(http://s2.static.hotel.kximg.cn/e1412121729/images/public/Flip.gif) 8px 6px no-repeat; background-position:8px 7px\9; color:#d9d9d9; }
+#Flip .UpPage { border:1px solid #c3d1de; padding:3px 6px ; cursor:pointer; padding-left:15px; background:url(http://s3.static.hotel.kximg.cn/e1412121729/images/public/Flip.gif) 8px -51px no-repeat; background-position:8px -50px\9; }
+
+#footer {padding:10px 0;border-top:1px #e6e6e6 solid; clear:both; margin-top:10px; background:#fff;}
+#footer p {text-align:center;line-height:24px;color:#555;}
+#footer p span {padding:0 4px;color:#888;}
+#footer p .cf60 {color:#ff6600;}
+#footer .fSpacing { word-spacing:1.2em; }
+#footer .fSpacing .Copy_style{display:block; word-spacing:0.1em; color:#555;}
+.FliterA {cursor: pointer;}
+
+.NoneResult { padding:50px 0 50px 345px; overflow:hidden; zoom:1; clear:both; }
+.NoneResult h3 { line-height:34px; background:url(http://s3.static.hotel.kximg.cn/e1412121729/images/searchv5/NoResultIcon.gif) 0 0 no-repeat; padding-left:48px; font-size:14px; font-weight:700; }
+.NoneResult p { padding-left:48px; line-height:25px; font-family:SimSun; }
+.NoneResult p a { color:#4274b9; }
+
+.Hd { float:left; font:16px/35px Microsoft Yahei;   text-shadow:1px 1px 0 rgba(0, 0, 0, 0.1);color:#222; }
+.HdBd { height:35px; border-bottom:1px solid #e6e6e6; position:relative; margin-top: 20px;}
+.TagIcon { width:52px; height:38px; background:url(http://s3.static.hotel.kximg.cn/e1412121729/images/searchv5/tuangou_24.png) 0 0 no-repeat; _background:url(http://s3.static.hotel.kximg.cn/e1412121729/images/searchv5/tuangou_8.png) 0 0 no-repeat; position:absolute; top:10px; left:20px; color:#fff; text-align:center; padding-top:5px;}
+.TagFirst { font-size:16px; font-weight:bold;}
+.TagTwo { font-size:14px; padding-right:2px;}
+.tuanMapIcon{background:url(http://s3.static.hotel.kximg.cn/e1412121729/images/map/db.gif) 0 0 no-repeat;}
+@CHARSET "UTF-8";
+.sug_container{
+	position:absolute;
+	background:#fff;
+	z-index:1000;
+}
+.sug_container .InputText{
+    color: #000000;
+    font-family: 'Arial';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: normal;
+    left: 0;
+    position: absolute;
+    text-align: left;
+    text-decoration: none;
+    top: 0;
+}
+
+.sug_container .hotcity_btn, .sug_container .citys_btn{
+	background:url(http://s1.static.hotel.kximg.cn/e1412121729/images/city.png) right 2px no-repeat;
+	display:block;
+	position:absolute;
+	z-index:999;
+	right:3px;
+	top:3px;
+	color:#CCCCCC;
+	text-decoration:none;
+	height:20px;
+    padding: 0px 20px 2px 2px;
+}
+.sug{
+	display:none;
+    font-family: "宋体";
+    position: absolute;
+    top: 30px;
+	left:1px;
+    z-index: 9990;
+    width: 206px;
+}
+.sug-content {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #ccc;
+    border-spacing: 0;
+    color: #333333;
+}
+.sug-head {
+  border-bottom: 1px dashed #BBBBBB;
+  color: #333333;
+  font-family: "宋体";
+  font-size: 12px;
+  height: 28px;
+  line-height: 28px;
+  margin: 0 4px;
+  overflow: hidden;
+  padding: 0 3px;
+}
+.sug_container .highlighth {
+    background: none repeat scroll 0 0 #9CD3FF !important;
+    color: #FFFFFF;
+}
+.sug_container .lh, .sug_container .lu {
+    cursor: pointer;
+    line-height: 24px;
+    padding: 0 5px;
+}
+.sug_container .highlightg{
+	background:#e0edfe;
+}
+.sug_container .hightext{
+	color:#ff6600;
+}
+.sug-content ul{
+	padding:0;
+	margin:0;
+}
+.sug-content li{
+    cursor: pointer;
+    height: 24px;
+    line-height: 24px;
+    list-style: none outside none;
+    overflow: hidden;
+    padding: 0 5px;
+}
+.sug-content li em{
+	display:block;
+	font-style:normal;
+}
+.sug-error{
+	background:#FFFFCC;
+	color:#FF6600;
+	padding:5px 8px;
+    border: 1px solid #7F9EB9;
+}
+.sug_container .hotcity{
+	width:250px;
+	border:solid 1px #ccc;
+	position:absolute;
+	top:27px;
+	left:0px;
+	padding:8px;
+	z-index:9999;
+	background:#fff;
+}
+.sug_container .hotcity h3{
+	margin:0;
+	font-weight:normal;
+	border-bottom:dashed 1px #ccc;
+	padding-bottom:5px;
+	font-size:12px;
+}
+.sug_container .hotcity ul{
+	padding:5px 0 0 0;
+	margin:0;
+}
+.sug_container .hotcity li{
+	list-style:none;
+	float:left;
+	width:50px;
+	cursor:pointer;
+	padding:5px 0;
+	text-align:center;
+}
+.sug_container .hotcity li a{
+    color: #026CC6;
+    text-decoration: none;
+}
+.sug_container .hotcity li a:hover {
+    color: #ff6600;
+    text-decoration: underline;
+}
+.sug_container .hotcity li.li1{
+	text-align:center;
+}
+.sug_container .hotcity li.high a{
+    color: #ff6600;
+}
+.sug_container .hotcity li.li5{
+	text-align:center;
+}
+.sug_container .hotcity span{
+	display:block;
+	float:right;
+	background:url(http://s2.static.hotel.kximg.cn/e1412121729/images/close.gif);
+	width:12px;
+	height:12px;
+	cursor:pointer;
+	font-size:0;
+	line-height:0;
+	overflow:hidden;
+}
+.sug_container .city_tips{
+   
+    position: absolute;
+    width: 322px;
+	top:31px; 
+}
+.sug_container .city_tips_boder {
+    background: #fff;
+    border: 1px solid #ccc; 
+    overflow: hidden;
+    padding:20px 10px;
+	-moz-box-shadow:0 0 2px rgba(0,0,0,.2); -webkit-box-shadow:0 0 2px rgba(0,0,0,.2); box-shadow:0 0 2px rgba(0,0,0,.2);
+}
+.sug_container .tips_title {
+    background: none repeat scroll 0 0 ;
+    height: 0px;
+    font-size:0px;
+}
+.sug_container .ul_title {
+    float: left;
+    width: 0px;    
+	margin: 0;
+    padding: 0;
+}
+
+.sug_container .close {
+    background: url(http://s3.static.hotel.kximg.cn/e1412121729/images/close.gif) no-repeat scroll 0 0 transparent;
+    display: inline;
+    float: right;
+    height: 16px;
+    margin: 7px 5px 0 0;
+    width: 16px;
+	cursor:pointer;
+}
+.FenListBox {
+	border-bottom:1px solid #ccc;
+	height:21px;
+	}
+.sug_container .fenl_list { 
+    height: 22px;  
+	position:relative;
+	bottom:0;
+	_bottom:-1px;
+}
+.sug_container .fenl_list li {
+	background: #F7F7F7;
+	border:1px solid #ccc;
+	border-botom:0;
+    cursor: pointer;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    margin-left:5px;
+    overflow: hidden;
+    padding: 0 6px;
+	width:45px;
+	text-align: center;
+}
+.sug_container .fenl_list li.fl_active {
+    background: #fff;
+	border-bottom:1px solid #fff;
+}
+.sug_container .city_list {
+    height: 100%;
+    overflow: hidden;
+	margin:0;
+	padding:0;
+}
+.sug_container .city_list li {
+    float: left;
+    margin-top: 20px;
+    text-align: center;
+    width: 62px;
+	list-style:none;
+}
+.sug_container .city_list li a {
+    text-decoration: none;
+}
+.sug_container .city_list li a:hover {
+    color: #ff6600;
+    text-decoration: none;
+}
+.sug_container_css{
+	background:#fff;
+	z-index:1;
+}
+.sug_container_css .input_text{
+    color: #000000;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: normal;
+    left: 0;
+    position: absolute;
+    text-align: left;
+    text-decoration: none;
+    top: 0;
+}
+.sug_container_css .hotcity_btn, .sug_container_css .citys_btn{
+	background:url(http://s3.static.hotel.kximg.cn/e1412121729/images/city.png) right 0px no-repeat;
+	color:#CCC;
+	text-decoration:none;
+	height:15px;
+    padding: 1px 0px 2px 0px;
+	*padding:2px 0px 2px 0px;
+	cursor:pointer;
+	display:inline;
+}
+.AllCity { border-bottom:1px solid #ededed; margin-bottom:6px; font-family:Microsoft YaHei; padding:20px 0 20px 20px;width:1000px;}
+.CityHd { font-size:18px; color:#888; padding-bottom:10px;}
+.CityBd { overflow:hidden; zoom:1;}
+.CityBd a { display:block; width:74px; height:28px; float:left; font-size:14px; color:#3489cc; line-height:28px; overflow:hidden;}
+.CityBd a:hover { color:#f60;}
+.CityBd .more { text-decoration:underline;}
+
+.CityBack { text-align:center; height:50px; margin-top:50px;}
+.CityBack span { display:inline-block; cursor:pointer; line-height:50px; font-size:14px; color:#888; padding:0 70px; border-radius:2px; background:#e6e6e6; transition:background 0.3s linear;}
+.CityBack span:hover { background:#f2f2f2;}
+@CHARSET "UTF-8";
+/*map*/
+.MapPop { width:840px; height:506px;}
+.MapCont { border:4px solid #5d5d5d; background:#f7f7f7; position:relative; width:832px; height:498px;}
+.MapLeft { width:207px; padding:10px 10px 0;}
+.MapDetail { width:605px; height:498px;}
+.MapDetail img { display:block;}
+.BtnClose { width:26px; height:26px; position:absolute; right:-10px; top:-10px; background:#5d5d5d; border-radius:26px; cursor:pointer; z-index:999999; clear:both; box-shadow:0 0 5px rgba(0,0,0,.2);}
+.BtnClose i { width:12px; height:12px; background:url(http://s1.static.hotel.kximg.cn/e1412121729/images/tuanmap/btnclose.gif) 0 0 no-repeat; display:inline-block; margin:7px 0 0 7px; opacity:0.6; filter:alpha(opacity=60);}
+.BtnClose:hover i { opacity:1;}
+
+.MapTitie { padding:5px 0 15px 5px; height:75px;}
+.MapTitie .Title { display:block; height:15px; background:url(http://s1.static.hotel.kximg.cn/e1412121729/images/map/db.gif) 0 0 no-repeat; font-size:14px; font-weight:bold; padding:10px 0 0 28px;}
+.MapTitie .Detail { line-height:21px; height:40px; overflow:hidden; padding:10px 0 0 28px;}
+
+.MapTab { background:#fff;}
+.TabTop { border-left:1px solid #e6e6e6; overflow:hidden; zoom:1;}
+.TabTop li { display:inline; float:left; height:32px; width:102px; border:1px solid #e6e6e6; border-left:none; text-align:center; line-height:32px; cursor:pointer; background:#f7f7f7;}
+.TabTop .Active { background:#fff; border-bottom:1px solid #fff;} 
+
+.MapTabCont { border:1px solid #e6e6e6; border-top:none; padding:8px; height:332px;}
+.MapTabCont ul { overflow:hidden; zoom:1; clear:both;}
+.MapTabCont ul li { float:left; width:100%; padding:7px 0; border-bottom:1px solid #ededed;}
+.MapTabCont ul i { float:left; width:19px; height:29px; background:url(http://s2.static.hotel.kximg.cn/e1412121729/images/v5/HotelMapLinkNumIcon.gif) 0 0 no-repeat; margin:5px 0 0 7px;}
+.MapTabCont .HotelMapLinkCont { margin-left:35px; line-height:22px; padding-right:5px; color:#888; height:44px; overflow:hidden;}
+.MapTabCont .HotelMapLinkCont p { display:block;}
+.MapTabContLiHover { background:#efefef;}
+
+.MapTabCont li .HmLinkNumIcon_1 { background-position:0 0; }
+.MapTabCont li .HmLinkNumIcon_2 { background-position:-24px 0; }
+.MapTabCont li .HmLinkNumIcon_3 { background-position:-48px 0; }
+.MapTabCont li .HmLinkNumIcon_4 { background-position:-72px 0; }
+.MapTabCont li .HmLinkNumIcon_5 { background-position:-96px 0; }
+.MapTabCont li .HmLinkNumIcon_6 { background-position:-120px 0; }
+.MapTabCont li .HmLinkNumIcon_7 { background-position:-144px 0; }
+.MapTabCont li .HmLinkNumIcon_8 { background-position:-168px 0; }
+
+.MapTabCont li.MapTabContLiHover .HmLinkNumIcon_1 { background-position:0 -32px; }
+.MapTabCont li.MapTabContLiHover .HmLinkNumIcon_2 { background-position:-24px -32px; }
+.MapTabCont li.MapTabContLiHover .HmLinkNumIcon_3 { background-position:-48px -32px; }
+.MapTabCont li.MapTabContLiHover .HmLinkNumIcon_4 { background-position:-72px -32px; }
+.MapTabCont li.MapTabContLiHover .HmLinkNumIcon_5 { background-position:-96px -32px; }
+.MapTabCont li.MapTabContLiHover .HmLinkNumIcon_6 { background-position:-120px -32px; }
+.MapTabCont li.MapTabContLiHover .HmLinkNumIcon_7 { background-position:-144px -32px; }
+.MapTabCont li.MapTabContLiHover .HmLinkNumIcon_8 { background-position:-168px -32px; }
+
+.mapV5Icon { float:left; width:25px; height:31px; background:url(http://s2.static.hotel.kximg.cn/e1412121729/images/map/markers.png) 0 0 no-repeat; }
+.mapV5Icon_1 { background-position:0 0; }
+.mapV5Icon_2 { background-position:-29px 0; }
+.mapV5Icon_3 { background-position:-58px 0; }
+.mapV5Icon_4 { background-position:-87px 0; }
+.mapV5Icon_5 { background-position:-116px 0; }
+.mapV5Icon_6 { background-position:-145px 0; }
+.mapV5Icon_7 { background-position:-174px 0; }
+.mapV5Icon_8 { background-position:-203px 0; }
+.mapV5IconHover { float:left; width:34px; height:37px; background:url(http://s3.static.hotel.kximg.cn/e1412121729/images/map/markers.png) 0 0 no-repeat; }
+.mapV5IconHover_1 { background-position:0 -37px; }
+.mapV5IconHover_2 { background-position:-34px -37px; }
+.mapV5IconHover_3 { background-position:-68px -37px; }
+.mapV5IconHover_4 { background-position:-102px -37px; }
+.mapV5IconHover_5 { background-position:-136px -37px; }
+.mapV5IconHover_6 { background-position:-170px -37px; }
+.mapV5IconHover_7 { background-position:-204px -37px; }
+.mapV5IconHover_8 { background-position:-238px -37px; }
+
+.Flip { height:22px; padding:10px 8px 0; line-height:22px; color:#888;}
+.FlipTab { border:1px solid #ccc; height:20px; border-right:none; width:116px;}
+.Flip .UnUpPage,.Flip .UpPage,.Flip .UnNextPage,.Flip .NextPage { border-right:1px solid #ccc; padding-left:15px; background:url(http://s3.static.hotel.kximg.cn/e1412121729/images/public/Flip.gif) 8px 5px no-repeat; color:#ccc; height:20px; line-height:20px; display:block; width:42px; float:left; line-height:22px\9; overflow:hidden; display:inline;}
+.Flip .UpPage { cursor:pointer; padding-left:15px; background-position:8px -52px; color:#888;}
+.Flip .UnNextPage { padding:0 15px 0 6px; width:36px; background-position:48px -14px;}
+.Flip .NextPage { padding:0 15px 0 6px; width:36px; cursor:pointer; background-position:48px -33px; color:#888;}
+.TipPop { height:16px; overflow:hidden; line-height:18px; padding:0 5px; left:50%;margin-left:-59px;text-align:center;top:-30px;width:96px; z-index:1;padding:5px 10px; background:#555; border:1px solid #333; color:#fff; border-radius:5px; position:absolute; display:block;}
+.TipPop:hover { color:#fff; text-decoration:underline;}

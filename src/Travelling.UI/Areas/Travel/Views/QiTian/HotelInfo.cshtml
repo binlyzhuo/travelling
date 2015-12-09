@@ -1,0 +1,476 @@
+﻿@{
+    
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+    Dictionary<string, ZhunaHotelPicInfo> mediaImgs = ViewBag.HotelImgs;
+    List<KeyValuePair<string, ZhunaHotelPicInfo>> imgList; ;
+    int imgCount = 0;
+    int imgIndex = 0;
+    if(mediaImgs!=null)
+    {
+        imgList = mediaImgs.ToList().Range(10);
+        imgCount = mediaImgs.Count >= 10 ? 10 : mediaImgs.Count;
+        imgIndex = 0;
+    }
+    else
+    {
+        imgList = null;
+        imgCount = 0;
+        imgIndex = 0;
+    }
+    ZhunaHotelPriceReturnEntity roomplan = ViewBag.RoomRates;
+    List<ZhunaHotelRoomInfo> roomrates = roomplan.rooms;
+
+    ZhunaHotelSearchNearByReturnEntity nearHotels = ViewBag.NearHotels;
+    List<SceneryInfoDetail> nearSceneryInfos = ViewBag.NearSceneryInfos;
+}
+@model ZhunaHotelInfo
+@using Travelling.OpenApiEntity.Zhuna
+@using Travelling.FrameWork
+@using Travelling.Web.Helpers
+@using Travelling.ViewModel.Dto.Ticket
+@section header{
+  <link type="text/css" href="~/Content/travel/pri_detail.css" rel="stylesheet" />
+<link type="text/css" href="~/Content/travel/jiudian_list.css" rel="stylesheet" />   
+
+<style type="text/css">
+    #tooltip {
+        position: absolute;
+        border: 1px solid #ccc;
+        padding: 0;
+        display: none;
+        color: #fff;
+    }
+</style>
+<link type="text/css" rel="stylesheet" href="~/Content/jquery.fancybox.css" />
+<script type="text/javascript" src="~/Scripts/jquery.fancybox.js"></script>
+    <script type="text/javascript">
+        function modifyBookDate() {
+            var startDate = $("#txtCheckIn").val();
+            var endDate = $("#txtCheckOut").val();
+            var hotelid = "@Model.id";
+
+            var postUrl = "/HotelInfo_" + hotelid + "_" + startDate + "_" + endDate + ".html";
+            window.location.href = postUrl;
+        }
+
+        $(document).ready(function () {
+            $("#linkViewMap").fancybox({
+                'width': '800',
+                'height': '500',
+                'autoScale': false,
+                'transitionIn': 'none',
+                'transitionOut': 'none',
+                'type': 'iframe'
+            });
+
+            $("#topPicList .HotelImage").each(function () {
+                var x = 10;
+                var y = 20;
+                $(this).mouseover(function (e) {
+                    var tooltip = "<div id='tooltip'><img src='" + $(this).attr("data") + "' alt='产品预览图'/><\/div>";
+                    $("body").append(tooltip);
+                    $("#tooltip").css({ "top": (e.pageY + y) + "px", "left": (e.pageX + x) + "px" }).show("fast");
+
+                }).mouseout(function () {
+                    $("#tooltip").remove();
+                }).mousemove(function (e) {
+                    $("#tooltip").css({ "top": (e.pageY + y) + "px", "left": (e.pageX + x) + "px" });
+                });
+            });
+
+            bindRoomFolder();
+
+            //roomBookStateCheck();
+        });
+
+        function bindRoomFolder() {
+            $("a.room_unfold").each(function () {
+                $(this).click(function () {
+                    var objContainer = $(this).parent("td.room_type").parent("tr.last_room").next();
+                    var isVible = $(objContainer).is(":visible");
+
+                    if (isVible == true) {
+                        $(objContainer).addClass("hidden");
+                    }
+                    else {
+                        $(objContainer).removeClass("hidden");
+                    }
+                });
+            });
+
+            $("a.show_fold").each(function () {
+                $(this).click(function () {
+                    $(this).parent("div").parent("td").parent("tr").addClass("hidden");
+                });
+            });
+        }
+
+        function getRoomInfos() {
+            var startDate = $("#txtCheckIn").val();
+            var endDate = $("#txtCheckOut").val();
+            var hotelid = '@Model.id';
+
+            $.ajax({
+                url: '/QiTian/GetRoomInfos',
+                type: 'post',
+                dateType:'html',
+                data: { startDate: startDate, endDate: endDate, hotelid: hotelid },
+                success: function (rep) {
+                    $("#hotelRoomBox").html(rep);
+                    bindRoomFolder();
+                },
+                beforeSend: function () {
+                    $("#hotelRoomBox").html("<img src='/Imgs/Common/ajax-loader.gif'/>");
+                }
+            });
+        }
+        
+</script> 
+}
+<div id="MainContent">
+    <div class="hotelinfo_left">
+        <div class="path_bar2">
+            <a>您的位置:</a>
+            <a href="/">卓家客栈</a> >
+            <a title="酒店预订" href="/JiuDian">酒店预订</a> >
+            <a title="@Html.Raw(Model.cityname+"酒店")" href="#">@Html.Raw(Model.cityname + "酒店")</a> >
+            <h1>@Model.cityname</h1>
+        </div>
+        <div class="htl_info_com htl_pic_map layoutfix">
+            <div class="htl_info">
+                <div class="price_box">
+                    <p class="staring_price">
+                        <span style="font-weight:bold;color:#f60; font-size:large;">￥@Model.min_jiage</span>
+                        <span style="color:#f60; font-size:small;">起</span>
+                    </p>
+                    <p class="mlt_price"></p>
+
+                </div>
+                <div class="name">
+                    <h2 itemprop="name" class="cn_n">@Model.hotelname</h2>
+                </div>
+
+                <div class="adress">
+                    <span>@Model.cityname</span>
+                    <span>@Model.address</span>
+                    <span><a target="_blank" href="@HotelUnionHelper.HotelSearchWithKey(Model.ctripcityid,Model.esdname)" title="@string.Format("{0}{1}附近酒店预定",Model.esdname,Model.cityname)">@Model.esdname</a></span>
+                    <span><a href="/JiuDian/Map?latitude=@Model.baidu_lat&longitude=@Model.baidu_lng&hotelname=@Model.hotelname" class="icon_list_map view_map" id="linkViewMap">交通地图</a></span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="htl_pic_map layoutfix">
+            @if (imgList != null)
+            {
+                <div class="htl_pic" id="topPicList">
+
+                    @foreach (var img in imgList)
+                    {
+                        <div class="@Html.Raw(string.Format("pic{0}", imgIndex))">
+                            <div class="HotelImage" data="@img.Value.pic160" style="background-image:url('@img.Value.pic500'); opacity: 1;" data-index="0"></div>
+                        </div>
+                        imgIndex = imgIndex + 1;
+                    }
+                    <p class="pop_link">
+                        <a href="#" class="all_pic" data-index="1" name="needTraceCode">@Html.Raw(string.Format("酒店图片共有{0}张", mediaImgs.Count))</a>
+                    </p>
+                </div>
+            }
+            else
+            {
+                <div>暂无图片</div>
+            }
+        </div>
+
+        
+        <div class="room_select_box" id="id_room_select_box">
+            <div class="date_change_box">
+                <table style="width:80%;">
+                    <tr>
+                        <td>入住</td>
+                        <td>
+                            <input type="text" value="@DateTime.Now.ToString("yyyy-MM-dd")" autocomplete="off" class="input_txt width130" name="StartTime" id="txtCheckIn" style="margin-top:2px;">
+                        </td>
+                        <td>退房</td>
+                        <td>
+                            <input type="text" id="txtCheckOut" name="txtCheckOut" class="input_txt" autocomplete="off" value="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" style="width: 130px;" />
+                        </td>
+                        <td>
+                            <a class="btn" id="changeBtn" onclick="getRoomInfos();" href="javascript:void(0);">确定</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="hotelRoomBox" class="">
+                <div class="htl_room_table">
+                    @if (roomrates != null)
+                    {
+                        <table border="0" cellspacing="0" cellpadding="0" summary="详情页酒店房型列表">
+                            <tbody>
+                                <tr>
+                                    <th style="padding-left:10px;" class="col1">房型</th>
+                                    <th class="col3"></th>
+                                    <th class="col4">床型</th>
+                                    <th class="col4">早餐</th>
+                                    <th class="col5">宽带</th>
+                                    <th class="col_policy">政策</th>
+                                    <th class="col6">房价（含服务费）</th>
+                                    <th class="col3">付款方式</th>
+                                    <th class="col7"></th>
+                                </tr>
+                                @foreach (var r in roomrates)
+                                {
+                                    string roomimg = r.img != null && r.img.Count > 0 ? r.img[0].imgurl : "";
+                                    string amount = "";
+                                    bool bookState = true;
+                                    if (r.AvailableAmount == "订完")
+                                    {
+                                        int days = (roomplan.tm1.AsDateTime() - roomplan.tm1.AsDateTime()).Days;
+                                        if (days <= 0)
+                                        {
+
+                                            days = 1;
+                                        }
+                                        amount = (r.plans[0].totalprice / days).ToString();
+                                        bookState = false;
+                                    }
+                                    else
+                                    {
+                                        amount = r.plans[0].date[0].price;
+                                    }
+                                    <tr class="last_room">
+                                        <td rowspan="1" class="room_type">
+                                            <a href="javascript:void(0);" rel="nofollow" class="pic">
+                                                <img style="border-width:0;" src="@string.Format("http://tp1.znimg.com{0}", roomimg)">
+                                            </a>
+                                            <a>
+                                                @r.title
+                                            </a>
+                                            <a href="javascript:void(0);" class="room_unfold" rel="nofollow">查看详情</a>
+                                        </td>
+                                        <td class="child_name">标准价格</td>
+                                        <td><span class="room_type_name">@r.bed</span></td>
+                                        <td>@r.plans[0].planname</td>
+                                        <td><span class="net_free">@r.adsl</span></td>
+                                        <td><span class="room_policy">免费取消</span></td>
+                                        <td>
+                                            <span class="price_box">
+                                                <span class="base_price">
+                                                    <dfn>¥</dfn>
+                                                    <var class="p_h57_4">@amount</var>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td>酒店到付</td>
+                                        <td class="col7" id="@string.Format("RoomBook_{0}",r.rid)">
+                                            @if (bookState)
+                                            {
+                                                <a href="@ZhunaHotelHelper.ZhunaHotelOrderPage(Model.id, r.rid, r.plans[0].planid, DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"))" rel="nofollow" target="_blank" class="btn_buy">预定</a>
+                                            }
+                                            else
+                                            {
+                                                <a style="color:#f60;">订完</a>
+                                            }
+
+                                        </td>
+                                    </tr>
+                                    <tr class="hidden roomdetailinfo">
+                                        <td colspan="8">
+                                            <div class="searchresult_caption basefix">
+                                                <div class="pic_s">
+                                                    <img title="" src="@string.Format("http://tp1.znimg.com{0}", roomimg)">
+                                                </div>
+
+                                                <div>
+                                                    <ul class="searchresult_caplist">
+                                                        <li class="" title="@Html.Raw(string.Format("建筑面积：{0}平方米",r.area))">@Html.Raw(string.Format("建筑面积：{0}平方米", r.area))</li>
+                                                        <li class="" title="@Html.Raw(string.Format("楼层：{0}层",r.floor))">@Html.Raw(string.Format("楼层：{0}层", r.floor))</li>
+                                                        <li class="" title="@Html.Raw(string.Format("床型：{0}",r.bed))">@Html.Raw(string.Format("床型：{0}", r.bed))</li>
+
+                                                    </ul>
+
+                                                </div>
+                                                <a href="javascript:void(0);" class="show_fold">收起</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    }
+                    else
+                    {
+                        <div>暂无房间</div>
+                    }
+                </div>
+            </div>
+        </div>
+        
+        <div id="hotel_info_comment">
+
+            <div id="sectionBox" style="display: block;">
+                <div style="display: block;" class="xl_info section">
+
+                    <div class="tit">
+                        <strong>
+                            <a target="_blank" href="#">酒店介绍</a>
+                        </strong>
+
+                    </div>
+                    <div class="TabCont" style="line-height:24px;">@Html.Raw(HttpUtility.HtmlDecode(Model.content))</div>
+                    <br />
+                </div>
+                <div class="xl_info section">
+
+                    <div class="tit">
+                        <strong>
+                            <a target="_blank" href="#">酒店设施</a>
+                        </strong>
+
+                    </div>
+                    <div class="TabCont ">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th style="width:80px;">酒店服务</th>
+                                    <td>
+                                        <ul class="detail_extracontent">
+                                          <li>@Model.fuwu</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="xl_info section">
+                    <div class="tit">
+                        <strong>
+                            <a target="_blank" href="#">附近景点</a>
+                        </strong>
+                    </div>
+                    <div class="TabCont">
+                        <div class="TabContBd">
+                            <ul class="CullHotelList HotelHotelList" id="block_city1">
+
+                                @foreach (var h in nearSceneryInfos)
+                                {
+                                    <li title="@h.SceneryName">
+                                        <div class="CullHotelImg">
+                                            <a href="@SceneryTicketHelper.GetSceneryInfoLink(h.SceneryID)" title="@h.SceneryName" target="_blank">
+                                                <img alt="@string.Format("{0}图片",h.SceneryName)" width="150" height="98" src="@Html.Raw(h.ImgBaseUrl+h.Imgs)" />
+                                            </a>
+                                        </div>
+                                        <div class="CullHotelCont">
+                                            <h3>
+                                                <a title="@h.SceneryName" target="_blank" href="@SceneryTicketHelper.GetSceneryInfoLink(h.SceneryID)">@h.SceneryName</a>
+                                            </h3>
+                                            <p class="CullHotelCls">
+                                                <span class="CullHotelPrice">
+                                                    <a href="#" style="color:#f60;">
+                                                        <span class="f14">¥</span>
+                                                        <span class="Verdana">@h.AmountAdvice</span>
+                                                    </a>
+                                                </span>位置：@h.Address
+                                            </p>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="xl_info section">
+                    <div class="tit">
+                        <strong>
+                            <a target="_blank" href="#">附近酒店</a>
+                        </strong>
+
+                    </div>
+                    <div class="TabCont">
+                        <div class="TabContBd">
+                            <ul class="CullHotelList HotelHotelList" id="block_city1">
+                                @foreach (var h in nearHotels.reqdata)
+                                {
+                                    <li title="@h.hotelname">
+                                        <div class="CullHotelImg">
+                                            <a target="_blank" title="@string.Format("{0}{1}酒店预定",h.cityname,h.hotelname)" href="@HotelUnionHelper.GetHotelInfoUrl(h.id,1)">
+                                                <img width="150" height="98" alt="@h.hotelname" src="@h.picture">
+                                            </a>
+                                        </div>
+                                        <div class="CullHotelCont">
+                                            <h3 class="GpHd">
+                                                <a target="_blank" title="@string.Format("{0}{1}酒店预定",h.cityname,h.hotelname)" href="@HotelUnionHelper.GetHotelInfoUrl(h.id,1)">@h.hotelname 仅售元 @h.min_jiage！</a>
+                                            </h3>
+                                            <p class="CullHotelCls">
+                                                <span class="CullHotelPrice">
+                                                    <a href="#" style="color:#f60;">
+                                                        <span class="f14">¥</span>
+                                                        <span class="Verdana">@h.min_jiage</span>
+                                                    </a>
+                                                </span>位置：@h.address
+                                            </p>
+                                        </div>
+                                    </li>
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hotelinfo_right">
+        <div class="TabCont" id="customerComments">
+            @Html.Action("GetComments", "QiTian", new { hotelid = Model.id })
+        </div>
+        <div class="sider_pic">
+            @Html.Action("HotelViewed", "JiuDian", null)
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="~/Scripts/calendar/calendar.js"></script>
+<script type="text/javascript">
+    var oDepDate = new Date();
+    var oBackDate = new Date(oDepDate.getFullYear(), oDepDate.getMonth(), oDepDate.getDate() + 2);
+    //出发时间实例
+
+    var oDepCal3 = new Calendar({
+        id: "#txtCheckIn",			//触发显示日历元素ID
+        isPopup: !0,					//弹出式日历
+        isPrevBtn: !0,					//显示上月按钮
+        isNextBtn: !0,					//显示下月按钮
+        isCloseBtn: !0,					//显示关闭按钮
+        isHoliday: !0,					//节假日特殊显示
+        isHolidayTips: !0,					//显示节假日1~3天/后1~3天信息
+        isDateInfo: !0,					//显示日期信息
+        isMessage: !0,					//有日历提示信息
+        isCalEnd: !0,					//标记为结束时间
+        dateInfoClass: "date-info-end",		//结束时间icon样式
+        range: { mindate: new Date(), maxdate: "2020-12-31" },	//限制范围（当天——2020-12-31）
+        count: 2,					//日历个数
+        monthStep: 1					//切换上下月日历步长
+    });
+
+    var oDepCal4 = new Calendar({
+        id: "#txtCheckOut",			//触发显示日历元素ID
+        isPopup: !0,					//弹出式日历
+        isPrevBtn: !0,					//显示上月按钮
+        isNextBtn: !0,					//显示下月按钮
+        isCloseBtn: !0,					//显示关闭按钮
+        isHoliday: !0,					//节假日特殊显示
+        isHolidayTips: !0,					//显示节假日1~3天/后1~3天信息
+        isDateInfo: !0,					//显示日期信息
+        isMessage: !0,					//有日历提示信息
+        isCalEnd: !0,					//标记为结束时间
+        dateInfoClass: "date-info-end",		//结束时间icon样式
+        range: { mindate: new Date(), maxdate: "2020-12-31" },	//限制范围（当天——2020-12-31）
+        count: 2,					//日历个数
+        monthStep: 1					//切换上下月日历步长
+    });
+</script>

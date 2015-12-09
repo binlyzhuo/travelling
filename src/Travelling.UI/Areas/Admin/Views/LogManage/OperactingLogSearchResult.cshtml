@@ -1,0 +1,78 @@
+﻿@model PageObjectResult<OperatingLog>
+@using Travelling.ViewModel
+@using Travelling.ViewModel.Dto.HotelSyncRecord
+@using Travelling.WebHelper.Helpers
+<div id="messageContainer" style="position:fixed;top:90px;left:10px;z-index:999;width:500px;">
+    <div class="alert alert-block alert-success" style="display:none;" id="successMessage">
+        <button data-dismiss="alert" class="close" type="button">
+            <i class="icon-remove"></i>
+        </button>
+        <p>
+            <strong>
+                <i class="icon-ok"></i>
+                操作成功！
+            </strong>
+            You successfully read this important alert message.
+        </p>
+
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table id="hotelbrandinfotable" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+
+                            <th>操作时间</th>
+                            <th>创作人</th>
+                            <th>描述信息</th>
+                            <th>开始时间</th>
+
+                            <th>结束时间</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var ct in Model.Items)
+                        {
+                            <tr>
+                                <td>
+                                    <a href="#">@ct.AddDate.ToString("yyyy-MM-dd HH:mm:ss")</a>
+                                </td>
+                                <td>@ct.Creator</td>
+                                <td>@ct.Content</td>
+                                <td>@ct.StartDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+
+                                <td class="hidden-480">
+                                    @ct.EndDate.ToString("yyyy-MM-dd HH:mm:ss")
+                                </td>
+                               
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+                <div class="row">
+                    <div class="col-sm-7">
+
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="dataTables_paginate paging_bootstrap">
+                            @Html.ToPageList((int)Model.Page, (int)Model.PageSize, (int)Model.TotalCount, "operationLogSearch")
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /span -->
+    </div>
+    <!-- /row -->
+
+</div>

@@ -1,0 +1,180 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@using Travelling.FrameWork
+@using Travelling.ViewModel.Dto.Hotel
+@using Travelling.ViewModel.Hotel
+@using Travelling.ViewModel.Lucene
+@model HotelInfoQuery
+@{
+    List<LocationInfo> locations = ViewBag.Locations;
+    List<CityAreaPrimaryInfo> areaInfos = ViewBag.AreaInfos;
+    Tuple<List<HotelBrandDetailInfo>, List<HotelBrandDetailInfo>> hotelBrands = ViewBag.HotelBrands;
+
+    var trainStations = areaInfos.Where(u =>
+    {
+        return u.TypeCode == (int)CityAreaInfoTypeCode.TrainStation;
+    });
+
+    var sceneryAreas = areaInfos.Where(u =>
+    {
+        return u.TypeCode == (int)CityAreaInfoTypeCode.Scenery;
+    });
+
+    var businessAreas = areaInfos.Where(u =>
+    {
+        return u.TypeCode == (int)CityAreaInfoTypeCode.BusinessArea;
+    });
+    
+    int cityid = Model.CityId;
+    DateTime startDate = Model.StartDate;
+    DateTime endDate = Model.EndDate;
+
+    int locationId = Model.LocationID;
+    int areaId = Model.AreaId;
+
+    int minPrice = Model.MinPrice;
+    int maxPrice = Model.MaxPrice;
+
+    string hotelStarsSearch = Model.HotelStar.ToString();
+    string hotelBrandsSearch = Model.HotelBrandID.ToString();
+
+    var hotelBrandList = Model.HotelBrandID.Split('f').ToList();
+    
+}
+<div class="change_box">
+    <form id="hotelsearchform" method="post">
+        <input type="hidden" name="LocationID" id="hidCityLocationId" value="0" />
+        <input type="hidden" name="CityID" id="hidCityId" value="@Model.CityId" />
+        <input type="hidden" name="HotelInRoomDate" value="@Model.StartDate" id="hidHotelInRoomDate" />
+        <input type="hidden" name="HotelLeaveRoomDate" value="@Model.EndDate" id="hidHotelLeaveRoomDate" />
+        <input type="hidden" name="HotelPriceLevel" id="hidHotelPriceLevel" value="1-9999"/>
+        <input type="hidden" name="HotelStarLevel" id="hidHotelStarLevel" value="0-5"/>
+        <input type="hidden" name="HotelBrandID" id="hidHotelBrandID" value="0">
+        <input type="hidden" name="Page" id="hidPage" value="1"/>
+        <input type="hidden" name="Order" id="hidOrder" value="0"/>
+        <input type="hidden" name="AreaID" id="hidAreaId" value="0" />
+        <input type="hidden" name="AreaName" id="hidAreaName" value="" />
+        <dl class="first">
+            <dt>位置：</dt>
+            <dd class="">
+                <a class="notto on" onclick="clearAreaSearch();" href="#" id="otherArea">不限</a>
+                <div id="change_box_tag" class="tag">
+
+                    <a class="cancel_pop" href="#location_show">行政区<i></i></a>
+                    <a class="cancel_pop" href="#trainstatic_show">火车站/机场<i></i></a>
+                    <a class="cancel_pop" href="#scenery_show">景点<i></i></a>
+
+                    <a class="cancel_pop" href="#shopping_show">商业中心<i></i></a>
+                </div>
+            </dd>
+            <div id="change_list" class="change_list">
+                <div style="display:none" class="address_show" id="location_show">
+                    <i></i>
+                    <ul>
+                        @foreach (var l in locations)
+                        {
+                            <li>
+                                <input id="location_@l.LocationID" data="@l.LocationID" type="radio" name="cityLocation" class="radio location">
+                                <label for="location_@l.LocationID">@l.LocationName</label>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div style="display:none" class="address_show" id="trainstatic_show">
+                    <i></i>
+                    <ul>
+
+                        @foreach (var s in trainStations)
+                        {
+                            <li>
+                                <input type="radio" id="area_@s.AreaID" name="AreaIDRadio" value="@s.AreaID" txt="@s.AreaName" class="radio">
+                                <label for="area_@s.AreaID">@s.AreaName</label>
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+
+                <div style="display:none" class="address_show" id="scenery_show">
+                    <i></i>
+                    <ul>
+                        @foreach (var s in sceneryAreas)
+                        {
+                            <li>
+                                <input type="radio" id="area_@s.AreaID" name="AreaIDRadio" value="@s.AreaID" txt="@s.AreaName" class="radio">
+                                <label for="area_@s.AreaID">@s.AreaName</label>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div style="display:none" class="address_show" id="shopping_show">
+
+                    <ul>
+                        @foreach (var s in businessAreas)
+                        {
+                            <li>
+                                <input type="radio" id="area_@s.AreaID" name="AreaIDRadio" value="@s.AreaID" txt="@s.AreaName" class="radio">
+                                <label for="area_@s.AreaID">@s.AreaName</label>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+            </div>
+        </dl>
+        <dl class="other" id="HotelRoomPriceRange">
+            <dt>房价：</dt>
+            <dd>
+                @HotelInfoHelper.GetHotelPriceCheckBox(Model)
+            </dd>
+        </dl>
+        <dl class="other" id="ddlHotelStar">
+            <dt>星级：</dt>
+            <dd>
+                @HotelInfoHelper.GetHotelStarCheckBox(Model)
+            </dd>
+        </dl>
+
+        <dl class="other noborder" id="dllHotelBrands">
+            <dt>品牌：</dt>
+            <dd>
+                <a class="notto on" id="otherHotelBrand" href="#" rel="nofollow">不限</a>
+                @for (int i = 0; i < hotelBrands.Item1.Count; i++)
+                {
+                    var brand = hotelBrandList.Where(u => u == hotelBrands.Item1[i].BrandID.ToString()).ToList();
+                    string isCheck = "";
+                    if (brand != null && brand.Count > 0)
+                    {
+                        isCheck = "checked";
+                    }
+
+                    <a data-index="@hotelBrands.Item1[i].BrandID" class="iliansuo cancel_pop" style="width:80px;" href="#" rel="nofollow">
+                        <input type="checkbox" @isCheck class="checkbox" value="@hotelBrands.Item1[i].BrandID">@hotelBrands.Item1[i].BrandName.SubString(4)
+                    </a>
+                }
+                
+
+                <div style="margin-left:54px;display:none;" id="moreHotelBrandContainer">
+
+                    @for (int i = 0; i < hotelBrands.Item2.Count; i++)
+                    {
+                        var brand = hotelBrandList.Where(u => u == hotelBrands.Item2[i].BrandID.ToString()).ToList();
+                        string isCheck = "";
+                        if (brand != null && brand.Count > 0)
+                        {
+                            isCheck = "checked";
+                        }
+                        <a data-index="@hotelBrands.Item2[i].BrandID" class="iliansuo cancel_pop" style="width:80px;" href="#" rel="nofollow">
+                            <input type="checkbox" @isCheck class="checkbox" value="@hotelBrands.Item2[i].BrandID">@hotelBrands.Item2[i].BrandName.SubString(4)
+                        </a>
+                    }
+                </div>
+            </dd>
+            <div style="float:right;margin-right:1px;"><a id="getMoreBrandinfos" href="#">更多</a></div>
+        </dl>
+
+        <div class="add_change">
+            <b id="totalHotelCount">@Model.TotalRecords</b>家酒店满足条件
+        </div>
+    </form>
+</div>

@@ -1,0 +1,190 @@
+@charset "gb2312";
+/* CSS Document */
+.wraper{width:1197px;overflow:hidden;zoom:1;}
+/* Left */
+.left{float:left;width:270px;margin-top:10px;}
+.right{float:right;width:910px;}
+.hotel_state{height:39px;line-height:39px;}
+.hotel_state a{color:#0059A4;}
+.hotel_search_info{background:url(http://images.laidingba.com/0718/i_1.gif) no-repeat;width:270px;height:316px;overflow:hidden;}
+.hotel_search_info h3{height:35px;line-height:35px;margin-left:9px;font-size:18px;color:#fff;}
+.hotel_search{height:262px;padding-top:16px;background:#fff;}
+.hotel_search li.brand{display:block;}
+.hotel_search li.nobrand{display:none;}
+.hotel_search .map{background:url(http://images.laidingba.com/0718/i_4.jpg) no-repeat;width:156px;height:25px;padding-left:83px;padding-top:19px;margin:20px auto 0;}
+.hotel_search .map a{color:#ff6600;}
+.hotel_search li .btn{margin:0px auto 0;}
+
+.new_order{background:url(http://images.laidingba.com/0718/i_10.gif) no-repeat;height:35px;line-height:35px;padding-left:10px;font-size:14px;color:#666;margin-top:10px;}
+
+.dp_order{border:solid 1px #ddd;border-top:none;overflow:hidden;zoom:1;padding-bottom:2px;}
+.dp_order_item{border-bottom:dashed 1px #ddd;height:44px;margin:0 10px;padding-left:4px;}
+.dp_order_item div{padding-top:17px;height:21px;line-height:normal;}
+.dp_order_item div a{float:left;color:#0059A4;}
+.dp_order_item span{color:#f60;font-family:Verdana, Arial, Helvetica, sans-serif;}
+.dp_order_item div span{float:right;}
+
+.flash{width:710px;height:221px;position:relative;z-index:1;}
+.flash_img{FILTER:progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);width:710px;height:221px;overflow:hidden;}
+.f_btn{overflow:hidden;zoom:1;position:absolute;bottom:6px;right:0px;}
+.f_btn li{float:left;width:21px;height:21px;margin-right:6px;display:inline;background:url(http://images.laidingba.com/0718/i_5.png) 0 -21px no-repeat;text-align:center;cursor:pointer;color:#fff;font-family:Verdana, Arial, Helvetica, sans-serif;}
+.f_btn li.f_tab{background-position:0 0;}
+
+.hot_hotel_tit{background:url(http://images.laidingba.com/0718/i_7.gif);height:37px;margin-top:10px;}
+.hot_hotel_tit img{float:left;margin-left:10px;margin-top:10px;display:inline;}
+.hot_hotel_tit a{float:right;margin-top:8px;margin-right:8px;display:inline;color:#0059A4;}
+
+.hot_hotel_brand{overflow:hidden;zoom:1;border-left:solid 1px #ddd;}
+.hot_hotel_brand li{float:left;width:100px;height:83px;border:solid 1px #ddd;border-left:none;border-top:none;text-align:center;overflow:hidden;zoom:1;color:#0059A4;}
+.hot_hotel_brand li img{display:block;margin:8px auto 10px;}
+
+.hotel_brand_search{border:solid 1px #FFCC5E;background:#FFF8E7;height:72px;padding-top:16px;padding-left:35px;width:953px;}
+.hotel_brand_search ul{width:930px;overflow:hidden;zoom:1;}
+.hotel_brand_search li{float:left;}
+.hotel_brand_search li.brand{display:none;}
+.hotel_brand_search li.nobrand{display:block;padding-top:4px;}
+.hotel_brand_search li .btn{background:url(http://images.laidingba.com/0718/h_4.jpg) no-repeat;width:99px;height:30px;border:none;cursor:pointer;margin:0;}
+.hotel_brand_search li .btn:hover{background-position:0 -30px;}
+
+.hotel_brand_tit{background:url(http://images.laidingba.com/0718/h_28.gif) 0 -36px no-repeat;height:37px;line-height:37px;padding-left:10px;margin-top:10px;color:#666;font-family:'ºÚÌå';font-weight:normal;font-size:20px;}
+.hotel_brand_info{border:solid 1px #ddd;border-top:none;overflow:hidden;zoom:1;padding-bottom:15px;}
+.hotel_brand_info span{float:left;width:105px;padding-top:15px;padding-left:10px;}
+.hotel_brand_info div{float:left;border-left:solid 1px #ddd;width:840px;padding-left:15px;margin-top:15px;line-height:22px;color:#666;}
+.hotel_brand_info div p{text-indent:24px;}
+.hotel_brand_info img{width:90px;height:90px;}
+
+.hotel_brand_tit2{background:url(http://images.laidingba.com/0718/h_28.gif) 0 -36px no-repeat;height:37px;padding-left:10px;margin-top:10px;color:#666;}
+.hotel_brand_tit2 h3{float:left;line-height:37px;margin-right:15px;font-family:'ºÚÌå';font-weight:normal;}
+.hotel_brand_tit2 ul{float:left;}
+.hotel_brand_tit2 li{float:left;width:134px;height:34px;line-height:34px;margin-top:3px;text-align:center;font-size:12px;color:#333;}
+.hotel_brand_tit2 li.hot_hotel_tit_tab{background:url(http://images.laidingba.com/0718/b_2.gif) no-repeat;font-weight:bold;font-size:14px;}
+
+.hotel_brand_zm,.hotel_brand_city{border:solid 1px #ddd;border-top:none;overflow:hidden;zoom:1; min-height:30px;margin-bottom:10px;}
+.hotel_brand_zm div,.hotel_brand_city div{margin:0 10px;border-bottom:dashed 1px #ddd;padding:8px 0;overflow:hidden;zoom:1;}
+.hotel_brand_zm div font{background:url(http://images.laidingba.com/0718/b_3.gif) no-repeat;width:22px;height:23px;text-align:center;line-height:23px;font-weight:bold;font-family:Verdana, Arial, Helvetica, sans-serif;float:left;margin-left:10px;display:inline;color:#fff;}
+.hotel_brand_zm div ul{float:left;overflow:hidden;zoom:1;width:1100px;margin-left:26px;line-height:24px;}
+.hotel_brand_zm div li{float:left;width:150px;white-space:nowrap;}
+.hotel_brand_zm div li a{color:#0059A4;}
+.hotel_brand_zm div li span{color:#999;}
+.hotel_brand_zm div.hotel_brand_zm_last{border:none;}
+
+.hotel_brand_city div{padding:12px 0;padding-left:10px;}
+.hotel_brand_city div span{float:left;background:url(http://images.laidingba.com/0718/b_4.gif) no-repeat;height:21px;padding-left:2px;line-height:21px;}
+.hotel_brand_city div span a{float:left;height:21px;background:url(http://images.laidingba.com/0718/b_4.gif) right -21px no-repeat;color:#fff;padding-left:8px;padding-right:10px;}
+.hotel_brand_city div ul{overflow:hidden;zoom:1;}
+.hotel_brand_city div li{float:left;margin-left:24px;display:inline;}
+.hotel_brand_city div li a{color:#0059A4;}
+.hotel_brand_city_more{float:left;margin-left:24px;color:#0059A4;}
+.hotel_brand_city div.hotel_brand_city_last{border:none;}
+
+
+.brand_tit,.yc_tit{background:url(http://images.laidingba.com/0718/h_28.gif) 0 -36px no-repeat;height:37px;padding-left:10px;margin-top:10px;color:#666;}
+.brand_tit h1,.brand_tit h3,.yc_tit h3{float:left;line-height:37px;font-family:'ºÚÌå';font-weight:normal;font-size:20px;}
+.brand_tit h3{font-size:18px;}
+.brand_tit ul{float:right;overflow:hidden;zoom:1;margin-right:20px;display:inline;}
+.brand_tit li{float:left;width:53px;height:34px;text-align:center;margin-top:3px;line-height:34px;cursor:pointer;}
+.brand_tit li a{color:#333;}
+.brand_tit li.hot_hotel_tit_tab{background:url(http://images.laidingba.com/0718/i_7.gif) 0 -37px no-repeat;width:59px;font-weight:bold;font-size:14px;}
+
+.hotel_brand_list{border:solid 1px #ddd;border-top:none;padding:10px;}
+.hotel_brand_list li{width:106px;}
+.hotel_brand_list li.hotel_brand_list_1{border-right:none;}
+.hotel_brand_list li.hotel_brand_list_2{border-bottom:none;}
+.hotel_brand_list li.hotel_brand_list_3{border:none;}
+
+/* Òþ²ØÆµµÀ */
+.yc_tit{background-position:0 -73px;}
+.yc_tit h3{margin-right:20px;}
+.yc_tit span{float:left;height:35px;width:91px;line-height:35px;margin-top:2px;text-align:center;}
+.yc_tit span a{color:#333;}
+.yc_tit span.yc_tit_tab{background:url(http://images.laidingba.com/0718/yc_1.gif) no-repeat;font-size:14px;font-weight:bold;}
+
+.yc_left{width:740px;float:left;overflow:hidden;zoom:1;}
+.yc_right{width:240px;float:right;}
+.yc_main{border:solid 1px #ddd;border-top:none;overflow:hidden;zoom:1;}
+.yc_top{margin:13px 13px 0;}
+
+.yc_city{height:32px;background:url(http://images.laidingba.com/0718/yc_2.gif) 0 26px repeat-x;margin:11px 10px 0;}
+.yc_city li{float:left;height:32px;line-height:27px;width:57px;text-align:center;}
+.yc_city li a{color:#333;}
+.yc_city li.hot_hotel_tit_tab{background:url(http://images.laidingba.com/0718/yc_3.gif) no-repeat;font-weight:bold;}
+.yc_city li.hot_hotel_tit_tab a{color:#fff;}
+
+.yc_item{width:227px;float:left;margin-left:15px;display:inline;height:295px;margin-top:10px;}
+.yc_item img{display:block;}
+.yc_item div{padding-top:13px;height:24px;}
+.yc_item div h4{float:left;font-weight:normal;font-size:12px;}
+.yc_item div h4 a{color:#0059A4;}
+.yc_item div span{float:right;padding-right:6px;}
+.yc_item div span font{font-size:14px;font-weight:bold;color:#f60;}
+.yc_item p{line-height:20px;color:#666;}
+
+.yc_r_tit{background:url(http://images.laidingba.com/0718/yc_4.jpg) no-repeat;height:35px;line-height:35px;margin-top:10px;}
+.yc_r_tit h3{float:left;padding-left:10px;font-size:14px;color:#666;}
+
+.yc_r_list{border:solid 1px #ddd;overflow:hidden;zoom:1;}
+.yc_r_list div{height:64px;border-bottom:dashed 1px #ddd;margin:0 10px;background:url(http://images.laidingba.com/0718/h_16.jpg) 0 20px no-repeat;padding-left:42px;}
+.yc_r_list div h4{font-size:16px;font-family:Helvetica,arial,sans-serif;color:#666;padding-top:15px;height:20px;}
+.yc_r_list div.yc_r_list_2{background-position:0 -44px;}
+.yc_r_list div.yc_r_list_3{background-position:0 -98px;}
+.yc_r_list div.yc_r_list_4{background-position:0 -172px;}
+.yc_r_list div.yc_r_list_5{background-position:0 -236px;}
+.yc_r_list div.yc_r_list_6{background-position:0 -300px;border-bottom:none;}
+
+.yc_r_list2{overflow:hidden;zoom:1;border:solid 1px #ddd;border-top:none;padding-left:16px;line-height:31px;}
+.yc_r_list2 li{float:left;width:69px;}
+.yc_r_list2 li a{color:#0059A4;}
+.yc_r_list2 li.yc_r_list2_li a{color:#f60;}
+
+/*------------------------------------------- »ú³¡¾Æµê -------------------------------------------*/
+.traffic-hotel{border:solid 1px #ddd;border-top:none;overflow:hidden;zoom:1;}
+.traffic-hotel dl {line-height:30px;background:url(http://images.laidingba.com/line02-dotted.gif) 0 bottom repeat-x;padding-left:12px;}
+.traffic-hotel dt {width:130px;float:left;font-weight:bold;}
+.traffic-hotel dt.dt{width:80px;}
+.traffic-hotel dt,.traffic-hotel dt a {color:#0386d0;}
+.traffic-hotel dd {float:left; }
+.traffic-hotel dd.dd {width:600px;float:right; }
+.traffic-hotel dd a {white-space:nowrap;padding-right:2px;}
+
+/*------------------------------------------- µØÌú¾Æµê -------------------------------------------*/
+.hotel-list .current, .tbar01 .inner, .hotel-citys li a, .hotel-address .titlebar, .metro-city .current, .metro-hotel .titlebar, .mapsearch .current {background-image: url("http://images.laidingba.com/titlebar.jpg");background-repeat: repeat-x;}
+.metro-city {border:1px solid #DCF1F6;overflow:hidden;margin-top:10px;}
+.metro-city .tabs { height:30px; line-height:30px; border-bottom:1px solid #dcf1f6; padding:2px 2px 0; }
+.metro-city .tabs li { width:158px; float:left; text-align:center; cursor:pointer; }
+.metro-city .current { height:31px; border:1px solid #dcf1f6; border-bottom:none; margin-bottom:-1px; position:relative; z-index:22; background-position:0 -43px; font-weight:bold; }
+.metro-city .map { padding-top:25px; text-align:center; border:none;}
+.metro-line {line-height:30px; padding:5px 10px; background:url(http://images.laidingba.com/t01.jpg) 0 bottom repeat-x; overflow:hidden; }
+.metro-line li{width:85px;overflow:hidden;padding-left:10px; background-position:0 -92px; float:left; white-space:nowrap; }
+.metro-line02 {line-height:25px; }
+.metro-line02 li { background-position:0 -105px; }
+.metro-hotel .titlebar { height:32px; line-height:32px; border-bottom:1px solid #dcf1f6; padding:4px 10px 0; background-position:0 -216px;  }
+.metro-hotel .titlebar em { display:inline-block; width:36px; height:32px; text-align:center; font-weight:bold; }
+* html .metro-hotel .titlebar em { display:inline; }
+.metro-hotel .titlebar h3 { font-size:14px; display:inline; color:#1179be; }
+.metro-hotel .content {overflow:hidden; padding:4px 0 15px; margin:0 4px; }
+.metro-hotel ul { width:105%; padding-left:20px; background:url(http://images.laidingba.com/bg1.gif) 0 0 repeat; line-height:32px; } 
+.metro-hotel li { width:182px; height:32px; line-height:32px; float:left; margin-right:5px; overflow:hidden; }
+#Dialog{position:absolute;color:#16397d;z-index:999;width:295px;}
+#Dialog .d_top{background:url(http://images.laidingba.com/metro/d_top.png) left top no-repeat;}
+#Dialog .d_top h3{height:20px;text-align:center;color:#000;padding-top:24px;border-bottom:solid 1px #cacaca;margin:0 5px;}
+#Dialog .d_top span{color:#0e96cb;}
+#Dialog ul{background:url(http://images.laidingba.com/metro/d_center.gif) repeat-y;padding:8px 15px;}
+#Dialog ul li{line-height:22px;}
+#Dialog ul li a{color:#000;}
+#Dialog .d_bottom{background:url(http://images.laidingba.com/metro/d_bottom.gif) left top no-repeat;height:36px;text-align:center;}
+#Dialog .d_bottom input{background:url(http://images.laidingba.com/metro/d_but.gif)  no-repeat;border:none;width:83px;height:21px;margin-top:8px;cursor:pointer;}
+
+/*  404´íÎó  */
+.errorbox { margin-top:10px;border:1px solid #dcf1f6;padding:8px; }
+.errorbox .content { height:350px; padding:60px 80px 50px 400px; background:#fff url(http://images.laidingba.com/404.jpg) 60px 50px no-repeat; }
+.errorbox .tit,.errorbox dl,.errorbox ul {margin-bottom:20px;}
+.errorbox .tit { padding-top:42px; background:url(http://images.laidingba.com/404title.gif) 0 0 no-repeat; font-size:14px; font-weight:bold; line-height:26px; }
+.errorbox dd { padding-left:10px; background:url(http://images.laidingba.com/ico.gif) 1px -92px no-repeat; }
+.errorbox ul { width:400px;}
+.errorbox li { width:118px; height:30px; line-height:30px; float:left; padding-left:15px; background:url(http://images.laidingba.com/ico.gif) 2px 9px no-repeat; }
+.errorbox li,.errorbox li a { font-size:14px;}
+
+/*×¿±ó 2014-12-25*/
+.provinceList li {
+ list-style-type:none;float:left;margin-right:5px;
+}

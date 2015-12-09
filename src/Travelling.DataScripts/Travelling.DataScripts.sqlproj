@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Travelling.DataScripts</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{db9153b6-735e-4eae-85a6-b865e8fbf182}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Travelling.DataScripts</RootNamespace>
+    <AssemblyName>Travelling.DataScripts</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Hotel" />
+    <Folder Include="Ticket" />
+    <Folder Include="HotelSyncRecord" />
+    <Folder Include="OTA_Hotel" />
+    <Folder Include="Travel" />
+    <Folder Include="Zhuna" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SP_HotelBookingSearch.sql" />
+    <None Include="SP_HotelRoomPlanSearch.sql" />
+    <None Include="SP_HotelLowestPriceImport.sql" />
+    <None Include="SP_HotelRoomRatePlanImportOneMonth.sql" />
+    <None Include="SP_HotelRoomInfo.sql" />
+    <None Include="HotelSyncRecord\P_HotelMinPriceSync.sql" />
+    <None Include="Hotel\H_HotelsForHotCityInfos.sql" />
+    <None Include="Hotel\P_HotHotelsForCityInfo.sql" />
+    <None Include="Hotel\P_ImportRefPointInfo.sql" />
+    <None Include="Ticket\SP_SceneryInfoQuery.sql" />
+    <None Include="Hotel\F_GetNearHotelInfos.sql" />
+    <None Include="Hotel\P_GetNearHotelInfos.sql" />
+    <None Include="TableAlter.sql" />
+    <None Include="HotelSyncRecord\P_UpdateAreaInfoCodeType.sql" />
+    <None Include="Hotel\P_HotelFullQuery.sql" />
+    <None Include="Hotel\P_HotelRoomPriceQuery.sql" />
+    <None Include="Hotel\IndexScripts.sql" />
+    <None Include="Hotel\F_getStrvalue.sql" />
+    <None Include="Hotel\P_HotelLuceneSearch.sql" />
+    <None Include="HotelSyncRecord\HotelLuceneIndexQuery.sql" />
+    <None Include="HotelSyncRecord\P_GetHotelInfoForIndex.sql" />
+    <None Include="Hotel\P_HotelRoomInfoQuery.sql" />
+    <None Include="Hotel\F_Split.sql" />
+    <None Include="Hotel\P_HotelPracticalForCity.sql" />
+    <None Include="Hotel\P_HotelsForChoiceCityInfos.sql" />
+    <None Include="OTA_Hotel\P_HotHotelsForCityInfo.sql" />
+    <None Include="OTA_Hotel\P_HotelsForChoiceCityInfos.sql" />
+    <None Include="OTA_Hotel\P_GetNearHotelInfos.sql" />
+    <None Include="OTA_Hotel\fnGetDistance.sql" />
+    <None Include="OTA_Hotel\P_HotelPracticalForCity.sql" />
+    <None Include="OTA_Hotel\P_UpdateAreaInfoCodeType.sql" />
+    <None Include="OTA_Hotel\P_GetHotelInfoForIndex.sql" />
+    <None Include="OTA_Hotel\AlterTables.sql" />
+    <None Include="Travel\AlterTables.sql" />
+    <None Include="Travel\InitTravelData.sql" />
+    <None Include="OTA_Hotel\P_HotelMostPractical.sql" />
+    <None Include="OTA_Hotel\P_HotelCheapMost.sql" />
+    <None Include="Ticket\SP_HotSceneryForProvincesByGrade.sql" />
+    <None Include="Zhuna\getZhunaHotelStar.sql" />
+    <None Include="Zhuna\SP_ZhunaHotelsToLuceneIndex.sql" />
+    <None Include="Hotel\P_InitHotelBrand.sql" />
+    <None Include="Hotel\P_InitHotelCityInfo.sql" />
+    <None Include="Hotel\P_InitHotelLocationInfo.sql" />
+    <None Include="Hotel\P_InitHotelInfo.sql" />
+    <None Include="Hotel\P_SettingCityData.sql" />
+    <None Include="Hotel\P_SettingLocationData.sql" />
+    <None Include="Hotel\P_DeleteRepeatHotel.sql" />
+    <None Include="Hotel\P_HotelInfoToIndex.sql" />
+    <None Include="Hotel\P_HotelCityBrandSummary.sql" />
+    <None Include="Hotel\P_HotelBrandCitySummary.sql" />
+    <None Include="Ticket\fnGetDistance.sql" />
+    <None Include="Ticket\SP_GetNearSceneryInfos.sql" />
+    <None Include="Hotel\P_HotelTradeAreaGet.sql" />
+    <None Include="Hotel\P_GetCitySchools.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ticket\SP_SceneryInfoSyncRecordInit.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ticket\SP_SceneryInitHotProvince.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ticket\SP_HotSceneryForProvinces.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hotel\SP_RcommendHotels.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hotel\P_HotelRoomInfoServiceQuery.sql" />
+  </ItemGroup>
+</Project>

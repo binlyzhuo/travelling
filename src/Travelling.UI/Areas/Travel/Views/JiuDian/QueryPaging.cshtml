@@ -1,0 +1,38 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@model HotelInfoQuery
+
+@{
+    var pageData = MyHtmlHelper.GetPaging(Model.PageIndex,Model.PageSize,Model.TotalRecords);
+    int startIndex = pageData.Item1;
+    int endIndex = pageData.Item2;
+
+    int lastPage = startIndex > 1 ? startIndex - 1 : 1;
+    int nextPage = endIndex == Model.TotalPages ? endIndex : endIndex + 1;
+
+    string key = string.IsNullOrEmpty(Model.KeyWords) ? "search" : Model.KeyWords;
+
+    //string pageLink = string.Format("hotelsearch_{0}_{1}_{2}_{3}_{4}_{5}_{6}_{7}_pp_{9}_{8}.html", Model.CityId, Model.AreaId, Model.LocationID, Model.HotelBrandID, Model.StartDate.ToString("yyyy-MM-dd"), Model.EndDate.ToString("yyyy-MM-dd"), Model.HotelStar, Model.HotelPrice, key, Model.OrderType);
+
+}
+
+<div style="float:right;padding-top:10px;margin-bottom:5px;" class="page">
+    <ul>
+        <li class="first">
+            <a rel="nofollow" href="#" onclick="pagingSearch(@lastPage)">上一页</a>
+        </li>
+
+
+        @for (int i = startIndex; i <= endIndex; i++)
+        {
+
+            <li class="@Html.Raw(i == Model.PageIndex ? "cur" : "num")">
+                <a rel="nofollow" href="#" onclick="pagingSearch(@i)">@i</a>
+            </li>
+        }
+        <li class="next">
+            <a rel="nofollow" href="#" onclick="pagingSearch(@nextPage)">下一页</a>
+        </li>
+    </ul>
+
+</div>

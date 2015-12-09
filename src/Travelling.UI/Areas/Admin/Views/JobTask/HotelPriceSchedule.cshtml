@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "HotelPriceSchedule";
+    Layout = "~/Areas/Admin/Views/Shared/_BaseAdminPage.cshtml";
+}
+
+@section header{
+<script type="text/javascript" src="~/Areas/Admin/assets/js/date-time/bootstrap-datepicker.js"></script> 
+<script type="text/javascript" src="~/Areas/Admin/assets/js/date-time/daterangepicker.min.js"></script> 
+    <script type="text/javascript" src="~/Areas/Admin/assets/js/date-time/bootstrap-datepicker.zh-CN.js"></script>
+    <link type="text/css" href="~/Areas/Admin/assets/css/datepicker.css" rel="stylesheet"/>
+<link type="text/css" href="~/Areas/Admin/assets/css/daterangepicker.css" rel="stylesheet" />
+    
+    <script type="text/javascript" src="~/Areas/Admin/js/jobtask.js"></script>
+  
+}
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home home-icon"></i>
+            <a href="#">控制面板</a>
+        </li>
+        <li>
+            <a href="#">计划任务</a>
+        </li>
+        <li class="active">酒店价格同步任务</li>
+    </ul>
+    <!-- .breadcrumb -->
+    <div class="nav-search" id="nav-search">
+        <form class="form-search">
+            <span class="input-icon">
+                <input placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" type="text">
+                <i class="icon-search nav-search-icon"></i>
+            </span>
+        </form>
+    </div>
+    <!-- #nav-search -->
+</div>
+<div class="page-content">
+    <div style="margin-bottom:5px;">
+        <table style="width:95%;">
+            <tr>
+                <td width="70">任务名称：</td>
+                <td width="150" style="text-align:left;">
+                    <input type="text" id="jobName" />
+                </td>
+
+                <td width="100" align="right">有效状态：</td>
+                <td width="100">
+                    <select style="width:120px;" id="jobState">
+                        <option value="" selected="selected">&nbsp;全部</option>
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+
+                    </select>
+                </td>
+
+                <td>
+                    <button class="btn btn-sm btn-primary" type="button" onclick="hotelroompricejobsearch(1);">查询</button>
+                    <button class="btn btn-sm btn-primary" type="button" onclick="hotelroompricejobedit(0);">添加</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row" id="queryresult">
+
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>

@@ -1,0 +1,81 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Domain
+@using Travelling.ViewModel.Dto.Ticket
+@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@using Travelling.FrameWork
+@model SceneryQueryInfo
+@{
+    List<SceneryProvinceDetailInfo> provinces = ViewBag.Provinces;
+    List<SceneryThemeInfo> themes = ViewBag.SceneryThemes;
+    string provincePinyin = ViewBag.P;
+    string themeid = ViewBag.T;
+    string level = ViewBag.L;
+
+    SceneryQueryInfo queryinfo = Model;
+    SceneryQueryInfo queryinfoClone = new SceneryQueryInfo();
+    queryinfoClone = Model;
+
+    List<SceneryProvinceDetailInfo> cityinfos = ViewBag.CityInfos;
+}
+
+<div class="change_box">
+    <input type="hidden" id="hidProvinceID" name="provinceid" value="@Model.ProvinceId"/>
+    <input type="hidden" id="hidCityID" name="cityid" value="@Model.CityID"/>
+    <input type="hidden" id="hidTheme" name="themeid" value="@Model.ThemeId"/>
+    <input type="hidden" id="hidPage" name="page" value="@Model.PageIndex"/>
+    <input type="hidden" id="hidOrderby" name="OrderBy" value="@Model.OrderBy"/>
+    <input type="hidden" id="hidStar" name="Star" value="@Model.Star">
+    <input type="hidden" id="hidSearchKeyWords" name="searchkeywords" value="@Model.KeyWord" />
+    <dl>
+        <dt>所在省份：</dt>
+        <dd>
+            <a class="@Html.Raw(Model.ProvinceId == 0 ? "on" : "")" href="javascript:resetProvinceSearch();">全部</a>
+            @foreach (var s in provinces)
+            {
+                <a href="@string.Format("/ticketsearchlist/province{0}.html",s.ID)" data="@s.ID" class="@Html.Raw(queryinfoClone.ProvinceId == s.ID ? "on" : "") provinceinfo">@s.Name</a>
+            }
+            <a class="more" href="#?">缩起<i class="close"></i></a>
+        </dd>
+    </dl>
+    <dl id="citylistContainer">
+        @if (cityinfos != null && cityinfos.Count > 0)
+        {
+            <dt>行政城市：</dt>
+            <dd>
+
+
+                <a class="@Html.Raw(Model.CityID == 0 ? "on" : "")" href="javascript:resetCitySearch();">全部</a>
+                @foreach (var s in cityinfos)
+                {
+                   <a data="@s.ID" class="@Html.Raw(Model.CityID == s.ID ? "on" : "") cityinfo" id="@string.Format("cityinfo{0}",s.ID)" title="@string.Format("{0}景点门票预定",s.Name)" href="javascript:cityinfosearch(@s.ID);">@s.Name.SubString(5)</a>
+                }
+
+
+            </dd>
+        }
+        
+    </dl>
+
+    <dl>
+        <dt>主题分类：</dt>
+        <dd>
+            <a class="@Html.Raw(Model.ThemeId == 0 ? "on" : "")" href="javascript:resetThemeSearch();">全部</a>
+            @foreach (var t in themes)
+            {
+
+                <a class="@Html.Raw(Model.ThemeId == t.ID ? "on" : "") themeinfo" data="@t.ID" href="#">@t.Name</a>
+            }
+            <a class="more" href="#?">
+                更多<i>
+                </i>
+            </a>
+        </dd>
+    </dl>
+    <dl>
+        <dt>景点级别：</dt>
+        <dd>
+            @SceneryTicketHelper.GetSceneryStarHref(queryinfoClone)
+        </dd>
+    </dl>
+</div>

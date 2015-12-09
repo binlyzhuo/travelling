@@ -1,0 +1,28 @@
+﻿@{
+    
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+}
+@model Tuple<string, List<Travelling.ViewModel.Travel.SchoolSummaryInfo>>
+           @using Travelling.Web.Helpers
+@section header{
+    <link type="text/css" href="~/Content/travel/hotelbrands.css" rel="stylesheet" />
+    <link type="text/css" href="~/Content/travel/hotel_brand.css" rel="stylesheet" />
+}
+<div class="wraper">
+    <div class="hotel_brand_tit2">
+        <h3>@string.Format("{0}学校",Model.Item1)</h3>
+    </div>
+    <div class="hotel_brand_city">
+        
+            <div>
+                <ul>
+                    @foreach (var c in Model.Item2)
+                    {
+                        <li>
+                            <a href="@HotelUnionHelper.HotelSearchWithKey(c.CityId,c.SchoolName)" target="_blank" title="@string.Format("{0}{1}附近酒店预定",c.CityName,c.SchoolName)">@c.SchoolName</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+    </div>
+</div>

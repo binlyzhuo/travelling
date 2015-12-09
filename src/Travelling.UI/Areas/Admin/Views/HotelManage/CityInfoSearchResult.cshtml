@@ -1,0 +1,132 @@
+﻿@using Travelling.ViewModel.Dto.Hotel
+@using Travelling.ViewModel
+@using Travelling.FrameWork
+@using Travelling.Web.Helpers
+@model PageObjectResult<HotelCityDetailInfo>
+<div id="messageContainer" style="position:fixed;top:90px;left:10px;z-index:999;width:500px;">
+    <div class="alert alert-block alert-success" style="display:none;" id="successMessage">
+        <button data-dismiss="alert" class="close" type="button">
+            <i class="icon-remove"></i>
+        </button>
+        <p>
+            <strong>
+                <i class="icon-ok"></i>
+                操作成功！
+            </strong>
+            You successfully read this important alert message.
+        </p>
+
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <!-- PAGE CONTENT BEGINS -->
+    @if (Model.TotalCount == 0)
+    {
+        <br />
+        <div class="alert alert-danger">没有相关数据</div>
+
+    }
+    else
+    {
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="center">
+                                <label>
+                                    <input class="ace" type="checkbox">
+                                    <span class="lbl"></span>
+                                </label>
+                            </th>
+                            <th>城市编号</th>
+                            <th>城市名称</th>
+                            <th>城市英文</th>
+                            <th>省份</th>
+                            <th>酒店个数</th>
+                            <th>是否热门酒店城市</th>
+                            <th>热门排序</th>
+                            <th>是否精选</th>
+                            <th>精选排序</th>
+                            <th>是否查询推荐</th>
+                            <th>是否热门推荐</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var ct in Model.Items)
+                        {
+                            <tr>
+                                <td class="center">
+                                    <label>
+                                        <input value="@ct.CityID" class="ace" type="checkbox">
+                                        <span class="lbl"></span>
+                                    </label>
+                                </td>
+                                <td>@ct.CityID</td>
+                                <td>
+                                    <a href="#">@ct.CityName</a>
+                                </td>
+
+                                <td>@ct.CityEName</td>
+                                <td>@ct.ProvinceName</td>
+                                <td><b class="green">@ct.HotelCount</b></td>
+                                <td>
+
+                                    @AceUIHelper.GetBoolZHState(ct.IsHotCity)
+                                </td>
+                                <td>@ct.HotCityIndex</td>
+                                <td class="hidden-480">
+
+                                    @AceUIHelper.GetBoolZHState(ct.IsHotCity)
+                                </td>
+                                <td>@ct.HotCityIndex</td>
+                                <td class="hidden-480">
+                                    @AceUIHelper.GetBoolZHState(ct.IsSearch)
+                                </td>
+                                <td class="hidden-480">
+                                    @AceUIHelper.GetBoolZHState(ct.IsRecommendCity)
+                                </td>
+                                <td>
+                                    <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+                                        <input type="hidden" class="hiddenCitId" value="@ct.CityID" />
+
+                                        <button class="btn btn-xs btn-info editbtn">
+                                            <i class="icon-edit bigger-120"></i>
+                                        </button>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+                <div class="row">
+                    <div class="col-sm-7">
+                        <button onclick="hotelcityinfostateaction(1, 'rdcity');" class="btn btn-sm btn-primary">批量推荐</button>
+                        <button onclick="hotelcityinfostateaction(2, 'rdcity');" class="btn btn-sm btn-primary">批量取消</button>
+                        <button onclick="hotelcityinfostateaction(1, 'hotcity');" class="btn btn-sm btn-primary">设置热门城市</button>
+                        <button onclick="hotelcityinfostateaction(2, 'hotcity');" class="btn btn-sm btn-primary">取消热门城市</button>
+                        <button onclick="hotelcityinfostateaction(1, 'searchcity');" class="btn btn-sm btn-primary">设置查询推荐城市</button>
+                        <button onclick="hotelcityinfostateaction(2,'searchcity');" class="btn btn-sm btn-primary">取消查询推荐城市</button>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <div class="dataTables_paginate paging_bootstrap">
+                            @Html.ToPageList((int)Model.Page, (int)Model.PageSize, (int)Model.TotalCount, "hotelcityinfosearch")
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /span -->
+    </div>
+    <!-- /row -->
+    }
+</div>
+

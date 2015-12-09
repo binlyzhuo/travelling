@@ -1,0 +1,40 @@
+﻿@using Travelling.ViewModel.Hotel
+@using Travelling.ViewModel.Travel
+@using Travelling.ViewModel.Dto.Hotel
+
+@{
+    //var businessAreaInfos = Model.Where(u => { return u.TypeCode == (int)CityAreaInfoTypeCode.BusinessArea; }).ToList();
+    //var trainAreaInfos = Model.Where(u => { return u.TypeCode == (int)CityAreaInfoTypeCode.TrainStation; }).ToList();
+    //var airportInfos = Model.Where(u => { return u.TypeCode == (int)CityAreaInfoTypeCode.AirePort; }).ToList();
+    //var sceneryInfos = Model.Where(u => { return u.TypeCode == (int)CityAreaInfoTypeCode.Scenery; }).ToList();
+
+    List<HotelBrandDetailInfo> hotelBrands = ViewBag.HotelBrands;
+    List<LocationInfo> locations = ViewBag.Locations;
+}
+@model List<CityAreaPrimaryInfo>
+<a style="float:right;margin-right:10px;" title="关闭" href="#?" class="tc_close" onclick="$('#tanchu_address').hide();">x</a>
+<div class="tc_con1 child-noborder">
+    
+   @if (hotelBrands.Count > 0)
+   {
+    <strong>酒店品牌</strong>
+    <p>
+        @foreach (var s in hotelBrands.Where(u=>u.IsSearchRecommend>0).ToList())
+        {
+            <a onclick="getHotelBrandInfo(@s.BrandID,'@s.BrandName');" href="#?">@s.BrandName</a>
+        }
+
+    </p>
+   }
+   
+    @if (locations.Count > 0)
+    {
+        <strong>行政区</strong>
+        <p>
+            @foreach (var s in locations.GetRange(0, locations.Count > 20 ? 20 : locations.Count))
+            {
+                <a onclick="getHoteCityLocation(@s.LocationID,'@s.LocationName');" href="#?">@s.LocationName</a>
+            }
+        </p>
+    }
+</div>

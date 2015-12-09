@@ -1,0 +1,33 @@
+﻿@model GetHotelListReturnEntity
+@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@using Travelling.OpenApiEntity.TC.Hotel
+@using Travelling.ViewModel.Travel.XmlData
+@{
+    var pageData = MyHtmlHelper.GetPaging(Model.page, Model.pageSize, Model.totalCount);
+    int startIndex = pageData.Item1;
+    int endIndex = pageData.Item2;
+
+    int lastPage = startIndex > 1 ? startIndex - 1 : 1;
+    int nextPage = endIndex == Model.totalPage ? endIndex : endIndex + 1;
+
+    int currentPage = Model.page;
+    GuZhenCityInfo guzhen = ViewBag.Selected;
+
+}
+
+<div class="page boxlist-page">
+
+    <span class="total">
+        @string.Format("共{0}页", Model.totalPage)
+    </span>
+    
+    <a target="_parent" title="第一页" class="page-a" href="@string.Format("/guzhen_{0}_{1}.html", guzhen.Pinyin,1)">第一页</a>
+   
+    @for (int index = startIndex; index <= endIndex; index++)
+    {
+        <a target="_parent" class="@string.Format(index == currentPage ? "page-a active" : "page-a")" title="@string.Format("第{0}页", index)" href="@string.Format("/guzhen_{0}_{1}.html", guzhen.Pinyin, index)">@index</a>
+    }
+    
+    <a class="page-a" target="_parent" title="末页" href="@string.Format("/guzhen_{0}_{1}.html", guzhen.Pinyin, Model.totalPage)">末页</a>
+</div>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{341B6A3A-81CE-4124-A51C-B4F3A98989EF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Travelling.Domain</RootNamespace>
+    <AssemblyName>Travelling.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Travelling.Domain.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Hotel\T_CityInfo.cs" />
+    <Compile Include="Hotel\T_HotelBrand.cs" />
+    <Compile Include="Hotel\T_HotelInfo.cs" />
+    <Compile Include="Hotel\T_LocationInfo.cs" />
+    <Compile Include="Setting\T_ArticleInfo.cs" />
+    <Compile Include="Setting\T_SettingConfig.cs" />
+    <Compile Include="Setting\T_UnionDetailInfo.cs" />
+    <Compile Include="TC_Hotel\TC_HotelBrand.cs" />
+    <Compile Include="TC_Hotel\TC_HotelCityInfo.cs" />
+    <Compile Include="TC_Hotel\TC_HotelList.cs" />
+    <Compile Include="TC_Hotel\TC_HotelProvinceInfo.cs" />
+    <Compile Include="TC_Hotel\TC_HotelRegionInfo.cs" />
+    <Compile Include="TC_Hotel\TC_HotelSectionInfo.cs" />
+    <Compile Include="XC_Hotel\T_XC_HotelPrice.cs" />
+    <Compile Include="XC_Hotel\T_XC_HotelRefPointInfo.cs" />
+    <Compile Include="XC_Hotel\T_XC_HotelDescription.cs" />
+    <Compile Include="XC_Hotel\T_XC_HotelSearchInfo.cs" />
+    <Compile Include="XC_Hotel\T_XC_HotelRoomInfo.cs" />
+    <Compile Include="XC_Hotel\T_XC_HotelAreaInfo.cs" />
+    <Compile Include="XC_Hotel\T_XC_HotelRoomRatePlan.cs" />
+    <Compile Include="XC_Hotel\T_XC_HotelRoomRateJobScheduler.cs" />
+    <Compile Include="XC_Hotel\T_JobScheduler.cs" />
+    <Compile Include="XC_Hotel\T_JobSchedulerLog.cs" />
+    <Compile Include="XC_Hotel\T_OperatingLog.cs" />
+    <Compile Include="XC_Hotel\T_XC_HotelBrandDetailInfo.cs" />
+    <Compile Include="XC_Hotel\T_HotelCityDetailInfo.cs" />
+    <Compile Include="Hotel\T_HotelBookingOrder.cs" />
+    <Compile Include="Scenery\T_SceneryImgInfo.cs" />
+    <Compile Include="Scenery\T_SceneryInfoSyncRecord.cs" />
+    <Compile Include="Scenery\T_SceneryInfoDetail.cs" />
+    <Compile Include="Scenery\T_SceneryProvinceDetailInfo.cs" />
+    <Compile Include="Scenery\T_SceneryTicketOrder.cs" />
+    <Compile Include="Scenery\T_SceneryTicketPrice.cs" />
+    <Compile Include="Setting\T_FriendLink.cs" />
+    <Compile Include="User\T_Account.cs" />
+    <Compile Include="User\T_AccountLog.cs" />
+    <Compile Include="XC_Hotel\T_XC_HotelCountry.cs" />
+    <Compile Include="XC_Hotel\T_XC_HotelTheme.cs" />
+    <Compile Include="XC_Hotel\T_XC_HotelLocation.cs" />
+    <Compile Include="XC_Hotel\T_XC_HotelProvince.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenery\T_SceneryTheme.cs" />
+    <Compile Include="User\T_Users.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_CBD.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_CityAreaInfo.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_CityInfo.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_CityLable.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_CityLableInfo.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_HotelChain.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_HotelInfo.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_RefPoint.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_SchoolInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Travelling.DataLayer\Travelling.DataLayer.csproj">
+      <Project>{5f404be1-5384-4e02-afc0-30ab4e63d5ea}</Project>
+      <Name>Travelling.DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

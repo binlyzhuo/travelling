@@ -1,0 +1,18 @@
+﻿@model List<SceneryProvinceDetailInfo>
+@using Travelling.ViewModel.Dto.Ticket
+@using Travelling.FrameWork
+@{
+    var cityinfos = Model;
+}
+@if (cityinfos != null && cityinfos.Count > 0)
+{
+    <dt>行政城市：</dt>
+    <dd>
+        <a class="" href="#">全部</a>
+        @foreach (var s in cityinfos)
+        {
+
+            <a class="" title="@string.Format("{0}景点门票预定",s.Name)" href="javascript:cityinfosearch(@s.ID);">@s.Name.SubString(5)</a>
+        }
+    </dd>
+}

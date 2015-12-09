@@ -1,0 +1,39 @@
+﻿<table class="formtable">
+    <tr>
+        <td class="data_title">开始时间：</td>
+        <td>
+            <div class="input-group">
+                <input type="text" data-date-format="dd-mm-yyyy" id="startDate" class="form-control date-picker">
+                @Html.Hidden("ID",0)
+                <span class="input-group-addon">
+                    <i class="icon-calendar bigger-110"></i>
+                </span>
+            </div>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="data_title">结束时间：</td>
+        <td>
+            <div class="input-group">
+                <input type="text" data-date-format="dd-mm-yyyy" id="endDate" class="form-control date-picker">
+                <span class="input-group-addon">
+                    <i class="icon-calendar bigger-110"></i>
+                </span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">状态：</td>
+        <td>
+            <input id="jobStateCheckBox" type="checkbox" />
+        </td>
+    </tr>
+    
+</table>
+<script type="text/javascript">
+    $('.date-picker').datepicker({ autoclose: true, format: 'yyyy-mm-dd' }).next().on(ace.click_event, function () {
+        $(this).prev().focus();
+    });
+    
+</script>

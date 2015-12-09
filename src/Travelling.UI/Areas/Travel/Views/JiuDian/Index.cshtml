@@ -1,0 +1,77 @@
+﻿@{
+   
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+}
+@section header{
+
+    <script type="text/javascript" src="~/Areas/Travel/Js/hotelfunction.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("img.lazy").lazyload({ event: "sporty" });
+        });
+        $(window).bind("load", function () {
+            var timeout = setTimeout(function () {
+                $("img.lazy").trigger("sporty")
+            }, 1000);
+        });
+    </script>
+}
+<div id="MainContent">
+    @Html.Action("HotelQuickSearch","JiuDian",null)
+    @Html.Action("HotelBrands", "JiuDian", null)
+
+    <div class="KxContent KxContentPdt">
+        <div class="KxContentLeft">
+            @Html.Action("HotelQuickFind","Home",null)
+            @Html.Action("HotHotels", "JiuDian", null)
+            @Html.Action("MostPracticalHotels", "JiuDian", null)
+            
+        </div>
+        <div class="KxContentRight">
+            @Html.Action("HotelsInSeason","JiuDian",null)
+            @Html.Action("HotelGroup", "JiuDian", null)
+            @Html.Action("VisitedHistory", "Home", null)
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/Scripts/fixdiv.js"></script>
+<script type="text/javascript" src="~/Scripts/address.js"></script>
+<script type="text/javascript" src="~/Scripts/calendar/calendar.js"></script>
+<script type="text/javascript">
+    var oDepDate = new Date();
+    var oBackDate = new Date(oDepDate.getFullYear(), oDepDate.getMonth(), oDepDate.getDate() + 2);
+    //出发时间实例
+    var oDepCal = new Calendar({
+        id: "#HotelInRoomDate",			//触发显示日历元素ID
+        isPopup: !0,					//弹出式日历
+        isPrevBtn: !0,					//显示上月按钮
+        isNextBtn: !0,					//显示下月按钮
+        isCloseBtn: !0,					//显示关闭按钮
+        isHoliday: !0,					//节假日特殊显示
+        isHolidayTips: !0,					//显示节假日1~3天/后1~3天信息
+        isDateInfo: !0,					//显示日期信息
+        isMessage: !0,					//有日历提示信息
+        isCalEnd: !0,					//标记为结束时间
+        dateInfoClass: "date-info-end",		//结束时间icon样式
+        range: { mindate: new Date(), maxdate: "2020-12-31" },	//限制范围（当天——2020-12-31）
+        count: 2,					//日历个数
+        monthStep: 1					//切换上下月日历步长
+    });
+
+    var oDepCal = new Calendar({
+        id: "#HotelLeaveRoomDate",			//触发显示日历元素ID
+        isPopup: !0,					//弹出式日历
+        isPrevBtn: !0,					//显示上月按钮
+        isNextBtn: !0,					//显示下月按钮
+        isCloseBtn: !0,					//显示关闭按钮
+        isHoliday: !0,					//节假日特殊显示
+        isHolidayTips: !0,					//显示节假日1~3天/后1~3天信息
+        isDateInfo: !0,					//显示日期信息
+        isMessage: !0,					//有日历提示信息
+        isCalEnd: !0,					//标记为结束时间
+        dateInfoClass: "date-info-end",		//结束时间icon样式
+        range: { mindate: new Date(), maxdate: "2020-12-31" },	//限制范围（当天——2020-12-31）
+        count: 2,					//日历个数
+        monthStep: 1					//切换上下月日历步长
+    });
+</script>

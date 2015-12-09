@@ -1,0 +1,182 @@
+        .header{ _position:relative; _z-index:2;}
+.main{ position:relative; width:1000px; margin:0 auto; _z-index:1;}
+.main h3{ padding:4px 10px; font-size:16px; font-family:"microsoft yahei";}
+.main h3 span.login{ float:right; font-family:"宋体"; font-size:12px; font-weight:normal;}
+.main h3 span.login a{ color:#16b;}
+.box1000{ width:980px; padding:9px; border:1px solid #e1e1e1;}
+.box1000 .box_form{ margin:30px;}
+.box_form dl{ display:block; float:left; padding:5px 0; line-height:26px; overflow:hidden;}
+.box_form dt{ width:280px; float:left; text-align:right; font-size:14px;}
+.box_form dt em{ padding:0 5px; color:#ff7d7d; font-size:12px;}
+.box_form dd{ width:600px; float:left;}
+.box_form dd select,input.text{ width:150px; float:left; padding:0 3px; height:24px; line-height:24px; border-top:1px solid #999; border-right:1px solid #d0d0d0; border-bottom:1px solid #d0d0d0; border-left:1px solid #999; vertical-align:middle;}
+.box_form dd input.text50{ width:50px;}
+.box_form dd span.error{ float:left; margin-left:5px; display:inline; line-height:22px; padding:0 8px 0 26px; color:#333; border:1px solid #ffd5a1; background:#fff8ee url(member/images/ico_error.png) no-repeat 8px 0; overflow:hidden;}
+.box_form dd span.tip{ padding-left:3px; color:#888; vertical-align:middle;}
+.box_form dd span.tip img{ float:left; margin:0 3px;}
+.box_form .button{ margin-top:5px; padding-left:280px;}
+.box_form .button input.submit{ display:inline-block; _height:32px; padding:6px 10px; _padding:0 2px; line-height:18px; font-family:"microsoft yahei"; font-size:16px; color:#fff; border:1px solid #f26000; border-radius:2px; background:#fe7c00; text-decoration:none; _vertical-align:middle;}
+.box_form .button input.submit:hover{ border:1px solid #f1760c; background:#fe960c;}
+.box_form .button span.tip a{ color:#16b;}
+.box_form .button span.tip a:hover{ color:#f60;}
+button.SentCode{ margin-top:-2px; margin-left:3px; padding:4px 10px; padding:0 5px\9; line-height:22px\9;}
+.tip_wz{ margin-top:200px; padding:20px; border-top:1px solid #e1e1e1; color:#666;}
+.tip_wz p{ padding-bottom:10px;}
+.tip_wz em{ display:block; color:#090; line-height:21px;}
+.top_title{ clear:both; margin-top:10px; line-height:24px; font-family:"microsoft yahei"; font-size:16px; color:#555; overflow:hidden;}
+.top_title span.order_num{ padding-left:10px;}
+.top_title span.order_mode{ padding-left:30px;}
+.top_title span.order_mode em{ color:#f60;}
+.top_title span.time{ float:right; padding-right:10px; font-size:12px;}
+.top_title span.time em{ font-family:Arial; font-size:16px; color:#f60; font-weight:bold;}
+.form_box{ width:998px; padding:10px 0 30px 0; border:1px solid #ccc; overflow:hidden;}
+.form_box h4{ clear:both; padding-left:32px; line-height:30px; font-size:14px;}
+.form_box h4 a{ padding-left:10px; font-size:12px; font-weight:normal;}
+.form_box h4 span{ font-size:12px; font-weight:normal; color:#888;}
+.form_box h4 span img{ margin:0 3px -5px 3px;}
+.form_box .line{ clear:both; width:940px; float:left; height:0; margin:20px 29px; display:inline; border-bottom:1px solid #e1e1e1; overflow:hidden;}
+.form_box dl{ display:block; width:100%; padding:6px 0; font-size:14px; overflow:hidden;}
+.form_box dt{ width:120px; float:left; line-height:24px; vertical-align:top; text-align:right; overflow:hidden;}
+.form_box dd{ display:inline-block; position:relative; width:660px; float:left; line-height:24px; font-family:Verdana;}
+input.text{ height:21px; line-height:21px; padding-left:3px; border-top:1px solid #989898; border-left:1px solid #C5C5C5; border-right:1px solid #d1d1d1; border-bottom:1px solid #e7e7e7; background:url(input-bg.gif) no-repeat 0 0;}
+.form_box dd em{ font-size:16px; font-family:"microsoft yahei"; color:#f73; padding:0 3px; font-weight:bold;}
+.form_box dd label{ padding-right:12px;}
+.form_box dd textarea.textarea{ width:570px; height:100px;}
+.form_box dd input.file{ clear:both; display:inline-block;}
+.form_box dd em.price_dj{ font:bold 20px/20px "microsoft yahei",Arial; color:#f60;}
+.form_box dd em.price_all{ font:bold 24px/24px "microsoft yahei",Arial; color:#f60;}
+.form_box dl.row2{ width:499px; float:left;}
+.form_box dl.row2 dd{ width:294px;}
+.form_box dl.row2 dd.qq a{ width:80px; float:left; height:21px; line-height:21px; padding:0 10px; font-size:12px; background:url(/member/images/ico_show.png) no-repeat right -231px;}
+.form_box dl.row2 dd.qq a img{ float:left; margin-right:3px;}
+.form_box dd span.pro_text{ display:block; margin-top:-5px; height:60px; padding:5px; border:1px solid #e1e1e1; color:#777; background:#f8f8f8;}
+.form_box dd span.tel{ font-family:"microsoft yahei"; font-weight:bold; font-size:20px;}
+.form_box dd .f60{ color:#f60;}
+.form_box dl.dingjin b{ padding:0 20px; color:#f60;}
+.form_box dl.dingjin a{ text-decoration:underline;}
+.form_box .button{ padding-left:120px;}
+.form_box .button span.btn{ display:inline-block;}
+.form_box .button span.btn a{ display:inline-block; padding:0 10px; line-height:30px; font-family:"microsoft yahei"; font-size:16px; color:#fff; border-radius:3px; background:#6b6b6b; text-decoration:none;}
+.form_box .button span.btn a:hover{ background:#898989;}
+.form_box .button span.btn1{ display:inline-block; margin-top:6px;}
+.form_box .button span.btn1 a{ display:inline-block; padding:0 10px; line-height:30px; font-family:"microsoft yahei"; font-size:16px; color:#fff; border:1px solid #f26000; border-radius:2px; background:#fe7c00; text-decoration:none;}
+.form_box .button span.btn1 a:hover{ border:1px solid #f1760c; background:#fe960c;}
+.form_box .button input.submit{ display:inline-block; _height:30px; padding:6px 10px; _padding:0; line-height:18px; font-family:"microsoft yahei"; font-size:16px; color:#fff; border:1px solid #f26000; border-radius:2px; background:#fe7c00; text-decoration:none; vertical-align:middle;}
+.form_box .button input.submit:hover{ border:1px solid #f1760c; background:#fe960c;}
+.form_box .tip_box{ margin:20px 20px 0 20px; padding:15px; font-size:14px; border:1px solid #fc6; color:#555; background:#ffc;}
+.form_box .tip_box strong{ color:#f60;}
+.form_box .tip_box p{ line-height:26px;}
+.form_box .tip_box p span{ width:90px; float:left;}
+.form_box .tip_box p em{ font:normal 18px/26px Arial; color:#f60;}
+.form_box .tip_box a{ padding:0 3px; color:#16b;}
+.form_box .tip_box a:hover{ color:#f60;}
+.table_box{ margin:0 30px;}
+.tab{ clear:both; width:100%; font-family:Arial;}
+.tab thead td{ padding:0; line-height:21px; border:0 none; color:#aaa; font-family:"宋体";}
+.tab th{ line-height:24px; background:#fafafa; border-bottom:none;}
+.tab td.order_nav{ padding:3px 0; color:#555; height:21px; line-height:21px; border-bottom:none; background:#F5FBEA;}
+.tab td.order_nav span{ padding:0 10px;}
+.tab td{ line-height:20px; padding:8px 6px 10px 6px; border:1px solid #e1e1e1; color:#666;}
+.tab td.sep-row{ border:none; height:8px; padding:0;}
+.tab td em{ color:#f73; font-size:14px; font-family:Tahoma;}
+.tab td.f73{ color:#f73;}
+.tab td span.download a:link,.tab td span.download a:visited{ text-decoration:underline;}
+.tab td .ddBtn{ display:block; margin-top:6px;}
+.tab td .ddBtn input.submit{ height:26px; padding:0 12px; padding:0\9;}
+.tab td .tTip{ margin-bottom:6px; margin-right:6px; line-height:24px; border-bottom:1px dashed #eee;}
+.tab td .ddBtn p{ color:#999;}
+.tab td.xl_info{ line-height:21px; text-align:left;}
+.tab td.xl_info p{ clear:both; color:#555;}
+.tab td.xl_info p.title{ padding-bottom:4px;}
+.tab td.xl_info p span{ clear:both; display:inline-block; width:56px; color:#666;}
+.tab td.xl_info p.title a:link,.tab td.xl_info p.title a:visited{ color:#16b;}
+.tab td.xl_info p.title a:hover{ color:#f73;}
+.tab td.xl_info a:link,.tab td.xl_info a:visited{ color:#666;}
+.tab td.xl_info a:hover{ color:#f73;}
+.lxsName{ display:inline-block; width:160px; padding-top:1px; padding-top:3px\9; line-height:14px;}
+.tab td.other{}
+.tab td.money a{ display:block; width:52px; height:19px; background-position:0 -25px;}
+.tab td.people span{ color:#777;}
+.tab th.bdl0{ border-left:0;}
+.tab td.bdl0{ border-left:0;}
+.tab td a:link,.tab td a:visited{ color:#16b;}
+.tab td a:hover{ color:#f73;}
+.tab .th{ font-weight:bold; text-align:right; color:#666;}
+.orderZt{ clear:both; display:block; width:100%; padding:6px 0 4px 0; height:18px; line-height:18px; background:url(/member/images/tj_line.png) repeat-x; overflow:hidden;}
+.orderZt p{ display:inline; padding:0 50px 0 24px;}
+.prompt{ display:block; width:500px; margin:12px auto 0 auto; padding:12px 20px; left:21px; color:#f78a32; font-size:14px; border:1px solid #fc7; background:#ffffe5; overflow:hidden;}
+.prompt strong{}
+#login{ position:absolute; top:20px; right:0; width:300px; padding-bottom:10px; border:2px solid #1d7fa7; font-weight:normal; text-indent:0; background:#fff; z-index:10000;}
+#login h5{ display:block; position:relative; width:100%; float:left; line-height:24px; margin:0 0 12px 0; color:#fff; text-indent:12px; background:#1d7fa7;}
+#login h5 i{ position:absolute; top:4px; right:4px; padding:0; background: url(/css/wd/images/close.gif) no-repeat 0 0;}
+#login h5 i a{ display:block; width:12px; height:12px;}
+#login p{ clear:both; display:block; margin:4px 0; padding-left:30px; overflow:hidden;}
+#login p.btnLogin{ margin:4px 0 0 60px; display:inline; float:left;}
+#login p.btnLogin input{ width:96px; height:27px; border:0; background:url(../wan/images/ico_show.png) 0 -188px;}
+#login p.btnLogin a{}
+#login p input.text {width: 150px;} 
+
+
+
+
+
+/***** 全局设置 *****/ 
+body,h1,h2,h3,h4,h5,h6,p,form,ul,ol,li,dt,dl,dd,th,td,label,bottom,input,textarea{ margin:0;padding:0;}
+body{font-family:"宋体", arial;font-size:12px;line-height:1.5;text-align:left;background:#FFF;color:#000;padding-bottom:10px}
+h1,h2,h3,h4,h5,h6,button,input,select,textarea{ font-size:100%;}
+fieldset,img{border:0;}
+ul{margin:0;padding:0;list-style:none;}
+div,th,td{font-size:12px;}
+table{ border-collapse:collapse; border-spacing:0;}
+em,i{ font-style:normal;}
+sup{ vertical-align:text-top;}
+sub{ vertical-align:text-bottom;}
+.fl{ float:left!important;}
+.fr{ float:right!important;}
+.mt6{ margin-top:6px;}
+.pr6{ padding-right:6px;}
+.mt20{ margin-top:20px!important;}
+.mt10{ margin-top:10px!important;}
+.mt15{ margin-top:15px!important;}
+.ml10{ margin-left:10px; display:inline;}
+.mt12{ margin-top:12px!important;}
+.noborder{ border:0 none!important;}
+.fn-clear:after{ content:"\20"; display:block; clear:both; height:0}
+.fn-clear:after{ *zoom:1}
+.clear{ clear:both;}
+a{ color:#555; text-decoration:none;}
+a:hover{ color:#f60; text-decoration:underline;}
+.header{ position:relative; width:1000px; height:56px; margin:0 auto; padding-bottom:10px; border-bottom:2px solid #80c249; z-index:2;}
+.header .logo{ position:relative; bottom:-5px; width:149px; float:left; height:54px; background:url(/css/wd/images/logo149x54.png) no-repeat;}
+.header .logo a{ display:block; width:149px; height:54px;}
+.header span.saying{ float:left; padding:25px 0 0 20px; font-size:14px; color:#090; font-family:"microsoft yahei";}
+.header span.saying em{ display:none;}
+.header .quick_menu{ float:right; padding-top:24px; margin-right:-3px; text-align:right; color:#777;}
+.header .quick_menu li{ float:left; padding:0 3px; line-height:28px;}
+span#top_user{ display:inline; float:none; padding:0; font-size:12px; font-family:Arial;}
+
+.web_nav{ position:relative; margin:0 0 0 -8px; padding:0; border:0;}
+.web_nav b{ position:relative; display:inline-block; line-height:28px; padding:0 14px 0 8px; border:1px solid #fff; color:#333; font-weight:normal; overflow:hidden; z-index:2;}
+.web_nav b s{ position:absolute; right:4px; top:12px; width:0; height:0; line-height:0; font-size:0; border:4px solid #fff; border-top-color:#999;}
+.web_nav .more{ display:none; position:absolute; top:29px; right:3px; width:140px; text-align:left; padding:3px 10px 0 10px; border:1px solid #ccc; background:#fff; z-index:1;}
+.web_nav .more ul{ clear:both; width:140px; overflow:hidden; padding:6px 0; border-bottom:1px solid #eee;}
+.web_nav .more li{ width:70px; float:left; padding:0; margin:0; height:20px; line-height:20px; border:0; overflow:hidden;}
+.web_nav .more li.title{ width:140px; font-weight:bold; font-size:12px; color:#f73;}
+.web_nav .more li.title a{ color:#f73;}
+.hov .more{ display:block;}
+.hov b{ border:1px solid #ccc; border-bottom:1px solid #fff; background:#fff;}
+.hov b{ border-bottom:1px solid #fff;}
+.hov b s{ border:4px solid #fff; border-top-color:#999;}
+
+#footer{ display:block; width:1000px; margin:20px auto 0 auto; text-align:center; color:#999; overflow:hidden;}
+
+.header{ _position:relative; _z-index:9999;}
+.main{ width:1000px; margin:0 auto;}
+
+.box1000 {
+    border: 1px solid #e1e1e1;
+    padding: 9px;
+    width: 980px;
+}
+
+

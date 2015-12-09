@@ -1,0 +1,25 @@
+﻿@using Travelling.Web.Helpers
+<div class="TabCont">
+    <div class="HdBd">
+        <h2 class="Hd">冬季热门城市</h2>
+    </div>
+    <ul class="ActivityList" id="seasonCityList">
+        <li>
+            <a title="三亚酒店预定" href="@HotelInfoHelper.GetHotelInfoQueryByCityId(43)" target="_blank"><img src="~/static/city/sanya.jpg" alt="三亚酒店预定" width="140" height="100"></a>
+            <a title="三亚酒店预定" href="@HotelInfoHelper.GetHotelInfoQueryByCityId(43)" target="_blank">三亚</a>
+        </li>
+        <li>
+            <a title="哈尔滨酒店预定" href="@HotelInfoHelper.GetHotelInfoQueryByCityId(5)" target="_blank"><img src="~/static/city/haerbin.jpg" alt="哈尔滨酒店预定" width="140" height="100"></a>
+            <a title="哈尔滨酒店预定" href="@HotelInfoHelper.GetHotelInfoQueryByCityId(5)" target="_blank">哈尔滨</a>
+        </li>
+        <li>
+            <a title="昆明酒店预定" href="@HotelInfoHelper.GetHotelInfoQueryByCityId(34)" target="_blank"><img src="~/static/city/kunming.jpg" width="140" alt="昆明酒店预定" height="100"></a>
+            <a title="昆明酒店预定" href="@HotelInfoHelper.GetHotelInfoQueryByCityId(34)" target="_blank">昆明</a>
+        </li>
+        <li>
+            <a title="广州酒店预定" href="@HotelInfoHelper.GetHotelInfoQueryByCityId(32)" target="_blank"><img src="~/static/city/guangzhou.jpg" width="140" alt="广州酒店预定" height="100"></a>
+            <a title="广州酒店预定" href="@HotelInfoHelper.GetHotelInfoQueryByCityId(32)" target="_blank">广州</a>
+        </li>
+    </ul>
+
+</div>

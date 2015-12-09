@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_BaseAdminPage.cshtml";
+}
+@section header{
+<script type="text/javascript" src="~/Areas/Admin/js/settingfunction.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            articlesearch(1);
+        });
+    </script>
+
+}
+
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home home-icon"></i>
+            <a href="#">控制面板</a>
+        </li>
+        <li>
+            <a href="#">新闻咨询</a>
+        </li>
+        <li class="active">新闻管理</li>
+    </ul>
+
+</div>
+<div class="page-content">
+    <div class="page-header">
+        <h1>
+            新闻列表
+            <small>
+                <i class="icon-double-angle-right"></i>
+                查看
+                <a href="AddArticle">添加</a>
+            </small>
+        </h1>
+    </div><!-- /.page-header -->
+
+    <div class="row" id="queryresult">
+
+    </div><!-- /.row -->
+</div>

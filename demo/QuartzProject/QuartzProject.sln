@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzProject", "QuartzProject\QuartzProject.csproj", "{EAABDCD6-1A57-4C02-B448-AF99435FFAE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quart.LoadMethod", "Quart.LoadMethod\Quart.LoadMethod.csproj", "{6CEC343A-4378-4ED9-BB4B-F68F42AB0EE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAABDCD6-1A57-4C02-B448-AF99435FFAE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAABDCD6-1A57-4C02-B448-AF99435FFAE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAABDCD6-1A57-4C02-B448-AF99435FFAE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAABDCD6-1A57-4C02-B448-AF99435FFAE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CEC343A-4378-4ED9-BB4B-F68F42AB0EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CEC343A-4378-4ED9-BB4B-F68F42AB0EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CEC343A-4378-4ED9-BB4B-F68F42AB0EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CEC343A-4378-4ED9-BB4B-F68F42AB0EE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,22 @@
+﻿@model ZhunaHotelCommentReturnEntity
+@using Travelling.OpenApiEntity.Zhuna
+@using Travelling.FrameWork
+@if (Model.reqdata != null && Model.reqdata.Count > 0)
+{
+    <div class="HdBd">
+        <h2 class="Hd">游客点评</h2>
+
+    </div>
+    <ul class="ActivityList">
+        @foreach (var comment in Model.reqdata)
+        {
+            <li style="border-bottom: 1px dashed #ccc; line-height:25px;">
+                <ul>
+                    <li>游客：<span style="color:#f60;"></span> @comment.content</li>
+                    <li>人群：@comment.renqun</li>
+                </ul>
+            </li>
+        }
+
+    </ul>
+}

@@ -1,0 +1,17 @@
+﻿@model List<ArticleInfoDto>
+@using Travelling.ViewModel.Dto.Setting
+@using Travelling.FrameWork
+@if (Model != null && Model.Count > 0)
+{
+    <div class="KxContentRight">
+        <div class="HdBd">
+            <h2 class="Hd"><a target="_blank" href="#">热门新闻</a></h2>
+        </div>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li><a href="@string.Format("/newsinfo_{0}.html",item.ID)" target="_blank" title="@item.Title">@item.Title.SubString(25)</a></li>
+            }
+        </ul>
+    </div>
+}

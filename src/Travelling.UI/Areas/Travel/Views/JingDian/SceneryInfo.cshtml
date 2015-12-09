@@ -1,0 +1,126 @@
+﻿@using Travelling.Domain
+@using Travelling.Web.Helpers
+@using Travelling.ViewModel.Travel
+@using Travelling.FrameWork
+@using Travelling.ViewModel.Dto.Ticket
+@using Travelling.ViewModel.Ticket
+@{
+
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+    SceneryInfoDetail sceneryinfo = ViewBag.SceneryDetail;
+    List<SceneryImgInfo> imgGally = ViewBag.ImgGally;
+
+    List<ImgObject> imgObjects = SceneryTicketHelper.GetSceneryImgList(imgGally);
+    SceneryTicketPolicyInfo ticketPolicy = ViewBag.SceneryTicketPolicy;
+
+}
+
+@section header
+{
+
+    <link type="text/css" rel="stylesheet" href="~/Content/travel/piao_v6.css">
+    <script type="text/javascript" src="~/Scripts/jquery.slides.min.js"></script>
+    
+    <script type="text/javascript" src="~/Areas/Travel/Js/comm_v6.js"></script>
+    <script type="text/javascript" src="~/Areas/Travel/Js/piao_v6.js"></script>
+}
+<div id="MainContent">
+    <div class="content">
+        @Html.Partial("Navigate", sceneryinfo)
+        <div class="side_l">
+            <div class="jd_top_info">
+                <div class="info_l">
+                    <div class="slides" id="slide300">
+                        @foreach (var img in imgObjects.GetRange(0, imgObjects.Count > 10 ? 10 : imgObjects.Count))
+                        {
+                            <img src="@img.ImgUrl" alt="@sceneryinfo.SceneryName" width="300" height="200">
+                        }
+                    </div>
+                    <script>
+                        $('#slide300').slidesjs({ width: 300, height: 200, play: { active: true, auto: true, interval: 3000, swap: true } });
+                    </script>
+
+                </div>
+                <div class="info_r">
+                    <h1>@sceneryinfo.SceneryName</h1>
+                    <b>@sceneryinfo.GradeId</b>
+                    <p class="address">
+                        @sceneryinfo.Address
+                        <a href="#traffic">[查看地图]</a>
+                    </p>
+                    <div class="info_type">
+                        <p>
+                            <span>门票分类：</span>
+                            <span class="nr">
+                                <a href="#" target="_blank">@sceneryinfo.ThemeName</a>
+                            </span>
+                        </p>
+
+                        <p>
+                            <span>门票信息：</span>
+                            <span class="nr">@sceneryinfo.PayMode</span>
+                        </p>
+                        <p>
+                            <span>最低价格：</span>
+                            <span class="price">
+                                <em>¥<b>@Html.Raw(sceneryinfo.AmountAdvice)</b></em>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="show_box">
+                <div class="tab_nav" id="tab_nav">
+                    <span class="on">门票预订</span>
+                    <span>预定须知</span>
+                    <span>景点介绍</span>
+                    <span>交通指南</span>
+                    <span>游客点评</span>
+                    <span>附近景点</span>
+                    <span>附近酒店</span>
+                </div>
+                <div id="tab_nav_bg">
+
+                </div>
+                <div id="sectionBox">
+                    @Html.Partial("TicketPrice", ViewData["TicketPrices"])
+                    <div class="other_info section">
+                        <div class="tit">
+                            <strong>
+                                <i class="i3"></i>预定须知
+                            </strong>
+                        </div>
+                        <div class="txt font_con">
+                            @Html.Raw(sceneryinfo.BuyNotice)
+                        </div>
+                    </div>
+                    <div class="other_info section">
+                        <div class="tit">
+                            <strong>
+                                <i class="i1"></i>景点介绍
+                            </strong>
+                        </div>
+                        <div class="txt">
+                            <div class="simple font_con">@Html.Raw(sceneryinfo.ScenerySummary)</div>
+                        </div>
+                    </div>
+                    
+
+                    @Html.Partial("Traffic", ViewData["TrafficInfo"])
+                    @Html.Partial("Comments", sceneryinfo.SceneryID)
+                    @Html.Partial("NearSceneryInfo", ViewData["NearSceneryInfos"])
+                    @Html.Partial("NearHotelInfo", ViewData["SceneryHotelInfos"])
+
+                </div>
+            </div>
+        </div>
+        <div class="side_r">
+            @Html.Partial("SceneryYouLike", ViewData["SceneryYouLike"])
+            <div class="box280">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fn-clear"></div>

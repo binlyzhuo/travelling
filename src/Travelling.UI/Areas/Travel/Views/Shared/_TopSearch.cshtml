@@ -1,0 +1,50 @@
+﻿<div class="head_con">
+    <div class="logo">
+        <img alt="卓家客栈" src="~/Areas/Travel/Imgs/logo.png" title="卓家客栈"/>
+    </div>
+    <div class="search_con">
+        <form target="_self" name="scenerysearchform2" id="scenerysearchform2">
+            <div class="search_top">
+                <div id="curtInput" class="">
+                    <div class="search_curt">
+                        <span class="onName">门票</span><i></i>
+                    </div>
+                    <ul style="display: none;" id="curtlist">
+                        <li style="background: none repeat scroll 0% 0% rgb(255, 255, 255);">门票</li>
+                    </ul>
+
+                    <input type="text" style="color: rgb(170, 170, 170);" autocomplete="off" name="q" id="keywordScenery" placeholder="请输入景区名称或者城市名称" class="text">
+                    <button name="" type="button" onclick="topscenerysearch();">搜&nbsp;索</button>
+                    <div id="smart_arrow" style="height: 29px; left: 1288px; top: 62px;">
+                        <div class="hide">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+       <script type="text/javascript">
+           function topscenerysearch() {
+
+               var keyWords = $("#keywordScenery").val();
+               if ($.trim(keyWords) == "") {
+                   keyWords = "search";
+                   $("#keywordScenery").attr("placeholder", "请输入景区名称或者城市名称");
+                   
+               }
+               var page = 1;
+               var themeid = 0;
+               var star = 0;
+               var provinceid = 0;
+               var cityId = 0;
+               var orderby = 0;
+
+               var postUrl = "/ticketsearch_" + provinceid + "_" + cityId + "_" + themeid + "_" + star + "_" + page + "_" + orderby + "_" + encodeURI(keyWords) + ".html";
+
+               $("#scenerysearchform2").attr("action", postUrl);
+               $("#scenerysearchform2").submit();
+           }
+       </script>
+    </div>
+
+</div>

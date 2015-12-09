@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+}
+@using StackExchange.Profiling;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="卓家客栈" />
+    <meta name="copyright" content="卓家客栈" />
+    <title>@ViewBag.Title</title>
+    <meta name='keywords' content='@ViewBag.SeoKeywords' />
+    <meta name='description' content='@ViewBag.SeoDescription' />
+
+    <link type="text/css" rel="stylesheet" href="~/Content/travel/common.css" />
+    <link type="text/css" rel="stylesheet" href="~/Scripts/calendar/calendar.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/travel/index.css" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.lazyload.min.js"></script>
+    
+    
+    <script type="text/javascript" src="~/Scripts/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.cookie.js"></script>
+    @RenderSection("header",false)
+</head>
+<body>
+    
+    @Html.Partial("~/Areas/Travel/Views/Shared/_Header.cshtml")
+    @RenderBody()
+    @Html.Partial("~/Areas/Travel/Views/Shared/_Footer.cshtml")
+    @RenderSection("footer",false)
+    @MiniProfiler.RenderIncludes()
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@model SceneryQueryInfo
+@{
+    var pageData = MyHtmlHelper.GetPaging(Model.PageIndex, Model.PageSize, Model.TotalRecords);
+    int startIndex = pageData.Item1;
+    int endIndex = pageData.Item2;
+
+    int lastPage = startIndex > 1 ? startIndex - 1 : 1;
+    int nextPage = endIndex == Model.TotalPages ? endIndex : endIndex + 1;
+
+    int currentPage = Model.PageIndex;
+    
+}
+
+<div class="cutpage mg_t6">
+    <ul>
+
+        <li class="first"><a href="javascript:pagesearchlist('@lastPage');" rel="nofollow">上一页</a></li>
+
+        @for (int index = startIndex; index <= endIndex; index++)
+        {
+            
+            <li class="@Html.Raw(index == Model.PageIndex ? "cur" : "num")">
+                <a href="javascript:pagesearchlist('@index');" rel="nofollow">@index</a>
+            </li>
+        }
+
+        <li class="next">
+            <a href="javascript:pagesearchlist('@nextPage');" rel="nofollow">下一页</a>
+        </li>
+    </ul>
+
+</div>

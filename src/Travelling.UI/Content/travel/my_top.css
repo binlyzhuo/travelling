@@ -1,0 +1,54 @@
+/***** 全局设置 *****/ 
+body,h1,h2,h3,h4,h5,h6,p,form,ul,ol,li,dt,dl,dd,th,td,label,bottom,input,textarea{ margin:0;padding:0;}
+body{font-family:"宋体", arial;font-size:12px;line-height:1.5;text-align:left;background:#FFF;color:#000;padding-bottom:10px}
+h1,h2,h3,h4,h5,h6,button,input,select,textarea{ font-size:100%;}
+fieldset,img{border:0;}
+ul{margin:0;padding:0;list-style:none;}
+div,th,td{font-size:12px;}
+table{ border-collapse:collapse; border-spacing:0;}
+em,i{ font-style:normal;}
+sup{ vertical-align:text-top;}
+sub{ vertical-align:text-bottom;}
+.fl{ float:left!important;}
+.fr{ float:right!important;}
+.mt6{ margin-top:6px;}
+.pr6{ padding-right:6px;}
+.mt20{ margin-top:20px!important;}
+.mt10{ margin-top:10px!important;}
+.mt15{ margin-top:15px!important;}
+.ml10{ margin-left:10px; display:inline;}
+.mt12{ margin-top:12px!important;}
+.noborder{ border:0 none!important;}
+.fn-clear:after{ content:"\20"; display:block; clear:both; height:0}
+.fn-clear:after{ *zoom:1}
+.clear{ clear:both;}
+a{ color:#555; text-decoration:none;}
+a:hover{ color:#f60; text-decoration:underline;}
+.header{ position:relative; width:1000px; height:56px; margin:0 auto; padding-bottom:10px; border-bottom:2px solid #80c249; z-index:2;}
+.header .logo{ position:relative; bottom:-5px; width:149px; float:left; height:54px; background:url(/css/wd/images/logo149x54.png) no-repeat;}
+.header .logo a{ display:block; width:149px; height:54px;}
+.header span.saying{ float:left; padding:25px 0 0 20px; font-size:14px; color:#090; font-family:"microsoft yahei";}
+.header span.saying em{ display:none;}
+.header .quick_menu{ float:right; padding-top:24px; margin-right:-3px; text-align:right; color:#777;}
+.header .quick_menu li{ float:left; padding:0 3px; line-height:28px;}
+span#top_user{ display:inline; float:none; padding:0; font-size:12px; font-family:Arial;}
+
+.web_nav{ position:relative; margin:0 0 0 -8px; padding:0; border:0;}
+.web_nav b{ position:relative; display:inline-block; line-height:28px; padding:0 14px 0 8px; border:1px solid #fff; color:#333; font-weight:normal; overflow:hidden; z-index:2;}
+.web_nav b s{ position:absolute; right:4px; top:12px; width:0; height:0; line-height:0; font-size:0; border:4px solid #fff; border-top-color:#999;}
+.web_nav .more{ display:none; position:absolute; top:29px; right:3px; width:140px; text-align:left; padding:3px 10px 0 10px; border:1px solid #ccc; background:#fff; z-index:1;}
+.web_nav .more ul{ clear:both; width:140px; overflow:hidden; padding:6px 0; border-bottom:1px solid #eee;}
+.web_nav .more li{ width:70px; float:left; padding:0; margin:0; height:20px; line-height:20px; border:0; overflow:hidden;}
+.web_nav .more li.title{ width:140px; font-weight:bold; font-size:12px; color:#f73;}
+.web_nav .more li.title a{ color:#f73;}
+.hov .more{ display:block;}
+.hov b{ border:1px solid #ccc; border-bottom:1px solid #fff; background:#fff;}
+.hov b{ border-bottom:1px solid #fff;}
+.hov b s{ border:4px solid #fff; border-top-color:#999;}
+
+#footer{ display:block; width:1000px; margin:20px auto 0 auto; text-align:center; color:#999; overflow:hidden;}
+
+.header{ _position:relative; _z-index:9999;}
+.main{ width:1000px; margin:0 auto;}
+
+

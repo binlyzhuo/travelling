@@ -1,0 +1,131 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@{
+    string defaultCityName = "北京";
+    string defaultCityID = "1";
+}
+
+<div id="SearchBox" class="SearchBox">
+    <ul class="SearchClsTag">
+        <li mdi="2" class="SearchClsTagAc">
+            <i class="SHotelIcon SHotelIconAc"></i>订酒店
+        </li>
+        <li mdi="1">
+            <i class="SFlightIcon SFlightIconAc"></i>景点门票
+        </li>
+    </ul>
+
+    <!-- 酒店 -->
+    <div style="display: block;" class="SearchClsCn" id="hotel_search">
+        <div id="jsContainer" class="jsContainer" style="height:0;z-index:999999;">
+            <div id="tuna_alert" style="display: none; position: absolute; z-index: 999999; overflow: hidden;"></div>
+            <div id="tuna_jmpinfo" style="visibility: hidden; position: absolute; z-index: 999999;"></div>
+        </div>
+        <div class="SearchClsHtBox">
+            <h2 class="SearchClsHtAc">国内酒店</h2>
+        </div>
+        <div class="FlightCnCk">
+            <form id="HotelSearchForm" method="post">
+                <div class="SearchInpHeight SearchInpHeightPdt">
+                    <span class="FlightSName">城市</span>
+                    <div class="SearchInpHeightWide">
+                        <div class="FlightSPosBd FlightHotelPosBd">
+                            <input type="text" class="HotelCityTxt" value="@defaultCityName" size="15" id="HotelCityName" name="HotelCityName" mod="address|notice" mod_address_source="hotel" mod_address_suggest="@Html.Raw(ViewBag.HotCities)" mod_address_reference="HotelCityID" mod_notice_tip="中文/拼音" />
+                            <input id="HotelCityID" name="HotelCityID" type="hidden" value="@defaultCityID" />
+                            <i class="SearchCityIcon"></i>
+                        </div>
+                    </div>
+                    <div class="FlightSPosBd FlightHotelPosBd_Wid">
+                        <input type="text" placeholder="商圈/行政区/地标" value="" name="searchkeywords" id="address" class="text" style="color: rgb(170, 170, 170);height:27px;border:0;width:300px;" />
+                        <div style="display: none;position:absolute;z-index:250;" id="tanchu_address" class="tanchu">
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="SearchInpHeight">
+                    <span class="FlightSName">日期</span>
+                    <div class="SearchInpHeightDate">
+                        <div class="FlightSPosBd">
+                            <input id="HotelInRoomDate" type="text" class="f-text" value="@DateTime.Now.ToString("yyyy-MM-dd")" name="HotelInRoomDate" autocomplete="off" style="border:0;width:100%;height:100%;margin:0;padding:0;" />
+                        </div>
+                    </div>
+                    <div class="FlightSPosBd">
+                        <input id="HotelLeaveRoomDate" type="text" name="HotelLeaveRoomDate" class="f-text" value="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" autocomplete="off" style="border:0;width:100%;height:100%;margin:0;padding:0;" />
+
+                    </div>
+                </div>
+                <div class="SearchBtnBox">
+                    <input type="button" value="搜索" class="SearchBtn" id="hotelSearchBtn">
+                    <input type="hidden" id="hidCityAreaID" name="CityAreaID" value="0" />
+                    <input type="hidden" id="hidHotelBrandID" name="HotelBrandID" value="0" />
+                    <input type="hidden" id="hidLocationID" name="LocationID" value="0" />
+                    <p>
+                        <span class="FlightSName">酒店级别</span>
+                        @Html.DropDownList("HotelStarLevel", Html.CreateHotelLevelSelectList(typeof(HotelStarLevel), ((int)HotelStarLevel.All).ToString()), new { style = "border:1px solid  #ccc;height:25px;" })
+                        @Html.DropDownList("HotelPriceLevel", Html.CreateHotelPriceSelectList(typeof(HotelPriceLevel), ((int)HotelPriceLevel.All).ToString()), new { style = "border:1px solid  #ccc;height:25px;" })
+                    </p>
+                </div>
+                <div class="BaozBox BaozBox2">
+                    <ul class="SearchHotCityList">
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",1)" target="_blank" title="北京酒店预定">北京</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",2)" target="_blank" title="上海酒店预定">上海</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",12)" target="_blank" title="南京酒店预定">南京</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",4)" target="_blank" title="重庆酒店预定">重庆</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",144)" target="_blank" title="济南酒店预定">济南</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",32)" target="_blank" title="广州酒店预定">广州</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",17)" target="_blank" title="杭州酒店预定">杭州</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",43)" target="_blank" title="三亚酒店预定">三亚</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",5)" target="_blank" title="哈尔滨酒店预定">哈尔滨</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",30)" target="_blank" title="深圳酒店预定">深圳</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",223)" target="_blank" title="东莞酒店预定">东莞</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",28)" target="_blank" title="成都酒店预定">成都</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",4)" target="_blank" title="重庆酒店预定">重庆</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",10)" target="_blank" title="西安酒店预定">西安</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",14)" target="_blank" title="厦门酒店预定">厦门</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",25)" target="_blank" title="苏州酒店预定">苏州</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",7)" target="_blank" title="青岛酒店预定">青岛</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",34)" target="_blank" title="昆明酒店预定">昆明</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",58)" target="_blank" title="香港酒店预定">香港</a></li>
+                        <li><a href="@string.Format("/hotelsearchlist_{0}.html",59)" target="_blank" title="澳门酒店预定">澳门</a></li>
+                    </ul>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div id="jipiao_search" class="SearchClsCn" style="display: none;">
+        <div class="SearchClsHtBox">
+            <h2 class="SearchClsHtAc">景点门票</h2>
+        </div>
+        <div class="FlightCnCk">
+            <form method="get" id="scenerysearchform">
+
+                <div class="SearchInpHeight SearchInpHeightPdt">
+                    <div id="int_search" class="FlightSPosBd FlightHotelPosBd FlightHotelPosBd_Wid" style="width:500px;">
+                        <input type="text" id="txtSceneryKeyWords" name="keywords" placeholder="景点名或城市名" onclick="javascript: $(this).val('');" class="SerachTxBd SerachTxBdSr SerachHotTxBdClor">
+                    </div>
+                </div>
+                <div class="SearchBtnBox">
+                    <input type="button" id="scenery_searchBtn" class="SearchBtn" value="搜索">
+                    <p class="FlightTip">可实时搜索 <span>20000</span>种景点门票免费预订</p>
+                </div>
+                <div class="BaozBox">
+                    <ul class="SearchHotCityList">
+                        <li><a href="@SceneryTicketHelper.GetSceneryTicketByProvinceID(3,53)" target="_blank" title="北京景点门票预定">北京</a></li>
+                        <li><a href="@SceneryTicketHelper.GetSceneryTicketByProvinceID(25,321)" target="_blank" title="上海景点门票预定">上海</a></li>
+                        <li><a href="@SceneryTicketHelper.GetSceneryTicketByProvinceID(16,224)" target="_blank" title="南京景点门票预定">南京</a></li>
+                        <li><a href="@SceneryTicketHelper.GetSceneryTicketByProvinceID(32,394)" target="_blank" title="重庆景点门票预定">重庆</a></li>
+                        <li><a href="@SceneryTicketHelper.GetSceneryTicketByProvinceID(22, 287)" target="_blank" title="济南景点门票预定">济南</a></li>
+                        <li><a href="@SceneryTicketHelper.GetSceneryTicketByProvinceID(6,80)" target="_blank" title="广州景点门票预定">广州</a></li>
+                        <li><a href="@SceneryTicketHelper.GetSceneryTicketByProvinceID(31,383)" target="_blank" title="杭州景点门票预定">杭州</a></li>
+                        <li><a href="@SceneryTicketHelper.GetSceneryTicketByProvinceID(9,133)" target="_blank" title="三亚景点门票预定">三亚</a></li>
+                        <li><a href="@SceneryTicketHelper.GetSceneryTicketByProvinceID(12,170)" target="_blank" title="哈尔滨景点门票预定">哈尔滨</a></li>
+                        <li><a href="@SceneryTicketHelper.GetSceneryTicketByProvinceID(9,127)" target="_blank" title="海口景点门票预定">海口</a></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

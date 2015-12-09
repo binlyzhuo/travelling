@@ -1,0 +1,111 @@
+﻿@model List<GroupProductInfo>
+@using Travelling.OpenApiEntity.Ctrip.Tuan
+@using Travelling.Web.Helpers
+@using Travelling.FrameWork
+@{
+    int defaultCityId = ViewBag.CityId;
+    string defaultCityName = ViewBag.CityName;
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+}
+@section header{
+
+    <link type="text/css" rel="stylesheet" href="~/Content/travel/tuan.css" />
+    <script type="text/javascript">
+        $(function () {
+            $("img.lazy").lazyload({ event: "sporty" });
+        });
+        $(window).bind("load", function () {
+            var timeout = setTimeout(function () {
+                $("img.lazy").trigger("sporty")
+            }, 1000);
+        });
+    </script>
+}
+<div id="MainContent">
+    <div id="#PageCont">
+        <div class="SearchBoxTuan">
+            <div id="jsContainer" class="jsContainer" style="height:0;z-index:999999;">
+                <div id="tuna_alert" style="display: none; position: absolute; z-index: 999999; overflow: hidden;"></div>
+                <div id="tuna_jmpinfo" style="visibility: hidden; position: absolute; z-index: 999999;"></div>
+            </div>
+            <form method="post" id="tuanForm" name="qform">
+                <span class="FieldSchName left">入住城市</span>
+                <div id="sugg_city" class="SearchInputBox left">
+                    <input type="text" class="TextInput SearchInput" value="@defaultCityName" size="15" id="HotelCityName" name="HotelCityName" mod="address|notice" mod_address_source="hotel" mod_address_suggest="@Html.Raw(ViewBag.HotCities)" mod_address_reference="HotelCityID" mod_notice_tip="中文/拼音" />
+                    <input id="HotelCityID" name="HotelCityID" type="hidden" value="@defaultCityId" />
+                    <span class="CityTip"></span>
+
+                </div>
+                <div class="AreaInputCont left">
+                    <input type="text" sug="on" placeholder="输入关键词搜索团购" value="" name="keywords" autocomplete="off" disableautocomplete="" class="TextInput InputArea" id="keywords">
+                    <span class="AreaTip"></span>
+                </div>
+                <input type="button" id="btnSearch" onmouseover="this.className='SearchBtn SearchBtnHover'" onmouseout="this.className='SearchBtn'" value="" class="SearchBtn">
+
+            </form>
+        </div>
+        @Html.Action("TuanCityList", "Tuan", null)
+        <div class="MainBox">
+            <div class="SequBdBox clearfix">
+                <div class="SequHiden">
+                    <div class="SequBd clearfix">
+                        @foreach (var g in Model)
+                        {
+                            <div class="SequBdMod left">
+                                <div class="SequBdImg">
+                                    <a target="_blank" title="@g.HotelName" href="@TuanHelper.CtripTuanUrl(g.ProductID)">
+                                        <img width="292" height="187" title="@Html.Raw(string.Format("{0}团购",g.HotelName))" alt="@Html.Raw(string.Format("{0}团购",g.HotelName))" data-original="@g.ProductPictures[0].contents[0].URL" src="" class="lazy">
+                                    </a>
+                                    <div class="BdImgContBtm" style="bottom: -80px;"></div>
+                                    <div class="BdImgContTop" style="bottom: -80px;">
+                                        @g.HotelName
+                                    </div>
+                                    <div class="TagIcon">
+                                        <span class="TagTwo">@Html.Raw((g.SalePrice / (float)g.ListingPrice).ToString("f2").ToFloat() * 10)</span>折
+                                    </div>
+                                </div>
+                                <div class="SequBdTitle clearfix">
+                                    <h3 class="left">
+                                        <a href="@TuanHelper.CtripTuanUrl(g.ProductID)" target="_blank" title="@g.HotelName" rel="nofollow">@g.HotelName.SubString(20) @TuanHelper.GetHotelStarName(g.ProductScores.StarRate)</a>
+                                    </h3>
+
+
+                                </div>
+                                <div class="SequBdList clearfix SequBdListShow">
+                                    <div class="BdListHd clearfix">
+                                        <span class="BdListPrice Verdana left"><i>¥</i>@g.SalePrice</span>
+                                        <span class="BdListDest right">携程团购</span>
+                                    </div>
+                                    <div class="BdListShow" style="display: block;">
+                                        <a title="@Html.Raw(g.HotelName)" class="ListBdCont" target="_blank" rel="nofollow" href="#">@Html.Raw(HttpUtility.HtmlDecode(g.ProductDescriptions[0].Text))</a>
+                                        <div class="ListBdBtm clearfix">
+                                            <p class="ListBdLeft left">
+                                                @g.SaledItemCount 人购买<br> @string.Format("还剩{0}结束",TuanHelper.GetTuanLeftTime(g.EndDate))
+                                            </p>
+                                            <a class="ListBdBtn right" target="_blank" rel="nofollow" href="@TuanHelper.CtripTuanUrl(g.ProductID)"><span></span>去看看</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/Scripts/fixdiv.js"></script>
+<script type="text/javascript" src="~/Scripts/address.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btnSearch").click(function () {
+            var cityId = $("#HotelCityID").val();
+            var postUrl = "/tuan2_" + cityId + ".html";
+            $("#tuanForm").attr("action", postUrl).submit();
+
+        });
+    });
+</script>

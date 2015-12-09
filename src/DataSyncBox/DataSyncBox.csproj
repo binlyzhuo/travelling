@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7541097-C572-4B57-B344-F18F95F142DE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataSyncBox</RootNamespace>
+    <AssemblyName>DataSyncBox</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="PanGu, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Lucene.Net.Analysis.PanGu.2.4.1\lib\PanGu.dll</HintPath>
+    </Reference>
+    <Reference Include="PanGu.HighLight">
+      <HintPath>..\packages\Lucene.Net.Analysis.PanGu.2.4.1\lib\PanGu.HighLight.dll</HintPath>
+    </Reference>
+    <Reference Include="PanGu.Lucene.Analyzer, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Lucene.Net.Analysis.PanGu.2.4.1\lib\PanGu.Lucene.Analyzer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\BaseAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\HotelApiReturnResult.cs" />
+    <Compile Include="Core\HotelStaticInfoNinject.cs" />
+    <Compile Include="Core\IPHelper.cs" />
+    <Compile Include="Core\SceneryStaticInfoLogic.cs" />
+    <Compile Include="Core\TCHotelResourceNInject.cs" />
+    <Compile Include="Core\TicketInjectDataProvider.cs" />
+    <Compile Include="Core\ZhunaNInjectBusinessLogic.cs" />
+    <Compile Include="CtripHotelInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CtripHotelInfoForm.Designer.cs">
+      <DependentUpon>CtripHotelInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtripProvinceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CtripProvinceForm.Designer.cs">
+      <DependentUpon>CtripProvinceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\DependencyResolver.cs" />
+    <Compile Include="DataBakeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataBakeForm.Designer.cs">
+      <DependentUpon>DataBakeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelApiTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotelApiTestForm.Designer.cs">
+      <DependentUpon>HotelApiTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotelDataForm.Designer.cs">
+      <DependentUpon>HotelDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelDataImportOnlineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotelDataImportOnlineForm.Designer.cs">
+      <DependentUpon>HotelDataImportOnlineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelLuceneIndexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotelLuceneIndexForm.Designer.cs">
+      <DependentUpon>HotelLuceneIndexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hotelRoomRatePlanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hotelRoomRatePlanForm.Designer.cs">
+      <DependentUpon>hotelRoomRatePlanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelTableSplitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotelTableSplitForm.Designer.cs">
+      <DependentUpon>HotelTableSplitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainBoard.Designer.cs">
+      <DependentUpon>MainBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuartzForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuartzForm.Designer.cs">
+      <DependentUpon>QuartzForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomRatePlanSyncLogEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomRatePlanSyncLogEditForm.Designer.cs">
+      <DependentUpon>RoomRatePlanSyncLogEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneryInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneryInfoForm.Designer.cs">
+      <DependentUpon>SceneryInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneryLuceneIndexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneryLuceneIndexForm.Designer.cs">
+      <DependentUpon>SceneryLuceneIndexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneryTicketTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneryTicketTestForm.Designer.cs">
+      <DependentUpon>SceneryTicketTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tcHotelApiTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tcHotelApiTestForm.Designer.cs">
+      <DependentUpon>tcHotelApiTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tcHotelProvinceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tcHotelProvinceForm.Designer.cs">
+      <DependentUpon>tcHotelProvinceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicketStaticInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketStaticInfoForm.Designer.cs">
+      <DependentUpon>TicketStaticInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="zhuanApiTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="zhuanApiTestForm.Designer.cs">
+      <DependentUpon>zhuanApiTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="zhunaApiDataSyncForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="zhunaApiDataSyncForm.Designer.cs">
+      <DependentUpon>zhunaApiDataSyncForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtripHotelInfoForm.resx">
+      <DependentUpon>CtripHotelInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtripProvinceForm.resx">
+      <DependentUpon>CtripProvinceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataBakeForm.resx">
+      <DependentUpon>DataBakeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelApiTestForm.resx">
+      <DependentUpon>HotelApiTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelDataForm.resx">
+      <DependentUpon>HotelDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelDataImportOnlineForm.resx">
+      <DependentUpon>HotelDataImportOnlineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelLuceneIndexForm.resx">
+      <DependentUpon>HotelLuceneIndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hotelRoomRatePlanForm.resx">
+      <DependentUpon>hotelRoomRatePlanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelTableSplitForm.resx">
+      <DependentUpon>HotelTableSplitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainBoard.resx">
+      <DependentUpon>MainBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="QuartzForm.resx">
+      <DependentUpon>QuartzForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomRatePlanSyncLogEditForm.resx">
+      <DependentUpon>RoomRatePlanSyncLogEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneryInfoForm.resx">
+      <DependentUpon>SceneryInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneryLuceneIndexForm.resx">
+      <DependentUpon>SceneryLuceneIndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneryTicketTestForm.resx">
+      <DependentUpon>SceneryTicketTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tcHotelApiTestForm.resx">
+      <DependentUpon>tcHotelApiTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tcHotelProvinceForm.resx">
+      <DependentUpon>tcHotelProvinceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketStaticInfoForm.resx">
+      <DependentUpon>TicketStaticInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="zhuanApiTestForm.resx">
+      <DependentUpon>zhuanApiTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="zhunaApiDataSyncForm.resx">
+      <DependentUpon>zhunaApiDataSyncForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="data\log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="pangu\Dict.dct">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Travelling.CommonLibrary\Travelling.CommonLibrary.csproj">
+      <Project>{075522d2-7387-45fa-884a-e59de4c16665}</Project>
+      <Name>Travelling.CommonLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.DataLayer\Travelling.DataLayer.csproj">
+      <Project>{5f404be1-5384-4e02-afc0-30ab4e63d5ea}</Project>
+      <Name>Travelling.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.Domain\Travelling.Domain.csproj">
+      <Project>{341b6a3a-81ce-4124-a51c-b4f3a98989ef}</Project>
+      <Name>Travelling.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.FrameWork\Travelling.FrameWork.csproj">
+      <Project>{44ba1b80-dade-446c-a0aa-cec37a6381ba}</Project>
+      <Name>Travelling.FrameWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.Lucene\Travelling.Lucene.csproj">
+      <Project>{be32a215-4dc5-474a-825e-12bc83e4680c}</Project>
+      <Name>Travelling.Lucene</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.OpenApiEntity\Travelling.OpenApiEntity.csproj">
+      <Project>{4fac92ac-8334-428e-a469-91a25b8663eb}</Project>
+      <Name>Travelling.OpenApiEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.OpenApiLogic\Travelling.OpenApiLogic.csproj">
+      <Project>{93251de9-d810-4132-9bcd-355e4fb5c3ee}</Project>
+      <Name>Travelling.OpenApiLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.Repository\Travelling.Repository.csproj">
+      <Project>{ceda6bb9-e285-4f4c-984e-ce3b7e4870f5}</Project>
+      <Name>Travelling.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.TravelInterface\Travelling.TravelInterface.csproj">
+      <Project>{b579d0bf-abc9-4e0c-b71b-62c3197261f0}</Project>
+      <Name>Travelling.TravelInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.ViewModel\Travelling.ViewModel.csproj">
+      <Project>{73d09fd5-f29e-4f5a-8017-42930776f772}</Project>
+      <Name>Travelling.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\businessarea.xml" />
+    <Content Include="data\chinacity.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="data\chinalocation.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\chinaprovinces.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\countrydata.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\hotelbrandcode.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="data\hoteldescrition.xml" />
+    <Content Include="data\hotelservice.xml" />
+    <Content Include="data\hoteltheme.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\scenic-geo-cn.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\scenic-theme.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\tc\hotel-brands.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\tc\hotel-category.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\tc\hotel-goe-cn.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\tc\hotel-list.xml" />
+    <Content Include="data\tc\hotellist.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\XMLFile1.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ico.ico" />
+    <Content Include="pangu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pangu\ChsDoubleName1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pangu\ChsDoubleName2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pangu\ChsSingleName.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pangu\Stopword.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pangu\Synonym.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pangu\Wildcard.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sqlscripts\tables.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

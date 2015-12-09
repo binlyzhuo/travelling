@@ -1,0 +1,27 @@
+﻿@using Travelling.ViewModel.Lucene
+    @model List<HotelLuceneIndexInfo>
+    <div class="tit">
+        <strong>
+            <a target="_blank" href="#">周边酒店推荐</a>
+        </strong>
+        <a target="_blank" class="more" href="#">更多 &gt;</a>
+    </div>
+    <div class="tj_hotel">
+        
+        @foreach (var h in Model)
+        {
+            <dl>
+                <dt>
+                    <a target="_blank" href="#">
+                        <img width="90" height="60" alt="@h.HotelName" src="@h.HotelImg">
+                    </a>
+                </dt>
+                <dd>
+                    <a class="title" target="_blank" href="#">@h.HotelName</a>
+                    <span class="price">
+                        <s>¥</s><b>@h.AmountBeforeTax</b>起
+                    </span>
+                </dd>
+            </dl>
+        }
+    </div>

@@ -1,0 +1,35 @@
+﻿@model List<HotelCityDetailInfo>
+@using Travelling.ViewModel.Dto.Hotel
+<div class="TabCont">
+    <div class="HdBd">
+        <h2 class="Hd">地标找酒店</h2>
+        <input type="hidden" id="hiddenHotelQuickCityID" value="1" />
+        <ul class="Tablist" id="HotelQuickFindList">
+            
+            @for (int index = 0; index < Model.Count;index++ )
+            {
+                <li class="@Html.Raw(index == 0 ? "TabDefault" : "")" id="tagFind_@Model[index].CityID">
+                    <a href="javascript:void(0)" data="@Model[index].CityID">@Model[index].CityName</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="TabContBd">
+        <div>
+            <div class="change_tag" id="hotelfindtagslist">
+                <a data-id="503" data-index="1" datatype="0" class="c1 cancel_pop" href="#?">地铁站附近</a>
+                <a data-id="502" data-index="2" datatype="0" class="c2 cancel_pop" href="#?">火车站/机场</a>
+                <a data-id="501" data-index="3" datatype="0" class="c3 cancel_pop" href="#?">商业区</a>
+                <a data-id="506" data-index="4" datatype="0" class="c4 cancel_pop" href="#?">大学附近</a>
+                <a data-id="507" data-index="5" datatype="0" class="c5 cancel_pop" href="#?">展馆会展</a>
+                <a data-id="505" data-index="6" datatype="0" class="c6 cancel_pop" href="#?">景点附近</a>
+                <a data-id="508" data-index="7" datatype="1" class="c7 cancel_pop" href="#?">行政区</a>
+            </div>
+            <div id="areainfocontainer">
+                
+            </div>
+            
+        </div>
+        
+    </div>
+</div>

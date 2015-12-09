@@ -1,0 +1,37 @@
+﻿@using Travelling.ViewModel.Ticket
+@using Travelling.Web.Helpers
+@model List<SceneryTicketPrimaryInfo>
+
+<div class="other_info xl_info section">
+    <div class="tit">
+        <strong>
+            <i class="i5"></i>
+            <a href="#">附近景点门票</a>
+        </strong>
+
+    </div>
+    <div class="txt">
+        <ul>
+
+
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var s in Model)
+                {
+                    <li>
+                        <a title="@string.Format("{0}{1}门票预定",s.CityName,s.SceneryName)" href="@SceneryTicketHelper.GetSceneryInfoLink(s.SceneryId)" target="_blank">
+                            <img src="@Html.Raw(s.ImgBaseUrl+s.Imgs)" width="195" height="130" alt="@s.SceneryName">
+                            <div class="other">
+                                <span class="price">
+                                    <em>&yen;</em><b>@s.AmountAdvice</b>起
+                                </span>
+
+                            </div>
+                            <p>@s.SceneryName</p>
+                        </a>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</div>

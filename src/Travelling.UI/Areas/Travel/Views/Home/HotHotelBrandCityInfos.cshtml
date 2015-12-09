@@ -1,0 +1,21 @@
+﻿@model List<BrandCityInfo>
+@using Travelling.ViewModel.Travel.XmlData
+<div class="fastNav">
+    @foreach (var b in Model)
+    {
+        <div>
+            <ul class="hotcitylinklist" style="display:block;">
+                <li>@b.BrandName：</li>
+            @foreach (var city in b.Cities)
+            {
+                <li>
+                    <a title="@Html.Raw(string.Format("{0}{1}预定",city.CityName,b.BrandName))" target="_blank" href="@string.Format("/city{0}/chain{1}.html", city.CityId,b.BrandId)">@Html.Raw(string.Format("{0}{1}预定", city.CityName, b.BrandName))</a>
+                </li>
+            }
+            <li>
+                <a href="@string.Format("/pinpai_{0}.html",b.BrandId)" target="_blank" title="@string.Format("{0}预定",b.BrandName)">@Html.Raw(string.Format("更多{0}预定",b.BrandName))</a>
+            </li>
+        </ul>
+    </div>
+    }
+</div>

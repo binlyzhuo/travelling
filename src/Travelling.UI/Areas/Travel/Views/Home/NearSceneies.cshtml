@@ -1,0 +1,46 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Domain
+@using Travelling.ViewModel.Ticket
+@using Travelling.ViewModel.Dto.Ticket
+@using Travelling.Web.Helpers
+@model Tuple<List<SceneryInfoDetail>, List<SceneryProvinceDetailInfo>>
+<div style="" id="salefline2" class="CommPosBox marginBtm15">
+    <div class="HdBd">
+
+        <h2 class="CommHd">周边景点门票</h2>
+        <ul class="Tablist" id="NearSceneryProvinces">
+            @for (var index = 0; index < Model.Item2.Count; index++)
+            {
+                <li id="tag_@Model.Item2[index].ID" class="@Html.Raw(index == 0 ? "TabDefault" : "")">
+                    <a href="javascript:void(0)" data="@Model.Item2[index].ID">@Model.Item2[index].Name</a>
+                </li>
+            }
+            
+        </ul>
+    </div>
+    <div class="SaleFlineHide">
+        
+            @for (int index = 0; index < Model.Item2.Count; index++)
+            {
+                string hideStyle = "";
+                if (index != 0)
+                {
+                    hideStyle = "style=display:none;";
+                }
+                <ul class="SaleFlineList NearSceneryList" id="nearscenery_@Model.Item2[index].ID" @hideStyle>
+                    @foreach (var s in Model.Item1.Where(u =>
+                    {
+                        return u.CityID == Model.Item2[index].ID;
+                    }).ToList())
+                    {
+                        <li>
+                            <span class="SaleFlightPrice">¥<b>@s.AmountAdvice</b></span>
+                            <span class="SaleFlightDate">
+                                <a title="@string.Format("{0}{1}门票预定", Model.Item2[index].Name,s.SceneryName)" target="_blank" href="@SceneryTicketHelper.GetSceneryInfoLink(s.SceneryID)">@s.SceneryName</a>
+                            </span>
+                        </li>
+                    }
+                </ul>
+            }
+    </div>
+</div>

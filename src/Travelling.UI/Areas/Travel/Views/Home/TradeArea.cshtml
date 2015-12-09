@@ -1,0 +1,42 @@
+﻿@model Tuple<List<TradeAreaInfo>, List<HotelCityDetailInfo>>
+@using Travelling.ViewModel.Dto.Zhuna
+@using Travelling.ViewModel.Dto.Hotel
+@using Travelling.Web.Helpers
+@using Travelling.ViewModel.Travel
+@using Travelling.FrameWork
+
+<div class="TabCont">
+    <div class="HdBd">
+        <h2 class="Hd">热门商圈</h2>
+        <ul class="Tablist" id="citytradearealist">
+
+            @for (int index = 0; index < Model.Item2.Count; index++)
+            {
+                <li class="@Html.Raw(index == 0 ? "TabDefault GetTabDefault" : "")" id="tradetage_@Model.Item2[index].CityID">
+                    <a href="javascript:void(0)" data="@Model.Item2[index].CityID">@Model.Item2[index].CityName</a>
+                </li>
+            }
+            <li>
+                <a id="more" target="_blank" href="/landmark">更多</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="TabContBd">
+
+        @for (int index = 0; index < Model.Item2.Count; index++)
+        {
+            string hideStyle = "";
+            if (index != 0)
+            {
+                hideStyle = "style=display:none;";
+            }
+            <ul id="@Html.Raw(string.Format("block_trade_city{0}", Model.Item2[index].CityID))" class="CullHotelList TradeAreaList" @hideStyle>
+                @foreach (var h in HotelInfoHelper.GetCityCBD(Model.Item2[index].CityID, Model.Item1))
+                {
+                    <li><a target="_blank" title="@string.Format("{0}{1}酒店预定",h.CityName,h.Name)" href="@HotelUnionHelper.HotelSearchWithKey(h.CityId,h.Name)">@h.Name.SubString(10)</a></li>
+                }
+            </ul>
+        }
+    </div>
+</div>

@@ -1,0 +1,38 @@
+﻿@using Travelling.ViewModel.Dto.Hotel
+@using Travelling.Web.Helpers
+@model Tuple<List<HotelCityDetailInfo>, List<HotelBrandDetailInfo>>
+<div class="fastNav">
+
+    <div>
+        
+        <ul class="BookHotelList">
+            <li>连锁酒店：</li>
+            @foreach (var brand in Model.Item2)
+            {
+                <li>
+                    <a href="@string.Format("/pinpai_{0}.html", brand.BrandID)" target="_blank" title="@Html.Raw(string.Format("{0}酒店预定",brand.BrandName))">@brand.BrandName</a>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <div>
+        <ul class="hotcitylinklist" style="display:block;">
+            <li>热门城市：</li>
+            @foreach (var city in Model.Item1)
+            {
+                <li>
+                    <a title="@Html.Raw(string.Format("{0}酒店预定",city.CityName))" target="_blank" href="@string.Format("/hotelsearchlist_{0}.html",city.CityID)">@Html.Raw(string.Format("{0}酒店", city.CityName))</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div style="display:block;">
+        <ul class="hotsitelink">
+            <li>热门链接：</li>
+            <li><a href="/hotelcitylist.html" title="城市酒店预定" target="_blank">城市酒店预定</a></li>
+            <li><a href="/scenerycitylist.html" title="城市景点门票" target="_blank">城市景点门票</a></li>
+            <li><a href="/schools.html" title="学校大全" target="_blank">学校大全</a></li>
+        </ul>
+    </div>
+</div>

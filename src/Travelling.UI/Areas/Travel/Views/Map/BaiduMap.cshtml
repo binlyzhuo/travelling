@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+@model Tuple<string, string, string>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html, #allmap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=SyGugKzmoeThXDx0o0NrFu6L"></script>
+    <title>地图展示</title>
+</head>
+<body>
+    <div id="allmap"></div>
+    <div class="txt font_con">
+        <p>&nbsp;</p>@Html.Raw(Model.Item3)
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    map = new BMap.Map("allmap");
+    var point = new BMap.Point(@Model.Item1, @Model.Item2);
+    map.centerAndZoom(point, 15);
+    var marker = new BMap.Marker(point);
+    map.addOverlay(marker); 
+    map.setCenter(point);
+    var jd_title = '@Model.Item3';
+    var jd_info = '@Model.Item3';
+    var myIcon = new BMap.Icon("images/ditu_ico.gif", new BMap.Size(28, 37));
+    map.addControl(new BMap.NavigationControl());
+    var marker = new BMap.Marker(point, { icon: myIcon });
+</script>

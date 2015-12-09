@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="http://developer.amap.com/Public/css/demo.Default.css" />
+    <script language="javascript" src="http://webapi.amap.com/maps?v=1.3&key=dd11168a55d5469f1fddbe7f62919c65"></script>
+    <script language="javascript">
+    var mapObj;
+    function mapInit() {
+        mapObj = new AMap.Map("iCenter", {
+            //二维地图显示视口
+            view: new AMap.View2D({
+                center: new AMap.LngLat(117.230666, 39.098144),//地图中心点
+                zoom: 13 //地图显示的缩放级别
+            })
+        });
+        var marker = new AMap.Marker({
+            position: mapObj.getCenter(),
+            draggable: true, //点标记可拖拽
+            cursor: 'move',  //鼠标悬停点标记时的鼠标样式
+            raiseOnDrag: true//鼠标拖拽点标记时开启点标记离开地图的效果
+
+        });
+        marker.setMap(mapObj);
+    }
+    </script>
+</head>
+<body onload="mapInit()">
+    <div id="iCenter"></div>
+    <div style="padding:2px 0px 0px 5px;font-size:12px">
+        <input type="button" value="开始定位" onclick="javascript:toolBar.doLocation()" />
+        <div style="color: #C0C0C0">不支持IE9以下版本</div>
+    </div>
+</body>
+</html>

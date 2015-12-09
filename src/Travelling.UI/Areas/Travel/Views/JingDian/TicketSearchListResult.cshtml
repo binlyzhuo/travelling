@@ -1,0 +1,78 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@using Travelling.ViewModel.Ticket
+@using Travelling.ViewModel.Dto.Ticket;
+@model SceneryQueryInfo
+@{
+    var sceneryInfoAndPrices = ViewBag.SceneryInfos as Tuple<List<SceneryInfoDetail>, List<SceneryTicketPrice>, int>;
+    var sceneryinfos = sceneryInfoAndPrices.Item1;
+    var ticketPriceInfos = sceneryInfoAndPrices.Item2;
+}
+
+<div class="toolbar">
+    <ul>
+        <li>@Html.Raw(Model.PageIndex + "/" + Model.TotalPages)</li>
+        <li class="first"></li>
+        <li class="next">
+            <a rel="nofollow" onclick="getNextPage();" href="javascript:void(0);">下一页</a>
+        </li>
+    </ul>
+    <div class="sort">
+        <a rel="nofollow" href="javascript:orderbysearchlist(0);" class="@Html.Raw(Model.OrderBy == 0 ? "default" : "")">默认排序</a>
+        <a rel="nofollow" href="javascript:orderbysearchlist(1);" class="@Html.Raw(Model.OrderBy == 1 ? "default" : "")">价格<i></i></a>
+    </div>
+</div>
+@if (sceneryinfos == null || sceneryinfos.Count == 0)
+{
+    <div>没有查询结果</div>
+}
+else
+{
+    foreach (var s in sceneryinfos)
+    {
+        <div class="list_box">
+            <div class="list_top">
+                <a title="@s.SceneryName" target="_blank" href="@SceneryTicketHelper.GetSceneryInfoUrl(s.SceneryID)">
+                    <img width="180" height="120" alt="@s.SceneryName" src="@Html.Raw(s.Imgs)">
+                </a>
+                <div class="jd_info">
+                    <div class="title">
+                        <a target="_blank" title="@s.SceneryName" href="@SceneryTicketHelper.GetSceneryInfoUrl(s.SceneryID)">
+                            <strong>@s.SceneryName</strong>
+                        </a>
+                        <p>@s.Address</p>
+                        <p>@s.SceneryName<a target="_blank" class="scenerymap" href="/JingDian/SceneryMap?sceneryid=@s.SceneryID">[查看地图]</a></p>
+                    </div>
+                    <span class="price">
+                        <em>¥<b>@s.AmountAdvice</b></em>起<a target="_blank" href="@SceneryTicketHelper.GetSceneryInfoUrl(s.SceneryID)">去看看</a>
+                    </span>
+                </div>
+            </div>
+            <div class="list_con">
+                <ul>
+                    <li class="top">
+                        <span class="title">门票类型</span>
+                        <span class="cost">票面价格</span>
+                        <span class="price">优惠价</span>
+                        <span class="btn">操作</span>
+                    </li>
+                    @foreach (var p in SceneryTicketHelper.GetSceneryTicketPricesBySceneryId(s.SceneryID, ticketPriceInfos))
+                    {
+                        <li class="">
+                            <span class="title">@p.TicketName</span>
+                            <span class="cost">¥<del><b>@p.Price</b></del></span>
+                            <span class="price">
+                                <em>¥<b>@p.TCPrice</b></em>起<i class="sale">@Html.Raw(p.Price - p.TCPrice)</i>
+                            </span>
+                            <span class="btn">
+                                <a target="_blank" rel="nofollow" href="@SceneryTicketHelper.GetTCSceneryOrderUrl((int)p.SceneryID,p.PolicyID)">预订</a>
+                            </span>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+}
+
+@Html.Partial("~/Areas/Travel/Views/JingDian/QueryPaging.cshtml", Model)

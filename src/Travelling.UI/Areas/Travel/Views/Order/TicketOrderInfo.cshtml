@@ -1,0 +1,71 @@
+﻿@using Travelling.ViewModel.Travel
+@model SceneryTicketBookResult
+@{
+    ViewBag.Title = "OrderResult";
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+}
+@section header
+{
+    <link type="text/css" href="~/Content/travel/order_ticket.css" rel="stylesheet" />
+}
+<div id="MainContent">
+    <div class="main">
+        @if (Model.Success)
+        {
+            <div class="success_con">
+                <div class="pro_info">
+                    <!--需要确认-->
+                    <div class="success_info">
+                        <i></i>
+                        <strong>订单提交成功，请注意查收短信。</strong>
+
+                        <p class="mt10">订单编号: @Model.OrderNo</p>
+                        <p class="fws">产品服务提供商：同程旅游</p>
+                        <p class="exp">如有问题或其他咨询，请拨打同程旅游客服400-777777</p>
+                    </div>
+                    <div class="pro_info">
+                        <strong>您所预定的产品信息：</strong>
+                        <table style="width:100%;">
+                            <tbody>
+                                <tr>
+                                    <th width="30%">景点名称</th>
+                                    <th width="20%">门票类型</th>
+                                    <th width="15%">游玩日期</th>
+                                    <th width="10%">数量</th>
+                                    <th width="10%">取票方式</th>
+                                    <th width="15%">订单金额</th>
+                                </tr>
+                                <tr>
+                                    <td class="ticket_name">
+                                        <img width="80" height="60" alt="@Model.SceneryInfo.SceneryName" src="@Html.Raw(Model.SceneryInfo.ImgBaseUrl+Model.SceneryInfo.Imgs)">
+                                        <a href="#">济南趵突泉</a>
+                                        所在城市：济南
+                                    </td>
+                                    <td>景点门票</td>
+                                    <td>@Model.OrderInfo.TravelDate.ToString("yyyy-MM-dd")</td>
+                                    <td>@Html.Raw(Model.OrderInfo.TicketCount.ToString() + "张")</td>
+                                    <td class="pick_up">景区取票</td>
+                                    <td class="price">
+                                        <em>¥<b>@Model.OrderInfo.TotalAmount</b></em>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <div style="color:#f70;">
+                        <a href="#">继续预定</a>
+                    </div>
+                </div>
+
+            </div>
+
+        }
+        else
+        {
+            <div>@Model.ErrorMsg</div>
+        }
+
+    </div>
+</div>

@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "OrderList";
+    Layout = "~/Areas/Admin/Views/Shared/_BaseAdminPage.cshtml";
+}
+
+@section header{
+
+    <script type="text/javascript" src="~/Areas/Admin/assets/js/date-time/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="~/Areas/Admin/assets/js/date-time/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="~/Areas/Admin/assets/js/date-time/bootstrap-datepicker.zh-CN.js"></script>
+    <link type="text/css" href="~/Areas/Admin/assets/css/datepicker.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/Admin/assets/css/daterangepicker.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Areas/Admin/js/ticketfunction.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //hotelcityinfosearch(1);
+
+            $('.date-picker').datepicker({ autoclose: true, format: 'yyyy-mm-dd' }).next().on(ace.click_event, function () {
+                $(this).prev().focus();
+            });
+        });
+
+
+    </script>
+}
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home home-icon"></i>
+            <a href="#">控制面板</a>
+        </li>
+        <li>
+            <a href="#">景点门票</a>
+        </li>
+        <li class="active">订单管理</li>
+    </ul>
+    <!-- .breadcrumb -->
+    <div class="nav-search" id="nav-search">
+        <form class="form-search">
+            <span class="input-icon">
+                <input placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" type="text">
+                <i class="icon-search nav-search-icon"></i>
+            </span>
+        </form>
+    </div>
+    <!-- #nav-search -->
+</div>
+
+<div class="page-content">
+    <div style="margin-bottom:5px;">
+        <table style="width:95%;">
+            <tr>
+                <td width="100" align="right">游玩开始日期：</td>
+                <td width="120" style="text-align:left;">
+                    <div class="input-group">
+                        <input type="text" data-date-format="dd-mm-yyyy" id="inRoomDate" class="form-control date-picker">
+                        <span class="input-group-addon">
+                            <i class="icon-calendar bigger-110"></i>
+                        </span>
+                    </div>
+                </td>
+                <td width="100" align="right">游玩结束日期：</td>
+                <td width="120">
+                    <div class="input-group">
+                        <input type="text" data-date-format="dd-mm-yyyy" id="offRoomDate" class="form-control date-picker">
+                        <span class="input-group-addon">
+                            <i class="icon-calendar bigger-110"></i>
+                        </span>
+                    </div>
+                </td>
+                <td width="80" align="right">联系人：</td>
+                <td width="120">
+                    <input type="text" placeholder="联系人" id="ContractPerson">
+                </td>
+                <td width="80" align="right">景区名称：</td>
+                <td width="120">
+                    <input type="text" placeholder="联系人" id="ContractPerson">
+                </td>
+                <td width="80" align="right">联系电话：</td>
+                <td width="150">
+                    <input type="text" placeholder="联系电话" id="ContractTel">
+                </td>
+                <td width="80" align="right">订单状态：</td>
+                <td width="110">
+                    <select style="width:99%" id="HotelOrderFlag">
+                        <option value="">&nbsp;</option>
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                    </select>
+                </td>
+
+
+                <td align="center">
+                    <button class="btn btn-sm btn-primary" type="button" onclick="sceneryordersearch(1);">查询</button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="row" id="queryresult">
+
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>

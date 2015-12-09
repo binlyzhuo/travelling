@@ -1,0 +1,43 @@
+﻿@model int
+@using Travelling.OpenApiLogic
+@{
+    var comments = SceneryTicketServiceLogic.GetCommentList(Model);
+}
+<div class="xl_info section">
+    <div class="tit">
+        <strong>
+            <i class="i4"></i>
+            <a href="#" target="_blank">游客点评</a>
+        </strong>
+        
+    </div>
+    <div>
+        <ul>
+            @if (comments != null && comments.Count > 0)
+            {
+                foreach (var cm in comments)
+                {
+                    <li>
+                        <p>游客 @cm.CreateDate.ToString("yyyy-MM-dd HH:mm:ss") @cm.OverallRating</p>
+                        <p>@cm.Content</p>
+                        <br />
+                    </li>
+                }
+            }
+            else
+            {
+              <li>
+                  <p>没有点评信息</p>
+              </li>
+            }
+
+        </ul>
+
+
+
+
+
+
+
+    </div>
+</div>

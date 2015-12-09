@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6134BA8-8869-49DA-B273-6E54AA2C7D67}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Travelling.Web</RootNamespace>
+    <AssemblyName>Travelling.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Travelling.Web.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXssLibrary">
+      <HintPath>..\packages\AntiXSS.4.2.1\lib\net40\AntiXssLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc">
+      <HintPath>..\packages\Elmah.MVC.2.1.1\lib\net40\Elmah.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizationLibrary">
+      <HintPath>..\packages\AntiXSS.4.2.1\lib\net40\HtmlSanitizationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Qiniu.4.0">
+      <HintPath>..\packages\Qiniu.6.1.7.3\lib\Net40\Qiniu.4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=2.2.4.400, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Quartz.2.2.4\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.RegularExpressions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\AppGlobalSetting.cs" />
+    <Compile Include="Application\HotelInfoConfig.cs" />
+    <Compile Include="Controllers\Admin\AdminController.cs" />
+    <Compile Include="Controllers\Admin\ArticleController.cs" />
+    <Compile Include="Controllers\Admin\DataManageController.cs" />
+    <Compile Include="Controllers\Admin\HomeController.cs" />
+    <Compile Include="Controllers\Admin\HotelManageController.cs" />
+    <Compile Include="Controllers\Admin\JobTaskController.cs" />
+    <Compile Include="Controllers\Admin\LogManageController.cs" />
+    <Compile Include="Controllers\Admin\SettingController.cs" />
+    <Compile Include="Controllers\Admin\TicketManageController.cs" />
+    <Compile Include="Controllers\Admin\UserManageController.cs" />
+    <Compile Include="Controllers\BaseAdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\Travel\MapController.cs" />
+    <Compile Include="Controllers\Travel\QiTianController.cs" />
+    <Compile Include="Controllers\Travel\AjaxHelperController.cs" />
+    <Compile Include="Controllers\Travel\NewsController.cs" />
+    <Compile Include="Controllers\Travel\CityTravelController.cs" />
+    <Compile Include="Controllers\Travel\DingDanController.cs" />
+    <Compile Include="Controllers\Travel\ElmahController.cs" />
+    <Compile Include="Controllers\Travel\ErrorController.cs" />
+    <Compile Include="Controllers\Travel\GuangGaoController.cs" />
+    <Compile Include="Controllers\Travel\HomeController.cs" />
+    <Compile Include="Controllers\Travel\JiuDianController.cs" />
+    <Compile Include="Controllers\Travel\JingDianController.cs" />
+    <Compile Include="Controllers\Travel\KeZhanController.cs" />
+    <Compile Include="Controllers\Travel\LandMarkController.cs" />
+    <Compile Include="Controllers\Travel\OrderController.cs" />
+    <Compile Include="Controllers\Travel\PinPaiController.cs" />
+    <Compile Include="Controllers\Travel\SettingCachingController.cs" />
+    <Compile Include="Controllers\Travel\TuanController.cs" />
+    <Compile Include="Controllers\Travel\UtilityController.cs" />
+    <Compile Include="Cookies\AccountLoginCookie.cs" />
+    <Compile Include="Cookies\GuestViewRecord.cs" />
+    <Compile Include="Filter\AdminAuthorizeAttribute.cs" />
+    <Compile Include="Filter\GZipCompressAttribute.cs" />
+    <Compile Include="Filter\SaveLocalCookieAttribute.cs" />
+    <Compile Include="Helpers\AceUIHelper.cs" />
+    <Compile Include="Helpers\AdHelpers.cs" />
+    <Compile Include="Helpers\ApplicationSetting.cs" />
+    <Compile Include="Helpers\CustomerRouteConfig.cs" />
+    <Compile Include="Helpers\DataInitConfig.cs" />
+    <Compile Include="Helpers\ElmahResult.cs" />
+    <Compile Include="Helpers\EnumTypeInfo.cs" />
+    <Compile Include="Helpers\HomeControlService.cs" />
+    <Compile Include="Helpers\HotelConditionType.cs" />
+    <Compile Include="Helpers\HotelInfoHelper.cs" />
+    <Compile Include="Helpers\HotelUnionHelper.cs" />
+    <Compile Include="Helpers\HtmlHelper.cs" />
+    <Compile Include="Helpers\JobTaskHelper.cs" />
+    <Compile Include="Helpers\MenuInfo.cs" />
+    <Compile Include="Helpers\MenuUrlAttribute.cs" />
+    <Compile Include="Helpers\NavigateHelper.cs" />
+    <Compile Include="Helpers\NewsHelper.cs" />
+    <Compile Include="Helpers\NInjectControllerFactory.cs" />
+    <Compile Include="Helpers\QiniuUpload.cs" />
+    <Compile Include="Helpers\SceneryQueryType.cs" />
+    <Compile Include="Helpers\SceneryTicketHelper.cs" />
+    <Compile Include="Helpers\TopMenuSetting.cs" />
+    <Compile Include="Helpers\TuanHelper.cs" />
+    <Compile Include="Helpers\ValidateCode.cs" />
+    <Compile Include="Helpers\WebSafe.cs" />
+    <Compile Include="Helpers\XmlResult.cs" />
+    <Compile Include="Helpers\ZhunaHotelHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SEO\BaseSeo.cs" />
+    <Compile Include="SEO\HotelInfoSeo.cs" />
+    <Compile Include="Session\SessionKey.cs" />
+    <Compile Include="Session\SessionStore.cs" />
+    <Compile Include="XmlData\AppDataConfig.cs" />
+    <Compile Include="XmlData\XmlDataSource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Travelling.Caching\Travelling.Caching.csproj">
+      <Project>{d0cc3dc2-e7b1-486f-b6b5-cb7b9ee1ff27}</Project>
+      <Name>Travelling.Caching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.CommonLibrary\Travelling.CommonLibrary.csproj">
+      <Project>{075522d2-7387-45fa-884a-e59de4c16665}</Project>
+      <Name>Travelling.CommonLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.Domain\Travelling.Domain.csproj">
+      <Project>{341b6a3a-81ce-4124-a51c-b4f3a98989ef}</Project>
+      <Name>Travelling.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.FrameWork\Travelling.FrameWork.csproj">
+      <Project>{44ba1b80-dade-446c-a0aa-cec37a6381ba}</Project>
+      <Name>Travelling.FrameWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.JobSchedule\Travelling.JobSchedule.csproj">
+      <Project>{d220c9d5-9e35-467c-9179-199338b26359}</Project>
+      <Name>Travelling.JobSchedule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.Lucene\Travelling.Lucene.csproj">
+      <Project>{be32a215-4dc5-474a-825e-12bc83e4680c}</Project>
+      <Name>Travelling.Lucene</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.OpenApiEntity\Travelling.OpenApiEntity.csproj">
+      <Project>{4fac92ac-8334-428e-a469-91a25b8663eb}</Project>
+      <Name>Travelling.OpenApiEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.OpenApiLogic\Travelling.OpenApiLogic.csproj">
+      <Project>{93251de9-d810-4132-9bcd-355e4fb5c3ee}</Project>
+      <Name>Travelling.OpenApiLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.Repository\Travelling.Repository.csproj">
+      <Project>{ceda6bb9-e285-4f4c-984e-ce3b7e4870f5}</Project>
+      <Name>Travelling.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.TravelInterface\Travelling.TravelInterface.csproj">
+      <Project>{b579d0bf-abc9-4e0c-b71b-62c3197261f0}</Project>
+      <Name>Travelling.TravelInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.ViewModel\Travelling.ViewModel.csproj">
+      <Project>{73d09fd5-f29e-4f5a-8017-42930776f772}</Project>
+      <Name>Travelling.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

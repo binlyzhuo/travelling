@@ -1,0 +1,53 @@
+﻿@using Travelling.Web.Helpers
+@using Travelling.WebHelper.Helpers
+@using Travelling.ViewModel
+<table class="formtable">
+    <tr>
+        <td class="data_title">任务名称：</td>
+        <td>
+            <input id="jobTaskName" type="text" class="col-xs-10 col-sm-10" />
+            <input type="hidden" value="0" id="ID" />
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">任务方法名：</td>
+        <td>
+            <select id="jobMethodName">
+                @foreach (var m in JobTaskHelper.GetJobMethods())
+                {
+                    <option>@m</option>
+                }
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">项目类型：</td>
+        <td>
+            @Html.DropDownList("ProjectId", Html.CreateSelectList(typeof(ProjectType), ((int)ProjectType.Hotel).ToString()))
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">CRON表达式：</td>
+        <td>
+            <input type="text" id="cronExpr" class="col-xs-10 col-sm-10" />
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">状态：</td>
+        <td>
+            <input id="jobStateCheckBox" type="checkbox" />
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">Group名称：</td>
+        <td>
+            <input id="groupName" type="text" class="col-xs-10 col-sm-10" />
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">备注信息：</td>
+        <td>
+            <textarea id="remark" rows="5" cols="40" class="col-xs-10 col-sm-10"></textarea>
+        </td>
+    </tr>
+</table>

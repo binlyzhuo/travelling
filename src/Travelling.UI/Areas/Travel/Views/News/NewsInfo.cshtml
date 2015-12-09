@@ -1,0 +1,99 @@
+﻿@model ArticleInfoDto
+@using Travelling.ViewModel.Dto.Setting
+@{
+
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+    Tuple<List<ArticleInfoDto>, List<ArticleInfoDto>> items = ViewBag.NextAndLast;
+}
+@section header{
+    <link type="text/css" href="~/Content/travel/pri_detail.css" rel="stylesheet" />
+    <link type="text/css" href="~/Content/travel/jiudian_list.css" rel="stylesheet" />
+    <style type="text/css">
+        .articleTitle {
+            border-bottom: 1px solid #e2e2e2;
+            font-size: 20px;
+            font-weight: bold;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+            font-family: "microsoft yahei","黑体";
+        }
+
+        .articleInfos {
+        }
+
+        .articleContent {
+            line-height: 25px;
+            margin-top: 10px;
+            padding-bottom: 20px;
+        }
+
+        .articleNavigate {
+            margin-bottom: 5px;
+        }
+    </style>
+}
+<div id="MainContent">
+    <div class="hotelinfo_left">
+        <div class="path_bar2">
+            <a title="旅游资讯" href="/news">旅游资讯</a> >
+            <h1>@Model.Title</h1>
+        </div>
+        <div class="articleTitle">
+            <h1 style="font-weight:bold;font-size:20px;font-family:microsoft yahei" ,黑体">@Model.Title</h1>
+        </div>
+        <div class="articleInfos">
+            <span>@Model.AddDate.ToString("yyyy-MM-dd HH:mm:ss")</span>
+            <span style="margin-left:20px;">来源:卓家客栈</span>
+        </div>
+        <div class="articleContent">
+            @Html.Raw(Model.Content)
+        </div>
+        <div class="articleNavigate">
+            <div>
+                @if (items.Item2 != null && items.Item2.Count > 0)
+                {
+                    <div>上一篇：<a title="@items.Item2[0].Title" href="@string.Format("/newsinfo_{0}.html", items.Item2[0].ID)">@items.Item2[0].Title</a></div>
+                }
+                @if (items.Item1 != null && items.Item1.Count > 0)
+                {
+                    <div>下一篇：<a title="@items.Item1[0].Title" href="@string.Format("/newsinfo_{0}.html", items.Item1[0].ID)">@items.Item1[0].Title</a></div>
+                }
+                
+            </div>
+
+        </div>
+    </div>
+    <div class="hotelinfo_right">
+        <div class="KxContentRight">
+            <div class="CommPosBox margtop10" style="">
+                <div class="CommHdBox">
+                    <h2 class="CommHd">旅游资讯</h2>
+                </div>
+                <div class="ensure_list">
+                    <dl>
+                        <dt class="note1"></dt>
+                        <dd>
+                            <strong>免费保证</strong>
+                            <span>免费预订，不收取任何费用</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="note2"></dt>
+                        <dd>
+                            <strong>低价承诺</strong>
+                            <span>高出前台现付价，赔付预订差价</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="note3"></dt>
+                        <dd>
+                            <strong>有房保障</strong>
+                            <span>预订后，到店无房，赔付首晚房费</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

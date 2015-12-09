@@ -1,0 +1,14 @@
+﻿@model List<GroupCityInfo>
+@using Travelling.ViewModel.Dto.Hotel
+@using Travelling.ViewModel.Travel.XmlData
+<div id="cityTips" class="AllCity">
+    <h1 class="CityHd">全国<span class="cf60">300</span>城市酒店团购</h1>
+    <div class="CityBd">
+        
+        @foreach (var city in Model)
+        {
+            <a href="@Html.Raw(string.Format("/tuan_{0}.html",city.CityId))" target="_parent" title="@Html.Raw(string.Format("{0}酒店团购",city.CityName))">@city.CityName</a>
+        }
+        
+    </div>
+</div>

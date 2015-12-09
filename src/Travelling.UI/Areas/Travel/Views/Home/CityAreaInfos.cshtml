@@ -1,0 +1,48 @@
+﻿@model HotelFindAreaViewResult
+@using Travelling.ViewModel.Travel
+@using Travelling.ViewModel.Hotel
+@using Travelling.FrameWork
+@using Travelling.Web.Helpers;
+
+<div class="change_con @Html.Raw(string.Format("d{0}",Model.DataIndex))" style="display: block;">
+    <i class="@Html.Raw(string.Format("c{0}",Model.DataIndex))"></i>
+    @if (Model.IsLocation == 0)
+    {
+        if (Model.AreaInfos != null && Model.AreaInfos.Count > 0)
+        {
+            <ul class="cate_more">
+                @foreach (var area in Model.AreaInfos.Range(20))
+                {
+                    <li data-id="0" class="cur">
+                        <a class="cancel_pop" target="_blank" onclick="getHotelAreaInfo(@area.AreaID,'@area.AreaName')">@area.AreaName</a>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>暂无</p>
+        }
+
+    }
+    else
+    {
+        if (Model.locations != null && Model.locations.Count > 0)
+        {
+            <ul class="cate_more">
+                @foreach (var area in Model.locations.Range(20))
+                {
+                    <li data-id="0" class="cur">
+                        <a class="cancel_pop" title="@Html.Raw(string.Format("{0}酒店预定",area.LocationName))" target="_blank" onclick="getHoteCityLocation(@area.LocationID,'@area.LocationName')">@area.LocationName</a>
+                    </li>
+
+                }
+            </ul>
+        }
+        else
+        {
+            <p>暂无</p>
+        }
+    }
+</div>
+

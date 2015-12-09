@@ -1,0 +1,193 @@
+﻿@model Tuple<IEnumerable<HotelBrandDetailInfo>, IEnumerable<HotelBrandDetailInfo>>
+@using Travelling.ViewModel.Dto.Hotel
+@using Travelling.ViewModel.Travel
+@using System.Collections.Generic
+@{
+
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+    Queue<HotelCookieView> hotelsViewed = ViewBag.HotelViewed;
+    int defaultCityID = 1;
+    string defaultCityName = "北京";
+}
+@section header{
+    <link type="text/css" href="~/Content/travel/hotelbrands.css" rel="stylesheet" />
+<link type="text/css" href="~/Content/travel/hotel_brand.css" rel="stylesheet" />
+}
+<div id="MainContent">
+    <div class="wraper">
+        <!--Left-->
+        <div class="left">
+            <div class="hotel_search_info">
+                <div id="jsContainer" class="jsContainer" style="height:0;z-index:999999;">
+                    <div id="tuna_alert" style="display: none; position: absolute; z-index: 999999; overflow: hidden;"></div>
+                    <div id="tuna_jmpinfo" style="visibility: hidden; position: absolute; z-index: 999999;"></div>
+                </div>
+                <h3>国内酒店搜索</h3>
+                <div class="hotel_search">
+
+                    <form id="formsearch" name="formsearch" method="post" target="_self">
+                        <ul>
+                            <li>
+                                <span>*</span><i>入住城市</i>
+                                <input type="text" value="@defaultCityName" class="txt txt_city txt_1" id="HotelCityName" name="HotelCityName" mod="address|notice" mod_address_source="hotel" mod_address_suggest="@Html.Raw(ViewBag.HotCities)" mod_address_reference="HotelCityID" mod_notice_tip="中文/拼音"/>
+                                <input id="HotelCityID" name="HotelCityID" type="hidden" value="@defaultCityID" />
+                            </li>
+                            <li>
+                                <span>*</span><i>入住日期</i>
+                                <input type="text" value="@Html.Raw(DateTime.Now.ToString("yyy-MM-dd"))" id="HotelInRoomDate" name="HotelInRoomDate" tabindex="2" autocomplete="off" class="txt txt_1"/>
+                            </li>
+                            <li>
+                                <span>*</span><i>退房日期</i>
+                                <input type="text" value="@Html.Raw(DateTime.Now.AddDays(1).ToString("yyy-MM-dd"))" id="HotelLeaveRoomDate" name="HotelLeaveRoomDate" tabindex="3" autocomplete="off" class="txt txt_1" />
+                            </li>
+                            <li class="brand">
+                                &nbsp;&nbsp;<i>连锁品牌</i>
+                                <input type="text" id="searchKeyWords" class="txt" tabindex="4"/>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="nobrand hotel">
+                                <span>*</span><i>价格范围</i>
+                                <select name="aprice" tabindex="5">
+                                    <option value="0">不限</option>
+                                    <option value="1">150元以下</option>
+                                    <option value="2">150-300元</option>
+                                    <option value="3">300-600元</option>
+                                    <option value="4">600元以上</option>
+                                </select>
+                            </li>
+                            <li class="nobrand">
+                                &nbsp;&nbsp;<i>酒店名称</i>
+                                <input type="text" maxlength="50" class="txt" value="如：如家" name="skey" id="skey" tabindex="6">
+                            </li>
+                            <li class="nobrand s_address">
+                                &nbsp;&nbsp;<i>酒店位置</i>
+                                <input type="text" maxlength="50" class="txt txt_address" value="" placeholder="酒店名称" name="nkey" id="nkey" tabindex="7">
+                            </li>
+                            <li class="sunmitbtn">
+                                <input type="button" id="sbtn" class="btn" value="" tabindex="8"/>
+                            </li>
+                        </ul>
+                        
+                    </form>
+
+                </div>
+            </div>
+            <h3 class="new_order">我浏览过的酒店</h3>
+            <div class="dp_order">
+                @foreach (var h in hotelsViewed)
+                {
+                    <div class="dp_order_item">
+                        <div>
+                            <a title="@h.HotelName" target="_blank" href="@Travelling.Web.Helpers.HotelInfoHelper.GetHotelInfoLink(h.HotelId)">@h.HotelName</a><span>@Html.Raw(string.Format("￥{0}",h.Amount))</span>
+                        </div>
+                    </div>
+                }
+                
+                
+                <p class="hideline"></p>
+            </div>
+        </div>
+        <!--Left End-->
+        <!--Right-->
+        <div class="right">
+
+            <div class="hot_hotel_tit">
+                <img alt="经济型品牌连锁" src="http://images.laidingba.com/0718/h_zi2.jpg">
+                
+            </div>
+            <ul class="hot_hotel_brand">
+
+                @foreach (var h in Model.Item1)
+                {
+                    <li class="hot_hotel_brand_li">
+                        <a data="10" title="@string.Format("{0}酒店预定",h.BrandName)" target="_self" href="@Html.Raw(string.Format("/pinpai_{0}.html",h.BrandID))">
+                            <img alt="@string.Format("{0}图片",h.BrandName)" width="44" height="44" alt="@h.BrandImg" src="~/static/img/hotelbrand/@h.BrandImg">@h.BrandName
+                        </a>
+                    </li>
+                }
+            </ul>
+
+            <div class="hot_hotel_tit">
+                <img alt="高端品牌连锁" src="http://images.laidingba.com/0718/h_zi3.jpg">
+            </div>
+            <ul class="hot_hotel_brand">
+
+                @foreach (var h in Model.Item2)
+                {
+                    <li class="hot_hotel_brand_li">
+                        <a data="10" target="_self"  title="@string.Format("{0}酒店预定",h.BrandName)" href="@Html.Raw(string.Format("/pinpai_{0}.html",h.BrandID))">
+                            <img width="44" height="44" alt="@string.Format("{0}图片",h.BrandName)" src="~/static/img/hotelbrand/@h.BrandImg">@h.BrandName
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <!--Right End-->
+        <div class="clearer"></div>
+    </div>
+</div>
+<script type="text/javascript" src="~/Scripts/fixdiv.js"></script>
+<script type="text/javascript" src="~/Scripts/address.js"></script>
+<script type="text/javascript" src="~/Scripts/calendar/calendar.js"></script>
+<script type="text/javascript">
+    var oDepDate = new Date();
+    var oBackDate = new Date(oDepDate.getFullYear(), oDepDate.getMonth(), oDepDate.getDate() + 2);
+    //出发时间实例
+    var oDepCal = new Calendar({
+        id: "#HotelInRoomDate",			//触发显示日历元素ID
+        isPopup: !0,					//弹出式日历
+        isPrevBtn: !0,					//显示上月按钮
+        isNextBtn: !0,					//显示下月按钮
+        isCloseBtn: !0,					//显示关闭按钮
+        isHoliday: !0,					//节假日特殊显示
+        isHolidayTips: !0,					//显示节假日1~3天/后1~3天信息
+        isDateInfo: !0,					//显示日期信息
+        isMessage: !0,					//有日历提示信息
+        isCalEnd: !0,					//标记为结束时间
+        dateInfoClass: "date-info-end",		//结束时间icon样式
+        range: { mindate: new Date(), maxdate: "2020-12-31" },	//限制范围（当天——2020-12-31）
+        count: 2,					//日历个数
+        monthStep: 1					//切换上下月日历步长
+    });
+
+    var oDepCal = new Calendar({
+        id: "#HotelLeaveRoomDate",			//触发显示日历元素ID
+        isPopup: !0,					//弹出式日历
+        isPrevBtn: !0,					//显示上月按钮
+        isNextBtn: !0,					//显示下月按钮
+        isCloseBtn: !0,					//显示关闭按钮
+        isHoliday: !0,					//节假日特殊显示
+        isHolidayTips: !0,					//显示节假日1~3天/后1~3天信息
+        isDateInfo: !0,					//显示日期信息
+        isMessage: !0,					//有日历提示信息
+        isCalEnd: !0,					//标记为结束时间
+        dateInfoClass: "date-info-end",		//结束时间icon样式
+        range: { mindate: new Date(), maxdate: "2020-12-31" },	//限制范围（当天——2020-12-31）
+        count: 2,					//日历个数
+        monthStep: 1					//切换上下月日历步长
+    });
+
+    $(function () {
+        $("#sbtn").click(function () {
+            var cityid = $("#HotelCityID").val();
+            var areaid = 0;
+            var locationid = 0;
+            var brandid = 0;
+            var hotelstar = "0-5";
+            var price = "0-99999";
+            var page = 1;
+            var order = 0;
+            
+            var start = $("#HotelInRoomDate").val();
+            var end = $("#HotelLeaveRoomDate").val();
+            var keywords = $.trim($("#searchKeyWords").val()) == "" ? "search" : $("#searchKeyWords").val();
+
+            
+            var postUrl = "/hotelsearch_" + cityid + "_" + areaid + "_" + locationid + "_" + brandid + "_" + start + "_" + end + "_" + hotelstar + "_" + price + "_" + page + "_" + order + "_" + keywords + ".html";
+            
+            $("#formsearch").attr("action", postUrl);
+            $("#formsearch").submit();
+        });
+    });
+</script>

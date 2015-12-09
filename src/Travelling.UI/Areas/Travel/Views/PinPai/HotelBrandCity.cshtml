@@ -1,0 +1,54 @@
+﻿@{
+    
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+
+    List<HotelCitySummaryInfo> summaryInfos = ViewBag.HotelCitySummaryInfos;
+    var cityList = summaryInfos.Select(u => {
+        return new { cityid = u.HotelCityCode, cityname = u.CityName };
+    }).ToList().Distinct().ToList();
+}
+@model HotelBrandDetailInfo
+@using Travelling.ViewModel.Travel
+@using Travelling.ViewModel.Dto.Hotel
+@using Travelling.FrameWork
+@using Travelling.Web.Helpers
+@section header{
+    <link type="text/css" href="~/Content/travel/hotelbrands.css" rel="stylesheet" />
+    <link type="text/css" href="~/Content/travel/hotel_brand.css" rel="stylesheet" />
+}
+<div id="MainContent">
+    <div class="wraper">
+        @Html.Partial("HotelBrandSearch",Model)
+        
+        
+        <div class="hotel_brand_tit2">
+            <h3>@Html.Raw(string.Format("{0}酒店城市分布", Model.BrandName))</h3>
+            <ul data="SwitchTab">
+                <li class=""><a href="@Html.Raw(string.Format("/pinpai_{0}.html",Model.BrandID))">按字母查找城市</a></li>
+                <li class="hot_hotel_tit_tab"><a href="@Html.Raw(string.Format("/pinpai2_{0}.html",Model.BrandID))">热门城市门店</a></li>
+            </ul>
+        </div>
+        <div>
+            
+            <div class="hotel_brand_city">
+
+                @foreach (var word in cityList)
+                {
+                    <div>
+                        <span><a title="@string.Format("{0}{1}酒店预定",word.cityname,Model.BrandName)"  target="_blank" href="@Html.Raw(string.Format("/city{0}/chain{1}.html",word.cityid,Model.BrandID))">@word.cityname</a></span>
+                        <ul>
+                            @foreach (var h in summaryInfos.Where(u => u.CityName == word.cityname).ToList())
+                            {
+                                <li><a title="@string.Format("{0}预定",h.HotelName)" target="_blank" href="@HotelUnionHelper.GetHotelInfoUrl(h.HotelID,h.UnionId)">@h.HotelName</a></li>
+                            }
+
+
+                        </ul>
+                        
+                    </div>
+                }
+                <p class="hideline"></p>
+            </div>
+        </div>
+    </div>
+</div>

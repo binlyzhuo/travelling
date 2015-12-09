@@ -1,0 +1,86 @@
+﻿@{
+    HotelInfoQuery hotelQuery = ViewData["QueryCondition"] as HotelInfoQuery;
+    List<HotelLuceneIndexInfo> hotelInfos = ViewBag.HotelInfos;
+    List<HotelRoomPriceInfo> hotelRoomPrices = ViewBag.HotelRoomPrices;
+}
+@using Travelling.Web.Helpers
+@using Travelling.ViewModel.Travel
+@using Travelling.ViewModel.Lucene
+@using Travelling.ViewModel.Travel
+<input type="hidden" id="hidRecordCount" value="@hotelQuery.TotalRecords" />
+@if (hotelInfos != null && hotelInfos.Count > 0)
+{
+    foreach (var h in hotelInfos)
+    {
+        <div class="hotelInfo">
+            <div class="type">
+                <a class="preview">
+                    <img title="@h.HotelName" alt="@h.HotelName" style="width: 150px; height: 100px; display: block;" class="lazy" src="@h.HotelImg">
+                </a>
+                <div class="info">
+                    <strong>
+                        <a title="@string.Format("{0}酒店预定",h.HotelName)" href="@HotelUnionHelper.GetHotelInfoUrl(h.HotelID, h.UnionId)">@h.HotelName</a>
+
+                    </strong>
+                    <p>区域：<a target="_blank" title="@string.Format("{0}{1}酒店预定",h.CityName,h.RefPoints)" href="@string.Format("/hotelsearchlist_{0}/{1}",h.HotelCityCode,h.RefPoints)">@h.RefPoints</a></p>
+                    <p>
+                        地址：
+                        @h.AddressLine
+                        <br />
+                        <a rel="nofollow" title="@string.Format("{0}酒店地图",h.HotelName)" href="@HotelUnionHelper.GetHotelMap(h.UnionId,h.Latitude,h.Longitude,h.HotelName)" class="icon_list_map view_map hotelmap">交通地图</a>
+                    </p>
+
+                </div>
+                <div class="review">
+                    <span class="recent">供应商:@HotelUnionHelper.GetUnionName(h.UnionId)</span><br />
+                    <span class="recent">酒店品牌:</span><a target="_blank" title="@string.Format("{0}{1}酒店预定",h.CityName,h.BrandName)" href="@Html.Raw(h.BrandCode>0?HotelUnionHelper.GetHotelCityBrandInfo(h.HotelCityCode,h.BrandCode):HotelUnionHelper.HotelSearchWithKey(h.HotelCityCode,h.BrandName))">@h.BrandName</a><br />
+                    <span class="recent">酒店等级:@h.HotelStarRate</span><br />
+                    <span class="recent">用户评分:@h.CtripUserRate</span><br />
+                    <span class="recent">综合评分:@h.CtripCommRate</span>
+                </div>
+                <div class="price">
+                    <em>￥<b>@h.AmountBeforeTax</b></em>起
+                </div>
+            </div>
+            <div class="rooms mt15">
+                <div class="@Html.Raw(h.UnionId>0?"zhunaHotelRooms":"ctripHotelRooms")" data="@h.HotelID" id="@string.Format("hotelroom_{0}_{1}",h.UnionId,h.HotelID)">
+                    <ul>
+                        <li class="top">
+                            <span class="r_name">房型</span>
+                            <span>床型</span>
+                            <span>早餐</span>
+                            <span>宽带</span>
+                            <span class="price">日均价</span>
+                            <span class="btn">&nbsp;</span>
+                        </li>
+                        <li>
+                            @foreach (var r in hotelRoomPrices.Where(u => u.HotelId == h.HotelID))
+                            {
+                                <div class="first">
+                                    <span class="r_name">@r.RoomTypeName</span>
+                                    <span>@Travelling.Web.Helpers.EnumTypeInfo.GetBedType(r.BedTypeCode.ToString())</span>
+                                    <span>@Html.Raw(r.NumberOfBreakfast > 0 ? r.NumberOfBreakfast + "早餐" : "无早")</span>
+                                    <span>免费</span>
+                                    <span class="price">
+                                        <em>
+                                            ￥<b> @r.AmountBeforeTax</b>
+                                        </em>
+                                    </span>
+                                    <span>
+                                        <a class="btnCommon" href="@HotelUnionHelper.GetHotelInfoUrl(h.HotelID, h.UnionId)" target="_blank" title="@string.Format("{0}酒店预定",h.HotelName)">查看</a>
+                                    </span>
+                                </div>
+                            }
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    }
+    @Html.Partial("~/Areas/Travel/Views/JiuDian/QueryPaging.cshtml", hotelQuery)
+}
+else
+{
+    <p style="color:red;padding:10px;font-size:15px;">没有酒店信息</p>
+}

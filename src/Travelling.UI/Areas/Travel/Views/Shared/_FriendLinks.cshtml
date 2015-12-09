@@ -1,0 +1,13 @@
+﻿@using Travelling.ViewModel.Dto.Setting
+@model List<FriendLinkDto>
+           
+<div class="fastNav">
+    
+    <ul class="friendlinklist">
+        <li>友情链接：</li>
+        @foreach (var f in Model)
+        {
+            <li><a title="@f.Name" target="_blank" href="@f.LinkUrl">@f.Name</a></li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A15ACE77-D562-4FDA-B7BA-27467E8AE466}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Travelling.DataProvider</RootNamespace>
+    <AssemblyName>Travelling.DataProvider</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Travelling.DataProvider.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBA\SuperAdminDataProvider.cs" />
+    <Compile Include="Hotel\CityInfoDataProvider.cs" />
+    <Compile Include="Hotel\HotelBrandDataProvider.cs" />
+    <Compile Include="Hotel\HotelInfoDataProvider.cs" />
+    <Compile Include="Hotel\LocationInfoDataProvider.cs" />
+    <Compile Include="Setting\ArticleInfoDataProvider.cs" />
+    <Compile Include="Setting\SettingConfigDataProvider.cs" />
+    <Compile Include="Setting\UnionDetailInfoDataProvider.cs" />
+    <Compile Include="TC_Hotel\TC_HotelBrandDataProvider.cs" />
+    <Compile Include="TC_Hotel\TC_HotelCityInfoDataProvider.cs" />
+    <Compile Include="TC_Hotel\TC_HotelListDataProvider.cs" />
+    <Compile Include="TC_Hotel\TC_HotelProvinceInfoDataProvider.cs" />
+    <Compile Include="TC_Hotel\TC_HotelRegionInfoDataProvider.cs" />
+    <Compile Include="TC_Hotel\TC_HotelSectionInfoDataProvider.cs" />
+    <Compile Include="XC_Hotel\XC_HotelAreaInfoDataProvider.cs" />
+    <Compile Include="XC_Hotel\HotelLuceneIndexBusinessLogic.cs" />
+    <Compile Include="XC_Hotel\XC_HotelRefPointInfoDataProvider.cs" />
+    <Compile Include="XC_Hotel\XC_HotelDescriptionDataProvider.cs" />
+    <Compile Include="XC_Hotel\XC_HotelSearchInfoDataProvider.cs" />
+    <Compile Include="XC_Hotel\HotelSyncRecordDataStore.cs" />
+    <Compile Include="XC_Hotel\XC_HotelRoomInfoDataProvider.cs" />
+    <Compile Include="XC_Hotel\XC_HotelRoomRatePlanDataProvider.cs" />
+    <Compile Include="XC_Hotel\XC_HotelRoomRateJobSchedulerDataProvider.cs" />
+    <Compile Include="Setting\JobSchedulerDataProvider.cs" />
+    <Compile Include="XC_Hotel\JobSchedulerLogDataProvider.cs" />
+    <Compile Include="XC_Hotel\OperatingLogDataProvider.cs" />
+    <Compile Include="Hotel\HotelBookingOrderDataProvider.cs" />
+    <Compile Include="XC_Hotel\XC_HotelBrandDetailInfoDataProvider.cs" />
+    <Compile Include="XC_Hotel\XC_HotelCityDetailInfoDataProvider.cs" />
+    <Compile Include="Hotel\HotelDescriptionDataProvider.cs" />
+    <Compile Include="Scenery\SceneryImgInfoDataProvider.cs" />
+    <Compile Include="Scenery\SceneryInfoDetailDataProvider.cs" />
+    <Compile Include="Scenery\SceneryProvinceDetailInfoDataProvider.cs" />
+    <Compile Include="Scenery\SceneryTicketDataStore.cs" />
+    <Compile Include="Scenery\SceneryTicketOrderDataProvider.cs" />
+    <Compile Include="Scenery\SceneryTicketPriceDataProvider.cs" />
+    <Compile Include="Hotel\HotelDatabaseStore.cs" />
+    <Compile Include="Setting\FriendLinkDataProvider.cs" />
+    <Compile Include="User\AccountInfoDataProvider.cs" />
+    <Compile Include="User\AccountLogDataProvider.cs" />
+    <Compile Include="BaseRecord.cs" />
+    <Compile Include="XC_Hotel\XC_HotelCountryDataProvider.cs" />
+    <Compile Include="XC_Hotel\XC_HotelPriceDataProvider.cs" />
+    <Compile Include="XC_Hotel\HotelThemeDataProvider.cs" />
+    <Compile Include="XC_Hotel\XC_HotelLocationDataProvider.cs" />
+    <Compile Include="XC_Hotel\XC_HotelProvinceDataProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenery\SceneryInfoSyncRecordDataProvider.cs" />
+    <Compile Include="Scenery\SceneryThemeDataProvider.cs" />
+    <Compile Include="User\UsersDataProvider.cs" />
+    <Compile Include="Zhuna_Hotel\ZhunaDataProc.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_CBDDataProvider.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_CityAreaInfoDataProvider.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_CityInfoDataProvider.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_CityLableDataProvider.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_CityLableInfoDataProvider.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_HotelChainDataProvider.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_HotelInfoDataProvider.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_RefPointDataProvider.cs" />
+    <Compile Include="Zhuna_Hotel\Zhuna_SchoolInfoDataProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Travelling.DataLayer\Travelling.DataLayer.csproj">
+      <Project>{5f404be1-5384-4e02-afc0-30ab4e63d5ea}</Project>
+      <Name>Travelling.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.Domain\Travelling.Domain.csproj">
+      <Project>{341b6a3a-81ce-4124-a51c-b4f3a98989ef}</Project>
+      <Name>Travelling.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.FrameWork\Travelling.FrameWork.csproj">
+      <Project>{44ba1b80-dade-446c-a0aa-cec37a6381ba}</Project>
+      <Name>Travelling.FrameWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.TravelInterface\Travelling.TravelInterface.csproj">
+      <Project>{b579d0bf-abc9-4e0c-b71b-62c3197261f0}</Project>
+      <Name>Travelling.TravelInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travelling.ViewModel\Travelling.ViewModel.csproj">
+      <Project>{73d09fd5-f29e-4f5a-8017-42930776f772}</Project>
+      <Name>Travelling.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

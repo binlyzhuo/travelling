@@ -1,0 +1,70 @@
+﻿@model HotelBrandDetailInfo
+@using Travelling.ViewModel.Hotel
+@using Travelling.ViewModel.Dto.Hotel
+@using System.Web.Mvc
+@using Travelling.Web.Application
+@using Travelling.Web.Helpers
+<div>
+    <form method="post" action="/HotelManage/UploadBrandImg" enctype="multipart/form-data">
+        <table class="formtable">
+            <tr>
+                <td class="data_title">品牌名称：</td>
+                <td>
+                    @Model.BrandName
+                    @Html.HiddenFor(u=>u.BrandID)
+            </td>
+            </tr>
+            <tr>
+                <td class="data_title">品牌类型：</td>
+                <td>
+                    @Html.DropDownList("HotelBrandTypeList", Html.CreateSelectList(typeof(HotelBrandType),Model.BrandType.ToString()))
+                </td>
+            </tr>
+            <tr>
+                <td class="data_title">品牌图片：</td>
+                <td>
+                    <input type="file" id="brandImg" name="brandimg" style="float:left;" />
+                    <button style="float:right;" class="btn btn-xs btn-info" onclick="uploadbrandimg();" data-toggle="button" type="button">上传图片</button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+
+                    <img id="hotelBrandImg" @Html.Raw(string.IsNullOrEmpty(Model.BrandImg) ? "" : "src='" + HotelInfoConfig.HotelBrandImgPath+Model.BrandImg + "'")style="border:0;width:100px;height:100px;" />
+                    <input type="hidden" name="HiddenHotelBrandImg" id="HiddenHotelBrandImg" value="@Model.BrandImg"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="data_title">联系电话：</td>
+                <td>
+                    <input type="text" id="brandTel" value="@Model.BrandTel"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="data_title">品牌描述：</td>
+                <td>
+                    <textarea maxlength="50" id="brandDesc" class="form-control limited">@Model.Description</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="data_title">是否热门推荐：</td>
+                <td>
+                    <input type="checkbox" id="isHotRecommend" @Html.Raw(Model.IsHotBrand==1?"checked":"")/>
+                </td>
+            </tr>
+            <tr>
+                <td class="data_title">是否查询推荐：</td>
+                <td>
+                    <input type="checkbox" id="isSearchRecommend" @Html.Raw(Model.IsSearchRecommend == 1 ? "checked" : "") />
+                </td>
+            </tr>
+            <tr>
+                <td class="data_title">排序号：</td>
+                <td>
+                    <input type="text" id="orderIndex" value="@Model.OrderIndex"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

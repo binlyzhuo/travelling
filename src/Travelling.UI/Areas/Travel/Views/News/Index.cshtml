@@ -1,0 +1,27 @@
+﻿@model PageObjectResult<ArticleInfoDto>
+@using Travelling.ViewModel
+@using Travelling.ViewModel.Dto.Setting
+@using Travelling.Web.Helpers
+@{
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+}
+<div id="MainContent">
+    <div class="hotelinfo_left">
+        <div class="path_bar2">
+            <a title="新闻咨询" href="/news">新闻咨询</a> >
+            
+        </div>
+        @if (Model.TotalCount > 0)
+        {
+            <ul>
+                @foreach (var t in Model.Items)
+                {
+                    <li>
+                        <a href="@NewsHelper.GetNewsHref(t.ID)" target="_blank" title="@t.Title"><span style="padding-right:10px;">@t.AddDate.ToString("yyyy-MM-dd")</span>@t.Title</a>
+                    </li>
+                }
+            </ul>
+        }
+       
+    </div>
+</div>

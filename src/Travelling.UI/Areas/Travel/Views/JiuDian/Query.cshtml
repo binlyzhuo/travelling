@@ -1,0 +1,432 @@
+﻿@using Travelling.FrameWork
+@using Travelling.ViewModel.Dto.Hotel
+@using Travelling.ViewModel.Hotel
+@using Travelling.ViewModel.Travel
+@using Travelling.ViewModel.Lucene
+@using Travelling.Web.Helpers
+@{
+
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+    List<HotelLuceneIndexInfo> hotelInfos = ViewBag.HotelInfos;
+    List<HotelRoomPriceInfo> hotelRoomPrices = ViewBag.HotelRoomPrices;
+    HotelInfoQuery hotelQuery = ViewData["QueryCondition"] as HotelInfoQuery;
+    string postUrl = HotelInfoHelper.GetHotelQueryHref(hotelQuery);
+
+}
+
+@section header{
+    <script type="text/javascript" src="~/Areas/Travel/Js/comm_v6.js"></script>
+    <script type="text/javascript" src="~/Areas/Travel/Js/j.suggest.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="~/Content/travel/jiudian_common.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/travel/jiudian_list.css" />
+
+    <link type="text/css" href="~/Content/travel/pri_detail.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="~/Content/jquery.fancybox.css" />
+    <script type="text/javascript" src="~/Scripts/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.form.min.js"></script>
+    <script type="text/javascript">
+
+        var hotelsearchsetting = {
+            cityid: 0,
+            areaid: 0,
+            locationid: 0,
+            brandid: 0,
+            startdate: Date.now(),
+            endate: Date.now(),
+            hotelstar: '0-5',
+            price: '1-9999',
+            page: 1,
+            order: 0,
+            keywords: 'search'
+        };
+
+        function hotelsearchConfig(cityid, areaid, locationid, brandid, startdate, enddate, hotelstar, price, page, order, keywords) {
+            var searchUrl = "hotelsearch_" + cityid + "_" + areaid + "_" + locationid + "_" + brandid + "_" + startdate + "_" + enddate + "_" + hotelstar + "_" + price + "_" + page + "_" + order + "_" + keywords + ".html";
+            return searchUrl;
+        };
+        $(document).ready(function () {
+
+            //$("#change_box_tag a").each(function () {
+            //    $(this).click(function () {
+            //        $("#change_box_tag a").removeClass("on");
+            //        $(this).addClass("on");
+
+            //        $(".address_show").hide();
+            //        $($(this).attr("href")).show();
+            //        return false;
+            //    });
+            //});
+            //$("#moreHotelBrand").toggle(function () {
+            //    $("#moreHotelBrandContainer").show();
+            //}, function () {
+            //    $("#moreHotelBrandContainer").hide();
+            //});
+
+            //$("#otherArea").click(function () {
+            //    $(".address_show").hide();
+            //    $("#change_box_tag a").removeClass("on");
+            //});
+
+            //$("#otherHotelBrand").click(function () {
+            //    $("#moreHotelBrandContainer").hide();
+            //});
+
+            //$("#keyword").click(function () {
+            //    $("#tanchu_keyword").show();
+            //});
+
+            //$("#address").click(function () {
+            //    $("#tanchu_address").show();
+            //});
+
+            //$("#HotelCityName").focusout(function () {
+
+            //    $.ajax({
+            //        url: '/Travel/AjaxHelper/CityAreaInfo',
+            //        type: 'POST',
+            //        data: { "cityid": $("#HotelCityID").val() },
+            //        success: function (rep) {
+            //            $("#tanchu_address").html(rep);
+            //        },
+            //        error: function (error) { }
+
+            //    });
+            //});
+
+            //$.ajax({
+            //    url: '/Travel/AjaxHelper/CityAreaInfo',
+            //    type: 'POST',
+            //    data: { "cityid": $("#HotelCityID").val() },
+            //    success: function (rep) {
+            //        $("#tanchu_address").html(rep);
+            //    },
+            //    error: function (error) { }
+
+            //});
+
+            //====================================
+            //bindLocation();
+            bindhotelcityareaClick();
+            //bindhotelroompriceclick();
+            //BindHotelStarClick();
+            //BindHotelBrandClick();
+            
+
+            // binding map
+            $("a.hotelmap").each(function () {
+                $(this).fancybox({
+                    'width': '800',
+                    'height': '500',
+                    'autoScale': false,
+                    'transitionIn': 'none',
+                    'transitionOut': 'none',
+                    'type': 'iframe'
+                });
+            });
+
+        });
+
+        function getHotelAreaInfo(select, value) {
+            $("#address").val(value);
+            $("#hidCityAreaID").val(select);
+            $("#tanchu_address").hide();
+        }
+
+        function getHotelBrandInfo(select, value) {
+            $("#address").val(value);
+            $("#hidHotelBrandID").val(select);
+            $("#tanchu_address").hide();
+        }
+
+        function getHoteCityLocation(select, value) {
+            $("#address").val(value);
+            $("#hidLocationID").val(select);
+            $("#tanchu_address").hide();
+        }
+
+        function getHotelPricePost() {
+            var minPrice = $("#price_min").val();
+            var maxPrice = $("#price_max").val();
+
+            if (isNaN(minPrice)) {
+                alert('价格请输入数字');
+                return;
+            }
+            if (isNaN(maxPrice)) {
+                alert('价格请输入数字');
+                return;
+            }
+            var priceRange = minPrice + "-" + maxPrice;
+            var postHref = "/hotelsearch_" + "@hotelQuery.CityId" + "_" + "@hotelQuery.AreaId" + "_" + "@hotelQuery.LocationID" + "_" + "@hotelQuery.HotelBrandID" + "_" + "@hotelQuery.StartDate.ToString("yyyy-MM-dd")" + "_" + "@hotelQuery.EndDate.ToString("yyyy-MM-dd")" + "_" + "@hotelQuery.HotelStar" + "_" + priceRange + "_" + "@hotelQuery.PageIndex" + "_" +@hotelQuery.OrderType +"_" + "@hotelQuery.KeyWords"+".html";
+            window.location.href = postHref;
+        }
+
+        function bindhotelcityareaClick() {
+
+            var locationid = $("#change_list input:radio[name='cityLocation']:checked").val();
+            $("#change_list input:radio[name='cityLocation']").change(function () {
+                alert(123);
+            });
+        }
+
+        function bindhotelroompriceclick() {
+            $("#HotelRoomPriceRange input[type='radio']").each(function () {
+                $(this).click(function () {
+
+                    //window.location.href = $(this).parent("a").attr("href");
+                });
+            });
+        }
+
+        function BindHotelStarClick() {
+            $("#ddlHotelStar input[type='checkbox']").each(function () {
+                var parentHref = $(this).parent("a");
+
+                $(this).click(function () {
+                    if ($(this).attr("checked")) {
+                        //window.location.href = parentHref.attr("selecturl");
+                    }
+                    else {
+                        //window.location.href = parentHref.attr("unselecturl");
+                    }
+                });
+            });
+        }
+
+        function BindHotelBrandClick() {
+            $("#dllHotelBrands input[type='checkbox']").each(function () {
+                var parentHref = $(this).parent("a");
+
+                $(this).click(function () {
+                    if ($(this).attr("checked")) {
+                        //window.location.href = parentHref.attr("selecturl");
+                    }
+                    else {
+                        //window.location.href = parentHref.attr("unselecturl");
+                    }
+                });
+            });
+        }
+
+        function bindLocation() {
+            $("#location_show").each(function () {
+
+            });
+        }
+
+        function BindHotelShortInfoSearch() {
+
+            var cityid = $("#HotelCityID").val();
+            var startDate = $("#J_date_1").val();
+            var endDate = $("#J_date_2").val();
+
+            var areaid = $("#hidCityAreaID").val();
+            var locationid = $("#hidLocationID").val();
+            var brandid = $("#hidHotelBrandID").val();
+            var hotelstar = hotelsearchsetting.hotelstar;
+            var price = hotelsearchsetting.price;
+            var page = hotelsearchsetting.page;
+            var order = hotelsearchsetting.order;
+            var keywords = $("#address").val() == "" ? hotelsearchsetting.keywords : $("#address").val();
+
+            var hotelSearch = hotelsearchConfig(cityid, areaid, locationid, brandid, startDate, endDate, hotelstar, price, page, order, keywords);
+            window.location.href = hotelSearch;
+        }
+
+        function getZhunaHotelRooms() {
+            $(".zhunaHotelRooms").each(function () {
+                var hotelid = $(this).attr("data");
+                $.ajax({
+                    url: '/QiTian/HotelRooms',
+                    data: { hotelid: hotelid },
+                    async:true,
+                    type: 'get',
+                    //timeout:1000,
+                    success: function (rep) {
+                        $("#hotelroom_1_" + hotelid).html(rep);
+                        //alert(hotelid);
+                        $("#moreroom_1_" + hotelid).toggle(function () {
+                            $("#moreroom_1_" + hotelid).parent("ul").children("li").children("div.morethan3").show();
+                            $("#moreroom_1_" + hotelid).children("a").html("<i class='flipy'></i>收起");
+                        }, function () {
+                            $("#moreroom_1_" + hotelid).parent("ul").children("li").children("div.morethan3").hide();
+                            $("#moreroom_1_" + hotelid).children("a").html("<i></i>查看全部房型</a>");
+                        });
+                    },
+                    beforeSend: function () {
+                        var img = "<ul><li style='display:inline-block;width:100%;border-bottom:none;'><img src='/imgs/common/loading.gif'/></li></ul>";
+                        $("#hotelroom_1_" + hotelid).html(img);
+                        
+                    },
+                    error: function () { }
+                });
+            });
+        }
+
+        function viewFullRooms() {
+            $(".morerooms").each(function () {
+                $(this).toggle(function () {
+                    alert('all');
+                }, function () {
+                    alert('collect!');
+                });
+            });
+        }
+
+        window.onload = function () {
+            getZhunaHotelRooms();
+            //viewFullRooms();
+        }
+
+        function submitHotelSearch() {
+            $("#hotelsearchform").submit();
+        }
+    </script>
+}
+<div id="MainContent">
+    <div class="path_bar2">
+        您的位置:
+        <a href="/">卓家客栈</a> &gt;
+        <a href="/jiudian">酒店预订</a> &gt;
+        
+        <h1>@Html.Raw(ViewBag.CityName+"酒店")</h1>
+    </div>
+    @Html.Partial("QueryBox", ViewData["QueryCondition"])
+    @Html.Partial("QueryCondition", ViewData["QueryCondition"])
+
+
+    <div class="box1000 mt10">
+        <div class="list740">
+            <div class="sort">
+                <b>排序</b>
+                <span class="@Html.Raw(hotelQuery.OrderType == (int)HotelQueryOrderType.CommonRate?"on":"")"><a href="@HotelInfoHelper.GetHotelQueryLink(hotelQuery, hotelQuery.OrderType,0)" rel="nofollow">最受欢迎</a></span>
+                <span class="@Html.Raw((hotelQuery.OrderType == (int)HotelQueryOrderType.PriceAsc || hotelQuery.OrderType == (int)HotelQueryOrderType.PriceDesc) ? "on" : "")"><a class="price" href="@HotelInfoHelper.GetHotelQueryLink(hotelQuery, hotelQuery.OrderType,1)" rel="nofollow">价格&uarr;&darr;</a></span>
+                <span class="@Html.Raw((hotelQuery.OrderType == (int)HotelQueryOrderType.UserRateAsc || hotelQuery.OrderType == (int)HotelQueryOrderType.UserRateDesc) ? "on" : "")"><a class="price" href="@HotelInfoHelper.GetHotelQueryLink(hotelQuery, hotelQuery.OrderType,2)" rel="nofollow">评分&uarr;&darr;</a></span>
+                <span class="@Html.Raw((hotelQuery.OrderType == (int)HotelQueryOrderType.StarAsc || hotelQuery.OrderType == (int)HotelQueryOrderType.StarDesc) ? "on" : "")"><a class="price" href="@HotelInfoHelper.GetHotelQueryLink(hotelQuery, hotelQuery.OrderType,3)" rel="nofollow">星级&uarr;&darr;</a></span>
+            </div>
+            <div class="listCon">
+
+                @foreach (var h in hotelInfos)
+                {
+                    <div class="hotelInfo">
+                        <div class="type">
+                            <a class="preview">
+                                <img title="@h.HotelName" alt="@h.HotelName" style="width: 150px; height: 100px; display: block;" class="lazy" src="@h.HotelImg">
+                            </a>
+                            <div class="info">
+                                <strong>
+                                    <a target="_blank" title="@string.Format("{0}酒店预定",h.HotelName)" href="@HotelUnionHelper.GetHotelInfoUrl(h.HotelID,h.UnionId)">@h.HotelName</a>
+
+                                </strong>
+                                <p>区域：<a href="#">@h.RefPoints</a></p>
+                                <p>
+                                    地址：
+                                    @h.AddressLine
+                                    <br />
+                                    <a title="@string.Format("{0}酒店地图",h.HotelName)" href="/JiuDian/Map?latitude=@h.Latitude&longitude=@h.Longitude&hotelname=@h.HotelName" class="icon_list_map view_map hotelmap">交通地图</a>
+                                </p>
+
+                            </div>
+                            <div class="review">
+                                <span class="recent">供应商:@HotelUnionHelper.GetUnionName(h.UnionId)</span><br />
+                                <span class="recent">酒店品牌:@h.BrandName</span><br />
+                                <span class="recent">酒店等级:@h.HotelStarRate</span><br />
+                                <span class="recent">用户评分:@h.CtripUserRate</span><br />
+                                <span class="recent">综合评分:@h.CtripCommRate</span>
+
+                            </div>
+                            <div class="price">
+                                <em>￥<b>@h.AmountBeforeTax</b></em>起
+                            </div>
+                        </div>
+                        <div class="rooms mt15">
+                            <div class="@Html.Raw(h.UnionId>0?"zhunaHotelRooms":"ctripHotelRooms")" data="@h.HotelID" id="@string.Format("hotelroom_{0}_{1}",h.UnionId,h.HotelID)">
+                                <ul>
+                                    <li class="top">
+                                        <span class="r_name">房型</span>
+                                        <span>床型</span>
+                                        <span>早餐</span>
+                                        <span>宽带</span>
+                                        <span class="price">日均价</span>
+                                        <span class="btn">&nbsp;</span>
+                                    </li>
+                                    <li>
+                                        @foreach (var r in hotelRoomPrices.Where(u => u.HotelId == h.HotelID))
+                                        {
+                                            <div class="first">
+                                                <span class="r_name">@r.RoomTypeName</span>
+                                                <span>@Travelling.Web.Helpers.EnumTypeInfo.GetBedType(r.BedTypeCode.ToString())</span>
+                                                <span>@Html.Raw(r.NumberOfBreakfast > 0 ? r.NumberOfBreakfast + "早餐" : "无早")</span>
+                                                <span>免费</span>
+                                                <span class="price">
+                                                    <em>
+                                                        ￥<b> @r.AmountBeforeTax</b>
+                                                    </em>
+                                                </span>
+                                                <span>
+                                                    <a class="btnCommon" href="@HotelUnionHelper.GetHotelInfoUrl(h.HotelID,h.UnionId)" target="_blank" title="@string.Format("{0}酒店预定",h.HotelName)">查看</a>
+                                                </span>
+                                            </div>
+                                        }
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <!--p-->
+            @Html.Partial("QueryPaging", ViewData["QueryCondition"])
+            <!--p-->
+        </div>
+
+        <div class="side250">
+            @Html.Partial("PracticalHotels", ViewData["PracticalHotels"])
+            <br />
+            @Html.Partial("SceneryRecommend", ViewData["SceneryInHotelCity"])
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/Scripts/fixdiv.js"></script>
+<script type="text/javascript" src="~/Scripts/address.js"></script>
+<script type="text/javascript" src="~/Scripts/calendar/calendar.js"></script>
+<script type="text/javascript">
+    var oDepDate = new Date();
+    var oBackDate = new Date(oDepDate.getFullYear(), oDepDate.getMonth(), oDepDate.getDate() + 2);
+    //出发时间实例
+    var oDepCal = new Calendar({
+        id: "#J_date_1",			//触发显示日历元素ID
+        isPopup: !0,					//弹出式日历
+        isPrevBtn: !0,					//显示上月按钮
+        isNextBtn: !0,					//显示下月按钮
+        isCloseBtn: !0,					//显示关闭按钮
+        isHoliday: !0,					//节假日特殊显示
+        isHolidayTips: !0,					//显示节假日1~3天/后1~3天信息
+        isDateInfo: !0,					//显示日期信息
+        isMessage: !0,					//有日历提示信息
+        isCalEnd: !0,					//标记为结束时间
+        dateInfoClass: "date-info-end",		//结束时间icon样式
+        range: { mindate: new Date(), maxdate: "2020-12-31" },	//限制范围（当天——2020-12-31）
+        count: 2,					//日历个数
+        monthStep: 1					//切换上下月日历步长
+    });
+
+    var oDepCal = new Calendar({
+        id: "#J_date_2",			//触发显示日历元素ID
+        isPopup: !0,					//弹出式日历
+        isPrevBtn: !0,					//显示上月按钮
+        isNextBtn: !0,					//显示下月按钮
+        isCloseBtn: !0,					//显示关闭按钮
+        isHoliday: !0,					//节假日特殊显示
+        isHolidayTips: !0,					//显示节假日1~3天/后1~3天信息
+        isDateInfo: !0,					//显示日期信息
+        isMessage: !0,					//有日历提示信息
+        isCalEnd: !0,					//标记为结束时间
+        dateInfoClass: "date-info-end",		//结束时间icon样式
+        range: { mindate: new Date(), maxdate: "2020-12-31" },	//限制范围（当天——2020-12-31）
+        count: 2,					//日历个数
+        monthStep: 1					//切换上下月日历步长
+    });
+</script>

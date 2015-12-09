@@ -1,0 +1,47 @@
+/***** 输入框样式 *****/
+.input_order_date{ width:108px; background:#fff url(/Areas/Travel/imgs/b_calendar.gif) no-repeat right 6px; cursor:pointer; vertical-align:middle; display:inline-block; height:25px; border:1px solid #CCC; border-top:1px solid #ADADAD; overflow:hidden; position:relative; margin-right:10px;}
+.input_order_date input{ width:100px; height:27px; margin-top:-5px; *margin-top:0; line-height:27px; outline:none; vertical-align:middle; font-size:14px; color:#555; text-align:left; border:0; background:none; cursor:pointer;}
+/***** 日期选择 *****/
+.order_date_select { width:445px; display:none; font-size: 12px; background-color: white; border:1px solid #ffa051; z-index: 100; line-height: 12px; box-shadow: 1px 1px 3px #ddd; }
+.order_date_select_yymm { position:absolute; left:2px; top:40px; width:50px; padding:10px 0; color:#333; font-size:14px;}
+.order_date_select_yymm i { position:absolute; top:8px; left:10px; width:36px; height:18px; background:url(/Areas/Travel/imgs/ico_calendar.png) no-repeat -36px 0; cursor:pointer; overflow:hidden;}
+.order_date_select_yymm i.next{ top:170px;}
+.order_date_select_yymm i.prev{ background-position:0 0;}
+.order_date_select_yymm i.next:hover{ background-position:-36px -18px;}
+.order_date_select_yymm i.prev:hover{ background-position:0 -18px;}
+.order_date_select_yymm i.disable{ cursor:default;}
+.order_date_select_yymm .next_year{ position:absolute; top: 8px; height:15px; width:28px; left:194px;}
+.order_date_select_yymm .next_year i.first{ border-left:7px solid #666; right:0px; top:0px; z-index:2;}
+.order_date_select_yymm .next_year i.second{ border-left:7px solid #666; right:6px; top:0px; }
+.order_date_select_yymm .prev_year{ position:absolute; top: 8px; height:15px; width:28px; left:0px;}
+.order_date_select_yymm .prev_year i.first{ border-right:7px solid #666; left:0px; top:0px; z-index:2;}
+.order_date_select_yymm .prev_year i.second{ border-right:7px solid #666; left:6px; top:0px;}
+.order_date_select_yymm .next_year:hover i{ border-left:7px solid #ffaa2e; transition:0.2s;}
+.order_date_select_yymm .prev_year:hover i{ border-right:7px solid #ffaa2e; transition:0.2s;}
+.order_date_select_yymm span{ display:block; height:30px; line-height:30px; text-align:center; font-weight:bold;}
+.order_date_select_yymm_wrap{}
+.order_date_select_yymm_wrap span{ position:absolute; top:80px; height:20px; line-height:20px; font-family:"microsoft yahei"; font-size:12px; color:#777;}
+.order_date_select_dd { padding:0 0 0 60px; color:#888;}
+.order_date_select_dd .week{ position:relative; left:-60px; width:385px; padding-left:60px; border-bottom:1px solid #eaeaea; line-height:25px; color:#fff; background:#ffa051; overflow:hidden;}
+.order_date_select_dd .week span{ width:55px; float:left; height:25px; padding:4px 0; text-align:center; font-weight:bold;}
+.order_date_select_dd a,.order_date_select_dd b{ width:54px; height:40px; float: left; border:1px solid #EEE; margin:-1px 0 0 -1px; position:relative;}
+.order_date_select_dd a{ color:#666; font-family:Tahoma,Simsun,sans-serif;}
+.order_date_select_dd .p{ text-align:right; padding-top:15px; padding-right:5px; line-height:25px; height:25px; display:block; color:#FF6000; font-size:14px;}
+.order_date_select_dd .p dfn{ font-style:normal; font-size:12px; font-family: Arial !important; }
+.order_date_select_dd .t{ text-align:left; position:absolute; top:4px; line-height:16px; width:40px; height:16px; left:4px; font-size:12px;}
+/*.date_select_dd a.cur{ background-color:#ffc35b; color:#fff}*/
+.order_date_select_dd a:hover{ background:#ff9400; color:#fff; text-decoration:none; cursor:pointer; background-position:1px 1px;}
+.order_date_select_dd a:hover .p{ color:#fff;}
+.order_date_select_dd a.today:hover .p{ color:#f60;}
+.order_date_select_dd a.cur{ background:#ff9400; color:#fff;}
+.order_date_select_dd a.cur .p{ color:#fff;}
+.order_date_select_dd a.disable{ background-color:#fff; color:#aaa; cursor: default;}
+.order_date_select_dd a.today{ background-color:#f2f2f2; color:#888;}
+.order_date_select_dd a.today em.t{ font-size:12px;}
+.order_date_select_dd a.today em.p{ color:#FF6000;}
+.order_date_select_dd a.today:hover{ background:#ff9400; color:#fff; text-decoration:none; cursor:pointer; background-position:1px 1px;}
+.order_date_select_dd a.today:hover em.p{ color:#fff;}
+.order_date_select_dd a.today.disable:hover{ background-color:#f2f2f2; color:#888;}
+
+.order_date_select_clear{ transition:0.3s linear all; height:24px; line-height:24px; color:#333!important; width: 50px; background:#fff; border:1px solid #e7e7e7; border-radius:2px; position:absolute; top:12px; right:15px; text-align:center;}
+.order_date_select_clear:hover{ box-shadow:0 0 3px #f18b40; text-decoration:none;}

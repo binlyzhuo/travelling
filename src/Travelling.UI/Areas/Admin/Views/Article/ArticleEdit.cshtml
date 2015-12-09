@@ -1,0 +1,96 @@
+﻿@model ArticleInfoDto
+@using Travelling.ViewModel.Dto.Setting
+@{
+    ViewBag.Title = "ArticleEdit";
+    Layout = "~/Areas/Admin/Views/Shared/_BaseAdminPage.cshtml";
+}
+@section header{
+    <script type="text/javascript" src="~/Areas/Admin/ueitor/ueditor.config.js"></script>
+    <script type="text/javascript" src="~/Areas/Admin/ueitor/ueditor.all.js"></script>
+}
+
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home home-icon"></i>
+            <a href="#">控制面板</a>
+        </li>
+        <li>
+            <a href="#">新闻咨询</a>
+        </li>
+        <li class="active">新闻管理</li>
+    </ul>
+
+</div>
+<div class="page-content">
+    <div class="page-header">
+        <h1>
+            新闻编辑
+            <small>
+                <i class="icon-double-angle-right"></i>
+                查看
+            </small>
+        </h1>
+    </div><!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form method="post" role="form" class="form-horizontal" action="ArticleEdit">
+                <table class="formtable" border="0" style="width:80%;padding-bottom:5px;">
+                    <tr>
+                        <td width="50">标题:</td>
+                        <td>
+                            @Html.HiddenFor(m=>m.ID)
+                            <input type="text" class="col-xs-10 col-sm-5" value="@Model.Title" placeholder="标题" id="txtTitle" name="title" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50" valign="top">内容:</td>
+                        <td>
+                            <!-- 加载编辑器的容器 -->
+                            <script id="container" name="content" type="text/plain">
+                                @Html.Raw(Model.Content)
+                        </script>
+                        <!-- 配置文件 -->
+                        <!-- 实例化编辑器 -->
+                        <script type="text/javascript">
+                            var ue = UE.getEditor('container');
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td>类型:</td>
+                    <td>
+                        <select id="articleType" name="articleType">
+                            <option value="0">新闻咨询</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50">Tag:</td>
+                    <td><input type="text" name="tag" class="col-xs-10 col-sm-5" placeholder="Tag" id="txtTag" value="@Model.Tag" /></td>
+                </tr>
+                <tr>
+                    <td>状态</td>
+                    <td>
+                        @Html.CheckBox("state", Model.State > 0 ? true : false)
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50"></td>
+                    <td>
+                        <button class="btn btn-success" type="submit" data-bb-handler="success">保存</button>
+                        <button class="btn btn-primary" type="reset" data-bb-handler="cance">取消</button>
+                    </td>
+
+                </tr>
+            </table>
+
+            <!-- /.col -->
+        </form>
+        </div>
+    </div><!-- /.row -->
+</div>

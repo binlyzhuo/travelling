@@ -1,0 +1,51 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@using Travelling.FrameWork
+@model Tuple<Queue<HotelCookieView>, Queue<SceneryInfoCookie>>
+
+
+@if (Model.Item2 != null && Model.Item2.Count > 0)
+{
+    <div class="TabCont">
+        <div class="HdBd">
+            <h2 class="Hd">您浏览过的景点</h2>
+            
+        </div>
+        <ul class="ActivityList">
+
+            @foreach (var s in Model.Item2)
+            {
+
+                <li>
+                    <a target="_blank" title="@s.SceneryName" href="@SceneryTicketHelper.GetSceneryInfoLink(s.SceneryId)">@s.SceneryName</a>
+                    <span style="color:#f60;" class="Verdana">￥@s.Amount</span>
+                </li>
+            }
+        </ul>
+
+    </div>
+}
+
+@if (Model.Item1 != null && Model.Item1.Count > 0)
+{
+    <div class="TabCont">
+
+        <div class="HdBd">
+            <h2 class="Hd">您浏览过的酒店</h2>
+            
+        </div>
+        <ul class="ActivityList">
+
+            @foreach (var s in Model.Item1)
+            {
+
+                <li>
+                    <a target="_blank" title="@s.HotelName" href="@string.Format("/hotelinfo{1}_{0}.html",s.HotelId,s.UnionId>0?"2":"")">@s.HotelName.SubString(20)</a>
+                    <span style="color:#f60;" class="Verdana">￥@s.Amount</span>
+                </li>
+            }
+        </ul>
+
+    </div>
+}
+

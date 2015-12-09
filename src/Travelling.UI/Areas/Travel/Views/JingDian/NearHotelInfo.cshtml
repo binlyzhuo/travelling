@@ -1,0 +1,30 @@
+﻿@using Travelling.ViewModel.Lucene
+@using Travelling.Web.Helpers
+@model List<HotelLuceneIndexInfo>
+<div class="other_info xl_info section">
+    <div class="tit">
+        <strong>
+            <i class="i6"></i>
+            <a href="#" target="_blank">附近酒店</a>
+        </strong>
+        <a href="#" class="more" target="_blank">更多 ></a>
+    </div>
+    <div class="txt">
+        <ul>
+            @foreach (var h in Model)
+            {
+                <li>
+                    <a href="@HotelInfoHelper.GetHotelInfoLink(h.HotelID)" target="_blank" title="@string.Format("{0}{1}酒店预定",h.CityName,h.HotelName)">
+                        <img src="@h.HotelImg" width="195" height="130" alt="@string.Format("{0}{1}酒店图片",h.CityName,h.HotelName)">
+                        <div class="other">
+                            <span class="price">
+                                <em>&yen;</em><b>@h.AmountBeforeTax</b>起
+                            </span>
+                        </div>
+                        <p>@h.HotelName</p>
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

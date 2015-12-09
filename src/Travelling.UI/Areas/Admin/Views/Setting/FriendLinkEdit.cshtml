@@ -1,0 +1,39 @@
+﻿@using Travelling.Web.Helpers
+@using Travelling.WebHelper.Helpers
+@using Travelling.ViewModel
+@using Travelling.ViewModel.Dto.Setting
+@model FriendLink
+<table class="formtable">
+    <tr>
+        <td class="data_title">网站名称：</td>
+        <td>
+            <input id="siteName" type="text" value="@Model.Name" class="col-xs-10 col-sm-10" />
+            <input type="hidden" value="@Model.ID" id="ID" />
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">网站链接：</td>
+        <td>
+            <input id="siteLink" type="text" value="@Model.LinkUrl" class="col-xs-10 col-sm-10" />
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">网站联系人：</td>
+        <td>
+            <input id="siteLinkMan" value="@Model.LinkMan" type="text" class="col-xs-10 col-sm-10" />
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">排序：</td>
+        <td>
+            <input type="text" id="siteOrderNo" value="@Model.OrderIndex" class="col-xs-10 col-sm-10" />
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">有效状态：</td>
+        <td>
+            <input id="siteIsValid" @Html.Raw(Model.State == 1 ? "checked" : "") type="checkbox" />
+        </td>
+    </tr>
+    
+</table>

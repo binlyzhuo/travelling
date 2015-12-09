@@ -1,0 +1,1539 @@
+﻿<?xml version="1.0"?>
+<Response>
+  <Header ShouldRecordPerformanceTime="False" Timestamp="2014-02-23 18:39:22:50007" ReferenceID="5c99c86c-67d3-4026-be48-e1282b507d07" RecentlyTime="2014-02-23 18:39:22" AccessCount="30" CurrentCount="1" ResetTime="2014-02-23 18:40:22" ResultCode="Success" />
+  <HotelResponse>
+    <OTA_HotelDescriptiveInfoRS TimeStamp="2014-02-23T18:39:22.6243419+08:00" Version="1.0" PrimaryLangID="zh" xmlns="http://www.opentravel.org/OTA/2003/05">
+      <HotelDescriptiveContents>
+        <HotelDescriptiveContent BrandCode="138" HotelCode="625" HotelCityCode="2" HotelName="上海华亭宾馆" AreaID="113" HotelId="625">
+          <HotelInfo WhenBuilt="1986-1-1 0:00:00" LastUpdated="2008-01-01T00:00:00">
+            <CategoryCodes>
+              <SegmentCategory Code="4" />
+            </CategoryCodes>
+            <Position Latitude="31.181566" Longitude="121.435361" PositionTypeCode="502" />
+            <Services>
+              <Service Code="6" ID="1001">
+                <DescriptiveText>会议厅</DescriptiveText>
+              </Service>
+              <Service Code="8" ID="1001">
+                <DescriptiveText>商务中心</DescriptiveText>
+              </Service>
+              <Service Code="11" ID="1001">
+                <DescriptiveText>外币兑换服务</DescriptiveText>
+              </Service>
+              <Service Code="12" ID="1001">
+                <DescriptiveText>旅游票务服务</DescriptiveText>
+              </Service>
+              <Service Code="15" ID="1001">
+                <DescriptiveText>洗衣服务</DescriptiveText>
+              </Service>
+              <Service Code="16" ID="1001">
+                <DescriptiveText>送餐服务</DescriptiveText>
+              </Service>
+              <Service Code="40" ID="1001">
+                <DescriptiveText>医务室</DescriptiveText>
+              </Service>
+              <Service Code="55" ID="1001">
+                <DescriptiveText>叫车服务</DescriptiveText>
+              </Service>
+              <Service Code="69" ID="1001">
+                <DescriptiveText>邮政服务</DescriptiveText>
+              </Service>
+              <Service Code="96" ID="1001">
+                <DescriptiveText>专职行李员</DescriptiveText>
+              </Service>
+              <Service Code="97" ID="1001">
+                <DescriptiveText>行李寄存</DescriptiveText>
+              </Service>
+              <Service Code="98" ID="1001">
+                <DescriptiveText>叫醒服务</DescriptiveText>
+              </Service>
+              <Service Code="105" ID="1001">
+                <DescriptiveText>接机服务</DescriptiveText>
+              </Service>
+              <Service Code="123" ID="1001">
+                <DescriptiveText>租车服务</DescriptiveText>
+              </Service>
+              <Service Code="127" ID="1001">
+                <DescriptiveText>礼宾服务</DescriptiveText>
+              </Service>
+              <Service Code="128" ID="1001">
+                <DescriptiveText>干洗</DescriptiveText>
+              </Service>
+              <Service Code="129" ID="1001">
+                <DescriptiveText>传真/复印</DescriptiveText>
+              </Service>
+              <Service Code="130" ID="1001">
+                <DescriptiveText>熨衣服务</DescriptiveText>
+              </Service>
+              <Service Code="131" ID="1001">
+                <DescriptiveText>办理私人登记入住/退房手续</DescriptiveText>
+              </Service>
+              <Service Code="132" ID="1001">
+                <DescriptiveText>擦鞋服务</DescriptiveText>
+              </Service>
+              <Service Code="137" ID="1001">
+                <DescriptiveText>婚宴服务</DescriptiveText>
+              </Service>
+              <Service Code="139" ID="1001">
+                <DescriptiveText>管家服务</DescriptiveText>
+              </Service>
+              <Service Code="140" ID="1001">
+                <DescriptiveText>24小时前台服务</DescriptiveText>
+              </Service>
+              <Service Code="143" ID="1001">
+                <DescriptiveText>快速办理入住/退房手续</DescriptiveText>
+              </Service>
+              <Service Code="160" ID="1001">
+                <DescriptiveText>专职门童</DescriptiveText>
+              </Service>
+              <Service Code="162" ID="1001">
+                <DescriptiveText>信用卡结算服务</DescriptiveText>
+              </Service>
+              <Service Code="165" ID="1001">
+                <DescriptiveText>24小时大堂经理</DescriptiveText>
+              </Service>
+              <Service Code="167" ID="1001">
+                <DescriptiveText>旅游票务专柜</DescriptiveText>
+              </Service>
+              <Service Code="1" ID="1002">
+                <DescriptiveText>中餐厅</DescriptiveText>
+              </Service>
+              <Service Code="2" ID="1002">
+                <DescriptiveText>西餐厅</DescriptiveText>
+              </Service>
+              <Service Code="3" ID="1002">
+                <DescriptiveText>咖啡厅</DescriptiveText>
+              </Service>
+              <Service Code="5" ID="1002">
+                <DescriptiveText>酒吧</DescriptiveText>
+              </Service>
+              <Service Code="9" ID="1002">
+                <DescriptiveText>停车场</DescriptiveText>
+              </Service>
+              <Service Code="19" ID="1002">
+                <DescriptiveText>残疾人客房</DescriptiveText>
+              </Service>
+              <Service Code="35" ID="1002">
+                <DescriptiveText>商场</DescriptiveText>
+              </Service>
+              <Service Code="41" ID="1002">
+                <DescriptiveText>理发美容中心</DescriptiveText>
+              </Service>
+              <Service Code="66" ID="1002">
+                <DescriptiveText>日式餐厅</DescriptiveText>
+              </Service>
+              <Service Code="95" ID="1002">
+                <DescriptiveText>前台贵重物品保险柜</DescriptiveText>
+              </Service>
+              <Service Code="99" ID="1002">
+                <DescriptiveText>自动取款机</DescriptiveText>
+              </Service>
+              <Service Code="101" ID="1002">
+                <DescriptiveText>收费停车场</DescriptiveText>
+              </Service>
+              <Service Code="102" ID="1002">
+                <DescriptiveText>有可无线上网的公共区域</DescriptiveText>
+              </Service>
+              <Service Code="103" ID="1002">
+                <DescriptiveText>免费旅游交通图(可赠送)</DescriptiveText>
+              </Service>
+              <Service Code="106" ID="1002">
+                <DescriptiveText>大堂吧</DescriptiveText>
+              </Service>
+              <Service Code="110" ID="1002">
+                <DescriptiveText>电梯</DescriptiveText>
+              </Service>
+              <Service Code="116" ID="1002">
+                <DescriptiveText>空调</DescriptiveText>
+              </Service>
+              <Service Code="117" ID="1002">
+                <DescriptiveText>中央空调</DescriptiveText>
+              </Service>
+              <Service Code="142" ID="1002">
+                <DescriptiveText>吸烟区</DescriptiveText>
+              </Service>
+              <Service Code="144" ID="1002">
+                <DescriptiveText>暖气</DescriptiveText>
+              </Service>
+              <Service Code="145" ID="1002">
+                <DescriptiveText>大堂免费报纸</DescriptiveText>
+              </Service>
+              <Service Code="147" ID="1002">
+                <DescriptiveText>餐厅</DescriptiveText>
+              </Service>
+              <Service Code="161" ID="1002">
+                <DescriptiveText>礼品廊</DescriptiveText>
+              </Service>
+              <Service Code="164" ID="1002">
+                <DescriptiveText>多功能厅</DescriptiveText>
+              </Service>
+              <Service Code="173" ID="1002">
+                <DescriptiveText>无烟楼层</DescriptiveText>
+              </Service>
+              <Service Code="174" ID="1002">
+                <DescriptiveText>行政楼层</DescriptiveText>
+              </Service>
+              <Service Code="175" ID="1002">
+                <DescriptiveText>行政酒廊</DescriptiveText>
+              </Service>
+              <Service Code="177" ID="1002">
+                <DescriptiveText>公共区域闭路电视监控系统</DescriptiveText>
+              </Service>
+              <Service Code="24" ID="1003">
+                <DescriptiveText>棋牌室</DescriptiveText>
+              </Service>
+              <Service Code="26" ID="1003">
+                <DescriptiveText>桌球室</DescriptiveText>
+              </Service>
+              <Service Code="27" ID="1003">
+                <DescriptiveText>乒乓球室</DescriptiveText>
+              </Service>
+              <Service Code="29" ID="1003">
+                <DescriptiveText>室内游泳池</DescriptiveText>
+              </Service>
+              <Service Code="42" ID="1003">
+                <DescriptiveText>健身室</DescriptiveText>
+              </Service>
+              <Service Code="43" ID="1003">
+                <DescriptiveText>按摩室</DescriptiveText>
+              </Service>
+              <Service Code="44" ID="1003">
+                <DescriptiveText>桑拿浴室</DescriptiveText>
+              </Service>
+              <Service Code="64" ID="1003">
+                <DescriptiveText>足浴</DescriptiveText>
+              </Service>
+              <Service Code="65" ID="1003">
+                <DescriptiveText>SPA</DescriptiveText>
+              </Service>
+              <Service Code="150" ID="1003">
+                <DescriptiveText>台球</DescriptiveText>
+              </Service>
+              <Service Code="13" ID="1004">
+                <DescriptiveText>国内长途电话</DescriptiveText>
+              </Service>
+              <Service Code="14" ID="1004">
+                <DescriptiveText>国际长途电话</DescriptiveText>
+              </Service>
+              <Service Code="75" ID="1004">
+                <DescriptiveText>拖鞋</DescriptiveText>
+              </Service>
+              <Service Code="76" ID="1004">
+                <DescriptiveText>雨伞</DescriptiveText>
+              </Service>
+              <Service Code="77" ID="1004">
+                <DescriptiveText>书桌</DescriptiveText>
+              </Service>
+              <Service Code="78" ID="1004">
+                <DescriptiveText>浴室化妆放大镜</DescriptiveText>
+              </Service>
+              <Service Code="79" ID="1004">
+                <DescriptiveText>24小时热水</DescriptiveText>
+              </Service>
+              <Service Code="82" ID="1004">
+                <DescriptiveText>免费洗漱用品(6样以上)</DescriptiveText>
+              </Service>
+              <Service Code="83" ID="1004">
+                <DescriptiveText>免费瓶装水</DescriptiveText>
+              </Service>
+              <Service Code="85" ID="1004">
+                <DescriptiveText>迷你吧</DescriptiveText>
+              </Service>
+              <Service Code="86" ID="1004">
+                <DescriptiveText>熨衣设备</DescriptiveText>
+              </Service>
+              <Service Code="87" ID="1004">
+                <DescriptiveText>小冰箱</DescriptiveText>
+              </Service>
+              <Service Code="88" ID="1004">
+                <DescriptiveText>浴衣</DescriptiveText>
+              </Service>
+              <Service Code="89" ID="1004">
+                <DescriptiveText>多种规格电源插座</DescriptiveText>
+              </Service>
+              <Service Code="90" ID="1004">
+                <DescriptiveText>110V电压插座</DescriptiveText>
+              </Service>
+              <Service Code="93" ID="1004">
+                <DescriptiveText>吹风机</DescriptiveText>
+              </Service>
+              <Service Code="94" ID="1004">
+                <DescriptiveText>房内保险箱</DescriptiveText>
+              </Service>
+              <Service Code="107" ID="1004">
+                <DescriptiveText>中央空调</DescriptiveText>
+              </Service>
+              <Service Code="114" ID="1004">
+                <DescriptiveText>电热水器</DescriptiveText>
+              </Service>
+              <Service Code="182" ID="1004">
+                <DescriptiveText>液晶电视机</DescriptiveText>
+              </Service>
+              <Service Code="183" ID="1004">
+                <DescriptiveText>电视机</DescriptiveText>
+              </Service>
+              <Service Code="208" ID="1004">
+                <DescriptiveText>衣柜/衣橱</DescriptiveText>
+              </Service>
+              <Service Code="209" ID="1004">
+                <DescriptiveText>连通房</DescriptiveText>
+              </Service>
+              <Service Code="212" ID="1004">
+                <DescriptiveText>闹钟</DescriptiveText>
+              </Service>
+              <Service Code="213" ID="1004">
+                <DescriptiveText>针线包</DescriptiveText>
+              </Service>
+              <Service Code="217" ID="1004">
+                <DescriptiveText>遮光窗帘</DescriptiveText>
+              </Service>
+              <Service Code="219" ID="1004">
+                <DescriptiveText>手动窗帘</DescriptiveText>
+              </Service>
+              <Service Code="225" ID="1004">
+                <DescriptiveText>床具:毯子或被子</DescriptiveText>
+              </Service>
+              <Service Code="229" ID="1004">
+                <DescriptiveText>唤醒服务</DescriptiveText>
+              </Service>
+              <Service Code="236" ID="1004">
+                <DescriptiveText>按摩浴缸</DescriptiveText>
+              </Service>
+              <Service Code="240" ID="1004">
+                <DescriptiveText>城景</DescriptiveText>
+              </Service>
+              <Service Code="246" ID="1004">
+                <DescriptiveText>享有风景</DescriptiveText>
+              </Service>
+              <Service Code="248" ID="1004">
+                <DescriptiveText>地标景</DescriptiveText>
+              </Service>
+              <Service Code="252" ID="1004">
+                <DescriptiveText>洗浴间电话</DescriptiveText>
+              </Service>
+              <Service Code="253" ID="1004">
+                <DescriptiveText>沙发</DescriptiveText>
+              </Service>
+              <Service Code="256" ID="1004">
+                <DescriptiveText>免费报纸</DescriptiveText>
+              </Service>
+              <Service Code="257" ID="1004">
+                <DescriptiveText>开夜床</DescriptiveText>
+              </Service>
+              <Service Code="258" ID="1004">
+                <DescriptiveText>电子秤</DescriptiveText>
+              </Service>
+              <Service Code="262" ID="1004">
+                <DescriptiveText>淋浴</DescriptiveText>
+              </Service>
+            </Services>
+          </HotelInfo>
+          <FacilityInfo>
+            <GuestRooms>
+              <GuestRoom RoomTypeName="行政楼高级豪华房">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="8671" Floor="23" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+                <Features>
+                  <Feature>
+                    <DescriptiveText>享受行政楼层待遇</DescriptiveText>
+                  </Feature>
+                </Features>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="标准套房(连住2晚及以上)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="202808" Floor="6" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+                <Features>
+                  <Feature>
+                    <DescriptiveText>一房一厅，50平米</DescriptiveText>
+                  </Feature>
+                </Features>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="标准套房">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="24270" Floor="6" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+                <Features>
+                  <Feature>
+                    <DescriptiveText>一房一厅，50平米</DescriptiveText>
+                  </Feature>
+                </Features>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="高级豪华大床房(提前28天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="449086" Floor="12" BedTypeCode="3" Quantity="276" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="高级豪华双人房(提前28天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="449089" Floor="12" BedTypeCode="1" Quantity="276" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="豪华大床房(提前28天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="449091" Floor="6" BedTypeCode="3" Quantity="371" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="豪华双床房(提前28天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="449092" Floor="6" BedTypeCode="1" Quantity="371" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政豪华大床房(提前28天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="449093" Floor="23" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政豪华双人房(提前28天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="449094" Floor="23" BedTypeCode="1" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="标准套房(提前28天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="449096" Floor="6" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+                <Features>
+                  <Feature>
+                    <DescriptiveText>一房一厅，50平米</DescriptiveText>
+                  </Feature>
+                </Features>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政楼高级豪华房(提前28天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="449724" Floor="23" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+                <Features>
+                  <Feature>
+                    <DescriptiveText>享受行政楼层待遇</DescriptiveText>
+                  </Feature>
+                </Features>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="高级豪华大床房(连住2晚及以上)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="710029" Floor="12" BedTypeCode="3" Quantity="276" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="高级豪华双人房(连住2晚及以上)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="710111" Floor="12" BedTypeCode="1" Quantity="276" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="豪华大床房">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="246697" Floor="6" BedTypeCode="3" Quantity="371" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="豪华双床房">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="246698" Floor="6" BedTypeCode="1" Quantity="371" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政豪华大床房">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="246699" Floor="23" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政豪华双人房">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="246700" Floor="23" BedTypeCode="1" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="高级豪华大床房">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="246701" Floor="12" BedTypeCode="3" Quantity="276" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="高级豪华双人房">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="246702" Floor="12" BedTypeCode="1" Quantity="276" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="标准套房(提前14天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="4113921" Floor="6" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+                <Features>
+                  <Feature>
+                    <DescriptiveText>一房一厅，50平米</DescriptiveText>
+                  </Feature>
+                </Features>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="高级豪华大床房(提前14天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="4113922" Floor="12" BedTypeCode="3" Quantity="276" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="高级豪华双人房(提前14天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="4113923" Floor="12" BedTypeCode="1" Quantity="276" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政豪华大床房(提前14天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="4113924" Floor="23" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政豪华双人房(提前14天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="4113925" Floor="23" BedTypeCode="1" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政楼高级豪华房(提前14天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="4113926" Floor="23" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+                <Features>
+                  <Feature>
+                    <DescriptiveText>享受行政楼层待遇</DescriptiveText>
+                  </Feature>
+                </Features>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="豪华大床房(提前14天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="4113927" Floor="6" BedTypeCode="3" Quantity="371" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="豪华双床房(提前14天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="4113929" Floor="6" BedTypeCode="1" Quantity="371" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政豪华大床房(连住2晚及以上)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="4118086" Floor="23" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政豪华双人房(连住2晚及以上)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="4118087" Floor="23" BedTypeCode="1" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政楼高级豪华房(连住2晚及以上)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="4118088" Floor="23" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+                <Features>
+                  <Feature>
+                    <DescriptiveText>享受行政楼层待遇</DescriptiveText>
+                  </Feature>
+                </Features>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="豪华大床房(连住2晚及以上)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="278549" Floor="6" BedTypeCode="3" Quantity="371" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="豪华双床房(连住2晚及以上)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="278550" Floor="6" BedTypeCode="1" Quantity="371" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="标准套房(冬季促销)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="3972300" Floor="6" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+                <Features>
+                  <Feature>
+                    <DescriptiveText>一房一厅，50平米</DescriptiveText>
+                  </Feature>
+                </Features>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="高级豪华大床房(冬季促销)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="3972301" Floor="12" BedTypeCode="3" Quantity="276" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="高级豪华双人房(冬季促销)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="3972302" Floor="12" BedTypeCode="1" Quantity="276" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政豪华大床房(冬季促销)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="3972303" Floor="23" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政豪华双人房(冬季促销)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="3972304" Floor="23" BedTypeCode="1" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政楼高级豪华房(冬季促销)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="3972305" Floor="23" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+                <Features>
+                  <Feature>
+                    <DescriptiveText>享受行政楼层待遇</DescriptiveText>
+                  </Feature>
+                </Features>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="豪华大床房(冬季促销)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="3972306" Floor="6" BedTypeCode="3" Quantity="371" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="豪华双床房(冬季促销)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="3972307" Floor="6" BedTypeCode="1" Quantity="371" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="标准套房(提前7天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="2679556" Floor="6" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+                <Features>
+                  <Feature>
+                    <DescriptiveText>一房一厅，50平米</DescriptiveText>
+                  </Feature>
+                </Features>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="高级豪华大床房(提前7天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="2679561" Floor="12" BedTypeCode="3" Quantity="276" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="11">
+                    <DescriptiveText>免费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="高级豪华双人房(提前7天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="2679563" Floor="12" BedTypeCode="1" Quantity="276" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="11">
+                    <DescriptiveText>免费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政豪华大床房(提前7天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="2679565" Floor="23" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政豪华双人房(提前7天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="2679566" Floor="23" BedTypeCode="1" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="行政楼高级豪华房(提前7天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="2679568" Floor="23" BedTypeCode="3" Quantity="0" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="3">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="5">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="7">
+                    <DescriptiveText>可加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="12">
+                    <DescriptiveText>收费加床</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+                <Features>
+                  <Feature>
+                    <DescriptiveText>享受行政楼层待遇</DescriptiveText>
+                  </Feature>
+                </Features>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="豪华大床房(提前7天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.80" RoomTypeCode="4446076" Floor="6" BedTypeCode="3" Quantity="371" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+              <GuestRoom RoomTypeName="豪华双床房(提前7天预订)">
+                <TypeRoom StandardOccupancy="2" Size="1.30" RoomTypeCode="4446077" Floor="6" BedTypeCode="1" Quantity="371" />
+                <Amenities>
+                  <Amenity RoomAmenityCode="4">
+                    <DescriptiveText>有线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="6">
+                    <DescriptiveText>无线宽带</DescriptiveText>
+                  </Amenity>
+                  <Amenity RoomAmenityCode="10">
+                    <DescriptiveText>自助早餐</DescriptiveText>
+                  </Amenity>
+                </Amenities>
+              </GuestRoom>
+            </GuestRooms>
+          </FacilityInfo>
+          <AreaInfo>
+            <RefPoints>
+              <RefPoint Distance="0.8" UnitOfMeasureCode="2" Name="徐家汇商业圈" RefPointCategoryCode="10" RefPointName="商业中心/知名餐饮" Latitude="-1" Longitude="-1">
+                <DescriptiveText>步行约15分钟可到酒店。</DescriptiveText>
+              </RefPoint>
+              <RefPoint Distance="3.83" UnitOfMeasureCode="2" Name="上海火车南站" RefPointCategoryCode="2" RefPointName="火车站" Latitude="31.1518" Longitude="121.4345">
+                <DescriptiveText>乘坐地铁1号线(富锦路方向)，在上海体育馆站下车(7号口出)，步行约250米。乘坐出租车约16元。</DescriptiveText>
+              </RefPoint>
+              <RefPoint Distance="41.47" UnitOfMeasureCode="2" Name="上海浦东国际机场" RefPointCategoryCode="3" RefPointName="机场" Latitude="31.16141" Longitude="121.80299">
+                <DescriptiveText>乘坐地铁2号线(徐泾东方向)，在人民广场站下车，换乘地铁1号线(莘庄方向)，在上海体育馆站下车(7号口出)，步行约250米。乘坐出租车约164元。</DescriptiveText>
+              </RefPoint>
+              <RefPoint Distance="2.3" UnitOfMeasureCode="2" Name="光大会展中心" RefPointCategoryCode="11" RefPointName="展馆/体育馆" Latitude="31.16618" Longitude="121.43259">
+                <DescriptiveText>
+                  出租车：约8分钟，约14元 乘坐地铁1号线(富锦路方向)，在上海体育馆站下车(7号口出)，步行约250米
+
+                </DescriptiveText>
+              </RefPoint>
+              <RefPoint Distance="2" UnitOfMeasureCode="2" Name="龙华寺" RefPointCategoryCode="7" RefPointName="公园/游乐场/景点/景区" Latitude="31.17271" Longitude="121.4569">
+                <DescriptiveText>
+                  出租车：约9分钟，约14元
+
+                </DescriptiveText>
+              </RefPoint>
+              <RefPoint Distance="10.47" UnitOfMeasureCode="2" Name="上海虹桥机场（一号航站楼）" RefPointCategoryCode="3" RefPointName="机场" Latitude="31.19305" Longitude="121.35181">
+                <DescriptiveText>乘坐地铁10号线(新江湾城方向)，在虹桥路站下车，换乘地铁4号线，在上海体育馆站下车(7号口出)，步行约300米。乘坐出租车约42元。</DescriptiveText>
+              </RefPoint>
+              <RefPoint Distance="19.7" UnitOfMeasureCode="2" Name="虹桥火车站" RefPointCategoryCode="2" RefPointName="火车站" Latitude="31.19327" Longitude="121.32597">
+                <DescriptiveText>乘坐地铁10号线(新江湾城方向)，在虹桥路站下车，换乘地铁4号线，在上海体育馆站下车(7号口出)，步行约300米。乘坐出租车约66元。</DescriptiveText>
+              </RefPoint>
+              <RefPoint Distance="20.4" UnitOfMeasureCode="2" Name="上海虹桥机场（二号航站楼）" RefPointCategoryCode="3" RefPointName="机场" Latitude="31.1933" Longitude="121.33316">
+                <DescriptiveText>乘坐地铁10号线(新江湾城方向)，在虹桥路站下车，换乘地铁4号线，在上海体育馆站下车(7号口出)，步行约300米。乘坐出租车约68元。</DescriptiveText>
+              </RefPoint>
+              <RefPoint Distance="7" UnitOfMeasureCode="2" Name="新天地" RefPointCategoryCode="7" RefPointName="公园/游乐场/景点/景区" Latitude="31.20348" Longitude="121.41356">
+                <DescriptiveText>
+                  出租车：约14分钟，约28元;
+                  地铁：10号线，转4号线，上海体育馆站，7号出口下，步行约2分钟到达酒店。
+                </DescriptiveText>
+              </RefPoint>
+              <RefPoint Distance="10" UnitOfMeasureCode="2" Name="人民广场" RefPointCategoryCode="4" RefPointName="市中心" Latitude="31.22904" Longitude="121.48135">
+                <DescriptiveText>乘坐地铁1号线(莘庄方向)，在上海体育馆站下车(7号口出)，步行约250米。乘坐出租车约31元。</DescriptiveText>
+              </RefPoint>
+              <RefPoint Distance="10" UnitOfMeasureCode="2" Name="外滩" RefPointCategoryCode="7" RefPointName="公园/游乐场/景点/景区" Latitude="31.2341" Longitude="121.49665">
+                <DescriptiveText>
+                  出租车：约18分钟，约39元;
+                  地铁：2号线，转1号线，上海体育馆站，7号出口下，步行约2分钟到达酒店。
+                </DescriptiveText>
+              </RefPoint>
+            </RefPoints>
+          </AreaInfo>
+          <AffiliationInfo>
+            <Awards>
+              <Award Provider="HotelStarRate" Rating="5" />
+              <Award Provider="CtripStarRate" Rating="5" />
+              <Award Provider="CtripUserRate" Rating="5.0" />
+              <Award Provider="CtripCommRate" Rating="4.3" />
+              <Award Provider="CommSurroundingRate" Rating="4.6" />
+              <Award Provider="CommFacilityRate" Rating="4.1" />
+              <Award Provider="CommCleanRate" Rating="4.4" />
+              <Award Provider="CommServiceRate" Rating="4.3" />
+            </Awards>
+          </AffiliationInfo>
+          <MultimediaDescriptions>
+            <MultimediaDescription>
+              <ImageItems>
+                <ImageItem Category="1">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/f63e93576bf943abba7f424e09b09fde_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="外观" />
+                </ImageItem>
+                <ImageItem Category="2">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/1f162456f1df4047a513776548fcb536_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="大堂酒吧" />
+                </ImageItem>
+                <ImageItem Category="2">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/a3dc60849afc4b88a100a3285c5de497_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="大堂" />
+                </ImageItem>
+                <ImageItem Category="4">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/23fa7a88364f416f979626cd8a927d71_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="行政楼酒廊" />
+                </ImageItem>
+                <ImageItem Category="4">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/6fe843cf52f84242b9ac92cbea0a36bf_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="行政楼早餐" />
+                </ImageItem>
+                <ImageItem Category="4">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/5dfc13d3a0d74806b38aa22620ec05a2_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="早餐" />
+                </ImageItem>
+                <ImageItem Category="4">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/97085ddea86549bcbabf0ac35be3e673_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="观月台中餐厅" />
+                </ImageItem>
+                <ImageItem Category="4">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/449f803124df4af6a3b138a648e36c95_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="花苑餐厅" />
+                </ImageItem>
+                <ImageItem Category="4">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/487a6b5394b04c4182179db53b827cd4_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="荟萃厅" />
+                </ImageItem>
+                <ImageItem Category="4">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/0b9a8e4611eb4e94b09a2d6728a57b8c_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="荟景厅" />
+                </ImageItem>
+                <ImageItem Category="4">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/a3f7c78fec57439d93dfca432d7e53a8_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="咖啡厅" />
+                </ImageItem>
+                <ImageItem Category="4">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/0e7471577d824460b89fc0bd83a3f816_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="咖啡厅自助餐" />
+                </ImageItem>
+                <ImageItem Category="4">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/986c69fc91c840d0bbaf9a6ee2d1fabc_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="美食店" />
+                </ImageItem>
+                <ImageItem Category="20">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/e2837f0ec55842b69b2949f5eab725dc_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="办公桌" />
+                </ImageItem>
+                <ImageItem Category="20">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/cde738376e9744fb9e73084cf6598dc3_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="床品" />
+                </ImageItem>
+                <ImageItem Category="20">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/859d46488eb046e39353f536637b17e7_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="套房摆设" />
+                </ImageItem>
+                <ImageItem Category="5">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/47b10ed46c2a490a92129540d46c9ea2_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="健身中心" />
+                </ImageItem>
+                <ImageItem Category="5">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/2ca485b53b27436493e74bc9f4276ec7_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="游泳池" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/bf13b9d421744900befb6d7a7f6e0467_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="豪华大床房" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/47b3263a99fe44e1a9bce6b63902d4ab_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="豪华房" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/e69b30434e5247e79b4fb8299ddb73e1_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="豪华双床房" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/8a1021d29d81441fae112913a02779e6_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="高级豪华双人房" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/3725a4ac19c34c468f1638b85af793a3_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="高级豪华房" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/c0b8f93136074c5eb47cca8c708f259d_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="高级豪华大床房" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/bcdd3fd433624c7d9ca5d679af08b356_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="行政豪华双人房" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/c2382a3dbf864d40b6de42c293dfca2c_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="豪华房" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/400c0b3f42fd412cb2dee33f14b0a976_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="行政豪华大床房" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/6d341517a6f94041a1ec3129240e2b69_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="行政楼高级豪华房" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/48501838a15348fa9bc21a1b5a40d97f_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="高级特惠双床房" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/d9febae2a8004b4bad8c4dc138deb439_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="高级特惠大床房" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/b49e347040974616bbed1096c593e174_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="标准套房" />
+                </ImageItem>
+                <ImageItem Category="6">
+                  <ImageFormat>
+                    <URL>http://Images4.c-ctrip.com/target/hotel/1000/625/84b73a34e86d4c1e9d8adcb13221fc96_550_412.jpg</URL>
+                  </ImageFormat>
+                  <Description Caption="高级房" />
+                </ImageItem>
+              </ImageItems>
+            </MultimediaDescription>
+            <MultimediaDescription>
+              <TextItems>
+                <TextItem Category="5">
+                  <Description>上海华亭宾馆位于漕溪北路，毗邻地铁站，地铁1，3，4号线均可到达，漫步即可抵达徐家汇商业中心，与上海八万人体育馆咫尺之遥。无论您要去上海市内任何地方，快速的交通，将会给您带来超越期望的享受。&lt;br&gt;上海华亭宾馆是中国旅游业标志性饭店之一。作为08年北京奥运会上海赛区官方指定接待酒店，2010年世博会以及2011年第十四届国际泳联世界锦标赛官方指定接待酒店。&lt;br&gt;上海华亭宾馆一楼花苑自助餐厅，全新概念开放式厨房设计，提供国际风味佳肴。一楼美食店，精心准备新鲜、美味、品种繁多的点心、中西简餐供您选择。大堂酒吧是轻松小憩和会见友人的最佳场所，夜间还有精彩菲律宾乐队现场表演。26楼观月台景观中餐厅，把盏品馔，临巅俯瞰，徐家汇地区都市胜景尽收眼底。香港得奖名厨领衔主理，精品传家粤菜、上海菜。&lt;br&gt;上海华亭宾馆三楼克拉克海奇健身中心来，宽敞现代的健身房，干净恒温的游泳池，舒适的桑拿，弹子房等各类健身项目任你挑。贵宾楼行政楼层的客人会醉心于单独登记入住，24小时贴身管家服务，独立行政酒廊的尊贵享受。酒店主要的设施设备，喜欢至尊体验的客人均可享用，带给您全方位的奢华享受。</Description>
+                </TextItem>
+                <TextItem Category="11">
+                  <Description>上海华亭宾馆位于繁华的徐家汇商业中心，毗邻上海大舞台、旅游集散中心。出门即是地铁1、4号线，地理位置优越，既适合商务会议也方便休闲旅游购物。</Description>
+                </TextItem>
+                <TextItem Category="501">
+                  <URL>http://u.ctrip.com/union/CtripRedirect.aspx?TypeID=2&amp;Allianceid=7133&amp;sid=170965&amp;OUID=&amp;jumpUrl=http://hotels.ctrip.com/hotel/625.html</URL>
+                </TextItem>
+                <TextItem Category="8">
+                  <Description>1.华亭宾馆是徐家汇的标志性建筑之一，知名度很高，来往便利。&lt;br/&gt;2.交通方便，设施完善，服务热情，周到</Description>
+                </TextItem>
+              </TextItems>
+            </MultimediaDescription>
+          </MultimediaDescriptions>
+        </HotelDescriptiveContent>
+      </HotelDescriptiveContents>
+      <Success />
+    </OTA_HotelDescriptiveInfoRS>
+  </HotelResponse>
+</Response>

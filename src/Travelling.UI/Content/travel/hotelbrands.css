@@ -1,0 +1,303 @@
+﻿@charset "utf-8";
+body,html {margin:0;padding:0;color:#333;font:12px/180% "宋体",Arial, Helvetica, sans-serif;}
+h1,h2,h3,h4,h5,h6,p,ol,ul,li,dl,dt,dd,form { margin:0; padding:0; }
+li{list-style:none;}
+img{border:none;}
+i,em{font-style:normal;}
+a{color:#0b8cd5;text-decoration:none;}
+.like-a{color:#0b8cd5;font-weight:normal;}
+.like-a:hover{color:#f60;text-decoration:underline;}
+.clearer{font-size:0;clear:both;height:0;overflow:hidden;line-height:0;}
+.hideline{height:1px;font-size:1px;background:#fff;margin-top:-1px;}
+.hide,div.hide,ul.hide,li.hide,a.hide{display:none;}
+.loading{background:#fff url(http://images.laidingba.com/loading_room.gif) 50% 50% no-repeat;min-height:80px;_height:80px;}
+.span-price{color:#f60;font-family:Verdana, Arial, Helvetica, sans-serif;}
+.o_tishi{background-color:#F2F2F2;border:1px solid #ccc;color:#FF6600;font-family:Tahoma,Geneva,sans-serif;font-size:22px;font-weight:bold;padding:6px 8px 5px;position:absolute;}
+/*  clear floating  */
+.clearfix:after,.topbar:after,.traffic-hotel dl:after,.traffic-list li:after,.condition dl:after,.search-item:after,.wraper:after { content:""; height:0; display:block; clear:both; visibility:hidden; }
+* html .clearfix,* html .topbar,* html .traffic-hotel dl,* html .traffic-list li,* html .condition dl,* html .search-item,* html .wraper { height:1%; }
+* +html .clearfix,* +html .condition dl,* +html .search-item,* +html .wraper,* +html .traffic-hotel dl,* +html .traffic-list li { height:1%; }
+.clearfix,.traffic-hotel dl,.traffic-list li,.search-item,.wraper { display:block; clear:both; }
+/*  layout  */
+.wraper,.foot-wraper,.searchbar{width:970px;margin:0 auto;}
+.top,.topbar,.navbar{width:990px;margin:0 auto;}
+/*  background  */
+#header,.navbar,.topbar .logo,.topbar,.nav li a:hover,.nav li.current a,.nav li.current1 a,.txt_city,.txt_date{background-image:url(http://images.laidingba.com/0718/head.png);background-repeat:no-repeat;}
+.to_top{background-image:url(http://images.laidingba.com/d_top.jpg?v=1);background-repeat:no-repeat;}
+
+.show-detail{background:url(http://images.laidingba.com/0124/h_l_26.jpg) right 2px no-repeat;padding-right:10px;color:#0487D1;cursor:pointer;}
+.show-detail1{background-position:right -20px;}
+
+/*------------------------------------------- header -------------------------------------------*/
+#header{background-repeat:repeat-x;width:100%;height:151px;margin-bottom:8px;}
+#header .top{height:32px;line-height:32px;overflow:hidden;zoom:1;}
+#header .top div{float:left;color:#666;width:500px;}
+#header .top div a{margin-left:8px;}
+#header .top div span{margin:0 2px;color:#a70719;}
+#header .top div img{vertical-align:middle;margin:0 2px;}
+#header .top div span.lazu img{margin-top:-6px;}
+#header .top p{overflow:hidden;zoom:1;}
+#header .top p span{float:left;color:#666;margin:0;}
+#header .top p .btns{overflow:hidden;height:23px;}
+#header .top p .btns a{background-image:url(http://images.laidingba.com/icon_cooperation.gif);background-repeat:no-repeat;display:block;height:23px;padding-left:23px;}
+#header .top p .btns a:hover{text-decoration:none;}
+#header .top p .qq{width:70px;}
+#header .top p .qq a{background-position:0 3px;}
+#header .top p .sina a{background-position:0 -20px;}
+#header .top ul{float:right;}
+#header .top ul li{float:left;color:#666666;padding:0 6px;cursor:pointer; }
+#header .top ul i,#header .top ul a{color:#0c7cbb;}
+#header .top ul li.weixin{background:url(http://images.laidingba.com/head_weixin.jpg) no-repeat 0px 5px;padding-left:25px;}
+#header .topbar{background-position:right -205px;height:78px;}
+#header .topbar .logo{background:url(http://images.laidingba.com/logo_new.gif) no-repeat;width:190px;height:58px;float:left;margin-top:10px;background-color:#fff;line-height:normal;}
+#header .topbar .logo a{display:block;width:190px;height:58px;text-indent:-9999px;font-size:0;}
+#header .topbar .other{float:right;}
+#header .topbar .other p{margin-top:50px;}
+#header .topbar .other p span{vertical-align:middle;}
+#header .topbar .other p .tel{font:bold 18px arial;color:#ee5400;}
+
+.navbar{height:40px;background-position:0 -110px;background-repeat:repeat-x;position:relative;z-index:10;}
+.navbar .popman{background:url(http://images.laidingba.com/0124/bg_top_24.3.0.png) 0px -40px;_background:url(http://images.laidingba.com/0124/bg_top_8.3.0.png) 0px -40px;margin: 0px 9px;-webkit-transition:all 200ms;-ms-transition:all 200ms;-o-transition:all 200ms;-moz-transition:all 200ms;transition:all 200ms;font-size:12px;color:#fff;font-weight:normal;position:absolute;left:251px;top:-7px;z-index:1;width:0px;height:18px;line-height:18px;}
+.navbar .popman .bg{background:url(http://images.laidingba.com/0124/bg_top_24.3.0.png);_background:url(http://images.laidingba.com/0124/bg_top_8.3.0.png)}
+.navbar .popman .bg_l{width:9px;height:18px;position:absolute;left:-9px;background-position:0px -60px}
+.navbar .popman .bg_r{width:9px;height:18px;position:absolute;right:-9px;background-position:-9px -60px}
+.navbar .popman .pop_txt{text-decoration:none;position:absolute;left:-6px;top:0px;height:18px;white-space:nowrap;line-height:18px;margin-top:0px;line-height:15px\9;margin-top:2px\9;}
+.nav li{width:69px;height:36px;float:left;margin-top:4px;line-height:36px;text-align:center;margin-right:15px;display:inline;}
+.nav li,.nav li a{font-size:14px;color:#fff;font-weight:bold;}
+.nav li a{display:block;width:69px;height:36px;text-align:center;}
+.nav li a:hover,.nav li.current a,.nav li.current1 a{text-decoration:none;color:#333!important;background-position:0px -296px;}
+.nav li.last{width:89px;}
+.nav li.last a{width:89px;}
+.nav li.last a:hover{background-position:-73px -296px;}
+.nav li.last a:hover,.nav li.current1 a{background-position:-73px -296px;}
+.nav li.login{float:right;position:relative;z-index:11;height:40px;line-height:40px;margin:0px;width:140px;}
+.nav li.login .login_status{display:block;position:absolute;left:26px;top:0px;cursor:pointer;padding-left:20px; font-weight:normal;font-size:12px;}
+.nav li.login .login_status i{display:block;background:url(http://images.laidingba.com/0124/login_b.gif) 0px -5px no-repeat;position:absolute;width:9px;height:5px;top:18px;left:73px;}
+.nav li.login .login_list{display:none;position:absolute;z-index:12;left:0px;top:40px;border:1px solid #c3c3c3;border-top:none;padding:8px 9px 5px;width:120px;background-color:#fff;color:#333;text-align:left;line-height:1.5;border-bottom-left-radius:3px;border-bottom-right-radius:3px;box-shadow:0 0 3px rgba(0,0,0,0.2);}
+.nav li.login .login_list h3{font-weight:normal;font-size:12px;padding-left:2px;margin-top:5px;}
+.nav li.login .login_info{padding-top:5px;padding-bottom:5px;margin-top:5px;border-top:1px solid #c3c3c3;padding-left:1px;}
+.nav li.login .login_info p{padding:2px 0;color:#0b8cd5;}
+.nav li.login .login_info a{color:#0b8cd5;text-align:left;width:auto;height:auto;font-weight:normal;font-size:12px;display:inline;}
+.nav li.login .login_info a:hover{background:none;color:#f60!important;text-decoration:underline;}
+
+.nav li.login.hover{background-color:#FF9913;}
+.nav li.login.hover .login_status{background:url(http://images.laidingba.com/0124/login_person.gif) 0px 11px no-repeat;}
+.nav li.login.hover .login_status i{background-position:0px 0px;}
+.nav li.login.hover .login_list{display:block;}
+
+.hotel_search{border:solid 3px #007BE2;border-top:none;overflow:hidden;zoom:1;padding-top:58px;height:314px;}
+.hotel_search ul{overflow:hidden;}
+.hotel_search li{height:34px;padding-left:13px;overflow:hidden;}
+.hotel_search li.brand{display:none;}
+.hotel_search li span{color:#f00;margin-right:6px;}
+.hotel_search li .txt{border:solid 1px #ccc;width:159px;padding:0;color:#999;height:20px;line-height:20px;vertical-align:middle;margin-left:6px;padding-left:3px;}
+.hotel_search li .txt_1{color:#000;}
+.hotel_search li select{width:163px;margin-left:6px;vertical-align:middle;}
+.hotel_search li .txt_city{background-position:-583px -301px;}
+.hotel_search li .txt_date{background-position:-583px -351px;}
+.hotel_search li .sunmitbtn{height:40px;}
+.hotel_search li .btn{background:url(http://images.laidingba.com/0718/i_3.gif) no-repeat;width:91px;height:30px;display:block;margin:10px auto 0;border:none;cursor:pointer;}
+.hotel_search li .btn:hover{background-position:0 -30px;}
+
+.bigpic{border:1px #ccc solid;padding:2px;background:#fff;width:100px;height:75px;}
+.pic_load{background:#fff url(http://images.laidingba.com/img_loading.gif) 50% 50% no-repeat;display:block;border:1px solid #dedede;}
+.pic_load img{display:none;}
+/*------------------------------------------- footer -------------------------------------------*/
+.jd_b_nav{overflow:hidden;zoom:1;border:solid 1px #ddd;margin-top:10px;margin-bottom:10px;background:url(http://images.laidingba.com/0718/i_20.gif) 10px 14px no-repeat;}
+.jd_b_nav div{float:left;width:160px;padding-left:35px;margin-left:8px;display:inline;}
+.jd_b_nav div h4{border-bottom:solid 1px #95CFFF;padding-top:15px;height:25px;font-size:14px;}
+.jd_b_nav div ul{line-height:23px;padding-top:6px;padding-bottom:8px;}
+.jd_b_nav div ul a{color:#666;}
+.jd_b_nav div.jd_b_nav_1{width:150px;}
+.jd_b_nav div.jd_b_nav_2{width:185px;}
+.jd_b_nav div.jd_b_nav_3{width:140px;}
+.jd_b_nav div.jd_b_nav_4{}
+.jd_b_nav div.jd_b_nav_5{width:135px;}
+
+.f_link{margin-top:10px;}
+.f_link h3{font-size:14px;height:30px;line-height:30px;color:#666;}
+.f_link ul{padding-bottom:15px;overflow:hidden;zoom:1;}
+.f_link li{float:left;width:88px;line-height:22px;height:22px;overflow:hidden;}
+.f_link li a{color:#666;}
+
+.footer { border-top:1px solid #ddd; text-align:center;padding-bottom:10px;margin-top:10px;}
+.footer div a{color:#333;margin:0 10px;line-height:30px;}
+.footer div a.footer_tab{color:#f60;}
+.footer p{line-height:24px;color:#666;font-family:Verdana, Arial, Helvetica, sans-serif;}
+
+.foot-wraper {overflow:hidden;zoom:1;font-family:Arial;}
+.foot-wraper1{width: 950px;}
+.foot-main{float:left;}
+.ft-logo {float:left;margin-right:15px;background-position:0 -322px;}
+.ft-logo,.ft-logo a { display:block; width:130px; height:50px; }
+.hotlink { width:520px; float:left; padding-top:25px; line-height:20px; }
+.hotlink a { color:#979797; display:inline-block; margin-right:8px; white-space:nowrap; }
+.footer .intro { width:230px; float:right; margin-top:10px; line-height:24px; }
+.footer .intro h5 { font-size:12px; }
+.footer .tel { font-weight:bold; clear:both; }
+.footer-nav a { padding:0 2px; }
+
+.flinks {width:968px;margin:0 auto;overflow:hidden;}
+.flinks dl { clear:both; line-height:24px; }
+.flinks dt { width:68px; float:left; }
+.flinks dd { width:900px; float:right; }
+.flinks dd,.flinks dd a { color:#979797; }
+.flinks dd a { display:inline-block; margin-right:5px; white-space:nowrap;}
+
+.pages { padding:20px; text-align:center; padding-top:0px; }
+.pages a,.pages span { display:inline-block; padding:0 9px; height:24px; line-height:24px; margin:0 2px; white-space:nowrap; vertical-align:middle; font-family:Arial,SimSun; border:1px solid #ccc;}
+.pages a { color:#005bb5; }
+.pages span { color:#ccc; }
+.pages a:hover,.pages span.cur { text-decoration:none; background-color:#2288ee; border-color:#2288ee; color:#fff!important; }
+.pages .prev,.pages .next,.pages .first,.pages .last { background-image:url(http://images.laidingba.com/public/pages.jpg); background-repeat:no-repeat; padding-top:1px; height:23px; line-height:23px; }
+.pages a.prev { padding-left:17px; background-position:8px -117px; }
+.pages a.prev:hover { background-position:8px -198px; }
+.pages span.prev { padding-left:17px; background-position:8px -156px; }
+.pages a.first { padding-left:20px; background-position:8px -367px; }
+.pages a.first:hover { background-position:8px -446px; }
+.pages span.first { padding-left:20px; background-position:8px -406px; }
+.pages a.next { padding-right:17px; background-position:50px 2px; }
+.pages a.next:hover { background-position:50px -78px; }
+.pages span.next { padding-right:17px; background-position:50px -37px; }
+.pages a.last { padding-right:20px; background-position:37px -247px; }
+.pages a.last:hover { background-position:37px -327px; }
+.pages span.last { padding-right:20px; background-position:37px -286px; }
+
+.synopsis span{color:#FFFFFF;line-height:16px;margin-right:1px;padding:3px 3px 2px;white-space:nowrap;}
+.synopsis .setBg01{background:#666666;}
+.synopsis .setBg02{background:#db94ff;}
+.synopsis .setBg03{background:#4c94db;}
+.synopsis .setBg04{background:#94b770;}
+.synopsis .setBg05{background:#ff7094;}
+.synopsis .setBg06{background:#ff8300;}
+.synopsis .setBg07{background:#94B770;}
+.synopsis .setBg08{background:#356880;}
+.synopsis .setBg09{background:#c79810;}
+.synopsis .setBg10{background:#3f4c6b;}
+
+.star0,.star1,.star2,.star3,.star4,.star5{width:60px;height:12px;font-size:2px;background-image:url(http://images.laidingba.com/public/stars.gif);background-repeat:no-repeat;display:block; }
+.star0{background-position:0 -100px;}
+.star1{background-position:0 -80px;}
+.star2{background-position:0 -60px;}
+.star3{background-position:0 -40px;}
+.star4{background-position:0 -20px;}
+.star5{background-position:0 0;}
+
+.navPopWr{float:left;position:absolute;left:0;top:162px;margin-left:-170px;}
+.navPopWr #navPop{background:#FEFEF0;border:1px solid #FFEDD3;float:left;padding:5px;width:160px;height:140px;}
+.navPopWr #navPop li{line-height:23px;}
+.navPopWr #navPop li a{color:#3366CC;text-decoration:none;}
+.navPopWr #navPop li i{float:left;line-height:23px;height:23px;width:120px;overflow:hidden;cursor:pointer;}
+.navPopWr #navPop li span{float:right;color:#FF7200;font-family:Arial;width:40px;}
+.navPopWr .navClick{background:#ffaf60;color:#fff;border-color:#ffaf60 #ffaf60 #ffaf60;font-weight:bold;border-style:solid solid solid none;border-width:1px 1px 1px 0;cursor:pointer;float:left;height:110px;line-height:14px;padding:8px 5px;text-align:center;width:20px;}
+.to_top{display:block;width:56px;height:170px;overflow:hidden;position:absolute;top:60%;visibility:hidden;cursor:pointer;}
+.collect_box{width:133px;height:86px;}
+.collect_box div{position:relative;z-index:1;}
+.collect_box img{cursor:pointer;}
+.collect_box .close{position:absolute;right:0;}
+.collect_box .btn{margin-top:17px;width:133px;height:69px;}
+
+.cncity{background:#fff;border:1px solid #ccc;padding-bottom:3px;width:368px;font-family: Arial,"宋体";}
+.cncity .cstit{background:url(http://images.laidingba.com/public/city_bg01.gif) repeat-x 0 0;height:30px;}
+.cncity .cstit ul{float:left;}
+.cncity .cstit span{color:#666;float:left;line-height:30px;padding-left:5px;}
+.cncity .cstit a{background:url(http://images.laidingba.com/public/city_bg02.gif) no-repeat 0 0;display:inline;float:right;height:11px;margin:10px 10px 0 0;width:10px;}
+.cncity .cstit li{border-right:1px solid #E6E6E6;color:#2B5DB7;cursor:pointer;float:left;line-height:30px;text-align:center;width:69px;}
+.cncity .cstit .at{background:#fff;color:#2B5DB7;font-weight:700;}
+.cncity .unshow{display:none;}
+.cncity .link01 a:link,.cncity .link01 a:visited{color:#2B5DB7;text-decoration:none;}
+.cncity .city_sugg{overflow:hidden;clear:both;line-height:22px;margin-top:5px;}
+.cncity .city_sugg li{float:left;padding:0 2px 0 10px;white-space:nowrap;}
+.cncity .group_sugg{overflow:hidden;clear:both;line-height:22px;margin-top:5px;padding-left:5px;}
+.cncity .group_sugg li{float:left;white-space:nowrap;width:68px;}
+.cncity .more_city{display:block;padding-bottom:5px;padding-right:8px;}
+.cncity .more_city a{display:block;float:right;text-decoration:underline;}
+.cncity .city_list2{border-bottom:1px dashed #D7D7D7;height:26px;line-height:26px;padding-left:2px;width:366px;overflow:hidden;zoom:1;}
+.cncity .city_list2 li{float:left;padding:0 2px 0 5px;}
+.cncity .city_list2 li a{font-size:14px;}
+
+.suggest-container{background:#fff;width:172px;z-index:99999;font-family:Arial,"宋体"; width:238px;}
+.suggest-container .ds_input_tips{color:#666;line-height:22px;text-align:left;}
+.suggest-container .ds_input_tips_no{background-color:#FF8040;margin:0;padding-left:10px;}
+.suggest-container .ds_input_tips_one{border-bottom:1px dashed #aaa;margin:1px;padding-left:5px;width:165px;}
+.suggest-container .ds_input_tips_full{border-bottom:1px dashed #aaa;margin:1px;padding-left:5px;width:165px;}
+.suggest-container li{float:left;border-bottom:1px solid #fff;border-top:1px solid #fff;color:#0055AA;font-size:12px;line-height:20px;padding:1px 0 2px;width:100%;overflow:hidden;clear:both;}
+.suggest-container .top_mout{background:#fff;border-bottom:1px solid #fff;border-top:1px solid #fff;color:#0055AA;}
+.suggest-container .ds_selected{background:#C8E3FC;color:#0055AA;cursor:pointer;}
+.suggest-container .ds_selected span{color:#0055AA;cursor:pointer;}
+.suggest-container .suggest-result{color: #0055AA;cursor:pointer;float:right;padding-right:5px;text-align:right;white-space:nowrap;}
+.suggest-container .suggest-key{float:left;padding-left:10px;text-align:left;}
+.suggest-container .suggest-key font{color:Red;font-size:12px;}
+
+#quna_calendar A{COLOR:#0055bb;TEXT-DECORATION:none}
+#quna_calendar .day0{COLOR:#333;}
+#quna_calendar .day6{COLOR:#333;}
+#quna_calendar .current_day{FONT-WEIGHT:bold;COLOR:#0055bb;TEXT-DECORATION:underline}
+#quna_calendar .current_day:hover{BACKGROUND:#c8e3fc;COLOR:#0055bb!important;TEXT-DECORATION:underline}
+#quna_calendar .cue_day{COLOR:#a0522d}
+#quna_calendar .last_select_day{COLOR:#FFF;background-color:#eb6422;}
+#quna_calendar .last_select_day:hover{COLOR:#FFF!important;background-color:#e95800;}
+#quna_calendar .cue_day:hover{COLOR:#a0522d!important;BACKGROUND:#c8e3fc}
+#quna_calendar .selected_day{BORDER-RIGHT:#7cb9f4 1px solid;BORDER-TOP:#7cb9f4 1px solid;BACKGROUND:#c8e3fc;BORDER-LEFT:#7cb9f4 1px solid;WIDTH:18px;COLOR:#0055bb!important;BORDER-BOTTOM:#7cb9f4 1px solid;HEIGHT:18px;TEXT-DECORATION:none}
+#quna_calendar .limit_day{TEXT-DECORATION:line-through}
+#quna_calendar .limit_day:hover{TEXT-DECORATION:line-through}
+#quna_calendar .over_day{CURSOR:default;COLOR:#999}
+#quna_calendar .blank_day{CURSOR:default;COLOR:#999}
+#quna_calendar .limit_day{CURSOR:default;COLOR:#999}
+#quna_calendar .enable_day:hover{BACKGROUND:#e95800;color:#FFF!important;}
+#quna_calendar .currentmonth01 TH{BACKGROUND:red;}
+#quna_calendar TABLE{BORDER-RIGHT:#7f9db9 1px solid;BORDER-TOP:#7f9db9 1px solid;BACKGROUND:#fff;FLOAT:left;BORDER-LEFT:#7f9db9 1px solid;BORDER-BOTTOM:#7f9db9 1px solid;BORDER-COLLAPSE:collapse;font-family:Arial,Helvetica,sans-serif;}
+#quna_calendar TH{LINE-HEIGHT:20px;HEIGHT:20px;TEXT-ALIGN:center}
+#quna_calendar TD{LINE-HEIGHT:20px;HEIGHT:20px;TEXT-ALIGN:center}
+#quna_calendar THEAD TH{FONT-WEIGHT:bold;BACKGROUND:url(http://images.laidingba.com/date/Date_title.jpg) no-repeat left top;COLOR:#0055bb}
+#quna_calendar TH{FONT-WEIGHT:bold;BACKGROUND:#fff;COLOR:#999;}
+#quna_calendar TH SPAN{COLOR:#ffff00}
+#quna_calendar THEAD TH SPAN{FONT-WEIGHT:normal;WIDTH:40px;CURSOR:pointer;COLOR:#0055bb;LINE-HEIGHT:16px;TEXT-ALIGN:center}#quna_calendar TD A{DISPLAY:block;OVERFLOW:hidden;WIDTH:20px;LINE-HEIGHT:20px;HEIGHT:20px;TEXT-ALIGN:center}#quna_calendar .calendar_title01 SPAN{FLOAT:left;color:#FFF;}#quna_calendar .calendar_title01 DIV{FLOAT:left;color:#FFF;}#quna_calendar .calendar_title02 SPAN{FLOAT:right;color:#FFF;}#quna_calendar .calendar_title02 DIV{FLOAT:right;color:#FFF;}#quna_address{FONT-SIZE:12px;FONT-FAMILY:Arial,Simsun;}#quna_address #address_warp{BORDER-RIGHT:#7f9db9 1px solid;PADDING-RIGHT:4px;BORDER-TOP:#7f9db9 1px solid;PADDING-LEFT:4px;MIN-HEIGHT:305px;BACKGROUND:#fff;PADDING-BOTTOM:4px;MARGIN:0px;BORDER-LEFT:#7f9db9 1px solid;WIDTH:220px;PADDING-TOP:4px;BORDER-BOTTOM:#7f9db9 1px solid;TEXT-ALIGN:left;}HTML #quna_address #address_warp{HEIGHT:305px;}#quna_address #address_message{PADDING-RIGHT:0px;DISPLAY:block;PADDING-LEFT:5px;PADDING-BOTTOM:0px;WIDTH:207px;COLOR:#666;white-space:normal;LINE-HEIGHT:20px;PADDING-TOP:0px;BORDER-BOTTOM:#aaa 1px dashed;}#quna_address #address_list{PADDING-RIGHT:0px;PADDING-LEFT:0px;MIN-HEIGHT:277px;PADDING-BOTTOM:0px;MARGIN:5px 0px 0px;PADDING-TOP:0px}HTML #quna_address #address_list{HEIGHT:277px}#quna_address #address_list SPAN{PADDING-RIGHT:0px;PADDING-LEFT:0px;FLOAT:left;PADDING-BOTTOM:0px;MARGIN:0px;PADDING-TOP:0px;TEXT-ALIGN:left}#quna_address #address_list A{PADDING-RIGHT:5px;BORDER-TOP:#fff 1px solid;DISPLAY:block;PADDING-LEFT:5px;MIN-HEIGHT:20px;PADDING-BOTTOM:0px;CURSOR:pointer;COLOR:#0055bb;LINE-HEIGHT:20px;PADDING-TOP:1px;BORDER-BOTTOM:#fff 1px solid;TEXT-ALIGN:right;TEXT-DECORATION:none}HTML #quna_address #address_list A{HEIGHT:20px}#quna_address #address_list A:hover{BORDER-TOP:#7f9db9 1px solid;BACKGROUND:#e7f1fd;BORDER-BOTTOM:#7f9db9 1px solid}#quna_address .address_selected{BORDER-TOP:#c8e3fc 1px solid;BACKGROUND:#b2dcff;COLOR:#fff;BORDER-BOTTOM:#c8e3fc 1px solid}#quna_address .address_pagebreak{PADDING-RIGHT:0px;DISPLAY:none;PADDING-LEFT:0px;PADDING-BOTTOM:0px;MARGIN:0px;LINE-HEIGHT:25px;PADDING-TOP:0px;TEXT-ALIGN:center}#quna_address .address_pagebreak A{PADDING-RIGHT:4px;PADDING-LEFT:4px;FONT-SIZE:14px;PADDING-BOTTOM:0px;MARGIN:0px;COLOR:#0055bb;PADDING-TOP:0px;FONT-FAMILY:Arial,Simsun,sans-serif;TEXT-DECORATION:underline}#quna_address #address_arrowl{COLOR:#0055bb}#quna_address #address_arrowr{COLOR:#0055bb}#quna_address A.address_current{COLOR:black;TEXT-DECORATION:none}#quna_calendar .bg1{background:url(http://images.laidingba.com/date/1.gif) no-repeat 10px 25px;}#quna_calendar .bg2{background:url(http://images.laidingba.com/date/2.gif) no-repeat 10px 25px;}#quna_calendar .bg3{background:url(http://images.laidingba.com/date/3.gif) no-repeat 10px 25px;}#quna_calendar .bg4{background:url(http://images.laidingba.com/date/4.gif) no-repeat 10px 25px;}#quna_calendar .bg5{background:url(http://images.laidingba.com/date/5.gif) no-repeat 10px 25px;}#quna_calendar .bg6{background:url(http://images.laidingba.com/date/6.gif) no-repeat 10px 25px;}#quna_calendar .bg7{background:url(http://images.laidingba.com/date/7.gif) no-repeat 10px 25px;}#quna_calendar .bg8{background:url(http://images.laidingba.com/date/8.gif) no-repeat 10px 25px;}#quna_calendar .bg9{background:url(http://images.laidingba.com/date/9.gif) no-repeat 10px 25px;}#quna_calendar .bg10{background:url(http://images.laidingba.com/date/10.gif) no-repeat 10px 25px;}#quna_calendar .bg11{background:url(http://images.laidingba.com/date/11.gif) no-repeat 10px 25px;}#quna_calendar .bg12{background:url(http://images.laidingba.com/date/12.gif) no-repeat 10px 25px;}#quna_calendar .bg13{background:url(http://images.laidingba.com/date/1.gif) no-repeat 10px 25px;}#quna_calendar .spantile_right{background:url(http://images.laidingba.com/date/button_right.gif) no-repeat 25px 5px;}#quna_calendar .spantile_left{background:url(http://images.laidingba.com/date/button_left.gif) no-repeat 10px 5px;}
+/* 城市弹窗 */
+.select_city_box{width:360px;background:#196BB5;padding-bottom:2px;}
+.select_city_box_tit{height:30px;}
+.select_city_box_tit h3{float:left;line-height:30px;color:#fff;padding-left:10px;font-size:12px;}
+.select_city_box_tit span{float:left;line-height:30px;color:#fff;}
+.select_city_box_tit img{float:right;margin-right:10px;margin-top:10px;display:inline;}
+.select_city_box_item{background:#fff;margin:0 2px;overflow:hidden;zoom:1;}
+
+.select_city_box_tb{background:url(http://images.laidingba.com/0718/i_25.jpg) repeat-x;height:23px;margin:5px 5px 0;line-height:23px;}
+.select_city_box_tb span{float:left;width:56px;height:23px;text-align:center;cursor:pointer;}
+.select_city_box_tb span.select_city_box_tab{background:url(http://images.laidingba.com/0718/i_25.jpg) 0 -23px no-repeat;font-weight:bold;}
+
+.select_city_box_hot{overflow:hidden;zoom:1;padding:6px 0;padding-left:20px;}
+.select_city_box_hot li{float:left;width:40px;height:24px;line-height:24px;}
+.select_city_box_hot li a{color:#333;}
+.select_city_box_zm{overflow:hidden;zoom:1;padding:10px 0;}
+.select_city_box_zm div{overflow:hidden;zoom:1;}
+.select_city_box_zm div span{float:left;font-family:Verdana, Arial, Helvetica, sans-serif;margin-left:21px;display:inline;color:#f60;font-size:14px;line-height:17px;}
+.select_city_box_zm ul{float:left;width:300px;margin-left:3px;line-height:20px;}
+.select_city_box_zm li{float:left;margin-left:13px; white-space:nowrap;}
+.select_city_box_zm li a{color:#0059A4;}
+/* 分众样式 */
+.user_tips{position:absolute;right:0px;top:1000px;z-index:98;}
+.user_tips_bg{background:url(http://images.laidingba.com/0124/user_tips_24.png) no-repeat;_background:url(http://images.laidingba.com/0124/user_tips_8.png) no-repeat;width:234px;height:166px;overflow:hidden;}
+.user_tips_close{cursor:pointer;width:20px;height:20px;margin-top:50px;margin-left:185px;}
+.user_tips_click{cursor:pointer;width:210px;height:70px;margin-top:5px;margin-left:18px;}
+
+.user_help_tips{position:absolute;z-index:99;}
+.user_help_tips .close{cursor:pointer;width:36px;height:36px;margin-top:9px;margin-left:510px;}
+.user_help_tips a{display:block;height:37px;}
+.user_help_tips a:hover,.user_help_tips a.hover{background:url(http://images.laidingba.com/0124/user_help_tips_btn.jpg) no-repeat;}
+.user_help_tips_favorite{background:url(http://images.laidingba.com/0124/user_help_tips_favorite_24.png) no-repeat;_background:url(http://images.laidingba.com/0124/user_help_tips_favorite_8.png) no-repeat;width:564px;height:358px;overflow:hidden;}
+.user_help_tips_favorite .click{width:159px;height:37px;margin-top:119px;margin-left:43px;}
+.user_help_tips_favorite .click a{width:159px;}
+.user_help_tips_favorite .click a:hover{background-position:0 0;}
+.user_help_tips_copy{background:url(http://images.laidingba.com/0124/user_help_tips_copy_24.png) no-repeat;_background:url(http://images.laidingba.com/0124/user_help_tips_copy_8.png) no-repeat;width:564px;height:415px;overflow:hidden;}
+.user_help_tips_copy .click{width:119px;height:37px;margin-top:132px;margin-left:42px;}
+.user_help_tips_copy .click a{width:119px;}
+.user_help_tips_copy .click a:hover{background-position:0 -37px;}
+.user_help_tips_copy .click a.hover{background-position:0 -37px;}
+
+.temp1{ width:56px; height:56px;}
+.temp2{ width:56px; height:56px; margin-top:1px;}
+.temp3{ width:56px; height:56px; margin-top:1px;}
+
+.temp1:hover{ background:url(http://images.laidingba.com/h_top.jpg?v=1)  0 0;}
+.temp2:hover{ background:url(http://images.laidingba.com/h_top.jpg?v=1)  0 113px;}
+.temp3:hover{ background:url(http://images.laidingba.com/h_top.jpg?v=1)  0 56px;}

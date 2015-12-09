@@ -1,0 +1,35 @@
+﻿@{
+    
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+}
+@model Tuple<List<HotelProvinceInfo>, List<HotelCityDetailInfo>>
+@using Travelling.ViewModel.Travel
+@using Travelling.ViewModel.Dto.Hotel
+@section header{
+    <link type="text/css" href="~/Content/travel/hotelbrands.css" rel="stylesheet" />
+    <link type="text/css" href="~/Content/travel/hotel_brand.css" rel="stylesheet" />
+}
+<div id="MainContent">
+    <div class="wraper">
+        <div class="hotel_brand_tit2">
+            <h3>国内城市大全</h3>
+        </div>
+        <div class="hotel_brand_city">
+            @foreach (var p in Model.Item1)
+            {
+                <div>
+                    <span><a href="#" target="_blank" title="@p.ProvinceName">@p.ProvinceName</a></span>
+                    <ul>
+                        @foreach (var c in Model.Item2.Where(u => u.ProvinceID == p.ProvinceID).ToList())
+                        {
+                            <li><a href="@Html.Raw(string.Format("/city_{0}.html",c.CityID))" target="_blank" title="@c.CityName">@c.CityName</a></li>
+                        }
+
+                    </ul>
+                   
+                </div>
+            }
+            
+        </div>
+    </div>
+</div>

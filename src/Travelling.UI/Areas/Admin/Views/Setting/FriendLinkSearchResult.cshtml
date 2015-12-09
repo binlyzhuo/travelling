@@ -1,0 +1,87 @@
+﻿@using Travelling.ViewModel
+@using Travelling.ViewModel.Dto.Setting
+@using Travelling.Web.Helpers
+@model PageObjectResult<FriendLinkDto>
+
+<div id="messageContainer" style="position:fixed;top:90px;left:10px;z-index:999;width:500px;">
+    <div class="alert alert-block alert-success" style="display:none;" id="successMessage">
+        <button data-dismiss="alert" class="close" type="button">
+            <i class="icon-remove"></i>
+        </button>
+        <p>
+            <strong>
+                <i class="icon-ok"></i>
+                操作成功！
+            </strong>
+            You successfully read this important alert message.
+        </p>
+
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table id="hotelbrandinfotable" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+
+                            <th>网站名称</th>
+                            <th>网站链接</th>
+                            <th>网站联系人</th>
+                            <th>添加时间</th>
+                            <th>有效状态</th>
+                            <th>添加人</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var ct in Model.Items)
+                        {
+                            <tr>
+                                <td>@ct.Name</td>
+                                <td>@ct.LinkUrl</td>
+                                <td>@ct.LinkMan</td>
+                                <td>@ct.AddDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                                <td>@AceUIHelper.GetBoolZHState(ct.State)</td>
+                                <td>@ct.Creator</td>
+                                
+                                <td>
+                                    <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+                                        <input type="hidden" class="hiddenBrandID" value="@ct.ID" />
+                                        <button onclick="friendlinkedit(@ct.ID);" class="btn btn-xs btn-info editbtn">
+                                            <i class="icon-edit bigger-120"></i>
+                                        </button>
+                                        <button onclick="friendlinkdelete(@ct.ID);" class="btn btn-xs btn-danger">
+                                            <i class="icon-trash bigger-120"></i>
+                                        </button>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+                <div class="row">
+                    <div class="col-sm-7">
+
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="dataTables_paginate paging_bootstrap">
+                            @Html.ToPageList((int)Model.Page, (int)Model.PageSize, (int)Model.TotalCount, "friendlinksearch")
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /span -->
+    </div>
+    <!-- /row -->
+
+</div>

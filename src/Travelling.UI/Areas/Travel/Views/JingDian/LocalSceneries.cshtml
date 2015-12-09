@@ -1,0 +1,27 @@
+﻿@using Travelling.ViewModel.Dto.Ticket
+@using Travelling.Web.Helpers
+@model List<SceneryInfoDetail>
+<div class="tit">
+    <strong>
+        <a href="">周边热门排行</a>
+    </strong>
+    
+</div>
+<div class="sell_ranking">
+    <ul>
+
+        @for (int i = 1; i < Model.Count;i++ )
+        {
+            <li class="top3">
+                <i class="@Html.Raw("i"+i.ToString())"></i>
+                <span class="title">
+                    <a title="@Model[i].SceneryName" target="_blank" href="@SceneryTicketHelper.GetSceneryInfoUrl(Model[i].SceneryID)">@Model[i].SceneryName</a>
+                </span>
+                <span class="price">
+                    <em>¥<b>@Model[i].AmountAdvice</b></em>起
+                </span>
+            </li>
+        }
+    </ul>
+</div>
+

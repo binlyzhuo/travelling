@@ -1,0 +1,191 @@
+﻿@{
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+}
+@section header{
+    
+    <script type="text/javascript" src="~/Scripts/jquery.form.min.js"></script>
+    <script type="text/javascript" src="~/Areas/Travel/Js/index.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".SearchClsTag>li").each(function () {
+                $(this).click(function () {
+                    var mdi = $(this).attr("mdi");
+                    $(".SearchClsCn").hide();
+                    $(".SearchClsTag>li").removeClass("SearchClsTagAc");
+                    $(this).addClass("SearchClsTagAc");
+                    switch (Number(mdi)) {
+                        case 1:
+                            $("#jipiao_search").show();
+                            break;
+                        case 2:
+                            $("#hotel_search").show();
+                            break;
+                        case 3:
+                            $("#SearchClsCnHC").show();
+                            break;
+                        case 4:
+                            $("#SearchClsCnGL").show();
+                            break;
+                        case 5:
+                            $("#SearchClsCnMobile").show();
+                            break;
+                    }
+                });
+            });
+            $("body").on("click", function (e) {
+                $("#tanchu_address").hide();
+            });
+
+            $("ul#recommendhotelcities li a").each(function () {
+                $(this).click(function () {
+                    $(".HotelHotelList").hide();
+                    $("#block_city" + $(this).attr("data")).show();
+                    $("#recommendhotelcities li").removeClass("TabDefault GetTabDefault");
+                    $(this).parent("li").addClass("TabDefault GetTabDefault");
+                });
+            });
+
+            //items
+            $("ul#citytradearealist li a").each(function () {
+                $(this).click(function () {
+                    $(".TradeAreaList").hide();
+                    $("#block_trade_city" + $(this).attr("data")).show();
+                    $("#citytradearealist li").removeClass("TabDefault GetTabDefault");
+                    $(this).parent("li").addClass("TabDefault GetTabDefault");
+                });
+            });
+
+            $("#recommendhotelcitylist li a").each(function () {
+                $(this).click(function () {
+                    $(".recommendhotels").hide();
+                    $("#RecommendCityHotelList" + $(this).attr("data")).show();
+                    $("#recommendhotelcitylist li").removeClass("CommChTagCur");
+                    $(this).parent("li").addClass("CommChTagCur");
+                });
+            });
+
+            $("ul#hotsceneryprovinces li a").each(function () {
+                $(this).click(function () {
+                    $("ul.HotSceneryList").hide();
+                    $("#block_ticket_" + $(this).attr("data")).show();
+
+
+                    $("#hotsceneryprovinces li").removeClass("TabDefault");
+                    $(this).parent("li").addClass("TabDefault ");
+                });
+            });
+
+            $("ul#NearSceneryProvinces li a").each(function () {
+                $(this).click(function () {
+                     
+                    $("ul.NearSceneryList").hide();
+                    $("#nearscenery_" + $(this).attr("data")).show();
+
+
+                    $("#NearSceneryProvinces li").removeClass("TabDefault");
+                    $(this).parent("li").addClass("TabDefault ");
+                });
+            });
+
+            $("#address").click(function (e) {
+                e.stopPropagation();
+                $("#tanchu_address").show();
+            });
+
+            $("#brandHot li a").each(function (e) {
+                //e.stopPropagation();
+                $(this).click(function () {
+                    var id = $(this).attr("data");
+                    $(".brandClass").hide();
+                    $("#brand_" + id).show();
+                    $("#brandHot li").removeClass("TabDefault");
+                    $(this).parent("li").addClass("TabDefault");
+                });
+            });
+
+            $("#HotelQuickFindList li a").each(function () {
+                $(this).click(function () {
+                    var dataCityID = $(this).attr("data");
+                    $("#hiddenHotelQuickCityID").val(dataCityID);
+                    $("#HotelCityID").val(dataCityID);
+                    $(this).parent("li").siblings().removeClass("TabDefault");
+                    $(this).parent("li").addClass("TabDefault ");
+                });
+            });
+
+            $("#hotelfindtagslist a").each(function () {
+                $(this).click(function () {
+                    
+                    var hotelCityID = $("#hiddenHotelQuickCityID").val();
+                    var areaType = $(this).attr("data-id");
+                    var dataindex = $(this).attr("data-index");
+                    var islocation = $(this).attr("datatype");
+
+                    $.post("/Home/CityAreaInfos", { cityid: hotelCityID, areaCode: areaType,dataindex:dataindex,islocation:islocation }, function (rep) {
+                        $("#areainfocontainer").html(rep);
+                    });
+                });
+            });
+
+            
+        });
+
+        // image lazy load
+        $(function () {
+            $("img.lazy").lazyload({ event: "sporty" });
+        });
+        $(window).bind("load", function () {
+            var timeout = setTimeout(function () {
+                $("img.lazy").trigger("sporty")
+            }, 1000);
+        });
+    </script>
+}
+
+<div id="MainContent">
+    @Html.Action("SearchBox")
+    @Html.Action("HotelBrands")
+    @Html.Action("MainContent")
+</div>
+<script type="text/javascript" src="~/Scripts/fixdiv.js"></script>
+<script type="text/javascript" src="~/Scripts/address.js"></script>
+<script type="text/javascript" src="~/Scripts/calendar/calendar.js"></script>
+<script type="text/javascript">
+    var oDepDate = new Date();
+    var oBackDate = new Date(oDepDate.getFullYear(), oDepDate.getMonth(), oDepDate.getDate() + 2);
+    //出发时间实例
+    var oDepCal = new Calendar({
+        id: "#HotelInRoomDate",			//触发显示日历元素ID
+        isPopup: !0,					//弹出式日历
+        isPrevBtn: !0,					//显示上月按钮
+        isNextBtn: !0,					//显示下月按钮
+        isCloseBtn: !0,					//显示关闭按钮
+        isHoliday: !0,					//节假日特殊显示
+        isHolidayTips: !0,					//显示节假日1~3天/后1~3天信息
+        isDateInfo: !0,					//显示日期信息
+        isMessage: !0,					//有日历提示信息
+        isCalEnd: !0,					//标记为结束时间
+        dateInfoClass: "date-info-end",		//结束时间icon样式
+        range: { mindate: new Date(), maxdate: "2020-12-31" },	//限制范围（当天——2020-12-31）
+        count: 2,					//日历个数
+        monthStep: 1					//切换上下月日历步长
+    });
+
+    var oDepCal = new Calendar({
+        id: "#HotelLeaveRoomDate",			//触发显示日历元素ID
+        isPopup: !0,					//弹出式日历
+        isPrevBtn: !0,					//显示上月按钮
+        isNextBtn: !0,					//显示下月按钮
+        isCloseBtn: !0,					//显示关闭按钮
+        isHoliday: !0,					//节假日特殊显示
+        isHolidayTips: !0,					//显示节假日1~3天/后1~3天信息
+        isDateInfo: !0,					//显示日期信息
+        isMessage: !0,					//有日历提示信息
+        isCalEnd: !0,					//标记为结束时间
+        dateInfoClass: "date-info-end",		//结束时间icon样式
+        range: { mindate: new Date(), maxdate: "2020-12-31" },	//限制范围（当天——2020-12-31）
+        count: 2,					//日历个数
+        monthStep: 1					//切换上下月日历步长
+    });
+</script>

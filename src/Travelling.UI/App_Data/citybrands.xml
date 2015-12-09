@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<brands>
+  <brand name="7天连锁酒店" id="132">
+    <city id="1">北京</city>
+    <city id="2">上海</city>
+    <city id="477">武汉</city>
+    <city id="30">深圳</city>
+    <city id="28">成都</city>
+    <city id="1074">菏泽</city>
+    <city id="43">三亚</city>
+    <city id="34">昆明</city>
+    <city id="42">海口</city>
+    <city id="33">桂林</city>
+    <city id="25">厦门</city>
+    <city id="37">丽江</city>
+    <city id="5">哈尔滨</city>
+  <city id="533">烟台</city>
+  <city id="144">济南</city>
+  </brand>
+</brands>

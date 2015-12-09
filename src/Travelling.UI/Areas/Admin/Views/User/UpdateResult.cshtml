@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "UpdateResult";
+    Layout = "~/Areas/Admin/Views/Shared/_BaseAdminPage.cshtml";
+}
+@model bool
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home home-icon"></i>
+            <a href="#">控制面板</a>
+        </li>
+        <li>
+            <a href="#">账户信息</a>
+        </li>
+        <li class="active">修改密码</li>
+    </ul>
+    <!-- .breadcrumb -->
+    <div class="nav-search" id="nav-search">
+        <form class="form-search">
+            <span class="input-icon">
+                <input placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" type="text">
+                <i class="icon-search nav-search-icon"></i>
+            </span>
+        </form>
+    </div>
+    <!-- #nav-search -->
+</div>
+
+<div class="page-content">
+    @if (Model)
+    {
+        <div class="alert alert-block alert-success">
+
+            <p>
+                <strong>
+                    <i class="icon-ok"></i>
+                    Well done!
+                </strong>
+                You successfully read this important alert message.
+            </p>
+
+        </div>
+    }
+    else
+    {
+
+        <div class="alert alert-danger">
+            <button data-dismiss="alert" class="close" type="button">
+                <i class="icon-remove"></i>
+            </button>
+            <strong>
+                <i class="icon-remove"></i>
+                Oh snap!
+            </strong>
+            Change a few things up and try submitting again.
+            <br>
+        </div>
+    }
+</div>

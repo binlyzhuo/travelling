@@ -1,0 +1,43 @@
+﻿@using Travelling.ViewModel.Dto.Hotel
+@using Travelling.ViewModel.Travel
+@using Travelling.ViewModel.Hotel
+@using Travelling.Web.Helpers
+@model List<HotelBrandDetailInfo>
+@{
+    var brandValues = (from int val in Enum.GetValues(typeof(HotelBrandType))
+                       where val > 0
+                       select val).ToList();
+}
+<div class="KxContentRight">
+    <div class="HdBd">
+        <h2 class="Hd"><a target="_blank" href="#">品牌酒店榜</a></h2>
+        <ul id="brandHot" class="Tablist">
+            <li class="TabDefault GetTabDefault"><a href="javascript:void(0)" data="1">经济</a></li>
+            <li class=""><a href="javascript:void(0)" data="2">舒适</a></li>
+            <li class=""><a href="javascript:void(0)" data="3">高档</a></li>
+            <li class=""><a href="javascript:void(0)" data="4">豪华</a></li>
+        </ul>
+    </div>
+
+    @for (int i = 0; i < brandValues.Count; i++)
+    {
+        var brands = Model.Where(u => u.BrandType == brandValues[i]).ToList().OrderBy(u => u.OrderIndex).ToList();
+
+        <ul class="brandClass" id="brand_@(i+1)" style="@Html.Raw(i==0?"display:block;":"display:none;")">
+            @foreach (var h in brands)
+            {
+                <li>
+                    <a href="#" title="@h.BrandName" target="_blank">
+                        <img width="62" height="49" src="~/static/img/hotelbrand/@h.BrandImg" class="HotelRankImg">
+                    </a>
+                    <div class="HotelRankCont">
+                        <p>
+                            <a href="@string.Format("/pinpai_{0}.html",h.BrandID)" title="@string.Format("{0}预定",h.BrandName)" class="HotelRankHd HotelRank_Top1" target="_blank">@h.BrandName</a>
+                        </p>
+                        预订电话：@h.BrandTel
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+</div>

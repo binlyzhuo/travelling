@@ -1,0 +1,270 @@
+#footer{ margin-top:10px;}
+
+.step_order span{ position:relative; width:500px; float:left; height:32px; margin:10px 0 20px 0; border-bottom:5px solid #dedede; text-align:center; font-family:"Î¢ÈíÑÅºÚ"; font-size:18px; color:#999; z-index:1;}
+.step_order span.on{ width:500px; border-bottom:5px solid #58af0d; color:#555; z-index:2;}
+.step_order span i{ position:absolute; bottom:-10px; right:-7px; width:15px; height:15px; background:url(/Areas/Travel/Imgs/ico_order.png) no-repeat -15px 0; overflow:hidden; z-index:10;}
+.step_order span.on i{ background-position:0 0;}
+
+.order_con{ clear:both; width:100%; background:#f8f8f8; overflow:hidden; zoom:1;}
+.order_con .sideBar{ width:240px; float:left; padding:20px;}
+
+.sideBar .hotel_info dl{ padding:0 0 10px 0; margin-bottom:10px; border-bottom:1px dotted #e1e1e1; overflow:hidden; zoom:1;}
+.sideBar .hotel_info dt{ width:70px; float:left; margin-top:3px;}
+.sideBar .hotel_info dt img{ display:block; width:70px; height:70px; overflow:hidden;}
+.sideBar .hotel_info dd{ width:160px; float:left; padding-left:10px;}
+.sideBar .hotel_info dd span{}
+.sideBar .hotel_info dd em{ width:46px; float:right; color:#f60; font-family:"Î¢ÈíÑÅºÚ"; font-size:12px;}
+.sideBar .hotel_info dd em b{ font-size:14px; font-weight:bold;}
+.sideBar .hotel_info dd span a{ color:#36c;}
+.sideBar .hotel_info dd span a:hover{ color:#f60;}
+
+.sideBar .hotel_info dd i{ display:inline-block; width:55px; height:11px; margin:0 3px; color:#fff; background:url(/imgs/ico_star.png) no-repeat; overflow:hidden;}
+.sideBar .hotel_info dd i.color1{ width:auto; padding:1px; padding:2px 1px 0 1px\9; height:14px; line-height:14px; background:#92b66f;}
+.sideBar .hotel_info dd i.color2{ width:auto; padding:1px; padding:2px 1px 0 1px\9; height:14px; line-height:14px; background:#47a3e2;}
+.sideBar .hotel_info dd i.color3{ width:auto; padding:1px; padding:2px 1px 0 1px\9; height:14px; line-height:14px; background:#fdad57;}
+.sideBar .hotel_info dd i.star1{ background-position:0 -57px;}
+.sideBar .hotel_info dd i.star2{ background-position:0 -42px;}
+.sideBar .hotel_info dd i.star3{ background-position:0 -27px;}
+.sideBar .hotel_info dd i.star4{ background-position:0 -13px;}
+.sideBar .hotel_info dd i.star5{ background-position:0 0;}
+.sideBar .hotel_info dd i.star5e{ background-position:0 -70px;}
+.sideBar .hotel_info dd i.star4e{ background-position:0 -92px;}
+.sideBar .hotel_info dd i.star3e{ background-position:0 -114px;}
+.sideBar .hotel_info dd i.star2e{ background-position:0 -136px;}
+.sideBar .hotel_info dd i.star1e{ background-position:0 -158px;}
+.sideBar .hotel_info dd i.star5e1{ background-position:0 -81px;}
+.sideBar .hotel_info dd i.star4e1{ background-position:0 -103px;}
+.sideBar .hotel_info dd i.star3e1{ background-position:0 -125px;}
+.sideBar .hotel_info dd i.star2e1{ background-position:0 -147px;}
+.sideBar .hotel_info dd i.star1e1{ background-position:0 -169px;}
+
+
+
+.sideBar .hotel_info dd p{ clear:both; color:#777; line-height:24px;}
+.sideBar .hotel_info li{ line-height:24px;}
+.sideBar .hotel_info .lost{ padding-bottom:5px; _padding:10px 0; line-height:30px; color:#090; overflow:hidden;}
+.sideBar .hotel_info .lost i{ display:inline-block; margin-bottom:-3px; margin-right:5px; width:15px; height:15px; background:url(/imgs/ico_order.png) no-repeat -62px 0;}
+
+.sideBar .tips{ margin-bottom:10px; padding-top:10px; border-top:1px solid #ccc; color:#666;}
+.sideBar .tips span{ display:block; line-height:26px; color:#333;}
+.sideBar .tips em{ padding:0 3px; color:#f70; font-weight:bold;}
+
+
+
+.order_con .sideCon{ width:714px; float:left; border:3px solid #58af0d; overflow:hidden;}
+.sideCon .tit{ padding:6px 15px; color:#fff; background:#58af0d; overflow:hidden; zoom:1;}
+.sideCon .tit strong{ float:left; font-family:"Î¢ÈíÑÅºÚ"; font-size:20px; font-weight:normal;}
+.sideCon .tit span{ float:right; padding-top:8px; font-size:14px;}
+.sideCon .tit span a{ color:#fff; padding:0 10px;}
+
+.sideCon .addform{ width:654px; padding:20px 30px 10px 30px; background:#fff;}
+.addform .title{ clear:both; line-height:30px; border-bottom:2px solid #bfe1a3; color:#777; overflow:hidden;}
+.addform .title strong{ padding-left:12px; font-size:14px; color:#444;}
+.addform .txt{ padding:15px 0;}
+.addform .txt dl{}
+.addform .txt dt{ clear:both; width:90px; float:left; padding:5px 0; line-height:22px; text-align:right;}
+.addform .txt dt em{ padding-right:3px; color:#f00;}
+.addform .txt dd{ width:554px; float:left; padding:5px 0 5px 10px; line-height:22px; vertical-align:middle;}
+.addform .txt dd em.price{ padding-right:5px; color:#f60; font-family:"Î¢ÈíÑÅºÚ";}
+.addform .txt dd em.price b{ font-family:Arial; font-size:15px; font-weight:normal;}
+.addform .txt dd span.exp{ padding-left:10px; color:#777;}
+.addform .txt dd span.pd0{ padding:0;}
+.addform .txt dd .mr5{ margin-bottom:5px;}
+.addform .txt dd span i{ position:relative; display:inline-block; width:14px; height:14px; margin:0 3px; margin-bottom:-2px; background:url(/imgs/ico_order.png) no-repeat -47px 0;}
+.addform .txt dd label.error{ position:absolute; display:block; width:400px; margin-top:-24px; margin-left:140px; color:#f00; background:#fff;}
+.addform .txt dd span.riqi a{ color:#36c;}
+.addform .txt dd span.riqi_ok{ display:none;}
+.addform .txt dd span.riqi_ok a{ display:inline-block; width:60px; height:21px; text-align:center; background:url(/imgs/ico_order.png) no-repeat -67px -56px;}
+.addform .txt dd input.rz,.addform .txt dd input.tf{ width:80px; padding-left:3px; margin-right:3px;}
+
+.addform .txt .rates{margin-left:100px;}
+.addform .txt .rates dl{ width:100px; float:left;}
+.addform .txt .rates dt{width:100px; height:24px; text-align:center; border:1px solid #FBECAC; font-weight:normal; background:#FDF7DD;}
+.addform .txt .rates dd{ width:100px; font-family: Arial,Helvetica,sans-serif;line-height:1.4em;padding:5px 0;text-align: center; border:1px solid #FBECAC; border-top:0 none; color:#777;}
+.addform .txt .rates dd em{ padding-right:3px; font-family:"Î¢ÈíÑÅºÚ"; color:#f60;}
+.addform .txt .rates dd em b{ font-family:Arial; font-size:12px;}
+
+.detail_frame{ display:none; position:absolute; width:350px; border:1px solid #666; z-index:10000;}
+.detail_frame s{ position:absolute; top:-6px; right:47%; width:28px; height:9px; background:url(/imgs/ico_list.png) no-repeat -108px -165px; overflow:hidden;}
+.detail_frame .con{ padding:10px; border:3px solid #e8e8e8; color:#333; background:#fff;}
+
+.addform .txt dl{ position:relative; z-index:1;}
+.addform .txt dd input.text{ height:23px; line-height:23px; border-top:1px solid #999; border-right:1px solid #d0d0d0; border-bottom:1px solid #d0d0d0; border-left:1px solid #999; vertical-align:middle;}
+.addform .txt dd label{ clear:both; display:inline-block; float:left;}
+.addform .txt dd label input{ position:relative; bottom:-2px; margin-right:4px;}
+.addform .txt dd label em{ padding:0 3px; color:#f70; font-family:"Î¢ÈíÑÅºÚ"; font-weight:bold;}
+.addform .txt dd label b.tj{ padding:0 3px; color:#090;}
+.addform .txt dd label em b{ font-size:15px;}
+.addform .txt dd label s{ display:inline-block; width:15px; height:11px; margin:0 3px; background:url(/Areas/Travel/Imgs/ico_order.png) no-repeat -31px 0;}
+
+.addform .txt dd .w135{ display:inline-block; width:135px; float:left;}
+
+
+.addform .txt p{ clear:both; padding:10px 0 0 0;}
+.addform .txt p a{ padding:0 3px; color:#36c;}
+
+.addform .txt .danbao_tip{ width:600px; margin:0 auto 20px auto; padding:15px; border:1px dotted #dcdcdc; color:#787878; background:#fbfbfb;}
+.addform .btn{ width:614px; float:left; margin:15px auto 0 auto; padding:20px; text-align:center; border-top:1px dotted #dcdcdc; color:#090; overflow:hidden;}
+.addform .btn input.submit{ width:167px; height:39px; line-height:39px; margin-right:10px; font-weight:bold; color:#fff; font-size:14px; border:0 none; background:url(/Areas/Travel/Imgs/ico_order.png) no-repeat 0 -16px; cursor:pointer; vertical-align:middle;}
+
+.buttom_tip{ color:#999;}
+.buttom_tip a{ float:right; color:#36c;}
+.fi_fill{ display:none; height:80px; padding:10px; margin-bottom:15px; border:1px solid #ccc; color:#555; overflow-y:scroll;}
+
+.Validform_error{background-color:#ffe7e7;}
+
+
+/**** ¶©µ¥Ìá½»³É¹¦Ò³Ãæ *****/
+.success_box{ width:1119px; float:left; padding:30px 40px; border:1px solid #ffdbb0; background:#fff9e9; overflow:hidden;}
+.success_box .top{ min-height:50px; line-height:50px; padding-bottom:15px; border-bottom:1px dotted #ccc; color:#555; font-size:14px; font-weight:bold;}
+.success_box .top i{ display:inline-block; position:relative; margin-bottom:-15px; width:43px; height:43px; background:url(/Areas/Travel/Imgs/ico_order.png) no-repeat 0 -56px; overflow:hidden;}
+.success_box .top i.error{width:40px; float:left;height:40px; margin:6px 10px 0 0; display:inline;background:url(/imgs/ico_list.png) no-repeat -136px -132px;}
+.success_box .top a{ color:#36c;}
+.success_box .top a:hover{ color:#f70;}
+.success_box dl{ width:450px; float:left; padding-top:20px; line-height:24px;}
+.success_box dt{ clear:both; float:left; padding-right:15px; color:#999;}
+.success_box dd span{ display:inline-block; width:350px; padding-top:4px; line-height:18px;}
+.success_box dd em{ color:#f70; font-family:"Î¢ÈíÑÅºÚ";}
+.success_box dd em b{ font-family:Arial; font-size:15px;}
+
+
+.success_box p{ padding-top:20px; line-height:18px; color:#777;}
+.success_box p span{ display:block; color:#333; line-height:24px;}
+.success_box p em{ padding:0 3px; color:#f70; font-weight:bold;}
+
+.orderIng{ float:right; _padding:10px 0; line-height:40px; color:#aaa; overflow:hidden;}
+.orderIng span{ padding:0 10px;}
+.orderIng span i{ display:inline-block; position:relative; margin-bottom:-5px; margin-right:5px; width:22px; height:17px; background:url(/imgs/ico_order.png) no-repeat -44px -56px; overflow:hidden;}
+.orderIng span i.i1{ background-position:-44px -56px}
+.orderIng span i.i2{ background-position:-44px -75px;}
+.orderIng span a{ color:#36c;}
+.orderIng span a:hover{ color:#f70;}
+
+
+
+.hot_box{ clear:both;}
+.hot_box .tit{ line-height:30px;}
+.hot_box .tit strong{ float:left; font-size:14px; color:#555;}
+.hot_box .tit a.more{ float:right; padding-right:10px; color:#999;}
+.hot_box .tit a:hover{ color:#f70;}
+
+.hot_box .txt{ clear:both; width:950px; padding:24px 24px 10px 24px; border:1px solid #ccc; border-top:2px solid #090; overflow:hidden;}
+.hot_box .txt ul.xianlu{ width:1100px;}
+.hot_box .txt .xianlu li{ width:170px; float:left; margin-right:24px;}
+.hot_box .txt .xianlu li a{ display:block; height:146px; line-height:16px; overflow:hidden;}
+.hot_box .txt .xianlu li img{ width:170px; height:110px; overflow:hidden;}
+.hot_box .txt .xianlu li span{ color:#f70;}
+.hot_box .txt .xianlu li span b{ font-size:18px;}
+
+.hot_box .txt dl{ width:630px; float:left; padding:0 0 15px 0;}
+.hot_box .txt dt{ width:105px; float:left;}
+.hot_box .txt dd{ width:485px; float:left; padding:0 25px 0 15px;}
+.hot_box .txt dd a{ font-size:14px; color:#36c;}
+.hot_box .txt dd a:hover{ color:#f70;}
+.hot_box .txt dd p{ color:#999;}
+.hot_box .txt dd p a{ font-size:12px; color:#999; text-decoration:underline;}
+
+.hot_box .txt ul.actrile{ width:320px; float:right;}
+.hot_box .txt .actrile li{ display:block; height:24px; line-height:24px; overflow:hidden;}
+.hot_box .txt .actrile li a{ color:#555;}
+.hot_box .txt .actrile li a.zhuti{ float:left; padding:0 5px; color:#36c;}
+
+.red{color:silver}
+
+.fl{float:left;}
+.fr{float:right;}
+.tl{ text-align:left;}
+.tr{ text-align:right;}
+.mr5{ margin-right:5px;}
+.ml5{ margin-left:5px;}
+.normal{ font-weight:normal;}
+
+.o{width:654px;border:1px #efefef solid;padding-top:5px}
+.o .t{border-bottom:1px #efefef solid}
+.o .t th{background:#f4f4f4;height:26px;line-height:26px;border-bottom:1px #ccc solid;text-align:center;color:#333}
+.o .t th.b{border-right:2px #fff solid}
+.o .t td{background:#ffffe3;padding:10px 0;text-align:center}
+.o .t td .money{font-family:"Î¢ÈíÑÅºÚ"}
+.o .t td em.sub,.o .t td em.add{background:url(/imgs/tuan/bg.png?t=201305082104) no-repeat;width:21px;height:22px;cursor:pointer;overflow:hidden;float:left}
+.o .t td em.sub{background-position:-138px -353px}
+.o .t td em.add{background-position:-160px -353px}
+.o .t td .input-text{width:40px;height:20px;font-size:12px;line-height:20px;text-align:center;border:1px #bbb solid;float:left}
+.o .t td a{color:#333}
+.o .t td .tl{width:128px}
+.o .t td .tl img{width:118px;height:74px;padding:4px;background:#fff;border:1px #ccc solid}
+.o .t td .tr{width:229px;_width:286px;text-align:left;position:relative}
+.o .t td .tr div.d{width:297px;_width:286px;line-height:20px;float:left;position:relative;z-index:1}
+.o .t td .tr div.d a{ color:#16b;}
+.o .t td .tr div#onlineDesc{position:relative;z-index:2}
+.o .t td .tr i{background:url(../imgs/tuan/bg.png?t=201305082104) no-repeat -300px -217px;width:14px;height:14px;margin-top:2px;margin-right:2px}
+.o .t td .tr a{cursor:pointer}
+.o .t td .tr a#ShowAllDetail{color:#06c}
+.o .t td .tr a#ShowAllDetail i{background:url(/imgs/tuan/bg.png?t=201305082104) no-repeat -319px -219px;width:5px;height:9px;position:absolute;top:4px;top:3px\9;left:51px}
+.o .t td .tr .f1{color:#333}
+.o .t td .tr .f2{text-decoration:line-through;color:#666}
+.o .t td .tr .com_way{position:absolute;top:-42px;left:-15px;z-index:3}
+.o .t td .tr .com_way .bk_top_1{padding:0 10px;overflow:hidden}
+.o .t td .crp{padding-right:12px;text-align:right}
+.o tr.tpri td{background:0;border-top:1px #efefef solid}
+.dealprice{width:100%;color:#333;font-weight:bold;text-align:right;margin-right:25px;padding:5px 0}
+.dealprice span{color:#f60;font-size:24px;font-family:"Microsoft YaHei";margin-left:5px;margin-right:5px}
+
+
+
+.enter-mobile{width:100%;padding:10px 0;position:relative; overflow:hidden;z-index:2}
+.enter-mobile .nschlist{width:200px;margin-top:-7px;_margin-top:-6px;margin-left:65px;_margin-left:68px;position:absolute;border:1px #ccc solid;border-top:0;background:#fff}
+.enter-mobile .nschlist li{width:190px;height:20px;line-height:20px;padding:0 5px;float:left;cursor:pointer}
+.enter-mobile .nschlist li:hover{background:#e8f4fc}
+h3{background:url(/imgs/tuan/icon.png?t=201305082104) repeat-x 0 -878px;width:634px;height:31px;line-height:31px;margin:10px 0;padding:0 10px;color:#333;font-weight:bold;overflow:hidden}
+h4{width:100%;padding:15px 0;color:#333;font-size:14px;font-weight:bold;overflow:hidden}
+.enter-mobile .text1{width:300px;height:30px;line-height:30px;margin-right:5px;margin-bottom:5px;overflow:hidden}
+.enter-mobile .text1 font{width:65px;text-align:right;}
+.enter-mobile .text1 input{background:url(../pic/icon.png?t=201305082104) repeat-x 0 -912px;width:190px;height:26px;line-height:26px;padding:0 5px;font-size:14px;border:1px #ccc solid;color:#999}
+.enter-mobile .text1 em.red{ color:#f60;}
+.enter-mobile .text0{width:600px;position:relative;margin-top:5px;float:left}
+.enter-mobile .text0 span{width:96px;line-height:24px;text-align:right;float:left}
+.enter-mobile .text0 input{width:184px;padding:0 5px;height:24px;line-height:24px;color:#666;margin-right:5px;margin-bottom:5px;border:1px #ccc solid}
+.enter-mobile .text0 input.yzm{width:60px;float:left}
+.enter-mobile .text0 input.yzm2{width:145px}
+.enter-mobile .text0 img{position:absolute;left:170px;top:0}
+.enter-mobile .text0 a{position:absolute;left:240px;top:5px;text-decoration:underline}
+.enter-mobile .t0ml90{padding-left:45px}
+.enter-mobile .text0 .btn0{background:#eee;width:120px;height:26px;line-height:26px;*line-height:24px;line-height:28px\0;color:#000;border:1px #afafaf solid;cursor:pointer}
+.enter-mobile .text0 .btn0_an{background:#ccc;width:120px;height:26px;line-height:26px;*line-height:24px;line-height:28px\0;color:#000;border:1px #afafaf solid;cursor:pointer}
+
+
+
+.ticket_tip{}
+.ticket_tip p{ padding-bottom:5px;}
+.ticket_tip p i{ display:inline-block; margin:0 3px -2px 0; width:14px; height:14px; cursor:pointer; background:url(/imgs/tuan/ico_tuan.png) no-repeat -86px -37px;}
+.ticket_tip .hideBox{ display:none; overflow:hidden;}
+.ticket_tip .hideBox dl{ display:block; width:634px; padding:5px 0 0 0; overflow:hidden;}
+.ticket_tip .hideBox dt{ width:70px; float:left; line-height:30px;}
+.ticket_tip .hideBox dd{ width:564px; float:left;}
+.ticket_tip .hideBox dd span{ display:block; padding:5px 0;}
+.ticket_tip .hideBox em{ padding-right:3px; color:#f60;}
+.ticket_tip .hideBox dd input.text{ height:23px; line-height:23px; border-top:1px solid #999; border-right:1px solid #d0d0d0; border-bottom:1px solid #d0d0d0; border-left:1px solid #999; vertical-align:middle;}
+
+
+
+
+.open .hideBox{ display:block; padding:10px; background:#EFF8FF;}
+.open p i{ background:url(/imgs/tuan/ico_tuan.png) no-repeat -100px -37px;}
+
+.pay_zfb{ clear:both; float:left; padding:10px 0 10px 200px;}
+.pay_zfb i.ico_zfb{ display:inline-block; width:80px; float:left; height:36px; background:url(/imgs/tuan/ico_tuan.png) no-repeat -118px 0;}
+.pay_zfb a.btn{ display:inline-block; width:118px; height:36px; margin:0; padding:0; border:0 none; background:url(/imgs/tuan/ico_tuan.png) no-repeat 0 0;}
+
+/* µ¯´°Ð§¹û */
+.popBg{ display:none; position:fixed; _position:absolute; top:0; left:0; margin:0; padding:0; background:#000; filter:Alpha(opacity=50); -moz-opacity:0.5; opacity:0.5; z-index:2; zoom:1;}
+#popBox{ display:none; text-align:center; position:fixed; _position:absolute; width:500px; height:auto; color:#555; border:8px solid #ccc; border-radius:8px; background:#fff; z-index:3;}
+#popBox a.close{ display:inline-block; position:absolute; top:10px; right:10px; width:9px; height:9px; background:url(/imgs/tuan/ico_tuan.png) no-repeat -125px -38px; overflow:hidden; cursor:pointer;}
+#popBox .popTop{ display:block; width:100%; height:30px; line-height:30px; text-align:left; background:#1094dd;}
+#popBox .popTop strong{ padding-left:10px; color:#fff; font-size:14px;}
+#popBox .popCon{ padding:20px; text-align:left; overflow:hidden;}
+#popBox .popCon p{ padding:3px 0; margin:5px 0; line-height:24px; font-size:14px; border-bottom:1px solid #ddd;}
+#popBox .popCon p span{ width:80px; float:left;}
+
+
+
+

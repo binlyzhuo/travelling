@@ -1,0 +1,102 @@
+﻿@model ZhunaHotelPriceReturnEntity
+@using Travelling.OpenApiEntity.Zhuna
+@using Travelling.Web.Helpers
+@{
+    ZhunaHotelPriceReturnEntity roomplan = Model;
+    List<ZhunaHotelRoomInfo> roomrates = roomplan.rooms;
+}
+<div class="htl_room_table">
+    <table border="0" cellspacing="0" cellpadding="0" summary="详情页酒店房型列表">
+        <tbody>
+            <tr>
+                <th style="padding-left:10px;" class="col1">房型</th>
+                <th class="col3"></th>
+                <th class="col4">床型</th>
+                <th class="col4">早餐</th>
+                <th class="col5">宽带</th>
+                <th class="col_policy">政策</th>
+                <th class="col6">房价（含服务费）</th>
+                <th class="col3">付款方式</th>
+                <th class="col7"></th>
+            </tr>
+            @foreach (var r in roomrates)
+            {
+                string roomimg = r.img != null && r.img.Count > 0 ? r.img[0].imgurl : "";
+                string amount = "";
+                bool bookState = true;
+                if (r.AvailableAmount == "订完")
+                {
+                    int days = (roomplan.tm1.AsDateTime() - roomplan.tm1.AsDateTime()).Days;
+                    if (days <= 0)
+                    {
+
+                        days = 1;
+                    }
+                    amount = (r.plans[0].totalprice / days).ToString();
+                    bookState = false;
+                }
+                else
+                {
+                    amount = r.plans[0].date[0].price;
+                }
+                <tr class="last_room">
+                    <td rowspan="1" class="room_type">
+                        <a href="javascript:void(0);" rel="nofollow" class="pic">
+                            <img style="border-width:0;" src="@string.Format("http://tp1.znimg.com{0}", roomimg)">
+                        </a>
+                        <a>
+                            @r.title
+                        </a>
+                        <a href="javascript:void(0);" class="room_unfold" rel="nofollow">查看详情</a>
+                    </td>
+                    <td class="child_name">标准价格</td>
+                    <td><span class="room_type_name">@r.bed</span></td>
+                    <td>@r.plans[0].planname</td>
+                    <td><span class="net_free">@r.adsl</span></td>
+                    <td><span class="room_policy">免费取消</span></td>
+                    <td>
+                        <span class="price_box">
+                            <span class="base_price">
+                                <dfn>¥</dfn>
+                                <var class="p_h57_4">@amount</var>
+                            </span>
+                        </span>
+                    </td>
+                    <td>酒店到付</td>
+                    <td class="col7" id="@string.Format("RoomBook_{0}",r.rid)">
+                        @if (bookState)
+                        {
+                            <a href="@ZhunaHotelHelper.ZhunaHotelOrderPage(Model.hotelid, r.rid, r.plans[0].planid, DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"))" rel="nofollow" target="_blank" class="btn_buy">预定</a>
+                        }
+                        else
+                        {
+                            <a style="color:#f60;">订完</a>
+                        }
+
+                    </td>
+                </tr>
+                <tr class="hidden roomdetailinfo">
+                    <td colspan="8">
+                        <div class="searchresult_caption basefix">
+                            <div class="pic_s">
+                                <img title="" src="@roomimg">
+                            </div>
+
+                            <div>
+                                <ul class="searchresult_caplist">
+                                    <li class="" title="@Html.Raw(string.Format("建筑面积：{0}平方米",r.area))">@Html.Raw(string.Format("建筑面积：{0}平方米", r.area))</li>
+                                    <li class="" title="@Html.Raw(string.Format("楼层：{0}层",r.floor))">@Html.Raw(string.Format("楼层：{0}层", r.floor))</li>
+                                    <li class="" title="@Html.Raw(string.Format("床型：{0}",r.bed))">@Html.Raw(string.Format("床型：{0}", r.bed))</li>
+
+                                </ul>
+
+                            </div>
+                            <a href="javascript:void(0);" class="show_fold">收起</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

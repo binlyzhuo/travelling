@@ -1,0 +1,463 @@
+﻿@using Travelling.Domain
+@using Travelling.ViewModel.Travel
+@using Travelling.FrameWork
+@using Travelling.OpenApiEntity.Ctrip.Hotel.Module
+@using Travelling.OpenApiEntity.Ctrip.Enums
+@using Travelling.ViewModel.Dto.Hotel
+@using Travelling.ViewModel.Hotel
+@using Travelling.Web.Helpers
+@model HotelRoomBookInfo
+@{
+    ViewBag.Title = "酒店预定";
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+    HotelRoomPrimaryInfo roomInfo = ViewBag.RoomInfo;
+    HotelPolicy policyInfo = ViewBag.PolicyInfo;
+
+    var roomPrices = ViewBag.RoomPriceList as List<RoomRate>;
+}
+@section header
+{
+    <link type="text/css" href="~/Content/travel/pri_book.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/jquery.form.min.js"></script>
+    
+    <style type="text/css">
+        .ErrorMessage{color:red;font-size:20px; text-align:center;}
+    </style>
+    <script type="text/javascript">
+        var checkValid = true;
+        function warning(obj) {
+            if ($.trim($(obj).val()) != "") {
+                $(obj).removeClass("input_error");
+                checkValid = true;
+            }
+            else
+            {
+                $(obj).addClass("input_error");
+                $("#customerNameTips").show();
+                checkValid = false;
+            }
+        }
+
+        function contactPeroncheck() {
+            if ($.trim($("#txtContactName").val()) != "") {
+                $("#txtContactName").removeClass("input_error");
+                $("#bookcontactPerson").hide();
+            }
+            else
+            {
+                $("#bookcontactPerson").show();
+                $("#txtContactName").addClass("input_error");
+            }
+        }
+
+        function contactTelCheck() {
+            if ($.trim($("#txtContactMobilePhone").val()) != "") {
+                $("#txtContactMobilePhone").removeClass("input_error");
+                $("#bookTelPhoneWarning").hide();
+            }
+            else {
+                $("#bookTelPhoneWarning").show();
+                $("#txtContactMobilePhone").addClass("input_error");
+            }
+        }
+        
+        $(function () {
+            GetCustomerInputs();
+            loadReceiveTimes();
+        });
+
+        function ResetMsgBox() {
+            $("#loadingBox").html('<img src="/Imgs/common/loading14.gif" />');
+        }
+
+        
+        function ValidateData() {
+
+            $("#customerNameTips").hide();
+            $("#bookcontactPerson").hide();
+            $("#bookTelPhoneWarning").hide();
+            var checkCustomer = true;
+            $("#userInput input[type='text']").each(function () {
+                if ($.trim($(this).val()) == "") {
+                    $(this).addClass('input_error');
+                    $("#customerNameTips").show();
+                    checkCustomer = false;
+                    return false;
+                }
+            });
+            if (!checkCustomer)
+            {
+                return checkCustomer;
+            }
+            if ($.trim($("#txtContactName").val()) == "") {
+                $("#txtContactName").addClass('input_error');
+                $("#bookcontactPerson").show();
+                return false;
+            }
+
+            if ($.trim($("#txtContactMobilePhone").val()) == "") {
+                $("#txtContactMobilePhone").addClass('input_error');
+                $("#bookTelPhoneWarning").show();
+                return false;
+            }
+            $("#btnSubmitForm").attr('disabled',false);
+            return true;
+        }
+
+        function loadErrors() {
+            $(".input_error").each(function () {
+                $(this).removeClass("input_error");
+            });
+        }
+
+        function ChangeAmount() {
+            var roomCount = Number($("#ddlRoomCount").val());
+            var amountPerRoom = Number($("#AmountBeforeTax").val());
+            var totalAmount = roomCount * amountPerRoom;
+            $("#roomTotalPriceRMB").html(totalAmount);
+
+            $(".customerName").each(function () {
+                $(this).hide();
+            });
+            for (var index = 1; index <= roomCount * 2; index++) {
+                $("#J_resident_" + index).show();
+            }
+        }
+
+        function GetCustomerInputs() {
+            var roomCount = $("#ddlRoomCount").val();
+            var perRoomAmount = $("#AmountBeforeTax").val();
+            var startDate = $("#J_date_1").val();
+            var endDate = $("#J_date_2").val();
+
+            $("#roomTotalPriceRMB").html(roomCount * perRoomAmount);
+            $("#totalPrice").html(roomCount * perRoomAmount);
+            $.get("/JiuDian/GetCustomerInputs", { "customerCount": roomCount, "beginDate": startDate, "endDate": endDate }, function (data) {
+                $("#userInput").html(data.Item1);
+                $("#sideInfo").html("入住" + data.Item2 + "晚，" + data.Item3 + "间客房");
+            });
+
+        }
+
+        function loadReceiveTimes() {
+            var dt = $("#BeforeCheckInTime").val();
+            var selectDate = $("#J_date_1").val();
+            $.get("/JiuDian/GetReceiveTimeList", { "startDate": selectDate }, function (data) {
+                //alert('ok!!!');
+
+                $("#BeforeCheckInTime").html(data.left);
+                $("#LastCheckInTime").html(data.right);
+            });
+        }
+
+        function getNextTimes() {
+            $.get("/JiuDian/GetNextTimes", { "selectTime": $("#BeforeCheckInTime").val() }, function (data) {
+                $("#LastCheckInTime").html(data);
+            });
+        }
+
+        function editBookDate() {
+            $("#customerBookDate").hide();
+            $("#customerEditBookDate").show();
+            var oDepDate = new Date();
+            var oBackDate = new Date(oDepDate.getFullYear(), oDepDate.getMonth(), oDepDate.getDate() + 2);
+            //出发时间实例
+            var oDepCal1 = new Calendar({
+                id: "#J_date_1",			//触发显示日历元素ID
+                isPopup: !0,					//弹出式日历
+                isPrevBtn: !0,					//显示上月按钮
+                isNextBtn: !0,					//显示下月按钮
+                isCloseBtn: !0,					//显示关闭按钮
+                isHoliday: !0,					//节假日特殊显示
+                isHolidayTips: !0,					//显示节假日1~3天/后1~3天信息
+                isDateInfo: !0,					//显示日期信息
+                isMessage: !0,					//有日历提示信息
+                isCalEnd: !0,					//标记为结束时间
+                dateInfoClass: "date-info-end",		//结束时间icon样式
+                range: { mindate: new Date(), maxdate: "2020-12-31" },	//限制范围（当天——2020-12-31）
+                count: 2,					//日历个数
+                monthStep: 1					//切换上下月日历步长
+            });
+
+            oDepCal1.on("hide", function () {
+                //var selectDate = $("#J_date_1").val();
+                // loadReceiveTimes();
+            });
+
+
+
+            var oDepCal = new Calendar({
+                id: "#J_date_2",			//触发显示日历元素ID
+                isPopup: !0,					//弹出式日历
+                isPrevBtn: !0,					//显示上月按钮
+                isNextBtn: !0,					//显示下月按钮
+                isCloseBtn: !0,					//显示关闭按钮
+                isHoliday: !0,					//节假日特殊显示
+                isHolidayTips: !0,					//显示节假日1~3天/后1~3天信息
+                isDateInfo: !0,					//显示日期信息
+                isMessage: !0,					//有日历提示信息
+                isCalEnd: !0,					//标记为结束时间
+                dateInfoClass: "date-info-end",		//结束时间icon样式
+                range: { mindate: new Date(), maxdate: "2020-12-31" },	//限制范围（当天——2020-12-31）
+                count: 2,					//日历个数
+                monthStep: 1					//切换上下月日历步长
+            });
+           
+        }
+
+        function confirmBookDate() {
+            var checkInDate = $("#J_date_1").val();
+            var checkoutDate = $("#J_date_2").val();
+
+            //alert(checkInDate + checkoutDate);
+            window.location.href = "hotelorder_@Html.Raw(Model.HotelCode+"_"+Model.RoomTypeCode)_" + checkInDate + "_" + checkoutDate+".html";
+        }
+
+        function submitHotelOrder() {
+            $("#bookpostform").submit();
+            $("#btnSubmitForm").attr('disabled', 'disabled');
+        }
+    </script>
+}
+<div id="MainContent">
+    
+    <div id="base_bd">
+        <div id="processNoPay" class="book_process2 process_step1">
+            <ol>
+                <li class="step1">填写</li>
+                <li id="step2" class="step2">成功</li>
+            </ol>
+        </div>
+        
+        <div class="ErrorMessage" style="display:none;" id="loadingBox">
+            <img src="/Imgs/common/loading14.gif" />
+        </div>
+        <h1 class="base_title">@roomInfo.HotelName</h1>
+        <form action="/JiuDian/Order" id="bookpostform" method="post" onsubmit="return ValidateData();">
+            <div class="base_box">
+                <div class="base_container">
+                    <div class="base_main">
+                        <div class="book_form">
+                            <table class="book_table">
+                                <tbody>
+                                    <tr>
+                                        <th class="book_table_th">
+                                            <span>预订信息</span>
+                                            <input type="hidden" id="hidCheckinDate" name="InRoomDate" value="@Model.InRoomDate.ToString("yyyy-MM-dd")" />
+                                            <input type="hidden" id="hidCheckOutDate" name="OffRoomDate" value="@Model.OffRoomDate.ToString("yyyy-MM-dd")" />
+
+                                            <input type="hidden" id="hidRoomTypeName" name="RoomTypeName" value="@roomInfo.RoomTypeName"/></th>
+                                        <td class="book_table_td">
+                                            <div class="b_users">
+                                                <table class="book_table_form book_users">
+                                                    <tbody>
+                                                        <tr id="customerEditBookDate" style="display:none;">
+                                                            <th class="book_table_label"><span>入离日期</span></th>
+                                                            <td style="padding-top: 8px;" class="book_table_input">
+                                                                <div class="SearchInpHeight">
+
+                                                                    <div class="FlightSPosBd">
+                                                                        <input id="J_date_1" type="text" readonly="readonly" class="f-text datestyle" value="@Model.InRoomDate.ToString("yyyy-MM-dd")" name="InRoomDate2" autocomplete="off" />
+
+                                                                    </div>
+
+
+                                                                    <div style="float:left;width:30px; text-align:center;">至</div>
+                                                                    <div class="FlightSPosBd">
+                                                                        <input id="J_date_2" readonly="readonly" type="text" name="OffRoomDate2" class="f-text datestyle" value="@Model.OffRoomDate.ToString("yyyy-MM-dd")" autocomplete="off" />
+                                                                    </div>
+                                                                    <div style="width:50px;float:left;margin-left:10px">
+                                                                        <a id="btnConfirmDate" onclick="confirmBookDate();" class="b_date_change" href="#">确认修改</a>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="customerBookDate">
+                                                            <th class="book_table_label"><span>入离日期</span></th>
+                                                            <td style="padding-top: 8px;" class="book_table_input">
+                                                                
+                                                                <div class="SearchInpHeight" id="customerBookDate">
+                                                                    <div id="pnlDisplayDate" class="b_date">
+                                                                        <span id="J_dateFrom" class="b_date_in">@Model.InRoomDate.ToString("yyyy-MM-dd")</span>至
+                                                                        <span id="J_dateTo" class="b_date_out">@Model.OffRoomDate.ToString("yyyy-MM-dd")</span>
+                                                                        <span class="b_date_num">@Html.Raw((Model.OffRoomDate - Model.InRoomDate).TotalDays)晚</span>
+                                                                        <a id="btnModifyDate" class="b_date_change" onclick="editBookDate();" href="javascript:;">修改日期</a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th class="book_table_label">房价参考：</th>
+                                                            <td>
+                                                                <div class="rates">
+
+                                                                    @foreach (var p in roomPrices)
+                                                                    {
+                                                                        <dl>
+                                                                            <dt>@Html.Raw(string.Format("{0}({1})",p.StartTime.ToString("MM月dd日"),p.StartTime.GetChineseWeekName("周")))</dt>
+                                                                            <dd><em>￥<b>@p.AmountBeforeTax</b></em>@HotelInfoHelper.GetBreakfastTypeName(p.NumberOfBreakfast)</dd>
+                                                                        </dl>
+                                                                    }
+                                                                    
+                                                                </div>
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th class="book_table_label">
+                                                                <span>房间数量</span>
+                                                            </th>
+                                                            <td class="book_table_input">
+                                                                <div class="b_nums">
+                                                                    <select name="RoomCount" id="ddlRoomCount" onchange="GetCustomerInputs();">
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                    </select>
+                                                                    <span id="numsPrice" class="b_nums_price b_line">
+                                                                        房费<dfn>¥</dfn>
+                                                                        <span id="roomTotalPriceRMB">@ViewBag.TotalAmount</span>
+                                                                        @Html.Hidden("AmountBeforeTax", (int)ViewBag.TotalAmount)
+                                                                        @Html.Hidden("HotelCode", roomInfo.HotelCode)
+                                                                        @Html.Hidden("RoomTypeCode", roomInfo.RoomTypeCode)
+                                                                    </span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th class="book_table_label">
+                                                                <span>住客姓名</span>
+                                                            </th>
+                                                            <td class="book_table_input">
+                                                                <div id="userInput" class="b_userinput" data-init="1">
+
+                                                                </div>
+                                                                <div style="display:none;" id="customerNameTips" class="book_table_tips_info"><b></b><i></i><p>请填写住客姓名。</p></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th class="book_table_label"><span>最晚抵店</span></th>
+                                                            <td class="book_table_input">
+                                                                <table class="b_lasttime">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <select id="BeforeCheckInTime" name="BeforeCheckInTime" onchange="getNextTimes();"></select>
+                                                                                -
+                                                                                <select id="LastCheckInTime" name="LastCheckInTime"></select>
+
+                                                                            </td>
+                                                                            <td>
+                                                                                <span class="text_notes">@Html.Raw(!string.IsNullOrEmpty(policyInfo.PolicyInfo.CheckOutTime) ? policyInfo.PolicyInfo.CheckOutTime.Trim() : "")</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="lastArrivalTimeNote">
+                                                            <td></td>
+                                                            <td>
+                                                                <div style="margin:0" class="b_lasttime_info b_lasttime_info2">
+                                                                    <div class="info_tips">
+                                                                        <i></i>您最晚到店时间晚于<span class="lastArrivalTime">18:00</span>，<span class="ensureCost"></span>。房间保留至<span id="keepRoomDate"></span>中午12:00。
+                                                                        <br>
+                                                                        <span class="ensureCancelTime"></span>
+                                                                    </div>
+
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="book_table_th"><span>联系信息</span></td>
+                                        <td class="book_table_td">
+                                            <table class="book_table_form book_table_contact">
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="book_table_label"><span>联系人</span></th>
+                                                        <td class="book_table_input">
+                                                            <input type="text" onblur="contactPeroncheck();" placeholder="中文/拼音/英文" value="" name="ContactName" id="txtContactName" class="input_txt">
+                                                        </td>
+                                                        <td class="book_table_tips"><div id="bookcontactPerson" style="display:none;" class="book_table_tips_info"><b></b><i></i><p>请填写联系人姓名。</p></div></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="book_table_label"><span>手机号码</span></th>
+                                                        <td class="book_table_input">
+                                                            <input type="text" value="" onblur="contactTelCheck();" name="MobilePhone" id="txtContactMobilePhone" class="input_txt">
+                                                        </td>
+                                                        <td class="book_table_tips">
+                                                            <div id="bookTelPhoneWarning" style="display:none;" class="book_table_tips_info">
+                                                                <b></b><i></i><p>请填写手机号码，方便您接收短信通知。</p>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="book_table_label"><span>Email</span></th>
+                                                        <td class="book_table_input">
+                                                            <input type="text" value="" name="ContactEmail" id="txtContactEmail" class="input_txt">
+                                                        </td>
+                                                        <td class="book_table_tips"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="btn_cont">
+                            <a href="@Html.Raw(string.Format("/HotelInfo_{0}.html", roomInfo.HotelCode))" class="prev">重新选择房型</a>
+                            <input type="button" id="btnSubmitForm" onclick="submitHotelOrder();" value="提交订单" class="submit_btn" />
+                        </div>
+                    </div>
+                </div>
+                <div class="base_side">
+                    <div class="you_s">
+                        <div class="you_hd">
+                            <h2>我的选择</h2>
+                        </div>
+                        <div class="you_bd">
+                            <div class="s_cont">
+                                <div class="side_pic"><img src="@ViewBag.HotelImg"></div>
+                                <a target="_blank" href="#" class="s_hotel_name">@roomInfo.HotelName</a>
+
+                                <span class="s_hotel_addr">@roomInfo.AddressLine</span>
+                            </div>
+                            <ul class="s_list">
+                                @ViewBag.HotelRoomServices
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="total_price">
+                        <div id="sideInfo" class="total_price_time"></div>
+                        <ul class="total_price_main">
+
+                            <li class="price_total">
+                                <span class="t">酒店前台付款：</span>
+                                <span class="p total_price_border">
+                                    <dfn>¥</dfn>
+                                    <span id="totalPrice" data-oldprice="977">@Html.Raw((int)roomInfo.AmountBeforeTax)</span>
+                                </span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+            </form>
+
+</div>
+</div>
+<script type="text/javascript" src="~/Scripts/calendar/calendar.js"></script>

@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "OrderResult";
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+}
+@section header{
+    
+  <link type="text/css" rel="stylesheet" href="~/Areas/Travel/styles/my_top.css" />    
+}
+<div id="MainContent">
+    <div style="margin-bottom:10px;">
+        
+        <h5>非会员订单查询</h5>
+        <div class="box1000">
+            <form target="_self" name="userform2" id="userform2" action="OrderSearchResult" method="post">
+                <div class="box_form">
+                    <dl>
+                        <dt>订单类型：</dt>
+                        <dd>
+                            <select name="OrderType">
+                                <option value="0">酒店订单</option>
+                                <option value="1">门票订单</option>
+                            </select>
+                            
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>订单编号：</dt>
+                        <dd>
+                            <input type="text"  title="订单编号" maxlength="16" class="text" name="OrderNo" id="txtOrderID">
+                            <span id="spanOrderid" class="error">请输入订单编号</span>
+                        </dd>
+                    </dl>
+                    <dl id="mobile_p">
+                        <dt>手机号码：</dt>
+                        <dd>
+                            <input type="text" title="手机号码" class="text" name="Telphone" id="txtMobile">
+                            <span id="spanMobile"></span>
+                        </dd>
+                    </dl>
+                    
+                    <dl id="email_p">
+                        
+                        <dd>
+                            <div class="button">
+                                <input type="submit" id="btnSubmit" value="查询" name="btnSubmit" class="submit">
+                                
+                            </div>
+                        </dd>
+                    </dl>
+                    
+                </div>
+                
+            </form>
+            <div class="tip_wz">
+
+                <p>
+                    <em>·忘记订单编号?</em>
+                    建议您进入邮箱查找或查看手机短信（订单提交成功后系统会将订单编号及预订信息发送至您填写的邮箱与手机中）
+                </p>
+                <p>
+                    <em>·提示订单不存在？</em>
+                    订单编号错误或订单被删除，可以联系为您提供服务的旅行社咨询或<a href="/guestbook/">在线留言</a>
+                </p>
+                <p>
+                    <em>·酒店订单无法查询?</em>
+                    建议您拨打4000909733查询您的酒店订单
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link type="text/css" rel="stylesheet" href="~/Content/travel/common.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/travel/index_v20131030.css" />
+    <link type="text/css" rel="stylesheet" href="~/Scripts/calendar/calendar.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/travel/index.css" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.cookie.js"></script>
+    @RenderSection("header", false)
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>

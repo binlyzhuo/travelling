@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "ProvinceList";
+    Layout = "~/Areas/Admin/Views/Shared/_BaseAdminPage.cshtml";
+    
+    var provinces = ViewBag.Provinces as List<SceneryProvinceDetailInfo>;
+}
+@using Travelling.ViewModel.Dto.Ticket
+@section header{
+    <script type="text/javascript" src="~/Areas/Admin/js/ticketfunction.js"></script>
+}
+
+
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home home-icon"></i>
+            <a href="#">控制面板</a>
+        </li>
+        <li>
+            <a href="#">景区门票</a>
+        </li>
+        <li class="active">省份管理</li>
+    </ul>
+    <!-- .breadcrumb -->
+    <div class="nav-search" id="nav-search">
+        <form class="form-search">
+            <span class="input-icon">
+                <input placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" type="text">
+                <i class="icon-search nav-search-icon"></i>
+            </span>
+        </form>
+    </div>
+    <!-- #nav-search -->
+</div>
+<div class="page-content">
+    <div style="margin-bottom:5px;">
+        <table style="width:95%;">
+            <tr>
+                <td width="100" align="right">类型：</td>
+                <td width="100">
+                    <select style="width:120px;" id="areaType">
+                        
+                        <option value="1">城市</option>
+                        <option value="0">省份</option>
+
+                    </select>
+                </td>
+                <td width="100" align="right">省份</td>
+                <td width="150">
+                    <select id="ddlProvinces" style="width:90%">
+                        <option value="">--选择省份--</option>
+                        @foreach (var p in provinces)
+                        {
+                            <option value="@p.ID">@p.Name</option>
+                        }
+                    </select>
+
+                </td>
+                <td width="70">名称：</td>
+                <td width="150" style="text-align:left;">
+                    <input type="text" id="areaName" />
+                </td>
+
+                
+                <td width="100" align="right">有效状态：</td>
+                <td width="100">
+                    <select style="width:120px;" id="jobState">
+                        <option value="" selected="selected">&nbsp;全部</option>
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+
+                    </select>
+                </td>
+
+                <td>
+                    <button class="btn btn-sm btn-primary" type="button" onclick="ticketprovinceinfosearch(1);">查询</button>
+                    
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row" id="queryresult">
+
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>

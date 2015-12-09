@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "OrderResult";
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+}
+@using Travelling.ViewModel.Hotel
+@using Travelling.ViewModel.Dto.Hotel
+@section header
+{
+    <link type="text/css" rel="stylesheet" href="~/Content/travel/order.css" />
+}
+
+
+@model HotelOrderResult
+
+<div id="MainContent">
+    <div class="success_box mt10">
+        @if (Model.Success)
+        {
+            <div class="top">
+                <i></i>
+                <strong>酒店订单信息</strong>
+            </div>
+            <dl>
+                <dt>订 单 号：</dt>
+                <dd>
+                    <em>@Model.OrderInfo.SerialNo</em>
+                    @Html.Hidden("OrderNo", Model.OrderInfo)
+                </dd>
+                <dt>酒店名称：</dt>
+                <dd>酒店名称：<a href="/hotel-25250" target="_blank">@Model.OrderInfo.HotelName</a></dd>
+                <dt>入住时间：</dt>
+                <dd>@Model.OrderInfo.CheckInDate.ToString("yyyy-MM-dd")</dd>
+                <dt>离店时间：</dt>
+                <dd>@Model.OrderInfo.CheckOffDate.ToString("yyyy-MM-dd")</dd>
+                <dt>最晚到店：</dt>
+                <dd>@Model.OrderInfo.LateArrivalTime.ToString("yyyy-MM-dd HH:mm:ss")</dd>
+                <dt>酒店地址：</dt>
+                <dd><span>@Model.OrderInfo.HotelAddress</span></dd>
+                <dt>房&nbsp;&nbsp;&nbsp;&nbsp;型：</dt>
+                <dd>@Model.OrderInfo.RoomTypeName fff</dd>
+                <dt>费用总计：</dt>
+                <dd><em>￥<b>@Model.OrderInfo.Amount</b></em>(到店付款)</dd>
+            </dl>
+            <p style="color: red">
+                <span>温馨提示：</span>
+                到酒店前台请提供入住人姓名及手机号、并出示有效证件办理入住手续
+            </p>
+            <p>
+                <span>修改预订：</span>
+                请提前致电24小时服务电话<em>400-0909-733转2</em>。
+            </p>
+            <p>
+                <span>取消预订：</span>
+                请使用以下两种方式 -短信回复取消：收到确认短信后，<br>
+                直接回复“取消”。 -电话通知取消：致电24小时服务<br>
+                电话400-0909-733转2，人工取消预订
+            </p>
+        }
+        else
+        {
+            <div class="top noborder">
+                <i class="error"></i>
+                <strong>@Model.Message</strong>
+                <a href="javascript:window.history.go(-1)">返回上一页</a>
+            </div>
+        }
+    </div>
+    <div class="orderIng">
+        <span>
+            <i class="i1"></i><a target="_blank" href="#">继续订酒店</a>
+        </span>
+    </div>
+</div>

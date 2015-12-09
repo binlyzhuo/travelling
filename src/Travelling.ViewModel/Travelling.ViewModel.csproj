@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73D09FD5-F29E-4F5A-8017-42930776F772}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Travelling.ViewModel</RootNamespace>
+    <AssemblyName>Travelling.ViewModel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Travelling.ViewModel.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\ArticleInfoSearchModel.cs" />
+    <Compile Include="Admin\FriendLinkSearchModel.cs" />
+    <Compile Include="Admin\HotelBrandInfoSearchModel.cs" />
+    <Compile Include="Admin\HotelCityDetailSearchModel.cs" />
+    <Compile Include="Admin\HotelOrderInfoSearchModel.cs" />
+    <Compile Include="Admin\HotelRoomRateJobSearchModel.cs" />
+    <Compile Include="Admin\LoginModel.cs" />
+    <Compile Include="Admin\OperatingLogSearchModel.cs" />
+    <Compile Include="Admin\OperatingType.cs" />
+    <Compile Include="Admin\SceneryTicketOrderSearchModel.cs" />
+    <Compile Include="Admin\TicketProvinceInfoSearchModel.cs" />
+    <Compile Include="Admin\UserUpdatePasswordModel.cs" />
+    <Compile Include="AjaxUploadFileViewResult.cs" />
+    <Compile Include="Attributes\NumberRangeAttribute.cs" />
+    <Compile Include="Dto\Hotel\HotelBrandDto.cs" />
+    <Compile Include="Dto\Hotel\HotelInfoDto.cs" />
+    <Compile Include="Dto\Setting\ArticleInfoDto.cs" />
+    <Compile Include="Dto\Setting\SettingConfigDto.cs" />
+    <Compile Include="Dto\Setting\UnionDetailInfoDto.cs" />
+    <Compile Include="Dto\XC_Hotel\HotelAreaSyncInfo.cs" />
+    <Compile Include="Dto\XC_Hotel\HotelRoomRateJobScheduler.cs" />
+    <Compile Include="Dto\XC_Hotel\HotelSyncRoomRatePlanForCity.cs" />
+    <Compile Include="Dto\XC_Hotel\JobScheduler.cs" />
+    <Compile Include="Dto\XC_Hotel\JobSchedulerLog.cs" />
+    <Compile Include="Dto\XC_Hotel\OperatingLog.cs" />
+    <Compile Include="Dto\Hotel\CityAreaInfo.cs" />
+    <Compile Include="Dto\Hotel\HotelBookingOrder.cs" />
+    <Compile Include="Dto\Hotel\HotelBrandDetailInfo.cs" />
+    <Compile Include="Dto\Hotel\HotelCityDetailInfo.cs" />
+    <Compile Include="Dto\XC_Hotel\HotelDescription.cs" />
+    <Compile Include="Dto\Hotel\HotelRefPointInfo.cs" />
+    <Compile Include="Dto\Hotel\HotelRoomInfo.cs" />
+    <Compile Include="Dto\Hotel\HotelRoomRatePlan.cs" />
+    <Compile Include="Dto\Hotel\LocationInfo.cs" />
+    <Compile Include="Dto\Setting\FriendLinkDto.cs" />
+    <Compile Include="Dto\Ticket\SceneryImgInfo.cs" />
+    <Compile Include="Dto\Ticket\SceneryInfoDetail.cs" />
+    <Compile Include="Dto\Ticket\SceneryInfoSyncRecord.cs" />
+    <Compile Include="Dto\Ticket\SceneryProvinceDetailInfo.cs" />
+    <Compile Include="Dto\Ticket\SceneryThemeInfo.cs" />
+    <Compile Include="Dto\Ticket\SceneryTicketOrder.cs" />
+    <Compile Include="Dto\Ticket\SceneryTicketPrice.cs" />
+    <Compile Include="Dto\User\Account.cs" />
+    <Compile Include="Dto\Zhuna\Zhuna_CBDDto.cs" />
+    <Compile Include="Dto\Zhuna\Zhuna_CityAreaInfoDto.cs" />
+    <Compile Include="Dto\Zhuna\Zhuna_CityLableDto.cs" />
+    <Compile Include="Dto\Zhuna\Zhuna_HotelChainDto.cs" />
+    <Compile Include="Dto\Zhuna\Zhuna_HotelInfoDto.cs" />
+    <Compile Include="HotelServiceType.cs" />
+    <Compile Include="Hotel\CityAreaInfoTypeCode.cs" />
+    <Compile Include="Hotel\CityAreaPrimaryInfo.cs" />
+    <Compile Include="Hotel\HotelBrandType.cs" />
+    <Compile Include="Hotel\HotelCityDetailSearchType.cs" />
+    <Compile Include="Hotel\HotelDetailInfo.cs" />
+    <Compile Include="Hotel\HotelMediaImgDescription.cs" />
+    <Compile Include="Hotel\HotelMediaTextDescription.cs" />
+    <Compile Include="Hotel\HotelOrderResult.cs" />
+    <Compile Include="Hotel\HotelPolicyInfo.cs" />
+    <Compile Include="Hotel\HotelQueryPrimaryInfo.cs" />
+    <Compile Include="Hotel\HotelRefPointPrimaryInfo.cs" />
+    <Compile Include="Hotel\HotelRoomRatePlanPrimaryInfo.cs" />
+    <Compile Include="Hotel\HotelServiceInfo.cs" />
+    <Compile Include="ISceneryInfo.cs" />
+    <Compile Include="LogProjectType.cs" />
+    <Compile Include="Lucene\HotelLuceneIndexInfo.cs" />
+    <Compile Include="PageObjectResult.cs" />
+    <Compile Include="ProjectType.cs" />
+    <Compile Include="Setting\JobTaskSearchModel.cs" />
+    <Compile Include="Ticket\ImgObject.cs" />
+    <Compile Include="Ticket\SceneryImgSizeCode.cs" />
+    <Compile Include="Ticket\SceneryDetailInfo.cs" />
+    <Compile Include="Ticket\SceneryTicketLuceneInfo.cs" />
+    <Compile Include="Ticket\SceneryTicketOrderSearchResult.cs" />
+    <Compile Include="Ticket\SceneryTicketPrimaryInfo.cs" />
+    <Compile Include="Travel\CityInfo.cs" />
+    <Compile Include="Travel\CityMapInfo.cs" />
+    <Compile Include="Travel\HotelBookError.cs" />
+    <Compile Include="Travel\HotelBrandSummaryInfo.cs" />
+    <Compile Include="Travel\HotelCitySummaryInfo.cs" />
+    <Compile Include="Travel\HotelCookieView.cs" />
+    <Compile Include="Travel\HotelFindAreaViewResult.cs" />
+    <Compile Include="Travel\HotelInfoQuery.cs" />
+    <Compile Include="Travel\HotelOrderType.cs" />
+    <Compile Include="Travel\HotelPriceLevel.cs" />
+    <Compile Include="Travel\HotelPrimaryInfoLuceneSearch.cs" />
+    <Compile Include="Travel\HotelQueryOrderType.cs" />
+    <Compile Include="Travel\HotelRoomBookCheckResult.cs" />
+    <Compile Include="Travel\HotelRoomBookInfo.cs" />
+    <Compile Include="Travel\HotelRoomBookResult.cs" />
+    <Compile Include="Travel\HotelRoomoInfo.cs" />
+    <Compile Include="Travel\HotelRoomPriceInfo.cs" />
+    <Compile Include="Travel\HotelRoomRatePlanInfo.cs" />
+    <Compile Include="Travel\HotelRoomRateViewModel.cs" />
+    <Compile Include="Travel\JsonLocalIPInfo.cs" />
+    <Compile Include="Dto\Hotel\ProvinceInfo.cs" />
+    <Compile Include="Hotel\HotelPrimaryInfo.cs" />
+    <Compile Include="Travel\HotelStarLevel.cs" />
+    <Compile Include="Hotel\HotelBookingSearch.cs" />
+    <Compile Include="JsonViewResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BasePageQuery.cs" />
+    <Compile Include="Travel\HotelBookingQueryModel.cs" />
+    <Compile Include="Travel\LocalCityCookie.cs" />
+    <Compile Include="Travel\OrderInfoSearchModel.cs" />
+    <Compile Include="Travel\RefPointCodeType.cs" />
+    <Compile Include="Travel\SceneryHotCity.cs" />
+    <Compile Include="Travel\SceneryHotelCityInfo.cs" />
+    <Compile Include="Travel\SceneryImgInfo.cs" />
+    <Compile Include="Travel\SceneryInfo.cs" />
+    <Compile Include="Travel\SceneryInfoCookie.cs" />
+    <Compile Include="Travel\SceneryProvinceInfo.cs" />
+    <Compile Include="Travel\SceneryRecommendViewModel.cs" />
+    <Compile Include="Travel\SceneryStarLevel.cs" />
+    <Compile Include="Travel\SceneryThemeInfo.cs" />
+    <Compile Include="Travel\SceneryTicketBookResult.cs" />
+    <Compile Include="Travel\SceneryTicketPolicyInfo.cs" />
+    <Compile Include="Travel\SceneryQueryInfo.cs" />
+    <Compile Include="Travel\SceneryTicketPriceInfo.cs" />
+    <Compile Include="Travel\SceneryTrafficInfo.cs" />
+    <Compile Include="Travel\SchoolCityInfo.cs" />
+    <Compile Include="Travel\SchoolInfo.cs" />
+    <Compile Include="Travel\SchoolSummaryInfo.cs" />
+    <Compile Include="Travel\TicketPayMode.cs" />
+    <Compile Include="Travel\TicketPolicyInfo.cs" />
+    <Compile Include="Travel\TradeAreaInfo.cs" />
+    <Compile Include="Travel\XmlData\BrandCityInfo.cs" />
+    <Compile Include="Travel\XmlData\GroupCityInfo.cs" />
+    <Compile Include="Travel\XmlData\GuZhenCityInfo.cs" />
+    <Compile Include="UserLoginModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Travelling.FrameWork\Travelling.FrameWork.csproj">
+      <Project>{44ba1b80-dade-446c-a0aa-cec37a6381ba}</Project>
+      <Name>Travelling.FrameWork</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

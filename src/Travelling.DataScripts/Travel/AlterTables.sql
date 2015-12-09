@@ -1,0 +1,1 @@
+﻿alter table T_HotelBookingOrder add UnionID int not null default 0

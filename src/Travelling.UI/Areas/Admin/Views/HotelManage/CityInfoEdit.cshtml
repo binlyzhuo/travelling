@@ -1,0 +1,59 @@
+﻿@model HotelCityDetailInfo
+@using Travelling.ViewModel.Dto.Hotel
+
+
+<di>
+    <form id="cityinfoeditform" class="form-horizontal" method="post" role="form" action="/HotelManage/CityInfoEdit">
+        <table class="formtable" border="0" style="width:80%;padding-bottom:5px;">
+            <tr>
+                <td class="data_title">
+                    城市名称
+                </td>
+                <td>
+                    @Html.HiddenFor(u => u.CityID)
+                    @Model.CityName
+                </td>
+                <td class="data_title">
+                    省份
+                </td>
+                <td>@Model.ProvinceName</td>
+            </tr>
+            <tr>
+                <td class="data_title">是否热门酒店城市</td>
+                <td><input type="checkbox" id="IsHotCity" value="@Model.IsHotCity" name="IsHotCity" @Html.Raw(Model.IsHotCity > 0 ? "checked" : "") /></td>
+                <td class="data_title">
+                    热门排序
+                </td>
+                <td>
+                    <input type="text" id="HotCityIndex" name="HotCityIndex" value="@Model.HotCityIndex" />
+                </td>
+            </tr>
+            <tr>
+                <td class="data_title">是否精选酒店城市</td>
+                <td><input type="checkbox" id="IsChoiceCity" value="@Model.IsChoiceCity" name="IsChoiceCity" @Html.Raw(Model.IsChoiceCity > 0 ? "checked" : "") /></td>
+                <td class="data_title">
+                    精选排序
+                </td>
+                <td>
+                    <input type="text" id="ChoiceCityIndex" name="ChoiceCityIndex" value="@Model.ChoiceCityIndex" />
+                </td>
+            </tr>
+            <tr>
+                <td class="data_title">是否热门推荐</td>
+                <td><input type="checkbox" id="IsRecommendCity" value="@Model.IsRecommendCity" name="IsRecommendCity" @Html.Raw(Model.IsRecommendCity > 0 ? "checked" : "") /></td>
+                <td class="data_title">
+                    推荐排序
+                </td>
+                <td>
+                    <input type="text" id="RecommentIndex" value="@Model.RecommentIndex" name="RecommentIndex" />
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="data_title">是否查询推荐</td>
+                <td><input type="checkbox" id="IsSearch" name="IsSearch" @Html.Raw(Model.IsSearch > 0 ? "checked" : "") /></td>
+
+            </tr>
+        </table>
+    </form>
+</di>

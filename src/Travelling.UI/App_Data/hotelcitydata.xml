@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<citylist>
+  <group>
+    <city order="1" id="1">北京</city>
+    <city order="2" id="2">上海</city>
+    <city order="3" id="3">天津</city>
+    <city order="4" id="4">重庆</city>
+    <city order="5" id="5">哈尔滨</city>
+    <city order="6" id="6">大连</city>
+    <city order="7" id="7">青岛</city>
+    <city order="12" id="12">南京</city>
+    <city order="13" id="13">无锡</city>
+    <city order="14" id="14">苏州</city>
+    <city order="17" id="17">杭州</city>
+    <city order="23" id="23">黄山</city>
+    <city order="25" id="25">厦门</city>
+    <city order="27" id="27">张家界</city>
+    <city order="28" id="28">成都</city>
+    <city order="30" id="30">深圳</city>
+    <city order="32" id="32">广州</city>
+    <city order="33" id="33">桂林</city>
+    <city order="34" id="34">昆明</city>
+    <city order="36" id="36">大理市</city>
+    <city order="41" id="41">拉萨</city>
+    <city order="42" id="42">海口</city>
+    <city order="43" id="43">三亚</city>
+    <city order="149" id="149">齐齐哈尔</city>
+    <city order="84" id="84">海宁</city>
+    <city order="100" id="100">兰州</city>
+  </group>
+  <kezhan>
+    <city order="1" pinyin="xitang" id="385" keywords="西塘" sectionid="0">西塘</city>
+    <city order="2" pinyin="fenghuang" id="206" keywords="凤凰" sectionid="1575">凤凰</city>
+    <city order="3" pinyin="wuzhen" id="385" keywords="乌镇" sectionid="0">乌镇</city>
+    <city order="4" pinyin="dali" id="369" keywords="" sectionid="0">大理</city>
+    <city order="5" pinyin="lijiang" id="374" keywords="" sectionid="0">丽江</city>
+    <city order="5" pinyin="yangsuo" id="102" keywords="" sectionid="928">阳朔</city>
+    <city order="5" pinyin="pingyao" id="303" keywords="" sectionid="2098">平遥</city>
+    <city order="5" pinyin="wuyuan" id="241" keywords="" sectionid="1737">婺源</city>
+    <city order="5" pinyin="jongcun" id="45" keywords="宏村" sectionid="0">宏村</city>
+    <city order="5" pinyin="nanjing" id="62" keywords="" sectionid="715">南靖</city>
+    <city order="5" pinyin="tengcong" id="367" keywords="" sectionid="2596">腾冲</city>
+    <city order="5" pinyin="zhouzhuang" id="226" keywords="周庄" sectionid="0">周庄</city>
+    <city order="5" pinyin="yaan" id="338" keywords="" sectionid="0">雅安</city>
+    <city order="5" pinyin="zhenyuan" id="116" keywords="" sectionid="1020">镇远</city>
+    <city order="5" pinyin="pingyuan" id="102" keywords="" sectionid="925">平乐</city>
+    <city order="5" pinyin="xianggelila" id="371" keywords="" sectionid="2626">香格里拉</city>
+    <city order="5" pinyin="kangding" id="327" keywords="" sectionid="2319">康定</city>
+    <city order="5" pinyin="tongli" id="226" keywords="" sectionid="77">同里</city>
+    <city order="5" pinyin="langzhong" id="334" keywords="" sectionid="2383">阆中</city>
+    <city order="5" pinyin="yongding" id="55" keywords="" sectionid="667">永定</city>
+    <city order="5" pinyin="shaoxing" id="389" keywords="" sectionid="0">绍兴</city>
+  </kezhan>
+</citylist>

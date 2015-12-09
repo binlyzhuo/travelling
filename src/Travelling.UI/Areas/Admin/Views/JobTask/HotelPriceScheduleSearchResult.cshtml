@@ -1,0 +1,95 @@
+﻿@model PageObjectResult<HotelRoomRateJobScheduler>
+@using Travelling.ViewModel
+@using Travelling.ViewModel.Dto.HotelSyncRecord
+@using Travelling.FrameWork
+@using Travelling.Web.Helpers
+<div id="messageContainer" style="position:fixed;top:90px;left:10px;z-index:999;width:500px;">
+    <div class="alert alert-block alert-success" style="display:none;" id="successMessage">
+        <button data-dismiss="alert" class="close" type="button">
+            <i class="icon-remove"></i>
+        </button>
+        <p>
+            <strong>
+                <i class="icon-ok"></i>
+                操作成功！
+            </strong>
+            You successfully read this important alert message.
+        </p>
+
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        @if (Model.TotalCount > 0)
+        {
+            <div class="col-xs-12">
+                <div class="table-responsive">
+                    <table id="hotelbrandinfotable" class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+
+                                <th>开始时间</th>
+                                <th>结束时间</th>
+                                <th>有效状态</th>
+                                <th>执行状态</th>
+                                <th>添加时间</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var ct in Model.Items)
+                            {
+                                <tr>
+                                    <td>
+                                        <a href="#">@ct.StartDate.ToString("yyyy-MM-dd HH:mm:ss")</a>
+                                    </td>
+                                    <td>@ct.EndDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                                    <td>@AceUIHelper.GetBoolZHState(ct.State)</td>
+                                    <td>@AceUIHelper.GetBoolZHState(ct.SyncState)</td>
+                                    <td class="hidden-480">
+                                        @ct.AddDate.ToString("yyyy-MM-dd HH:mm:ss")
+                                    </td>
+                                    <td>
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+                                            <input type="hidden" class="hiddenBrandID" value="@ct.ID" />
+                                            <button onclick="hotelroompricejobedit(@ct.ID);" class="btn btn-xs btn-info editbtn">
+                                                <i class="icon-edit bigger-120"></i>
+                                            </button>
+                                            <button onclick="hotelroompricejobdelete(@ct.ID);" class="btn btn-xs btn-danger">
+                                                <i class="icon-trash bigger-120"></i>
+                                            </button>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+
+                    </table>
+                    <div class="row">
+                        <div class="col-sm-7">
+
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="dataTables_paginate paging_bootstrap">
+                                @Html.ToPageList((int)Model.Page, (int)Model.PageSize, (int)Model.TotalCount, "jobtasksearch")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+        }
+        else
+        {
+          <p>没有数据</p>
+        }
+        <!-- /span -->
+    </div>
+    <!-- /row -->
+
+</div>

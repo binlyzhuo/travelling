@@ -1,0 +1,49 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@using Travelling.FrameWork
+@{
+    
+    DateTime startDate = (ViewBag.StartData as string).ToDateTime();
+    DateTime endDate = (ViewBag.EndDate as string).ToDateTime();
+}
+@model HotelInfoQuery
+<div id="searchForm" class="aiOneNew">
+    <form method="post" id="hotelshortsearchform">
+        <div id="jsContainer" class="jsContainer" style="height:0;z-index:999999;">
+            <div id="tuna_alert" style="display: none; position: absolute; z-index: 999999; overflow: hidden;"></div>
+            <div id="tuna_jmpinfo" style="visibility: hidden; position: absolute; z-index: 999999;"></div>
+        </div>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="width:40px;">目的地</td>
+                <td style="margin:0;padding:0;padding-right:3px;">
+                    <div class="FlightSPosBd FlightHotelPosBd">
+                        <input type="text" class="HotelCityTxt" value="@ViewBag.CityName" size="15" id="HotelCityName" name="HotelCityName" mod="address|notice" mod_address_source="hotel" mod_address_suggest="@Html.Raw(ViewBag.HotCities)" mod_address_reference="HotelCityID" mod_notice_tip="中文/拼音" />
+                        <input id="HotelCityID" name="cityid" type="hidden" value="@ViewBag.CityID" />
+                        <input type="hidden" name="HotelStarLevel" value="1-5" />
+                        <input type="hidden" name="HotelPriceLevel" value="1-9999" />
+                        <input type="hidden" name="LocationID" value="0" />
+                        <input type="hidden" name="HotelBrandID" value="0"/>
+
+
+                        <i class="SearchCityIcon"></i>
+                    </div>
+                </td>
+                <td style="width:40px; text-align:right;padding-right:3px;">入住</td>
+                <td><input type="text" value="@startDate.ToString("yyyy-MM-dd")" autocomplete="off" class="input_txt width130" name="HotelInRoomDate" id="HotelInRoomDate" style="margin-top:2px;"></td>
+                <td style="width:40px;text-align:right;padding-right:3px;">退房</td>
+                <td><input type="text" value="@endDate.ToString("yyyy-MM-dd")" autocomplete="off" class="input_txt width130" name="HotelLeaveRoomDate" id="HotelLeaveRoomDate" style="margin-top:2px;"></td>
+                <td style="width:40px; text-align:right;padding-right:3px;">关键词</td>
+                <td>
+                    <input type="text" placeholder="商圈/行政区/地标" value="" name="location" id="address" class="text" style="color: rgb(170, 170, 170);width:300px;" />
+                    <div style="display: none;z-index:9999;" id="tanchu_address" class="tanchu">
+
+                    </div>
+
+                </td>
+
+                <td>&nbsp;<input type="submit" id="btnSearch" value="搜索" class="serchBut cf fw" onclick="hotelinfoshortsearch();" /></td>
+            </tr>
+        </table>
+    </form>
+</div>

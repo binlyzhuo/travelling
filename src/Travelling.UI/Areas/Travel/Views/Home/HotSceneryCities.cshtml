@@ -1,0 +1,15 @@
+﻿@using Travelling.ViewModel.Travel
+@model List<SceneryHotelCityInfo>
+<div id="tysact" class="CommPosBox">
+    <div class="CommHdBox">
+        <h2 class="CommHd">热门景点城市</h2>
+    </div>
+    <ul id="hotscenerycity">
+        @foreach (var s in Model)
+        {
+            <li>
+                <a title="@Html.Raw(string.Format("{0}景点门票预定",s.CityName))" href="@string.Format("/ticketsearchlist_{0}.html",s.CityID)">@Html.Raw(string.Format("{0}({1})",s.CityName,s.SceneryCount))</a>
+            </li>
+        }
+    </ul>
+</div>

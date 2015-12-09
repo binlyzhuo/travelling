@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 2014-12-30 04:30:01 -->
+<categorylist>
+  <category>
+    <id>1</id>
+    <name><![CDATA[五星级]]></name>
+  </category>
+  <category>
+    <id>76</id>
+    <name><![CDATA[豪华型]]></name>
+  </category>
+  <category>
+    <id>2</id>
+    <name><![CDATA[四星级]]></name>
+  </category>
+  <category>
+    <id>77</id>
+    <name><![CDATA[高档型]]></name>
+  </category>
+  <category>
+    <id>3</id>
+    <name><![CDATA[三星级]]></name>
+  </category>
+  <category>
+    <id>78</id>
+    <name><![CDATA[舒适型]]></name>
+  </category>
+  <category>
+    <id>152</id>
+    <name><![CDATA[二星级]]></name>
+  </category>
+  <category>
+    <id>60</id>
+    <name><![CDATA[二星级以下]]></name>
+  </category>
+  <category>
+    <id>63</id>
+    <name><![CDATA[经济型]]></name>
+  </category>
+  <category>
+    <id>1535</id>
+    <name><![CDATA[其他]]></name>
+  </category>
+</categorylist>

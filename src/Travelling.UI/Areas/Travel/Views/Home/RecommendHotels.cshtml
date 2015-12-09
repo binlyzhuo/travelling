@@ -1,0 +1,45 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Domain
+@using Travelling.FrameWork
+@using Travelling.Web.Helpers
+@using Travelling.ViewModel.Dto.Hotel
+@model Tuple<List<HotelPrimaryInfo>, List<HotelCityDetailInfo>>
+<div style="" id="salefline" class="CommPosBox marginBtm15">
+    <div class="CommHdBox">
+        <h2 class="CommHd">精选酒店</h2>
+        <ul class="CommChTag" id="recommendhotelcitylist">
+
+            @for (int index = 0; index < Model.Item2.Count; index++)
+            {
+                <li class="@Html.Raw(index == 0 ? "CommChTagCur" : "")" id="tag_@Model.Item2[index].CityID">
+                    <a href="javascript:void(0)" data="@Model.Item2[index].CityID">@Model.Item2[index].CityName</a>
+                </li>
+            }
+            <li>
+                <a id="more" target="_blank" href="/jiudian">更多</a>
+            </li>
+        </ul>
+    </div>
+    <div class="SaleFlineHide">
+
+        @for (int index = 0; index < Model.Item2.Count; index++)
+        {
+            string hideStyle = "";
+            if (index != 0)
+            {
+                hideStyle = "style=display:none;";
+            }
+            <ul class="SaleFlineList recommendhotels" id="@Html.Raw(string.Format("RecommendCityHotelList{0}", Model.Item2[index].CityID))" @hideStyle>
+                @foreach (var h in HotelInfoHelper.GetHotelInfosByCityID(Model.Item1, Model.Item2[index].CityID))
+                {
+                    <li>
+                        <span class="SaleFlightPrice">¥<b>@((int)h.AmountBeforeTax)</b></span>
+                        <span class="SaleFlightDate">
+                            <a href="@Html.Raw(string.Format("/HotelInfo_{0}.html",h.HotelID))" target="_blank" title="@string.Format("{1}{0}酒店预定", h.HotelName, Model.Item2[index].CityName)">@h.HotelName.SubString(10)</a>
+                        </span>
+                    </li>
+                }
+            </ul>
+        }
+</div>
+</div>

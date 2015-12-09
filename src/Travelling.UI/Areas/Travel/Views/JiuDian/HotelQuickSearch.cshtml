@@ -1,0 +1,69 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@{
+    string defaultCityName = "北京";
+    string defaultCityID = "1";
+
+
+}
+
+<div id="SearchBox2" class="SearchBox2">
+    <!-- 酒店 -->
+    <div style="display: block;" class="SearchClsCn" id="hotel_search">
+        
+        
+        <div class="FlightCnCk">
+            <form id="HotelSearchForm" method="post">
+                <div class="SearchInpHeight SearchInpHeightPdt">
+                    <span class="FlightSName">城市</span>
+                    <div class="SearchInpHeightWide">
+                        <div id="jsContainer" class="jsContainer" style="height:0;z-index:999999;">
+                            <div id="tuna_alert" style="display: none; position: absolute; z-index: 999999; overflow: hidden;"></div>
+                            <div id="tuna_jmpinfo" style="visibility: hidden; position: absolute; z-index: 999999;"></div>
+                        </div>
+                        <div class="FlightSPosBd FlightHotelPosBd">
+                            <input type="text" class="HotelCityTxt" value="@defaultCityName" size="15" id="HotelCityName" name="HotelCityName" mod="address|notice" mod_address_source="hotel" mod_address_suggest="@Html.Raw(ViewBag.HotCities)" mod_address_reference="HotelCityID" mod_notice_tip="中文/拼音" />
+                            <input id="HotelCityID" name="HotelCityID" type="hidden" value="@defaultCityID" />
+                            <i class="SearchCityIcon"></i>
+                        </div>
+                    </div>
+                    <div class="FlightSPosBd FlightHotelPosBd_Wid">
+                        <input type="text" placeholder="商圈/行政区/地标" value="" name="location" id="address" class="text" style="color: rgb(170, 170, 170);height:27px;border:0;width:300px;" />
+                        <div style="display: none;position:absolute;z-index:250;" id="tanchu_address" class="tanchu">
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="SearchInpHeight">
+                    <span class="FlightSName">日期</span>
+                    <div class="SearchInpHeightDate">
+                        <div class="FlightSPosBd">
+                            <input id="HotelInRoomDate" type="text" class="f-text" value="@DateTime.Now.ToString("yyyy-MM-dd")" name="HotelInRoomDate" autocomplete="off" style="border:0;width:100%;height:100%;margin:0;padding:0;" />
+                            
+                        </div>
+                        至
+                    </div>
+                    
+                    <div class="FlightSPosBd">
+                        <input id="HotelLeaveRoomDate" type="text" name="HotelLeaveRoomDate" class="f-text" value="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" autocomplete="off" style="border:0;width:100%;height:100%;margin:0;padding:0;" />
+
+                    </div>
+                </div>
+                <div class="SearchBtnBox">
+                    <input type="button" value="搜索" class="SearchBtn" id="hotelSearchBtn">
+                    
+                    <p>
+                        <span class="FlightSName">酒店级别</span>
+                        @Html.DropDownList("HotelStarLevel", Html.CreateHotelLevelSelectList(typeof(HotelStarLevel), ((int)HotelStarLevel.All).ToString()), new { style = "border:1px solid  #ccc;height:25px;" })
+                        <span style="font-size:14px;" class="">价格</span>
+                        @Html.DropDownList("HotelPriceLevel", Html.CreateHotelPriceSelectList(typeof(HotelPriceLevel), ((int)HotelPriceLevel.All).ToString()), new { style = "border:1px solid  #ccc;height:25px;" })
+                    </p>
+                </div>
+                <div class="BaozBox BaozBox2">
+                    
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@model List<HotelPrimaryInfo>
+<div class="box250">
+    <div class="tit">
+        <a target="_blank" href="#"><strong>推荐酒店 </strong></a>
+    </div>
+    <div class="txt2 child-noborder">
+        @foreach (var h in Model)
+        {
+            <dl>
+                <dt>
+                    <a target="_blank" href="@HotelInfoHelper.GetHotelInfoLink(h.HotelID)" title="@string.Format("{1}{0}酒店预定",h.HotelName,h.CityName)">
+                        <img title="@string.Format("{1}{0}酒店图片",h.HotelName,h.CityName)" alt="@string.Format("{1}{0}酒店图片",h.HotelName,h.CityName)" style="width:45px; height:30px;" data-original="@h.HotelImg" class="lazy " src="@h.HotelImg">
+                    </a>
+                </dt>
+                <dd>
+                    <a target="_blank" title="@string.Format("{1}{0}酒店预定",h.HotelName,h.CityName)" href="@HotelInfoHelper.GetHotelInfoLink(h.HotelID)">@h.HotelName</a>
+                    <span class="price">
+                        <em>￥<b>@h.AmountBeforeTax</b></em>
+                    </span>
+                </dd>
+            </dl>
+        }
+
+    </div>
+</div>

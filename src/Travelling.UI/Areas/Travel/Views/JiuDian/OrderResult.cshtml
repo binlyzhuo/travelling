@@ -1,0 +1,83 @@
+﻿@{
+
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+}
+@section header
+{
+    <link type="text/css" rel="stylesheet" href="~/Content/travel/order.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/travel/pri_book.css" />
+}
+@using Travelling.ViewModel.Hotel
+@model HotelOrderResult
+<div id="MainContent">
+    <div class="book_process2 process_step1" id="processNoPay">
+        <ol>
+            @if (Model.Success)
+            {
+                <li class="">填写</li>
+                <li class="step1" id="step2">成功</li>
+            }
+            else
+            {
+                <li class="step1">填写</li>
+                <li class="step2" id="step2">成功</li>
+            }
+           
+        </ol>
+    </div>
+
+
+
+    <div class="success_box mt10">
+        @if (Model.Success)
+        {
+            <div class="top">
+                <i></i>
+                <strong>恭喜您，订单提交成功!稍候您将收到确认短信。</strong>
+            </div>
+            <dl>
+                <dt>订 单 号：</dt>
+                <dd>
+                    <em>@Model.OrderInfo.SerialNo</em>
+                    @Html.Hidden("OrderNo", Model.OrderInfo)
+                </dd>
+                <dt>酒店名称：</dt>
+                <dd><a href="@Html.Raw(string.Format("/HotelInfo_{0}.html",Model.OrderInfo.HotelID))" target="_blank">@Model.OrderInfo.HotelName</a></dd>
+                <dt>入住时间：</dt>
+                <dd>@Model.OrderInfo.CheckInDate.ToString("yyyy-MM-dd")</dd>
+                <dt>离店时间：</dt>
+                <dd>@Model.OrderInfo.CheckOffDate.ToString("yyyy-MM-dd")</dd>
+                <dt>最晚到店：</dt>
+                <dd>@Model.OrderInfo.LateArrivalTime.ToString("yyyy-MM-dd HH:mm:ss")</dd>
+                <dt>酒店地址：</dt>
+                <dd><span>@Model.OrderInfo.HotelAddress</span></dd>
+                <dt>房&nbsp;&nbsp;&nbsp;&nbsp;型：</dt>
+                <dd>@Model.OrderInfo.RoomTypeName</dd>
+                <dt>费用总计：</dt>
+                <dd><em>￥<b>@Model.OrderInfo.Amount</b></em>(到店付款)</dd>
+            </dl>
+            <p style="color: red">
+                <span>温馨提示：</span>
+                到酒店前台请提供入住人姓名及手机号、并出示有效证件办理入住手续
+            </p>
+            
+        }
+        else
+        {
+            <div class="top noborder">
+                @foreach (var err in Model.Errors)
+                {
+                    <p>@err.Content</p>
+                }
+                <a href="javascript:window.history.go(-1)">返回上一页</a>
+            </div>
+        }
+    </div>
+    <div class="orderIng">
+        <span>
+            <i class="i1"></i><a target="_blank" href="#">继续订酒店</a>
+        </span>|<span>
+            <a target="_blank" href="#">继续预订景区门票</a>
+        </span>
+    </div>
+</div>

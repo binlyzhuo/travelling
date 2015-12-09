@@ -1,0 +1,26 @@
+﻿@model SceneryProvinceDetailInfo
+@using Travelling.ViewModel.Dto.Ticket
+
+<table class="formtable">
+    <tr>
+        <td class="data_title">省份名称：</td>
+        <td>
+            <input id="jobTaskName" value="@Model.Name" type="text" />
+            @Html.HiddenFor(u => u.ID)
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">是否推荐：</td>
+        <td>
+            <input id="IsRecommend" type="checkbox" @Html.Raw(Model.IsRecommend > 0 ? "checked" : "") />
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="data_title">推荐序号：</td>
+        <td>
+            <input type="text" value="@Model.OrderNum" id="OrderNum" />
+        </td>
+    </tr>
+    
+</table>

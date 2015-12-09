@@ -1,0 +1,74 @@
+﻿@using Travelling.ViewModel
+@using Travelling.ViewModel.Dto.Setting
+@using Travelling.Web.Helpers
+@model PageObjectResult<ArticleInfoDto>
+
+<div class="col-xs-12">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        @if (Model.Items != null)
+        {
+            <div class="col-xs-12">
+                <div class="table-responsive">
+                    <table id="hotelbrandinfotable" class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>标题</th>
+                                <th>发布时间</th>
+                                <th>作者</th>
+                                <th>状态</th>
+                                <th>类型</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var ct in Model.Items)
+                            {
+                            <tr>
+                                <td>@ct.Title</td>
+                                <td>@ct.AddDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                                <td>@ct.Author</td>
+                                <td>@AceUIHelper.GetBoolZHState(ct.State)</td>
+                                <td>@ct.Type</td>
+                                <td>
+                                    <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+                                        <input type="hidden" class="hiddenBrandID" value="@ct.ID" />
+                                        <button onclick="editarticle(@ct.ID);" class="btn btn-xs btn-info editbtn">
+                                            <i class="icon-edit bigger-120"></i>
+                                        </button>
+                                        <button onclick="deletearticle(@ct.ID);" class="btn btn-xs btn-danger">
+                                            <i class="icon-trash bigger-120"></i>
+                                        </button>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+
+                    </table>
+                    <div class="row">
+                        <div class="col-sm-7">
+
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="dataTables_paginate paging_bootstrap">
+                                @Html.ToPageList((int)Model.Page, (int)Model.PageSize, (int)Model.TotalCount, "articlesearch")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+        }
+        else
+        {
+            <p>没有数据</p>
+        }
+        <!-- /span -->
+    </div>
+    <!-- /row -->
+
+</div>

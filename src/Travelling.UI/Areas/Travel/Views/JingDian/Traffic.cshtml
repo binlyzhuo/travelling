@@ -1,0 +1,33 @@
+﻿@using Travelling.ViewModel.Travel
+@model SceneryTrafficInfo
+<div class="other_info section">
+    <div class="tit">
+        <strong>
+            <i class="i2">
+            </i>交通指南
+        </strong>
+    </div>
+    <div class="fn-clear"></div>
+    <div id="container" style="clear:both; width:863px; height:300px;" class="mt10"></div>
+    <script src="http://api.map.baidu.com/api?v=1.2"></script>
+    <script>
+        map = new BMap.Map("container");
+        var point = new BMap.Point(@Model.Longitude, @Model.Latitude);
+        map.centerAndZoom(point, 15);
+        var marker = new BMap.Marker(point);
+        map.addOverlay(marker); map.setCenter(point);
+        var jd_title = '@Model.SceneryName';
+        var jd_info = '@Model.Address';
+        var myIcon = new BMap.Icon("images/ditu_ico.gif", new BMap.Size(28, 37));
+        map.addControl(new BMap.NavigationControl());
+        var marker = new BMap.Marker(point, { icon: myIcon });
+        // 创建标注var opts = {width : 180,
+        // 信息窗口宽度 height: 30,
+        // 信息窗口高度 title : ""
+        // 信息窗口标题} var infoWindow = new BMap.InfoWindow(jd_title+'<br>'+jd_info, opts);
+        // 创建信息窗口对象 map.openInfoWindow(infoWindow,point);
+    </script>
+    <div class="txt font_con">
+        <p>&nbsp;</p>@Html.Raw(Model.Traffic)
+    </div>
+</div>

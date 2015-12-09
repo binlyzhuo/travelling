@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FAC92AC-8334-428E-A469-91A25B8663EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Travelling.OpenApiEntity</RootNamespace>
+    <AssemblyName>Travelling.OpenApiEntity</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Travelling.OpenApiEntity.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ctrip\CtripApiErrorCode.cs" />
+    <Compile Include="Ctrip\CtripBaseAPICallEntity.cs" />
+    <Compile Include="Ctrip\CtripBaseAPIReturnEntity.cs" />
+    <Compile Include="Ctrip\CtripRequestChannel.cs" />
+    <Compile Include="Ctrip\CtripApiReturnHeaderInfo.cs" />
+    <Compile Include="Ctrip\Enums\BedType.cs" />
+    <Compile Include="Ctrip\Enums\ContactType.cs" />
+    <Compile Include="Ctrip\Enums\CtripHotelStarLevel.cs" />
+    <Compile Include="Ctrip\Enums\HotelAmenityType.cs" />
+    <Compile Include="Ctrip\Enums\HotelBookResultCode.cs" />
+    <Compile Include="Ctrip\Enums\HotelDescType.cs" />
+    <Compile Include="Ctrip\Enums\HotelTextDescriptionType.cs" />
+    <Compile Include="Ctrip\Enums\InformationType.cs" />
+    <Compile Include="Ctrip\Enums\PhoneTechnologyType.cs" />
+    <Compile Include="Ctrip\Enums\HotelPictureCategoryCode.cs" />
+    <Compile Include="Ctrip\Enums\PositionTypeCode.cs" />
+    <Compile Include="Ctrip\Enums\RateCategory.cs" />
+    <Compile Include="Ctrip\Enums\RebateProgramCode.cs" />
+    <Compile Include="Ctrip\Enums\ReferencePointCategoryCode.cs" />
+    <Compile Include="Ctrip\Enums\RoomGuaranteeCode.cs" />
+    <Compile Include="Ctrip\Enums\SegmentCategoryCode.cs" />
+    <Compile Include="Ctrip\Hotel\Module\AreaInfo.cs" />
+    <Compile Include="Ctrip\Hotel\Module\AvaiRoomRate.cs" />
+    <Compile Include="Ctrip\Hotel\Module\CancelPenalty.cs" />
+    <Compile Include="Ctrip\Hotel\Module\CtripHotelRepEntity.cs" />
+    <Compile Include="Ctrip\Hotel\Module\DepositPayment.cs" />
+    <Compile Include="Ctrip\Hotel\Module\DepositPaymentInfo.cs" />
+    <Compile Include="Ctrip\Hotel\Module\DescriptiveInfo.cs" />
+    <Compile Include="Ctrip\Hotel\Module\ErrorInfo.cs" />
+    <Compile Include="Ctrip\Hotel\Module\Facility.cs" />
+    <Compile Include="Ctrip\Hotel\Module\GuaranteePayment.cs" />
+    <Compile Include="Ctrip\Hotel\Module\HotelBookErrorInfo.cs" />
+    <Compile Include="Ctrip\Hotel\Module\HotelCacheChange.cs" />
+    <Compile Include="Ctrip\Hotel\Module\HotelContact.cs" />
+    <Compile Include="Ctrip\Hotel\Module\HotelDescriptiveInfo.cs" />
+    <Compile Include="Ctrip\Hotel\Module\HotelPolicyInfo.cs" />
+    <Compile Include="Ctrip\Hotel\Module\HotelRatePlan.cs" />
+    <Compile Include="Ctrip\Hotel\Module\HotelRatePlanRQ.cs" />
+    <Compile Include="Ctrip\Hotel\Module\HotelReservation.cs" />
+    <Compile Include="Ctrip\Hotel\Module\HotelReservationID.cs" />
+    <Compile Include="Ctrip\Hotel\Module\HotelRoom.cs" />
+    <Compile Include="Ctrip\Hotel\Module\MultimediaDescription.cs" />
+    <Compile Include="Ctrip\Hotel\Module\MultimediaTextDescription.cs" />
+    <Compile Include="Ctrip\Hotel\Module\Person.cs" />
+    <Compile Include="Ctrip\Hotel\Module\Pertain.cs" />
+    <Compile Include="Ctrip\Hotel\Module\PolicyInfoCode.cs" />
+    <Compile Include="Ctrip\Hotel\Module\RelativePosition.cs" />
+    <Compile Include="Ctrip\Hotel\Module\RoomFacility.cs" />
+    <Compile Include="Ctrip\Hotel\Module\RoomRate.cs" />
+    <Compile Include="Ctrip\Hotel\Module\RoomRatePlan.cs" />
+    <Compile Include="Ctrip\Hotel\Module\VendorMessage.cs" />
+    <Compile Include="Ctrip\Hotel\Module\ZoneInfo.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_CancelCallEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_CancelReturnEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelAvailCallEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelAvailReturnEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelCacheChangeCallEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelCacheChangeReturnEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelDescriptiveInfoCallEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelDescriptiveInfoReturnEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelRatePlanCallEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelRatePlanReturnEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelResCallEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelResNotifCallEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelResNotifReturnEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelResReturnEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelSearchCallEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_HotelSearchReturnEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_PingCallEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_PingReturnEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_ReadCallEntity.cs" />
+    <Compile Include="Ctrip\Hotel\OTA_ReadReturnEntity.cs" />
+    <Compile Include="Ctrip\Tuan\CategoryAttr.cs" />
+    <Compile Include="Ctrip\Tuan\CategoryInfo.cs" />
+    <Compile Include="Ctrip\Tuan\ContactInfo.cs" />
+    <Compile Include="Ctrip\Tuan\GroupHotelInfo.cs" />
+    <Compile Include="Ctrip\Tuan\GroupProductChangeCallEntity.cs" />
+    <Compile Include="Ctrip\Tuan\GroupProductChangeReturnEntity.cs" />
+    <Compile Include="Ctrip\Tuan\GroupProductDescription.cs" />
+    <Compile Include="Ctrip\Tuan\GroupProductHotelEntity.cs" />
+    <Compile Include="Ctrip\Tuan\GroupProductInfo.cs" />
+    <Compile Include="Ctrip\Tuan\GroupProductListCallEntity.cs" />
+    <Compile Include="Ctrip\Tuan\GroupProductListEntity.cs" />
+    <Compile Include="Ctrip\Tuan\GroupProductListReturnEntity.cs" />
+    <Compile Include="Ctrip\Tuan\GroupProductPicture.cs" />
+    <Compile Include="Ctrip\Tuan\GroupProductPictureContent.cs" />
+    <Compile Include="Ctrip\Tuan\GroupProductRule.cs" />
+    <Compile Include="Ctrip\Tuan\GuaranteeInfo.cs" />
+    <Compile Include="Ctrip\Tuan\PositionInfo.cs" />
+    <Compile Include="Ctrip\Tuan\ProductDetailInfo.cs" />
+    <Compile Include="Ctrip\Tuan\ProductScores.cs" />
+    <Compile Include="Ctrip\Tuan\ProductsMarket.cs" />
+    <Compile Include="Ctrip\Tuan\ProductType.cs" />
+    <Compile Include="Ctrip\Tuan\Product_DetailCallEntity.cs" />
+    <Compile Include="Ctrip\Tuan\Product_DetailReturnEntity.cs" />
+    <Compile Include="Ctrip\Tuan\Product_GetCallEntity.cs" />
+    <Compile Include="Ctrip\Tuan\Product_GetReturnEntity.cs" />
+    <Compile Include="Ctrip\Tuan\RoomInfo.cs" />
+    <Compile Include="Ctrip\Tuan\RoomStatusItem.cs" />
+    <Compile Include="Ctrip\Tuan\TicketEffectiveRange.cs" />
+    <Compile Include="Ctrip\Tuan\VendorInfo.cs" />
+    <Compile Include="Ctrip\User\UserUniqueIDCallEntity.cs" />
+    <Compile Include="Ctrip\User\UserUniqueIDReturnEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenery\CancelSceneryOrderCallEntity.cs" />
+    <Compile Include="Scenery\CancelSceneryOrderReturnEntity.cs" />
+    <Compile Include="Scenery\GetCommentListCallEntity.cs" />
+    <Compile Include="Scenery\GetCommentListReturnEntity.cs" />
+    <Compile Include="Scenery\GetNearbySceneryCallEntity.cs" />
+    <Compile Include="Scenery\GetNearbySceneryReturnEntity.cs" />
+    <Compile Include="Scenery\GetPriceCalendarCallEntity.cs" />
+    <Compile Include="Scenery\GetPriceCalendarReturnEntity.cs" />
+    <Compile Include="Scenery\GetSceneryDetailReturnEntity.cs" />
+    <Compile Include="Scenery\GetSceneryImageListCallEntity.cs" />
+    <Compile Include="Scenery\GetSceneryImageListReturnEntity.cs" />
+    <Compile Include="Scenery\GetSceneryListCallEntity.cs" />
+    <Compile Include="Scenery\GetSceneryListReturnEntity.cs" />
+    <Compile Include="Scenery\GetSceneryPriceCallEntity.cs" />
+    <Compile Include="Scenery\GetSceneryPriceReturnEntity.cs" />
+    <Compile Include="Scenery\GetSceneryTrafficInfoCallEntity.cs" />
+    <Compile Include="Scenery\GetSceneryTrafficInfoReturnEntity.cs" />
+    <Compile Include="Scenery\Module\Comment.cs" />
+    <Compile Include="Scenery\Module\Guest.cs" />
+    <Compile Include="Scenery\Module\ImgSizeCode.cs" />
+    <Compile Include="Scenery\Module\Impression.cs" />
+    <Compile Include="Scenery\Module\NoticeInfo.cs" />
+    <Compile Include="Scenery\Module\SceneryImgSize.cs" />
+    <Compile Include="Scenery\Module\SceneryNotice.cs" />
+    <Compile Include="Scenery\Module\SceneryPolicy.cs" />
+    <Compile Include="Scenery\Module\SceneryPriceInfo.cs" />
+    <Compile Include="Scenery\Module\SceneryTheme.cs" />
+    <Compile Include="Scenery\Module\SceneryNearInfo.cs" />
+    <Compile Include="Scenery\Module\SceneryTicketPayType.cs" />
+    <Compile Include="Scenery\Module\SceneryViewModel.cs" />
+    <Compile Include="Scenery\Module\Suitherd.cs" />
+    <Compile Include="Scenery\ScenerySearchCallEntity.cs" />
+    <Compile Include="Scenery\ScenerySearchReturnEntity.cs" />
+    <Compile Include="Scenery\SubmitSceneryOrderCallEntity.cs" />
+    <Compile Include="Scenery\SubmitSceneryOrderReturnEntity.cs" />
+    <Compile Include="TC\Hotel\GetCommentListCallEntity.cs" />
+    <Compile Include="TC\Hotel\GetCommentListReturnEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelBookingPolicyCallEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelBookingPolicyReturnEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelImageListCallEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelImageListReturnEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelRoomsMultiCallEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelRoomsMultiReturnEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelTrafficInfoCallEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelTrafficInfoReturnEntity.cs" />
+    <Compile Include="TC\Hotel\GetProvinceListCallEntity.cs" />
+    <Compile Include="TC\Hotel\GetProvinceListReturnEntity.cs" />
+    <Compile Include="TC\Hotel\Module\CityInfo.cs" />
+    <Compile Include="TC\Hotel\Module\CommentScoreType.cs" />
+    <Compile Include="TC\Hotel\Module\HotelCommentInfo.cs" />
+    <Compile Include="TC\Hotel\Module\HotelRoomAdslType.cs" />
+    <Compile Include="TC\Hotel\Module\HotelRoomBookingFlag.cs" />
+    <Compile Include="TC\Hotel\Module\ProvinceInfo.cs" />
+    <Compile Include="TC\Hotel\Module\RegionInfo.cs" />
+    <Compile Include="TC\Hotel\Module\SectionInfo.cs" />
+    <Compile Include="TC\Hotel\Module\TCHotelBookingPolicy.cs" />
+    <Compile Include="TC\Hotel\Module\TCHotelImage.cs" />
+    <Compile Include="TC\Hotel\Module\TCHotelPresent.cs" />
+    <Compile Include="TC\Hotel\Module\TCHotelRoomInfo.cs" />
+    <Compile Include="TC\Hotel\Module\TCHotelRoomPricePolicyInfo.cs" />
+    <Compile Include="TC\Hotel\Module\TCTrafficInfo.cs" />
+    <Compile Include="TC\Hotel\TCBizSection.cs" />
+    <Compile Include="TC\Hotel\TCHotelDetailInfo.cs" />
+    <Compile Include="TC\Hotel\TCHotelImpress.cs" />
+    <Compile Include="TC\Hotel\TCHotelServiceInfo.cs" />
+    <Compile Include="TC\TongChengBaseCallEntity.cs" />
+    <Compile Include="TC\TongChengBaseReturnEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelDetailCallEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelDetailReturnEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelListCallEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelListReturnEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelRoomsCallEntity.cs" />
+    <Compile Include="TC\Hotel\GetHotelRoomsReturnEntity.cs" />
+    <Compile Include="TC\Hotel\TCHotelDetail.cs" />
+    <Compile Include="TC\Hotel\TCHotelInfo.cs" />
+    <Compile Include="TC\Hotel\TCSectionInfo.cs" />
+    <Compile Include="Zhuna\CityCallEntity.cs" />
+    <Compile Include="Zhuna\CityReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaCommentlistReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaHotelComment.cs" />
+    <Compile Include="Zhuna\ZhunaHotelCommentReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaHotelInfo.cs" />
+    <Compile Include="Zhuna\ZhunaHotelInfoReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaHotelPicInfo.cs" />
+    <Compile Include="Zhuna\ZhunaHotelpicReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaHotelPriceInfo.cs" />
+    <Compile Include="Zhuna\ZhunaHotelPriceReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaHotelPromotionReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaHotelQuestion.cs" />
+    <Compile Include="Zhuna\ZhunaHotelQuestionReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaHotelRoomImgInfo.cs" />
+    <Compile Include="Zhuna\ZhunaHotelRoomInfo.cs" />
+    <Compile Include="Zhuna\ZhunaHotelRoomPic.cs" />
+    <Compile Include="Zhuna\ZhunaHotelRoomPlan.cs" />
+    <Compile Include="Zhuna\ZhunaHotelRoomPlanAddValue.cs" />
+    <Compile Include="Zhuna\ZhunaHotelRoomPlanCardRule.cs" />
+    <Compile Include="Zhuna\ZhunaHotelRoomPlanReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaHotelSearchCallEntity.cs" />
+    <Compile Include="Zhuna\ZhunaHotelSearchNearByReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaHotelSearchReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaLablegetxyReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaBaseCallEntity.cs" />
+    <Compile Include="Zhuna\ZhunaBaseReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaCBDInfo.cs" />
+    <Compile Include="Zhuna\ZhunaCBDReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaCityareaInfo.cs" />
+    <Compile Include="Zhuna\ZhunaCityareaReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaCitychainInfo.cs" />
+    <Compile Include="Zhuna\ZhunaCitychainReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaCityInfo.cs" />
+    <Compile Include="Zhuna\ZhunaHotelChainInfo.cs" />
+    <Compile Include="Zhuna\ZhunaHotelChainReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaLableInfo.cs" />
+    <Compile Include="Zhuna\ZhunaLableInfoReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaLablesearchnearbyInfo.cs" />
+    <Compile Include="Zhuna\ZhunaLablesearchnearbyInfoReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaLabletypeInfo.cs" />
+    <Compile Include="Zhuna\ZhunaLabletypeReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaQuestionInfo.cs" />
+    <Compile Include="Zhuna\ZhunaQuestionlistReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaSchoolInfo.cs" />
+    <Compile Include="Zhuna\ZhunaSchoolReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaSubwaylineInfo.cs" />
+    <Compile Include="Zhuna\ZhunaSubwaylineReturnEntity.cs" />
+    <Compile Include="Zhuna\ZhunaSubwaystationInfo.cs" />
+    <Compile Include="Zhuna\ZhunaSubwaystationReturnEntity.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,128 @@
+﻿@using Travelling.ViewModel.Dto.Hotel
+@using Travelling.ViewModel
+@using Travelling.ViewModel.Travel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_BaseAdminPage.cshtml";
+
+    List<HotelProvinceInfo> hotelProvinces = ViewBag.HotelProvinces;
+}
+@section header{
+    <script type="text/javascript" src="~/Areas/Admin/js/hotelmanage.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //hotelcityinfosearch(1);
+        });
+    </script>
+}
+@model PageObjectResult<HotelCityDetailInfo>
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home home-icon"></i>
+            <a href="#">控制面板</a>
+        </li>
+        <li>
+            <a href="#">酒店管理</a>
+        </li>
+        <li class="active">城市管理</li>
+    </ul>
+    <!-- .breadcrumb -->
+    <div class="nav-search" id="nav-search">
+        <form class="form-search">
+            <span class="input-icon">
+                <input placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" type="text">
+                <i class="icon-search nav-search-icon"></i>
+            </span>
+        </form>
+    </div>
+    <!-- #nav-search -->
+</div>
+<div class="page-content">
+    <div style="margin-bottom:5px;">
+        <table style="width:95%;">
+            <tr>
+                <td width="80" align="right">省份：</td>
+                <td width="100" style="text-align:left;">
+                    <select id="hotelprovince" style="width:100%;" class="form-control">
+                        <option value="">请选择省份</option>
+
+                        @foreach (var p in hotelProvinces)
+                        {
+                            <option value="@p.ProvinceID">@p.ProvinceName</option>
+                        }
+
+                    </select>
+                </td>
+                <td width="80" align="right">城市名称：</td>
+                <td width="110">
+                    <input type="text" placeholder="城市名称" id="hotelcityname">
+                </td>
+                <td width="80" align="right">是否推荐：</td>
+                <td width="120">
+                    <select style="width:99%" id="isrecommendcity">
+                        <option value="">选择推荐状态</option>
+                        <option value="1">已推荐</option>
+                        <option value="0">未推荐</option>
+
+                    </select>
+                </td>
+                <td width="80" align="right">是否热门</td>
+                <td width="150">
+                    <select style="width:99%" id="ishotcity">
+                        <option value="">是否热门</option>
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+
+                    </select>
+                </td>
+                <td width="120" align="right">是否查询推荐</td>
+                <td width="150">
+                    <select style="width:99%" id="issearchrecommend">
+                        <option value="">选择推荐状态</option>
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                    </select>
+                </td>
+                
+                
+                <td align="center">
+                    <button class="btn btn-sm btn-primary" type="button" onclick="hotelcityinfosearch(1);">查询</button>
+                </td>
+            </tr>
+            <tr>
+                <td width="80" align="right">排序类型</td>
+                <td>
+                    <select style="width:99%" id="isOrderField">
+                        <option value="">&nbsp;选择推荐字段</option>
+                        <option value="1">热门</option>
+                        <option value="0">推荐</option>
+                    </select>
+                </td>
+                <td width="80" align="right">排序方式</td>
+                <td width="150">
+                    <select style="width:99%" id="isOrderType">
+                        <option value="">&nbsp;选择推荐字段</option>
+                        <option value="1">升序</option>
+                        <option value="0">降序</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row" id="queryresult">
+
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.page-content -->
+@section scripts{
+    
+    <script type="text/javascript" src="~/Areas/Admin/assets/js/ace-extra.min.js"></script>
+}
+
+

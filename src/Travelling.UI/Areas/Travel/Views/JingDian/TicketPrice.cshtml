@@ -1,0 +1,45 @@
+﻿@using Travelling.ViewModel.Dto.Ticket
+@using Travelling.FrameWork
+@using Travelling.OpenApiEntity.Scenery.Module
+@using Travelling.Web.Helpers
+
+@model List<SceneryPolicy>
+<div class="section order_list">
+    <div class="order_list_con">
+        <div class="top">
+            <span class="title">门票</span>
+        </div>
+        <ul style="display:block">
+            <li class="first">
+                <span class="title">门票/供应商</span>
+                <span class="cost">票面价</span>
+                <span class="price">优惠价</span>
+                <span class="type">取票方式</span>
+                <span class="must">&nbsp;</span>
+                <span class="pay">支付方式</span>
+                <span class="btn">操作</span>
+            </li>
+            @foreach (var p in Model)
+            {
+                <li>
+                    <span class="title">
+                        <a href="#" rel="nofollow" target="_blank">@p.PolicyName-@p.ticketName</a>
+                        <div class="vendor">供应商：同程旅游</div>
+                    </span>
+                    <span class="cost">&yen;<del>@p.price</del></span>
+                    <span class="price">
+                        <em>&yen;<b>@p.tcPrice</b></em>
+                    </span>
+                    <span class="type" title="@p.gMode">@p.gMode.SubString(5)</span>
+                    <span class="must">须知<i></i></span>
+                    <span class="pay">@SceneryTicketHelper.GetTicketPayTypeName(p.pMode)</span>
+                    <span class="btn">
+                        <a href="@SceneryTicketHelper.GetTCSceneryOrderUrl(p.SceneryId,p.PolicyId)" target="_blank" rel="nofollow">预订</a>
+                    </span>
+                    <div class="hide_box">@p.Remark</div>
+                </li>
+            }
+        </ul>
+
+    </div>
+</div>

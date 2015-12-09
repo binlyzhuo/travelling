@@ -1,0 +1,95 @@
+﻿@{
+
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+    List<SceneryThemeInfo> ticketThemes = ViewBag.Themes;
+    ticketThemes = ticketThemes.Range(21);
+}
+@using Travelling.ViewModel.Dto.Ticket
+@using Travelling.FrameWork
+@using Travelling.Web.Helpers
+@section header{
+    <script type="text/javascript" src="~/Scripts/jquery.slides.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="~/Content/travel/piao_index.css" />
+   <script type="text/javascript">
+       $(function () {
+           $("img.lazy").lazyload({ effect: 'fadeIn' });
+       });
+    </script>
+}
+<div id="MainContent">
+    <div class="con_t">
+        <div class="side_nav">
+            <strong>门票主题分类</strong>
+            <div class="side_nav_con">
+                @foreach (var t in ticketThemes)
+                {
+                    <a title="@t.Name" target="_parent" href="@string.Format("/ticketsearchlist/theme{0}.html",t.ID)">@t.Name</a>
+                }
+                
+            </div>
+        </div>
+        <div class="slides480" id="slides">
+            
+            <a title="卧虎山滑雪场" href="@SceneryTicketHelper.GetSceneryInfoUrl(16711)" target="_blank"><img src="http://upload.17u.com/uploadfile/2014/12/12/2/201412121336154503158.jpg" width="620" height="240" /></a>
+            <a title="济南跑马岭" href="@SceneryTicketHelper.GetSceneryInfoUrl(30712)" target="_blank"><img src="http://upload.17u.com/uploadfile/2014/11/12/2/201411121544295129244.jpg" width="620" height="240" /></a>
+        </div>
+        <script type="text/javascript">
+            $('#slides').slidesjs({ width: 615, height: 250, play: { active: true, auto: true, interval: 3000, swap: true } });
+        </script>
+
+
+
+    </div>
+    <div class="KxContentRight">
+        @Html.Action("HotTheme", "JingDian", null)
+        <div class="CommPosBox margtop10" id="v1212_kxlinks" style="">
+            <div class="CommHdBox">
+                <h2 class="CommHd">用户保障</h2>
+            </div>
+            <div class="ensure_list">
+                <dl>
+                    <dt class="note1"></dt>
+                    <dd>
+                        <strong>免费保证</strong>
+                        <span>免费预订，不收取任何费用</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="note2"></dt>
+                    <dd>
+                        <strong>低价承诺</strong>
+                        <span>高出前台现付价，赔付预订差价</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="note3"></dt>
+                    <dd>
+                        <strong>有房保障</strong>
+                        <span>预订后，到店无房，赔付首晚房费</span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+    </div>
+    <div class="KxContentLeft">
+        @Html.Action("HotSceneries", "JingDian", null)
+        @Html.Action("HotTravelCity", "JingDian", null)
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("ul#hotsceneryprovinces li a").each(function () {
+            $(this).click(function () {
+                $("ul.HotSceneryList").hide();
+                $("#block_ticket_" + $(this).attr("data")).show();
+
+
+                $("#hotsceneryprovinces li").removeClass("TabDefault");
+                $(this).parent("li").addClass("TabDefault ");
+            });
+        });
+        //========================
+
+    });
+</script>

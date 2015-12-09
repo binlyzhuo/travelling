@@ -1,0 +1,26 @@
+﻿@model List<GroupProductInfo>
+@using Travelling.OpenApiEntity.Ctrip.Tuan
+@using Travelling.Web.Helpers
+@using Travelling.FrameWork
+<div class="TabCont">
+    <div class="HdBd">
+        <h2 class="Hd">热门团购</h2>
+    </div>
+    
+    @foreach (var p in Model)
+    {
+        <ul class="ActivityList hothotelgroup">
+            <li>
+                <a title="@p.HotelName" href="@TuanHelper.CtripTuanUrl(p.ProductID)" target="_blank">
+                    <img src="@p.ProductPictures[0].contents[0].URL" alt="@p.HotelName" width="140" height="100">
+                </a>
+            </li>
+            <li>
+                <a href="@TuanHelper.CtripTuanUrl(p.ProductID)" target="_blank" title="@p.HotelName">@p.HotelName.SubString(12)</a>
+                <span>团购价:<span class="PriceShow fontSize15">￥@p.SalePrice</span></span><br />
+                <span>原价:<span>￥@p.ListingPrice</span></span><br />
+                <span>折扣:<span class="PriceShow">@Html.Raw((p.SalePrice / (float)p.ListingPrice).ToString("f2").ToFloat() * 10)折</span></span>
+            </li>
+        </ul>
+    }
+</div>

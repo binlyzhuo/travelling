@@ -1,0 +1,48 @@
+﻿@model HotelBrandDetailInfo
+@using Travelling.ViewModel.Dto.Hotel
+@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@{
+
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+    List<HotelBrandSummaryInfo> summaryInfos = ViewBag.HotelBrandSummaryInfos;
+    List<string> pinyinOrders = summaryInfos.Select(u => u.OrderFlag).Distinct().ToList();
+    List<string> cityOrders = summaryInfos.Select(u => u.CityName).Distinct().ToList();
+}
+@section header{
+    <link type="text/css" href="~/Content/travel/hotelbrands.css" rel="stylesheet" />
+    <link type="text/css" href="~/Content/travel/hotel_brand.css" rel="stylesheet" />
+}
+<div id="MainContent">
+    <div class="wraper">
+        @Html.Partial("HotelBrandSearch",Model)
+        <div class="hotel_brand_tit2">
+            <h3>@Html.Raw(string.Format("{0}酒店城市分布", Model.BrandName))</h3>
+            <ul data="SwitchTab">
+                <li class="hot_hotel_tit_tab"><a href="@Html.Raw(string.Format("/pinpai2_{0}.html",Model.BrandID))">按字母查找城市</a></li>
+                <li class=""><a href="@Html.Raw(string.Format("/pinpai2_{0}.html",Model.BrandID))">热门城市门店</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="hotel_brand_zm">
+
+                @foreach (var word in pinyinOrders)
+                {
+                    <div>
+                        <font>@word</font>
+                        <ul>
+                            @foreach (var s in summaryInfos.Where(u => u.OrderFlag == word).ToList())
+                            {
+                                <li>
+                                    <a title="@Html.Raw(string.Format("{0}{1}酒店预定", s.CityName, Model.BrandName))" target="_blank" href="@HotelUnionHelper.GetHotelCityBrandInfo(s.HotelCityCode, s.BrandID)">@Html.Raw(string.Format("{0}{1}", s.CityName, Model.BrandName))</a><span>(@s.HotelCount)</span>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+                <p class="hideline"></p>
+            </div>
+            
+        </div>
+    </div>
+</div>

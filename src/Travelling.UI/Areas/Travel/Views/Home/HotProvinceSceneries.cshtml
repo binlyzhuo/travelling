@@ -1,0 +1,60 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Domain
+@using Travelling.ViewModel.Ticket
+@using Travelling.ViewModel.Dto.Ticket;
+@using Travelling.Web.Helpers
+@model Tuple<List<SceneryTicketPrimaryInfo>, List<SceneryProvinceDetailInfo>>
+<div class="TabCont">
+    <div class="HdBd">
+        <h2 class="Hd">国内景点门票</h2>
+        <ul class="Tablist" id="hotsceneryprovinces">
+            @for (var index = 0; index < Model.Item2.Count; index++)
+            {
+                <li id="tag_@Model.Item2[index].ID" class="@Html.Raw(index == 0 ? "TabDefault" : "")">
+                    <a href="javascript:void(0)" data="@Model.Item2[index].ID">@Model.Item2[index].Name</a>
+                </li>
+            }
+            <li>
+                <a id="more" target="_blank" href="/jingdian">更多</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="TabContBd">
+        <!-- bj -->
+        @for (int index = 0; index < Model.Item2.Count; index++)
+        {
+            string hideStyle = "";
+            if (index != 0)
+            {
+                hideStyle = "style=display:none;";
+            }
+            <ul id="block_ticket_@Model.Item2[index].ID" class="CullHotelList HotSceneryList GpbCullHotelList" @hideStyle>
+                @foreach (var s in Model.Item1.Where(u => u.ProvinceId == Model.Item2[index].ID).ToList())
+                {
+                    <li title="@s.SceneryName">
+                        <div class="CullHotelImg">
+                            <a href="@SceneryTicketHelper.GetSceneryInfoLink(s.SceneryId)" title="@string.Format("{0}{1}门票预定", Model.Item2[index].Name,s.SceneryName)" target="_blank">
+                                <img width="150" height="98" data-original="@Html.Raw(s.ImgBaseUrl+s.Imgs)" src="~/Imgs/common/jingdianplace.jpg" class="lazy" />
+                            </a>
+                        </div>
+                        <div class="CullHotelCont">
+
+                            <p class="CullHotelCls">
+
+                                <span class="CullHotelPrice">
+                                    <a style="color:#f60;">
+                                        <span class="f14">¥</span>
+                                        <span class="Verdana">@s.AmountAdvice</span>
+                                    </a>
+                                </span>
+                                <span><a href="@SceneryTicketHelper.GetSceneryInfoLink(s.SceneryId)" title="@string.Format("{0}{1}门票预定", Model.Item2[index].Name,s.SceneryName)" target="_blank">@s.SceneryName</a></span>
+                            </p>
+                        </div>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+
+</div>

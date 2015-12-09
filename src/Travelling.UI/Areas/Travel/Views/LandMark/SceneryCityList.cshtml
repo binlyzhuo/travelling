@@ -1,0 +1,38 @@
+﻿@model Tuple<List<SceneryProvinceDetailInfo>, List<SceneryProvinceDetailInfo>>
+@using Travelling.ViewModel.Dto.Ticket
+
+@{
+    
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+    
+}
+@section header{
+    <link type="text/css" href="~/Content/travel/hotelbrands.css" rel="stylesheet" />
+    <link type="text/css" href="~/Content/travel/hotel_brand.css" rel="stylesheet" />
+}
+<div id="MainContent">
+    <div class="wraper">
+        <div class="hotel_brand_tit2">
+            <h3>国内城市景点门票</h3>
+        </div>
+        <div class="hotel_brand_city">
+            @foreach (var p in Model.Item1)
+            {
+                <div>
+                    <span><a href="#" target="_blank" title="@p.Name">@p.Name</a></span>
+                    <ul>
+                        @foreach (var c in Model.Item2.Where(u => u.ParentID == p.ID).ToList())
+                        {
+                            <li>
+                                <a href="@Html.Raw(string.Format("/ticketsearchlist_{0}.html", c.ID))" target="_blank" title="@string.Format("{0}景点门票",c.Name)">@string.Format("{0}景点门票", c.Name)</a>
+                            </li>
+                        }
+
+                    </ul>
+
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

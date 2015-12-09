@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+@model Tuple<string, string, string>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Map</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/travel/demo.Default.css" />
+    <script language="javascript" src="http://webapi.amap.com/maps?v=1.3&key=@ViewBag.GaoDeMapKey"></script>
+
+    <script language="javascript">
+    var mapObj;
+    function mapInit() {
+        mapObj = new AMap.Map("iCenter", {
+            //二维地图显示视口
+            view: new AMap.View2D({
+                center: new AMap.LngLat(@Model.Item1, @Model.Item2),//地图中心点
+                zoom: 13 //地图显示的缩放级别
+            })
+        });
+        var marker = new AMap.Marker({
+            position: mapObj.getCenter(),
+            draggable: false, //点标记可拖拽
+            cursor: 'move',  //鼠标悬停点标记时的鼠标样式
+            raiseOnDrag: true//鼠标拖拽点标记时开启点标记离开地图的效果
+
+        });
+        marker.setMap(mapObj);
+        marker.setTitle('@Model.Item3');
+    }
+    </script>
+</head>
+<body onload="mapInit()">
+    <div id="iCenter" style="width:800px;height:500px;"></div>
+    <div>使用右上角的地图切换插件进行地图类型切换</div>
+</body>
+</html>

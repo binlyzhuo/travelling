@@ -1,0 +1,15 @@
+﻿@model List<GuZhenCityInfo>
+@using Travelling.ViewModel.Travel.XmlData
+<div class="box-header clearfix">
+    <div class="name">古镇客栈：</div>
+    <div class="sale-city-box" id="sale_city_box">
+        <ul class="citylist-box clearfix" id="sale_city">
+
+            @foreach (var g in Model)
+            {
+                <li><a title="@string.Format("{0}酒店客栈预定",g.CityName)" href=@string.Format("/guzhen_{0}.html",g.Pinyin) target="_blank">@g.CityName</a></li>
+            }
+        </ul>
+
+    </div>
+</div>

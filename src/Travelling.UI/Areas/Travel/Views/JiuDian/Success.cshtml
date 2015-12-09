@@ -1,0 +1,15 @@
+﻿@model string
+@{
+    ViewBag.Title = "Success";
+    Layout = "~/Areas/Travel/Views/Shared/_BaseBookLayoutPage.cshtml";
+}
+
+
+@if(!string.IsNullOrEmpty(Model))
+{
+    <p>预定成功,订单号:@Model</p>
+}
+else
+{
+  <p>预定失败</p>
+}

@@ -1,0 +1,83 @@
+﻿@model GetHotelListReturnEntity
+@using Travelling.OpenApiEntity.TC.Hotel
+@using Travelling.ViewModel.Travel.XmlData
+@{
+
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+    List<GuZhenCityInfo> guzhens = ViewBag.GuZhen;
+    GuZhenCityInfo guzhen = ViewBag.Selected;
+}
+@section header{
+    <link type="text/css" href="~/Content/travel/kezhan.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".hiddenHotelID").each(function () {
+                //alert($(this).val());
+                $.ajax({
+                    url: '/KeZhan/GetComment',
+                    data: { hotelid: $(this).val() },
+                    type: 'post',
+                    success: function (rep) {
+                        if (rep.Success) {
+                            $("#comment_" + rep.Data).html("好评:" + rep.obj.content);
+
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}
+<div id="MainContent" class="lvshe-main">
+    <div class="main ch">
+        <div class="city-nav">
+            <a title="古镇客栈" href="/KeZhan/">古镇客栈</a> &gt; <span>@string.Format("{0}古镇客栈", guzhen.CityName)</span>
+        </div>
+        <div class="guzhen-chead">
+            <div class="guzhen-headleft">
+                <span class="guzhen-name">@guzhen.CityName</span>
+                <span class="guzhen-pinying">@guzhen.Pinyin</span>
+            </div>
+
+        </div>
+        <div class="guzhen-line">
+            <a href="#">
+                <i class="active">&nbsp;住宿推荐&nbsp;</i>
+            </a>
+
+            <a href="#"><i>&nbsp;景点&nbsp;</i></a>
+
+        </div>
+    </div>
+
+
+    <ul class="hotellist-ul clearfix">
+
+        @foreach (var p in Model.Hotels)
+        {
+            <li>
+                <div class="hotellist-detil">
+                    <div class="con-box">
+                        <input type="hidden" value="@p.hotelId" class="hiddenHotelID" />
+                        <a target="_blank" title="@p.hotelName" href="@Html.Raw(string.Format("/hotelinfo2_{0}.html", p.hotelId))" class="img-box">
+                            <img width="280" title="@p.hotelName" alt="@string.Format("{0}图片",p.hotelName)" src="@string.Format("http://pic2.40017.cn/hotel{0}", p.img)">
+                        </a>
+                        <a target="_blank" title="@p.hotelName" href="@Html.Raw(string.Format("/hotelinfo2_{0}.html", p.hotelId))" class="name">@p.hotelName</a>
+
+                        <p class="con">
+                            <span id="comment_@p.hotelId"></span>
+                        </p>
+                        <div class="btm-box">
+                            <span class="font14">¥</span>
+                            <strong class="price">@p.lowestPrice</strong> 起
+                        </div>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+    @Html.Partial("PagingResult",Model)
+    
+    @Html.Action("HotGuZhen", "KeZhan", null)
+</div>

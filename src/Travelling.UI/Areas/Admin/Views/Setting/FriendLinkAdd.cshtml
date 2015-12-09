@@ -1,0 +1,37 @@
+﻿@using Travelling.Web.Helpers
+@using Travelling.WebHelper.Helpers
+@using Travelling.ViewModel
+<table class="formtable">
+    <tr>
+        <td class="data_title">网站名称：</td>
+        <td>
+            <input id="siteName" type="text" class="col-xs-10 col-sm-10" />
+            <input type="hidden" value="0" id="ID" />
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">网站链接：</td>
+        <td>
+            <input id="siteLink" value="http://" type="text" class="col-xs-10 col-sm-10" />
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">网站联系人：</td>
+        <td>
+            <input id="siteLinkMan" type="text" class="col-xs-10 col-sm-10" />
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">排序：</td>
+        <td>
+            <input type="text" id="siteOrderNo" class="col-xs-10 col-sm-10" />
+        </td>
+    </tr>
+    <tr>
+        <td class="data_title">有效状态：</td>
+        <td>
+            <input id="siteIsValid" type="checkbox" />
+        </td>
+    </tr>
+
+</table>

@@ -1,0 +1,27 @@
+﻿@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@model IEnumerable<HotelCookieView>
+
+<div id="visitedHistory">
+    @if (Model.Count() > 0)
+    {
+        <div class="sider_title">
+            我浏览过的酒店
+        </div>
+    <ul class="sider_pic_list J_historyHotelsList" id="vistedHotels">
+        @foreach (var h in Model)
+        {
+            <li>
+                <a target="_blank" href="@HotelUnionHelper.GetHotelInfoUrl(h.HotelId,h.UnionId)" title="@h.HotelName" class="sider_hotel_pic">
+                    <img style="border-width:0;width:36px; height:36px;" alt="@string.Format("{0}图片",h.HotelName)" src="@h.HotelIcon">
+                </a>
+                <a target="_blank" href="@HotelUnionHelper.GetHotelInfoUrl(h.HotelId,h.UnionId)" title="@h.HotelName" class="hotel_name">@h.HotelName</a>
+                <span class="hotel_halfdiamond00"></span>
+
+            </li>
+        }
+
+    </ul>
+    }
+    
+</div>

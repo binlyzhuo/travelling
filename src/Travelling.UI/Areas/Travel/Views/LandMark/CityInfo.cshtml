@@ -1,0 +1,110 @@
+﻿@model HotelCityDetailInfo
+@using Travelling.ViewModel.Dto.Hotel
+@using Travelling.ViewModel.Hotel
+@using Travelling.ViewModel.Dto.Ticket
+@using Travelling.Web.Helpers
+@using Travelling.ViewModel.Lucene
+@using Travelling.FrameWork
+@using Travelling.ViewModel.Travel
+@{
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+    List<LocationInfo> locations = ViewBag.Locations;
+    List<CityAreaPrimaryInfo> areas = ViewBag.AreaInfos;
+    List<SceneryInfoDetail> sceneryInfos = ViewBag.SceneryInfos;
+    List<HotelLuceneIndexInfo> hotelInfos = ViewBag.HotelInfos;
+    List<TradeAreaInfo> tradeareas = ViewBag.CBDList;
+    List<SchoolSummaryInfo> schools = ViewBag.Schools;
+}
+@section header{
+    <link type="text/css" href="~/Content/travel/hotelbrands.css" rel="stylesheet" />
+    <link type="text/css" href="~/Content/travel/hotel_brand.css" rel="stylesheet" />
+}
+<div id="MainContent">
+    <h2>@Model.CityName</h2>
+    @if (locations != null && locations.Count > 0)
+    {
+        <div class="hotel_brand_tit2">
+            <h3>行政区域</h3>
+        </div>
+        <div class="hotel_brand_city">
+            <div>
+                <ul>
+                    @foreach (var l in locations)
+                    {
+                        <li>
+                            <a href="@HotelUnionHelper.HotelSearchWithKey(l.LocationCityID,l.LocationName)" target="_blank" title="@Html.Raw(string.Format("{1}{0}酒店预定",l.LocationName,Model.CityName))">@l.LocationName</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+    @if (hotelInfos != null && hotelInfos.Count > 0)
+    {
+        <div class="hotel_brand_tit2">
+            <h3>热门酒店</h3>
+        </div>
+        <div class="hotel_brand_city">
+            <div>
+                <ul>
+                    @foreach (var h in hotelInfos)
+                    {
+                        <li><a target="_blank" title="@string.Format("{0}{1}酒店预定",h.CityName,h.HotelName)" href="@HotelUnionHelper.GetHotelInfoUrl(h.HotelID,h.UnionId)">@h.HotelName</a></li>
+                    }
+                </ul>
+            </div>
+            
+           
+        </div>
+    }
+    @if (sceneryInfos != null && sceneryInfos.Count > 0)
+    {
+        <div class="hotel_brand_tit2">
+            <h3>热门景点</h3>
+        </div>
+        <div class="hotel_brand_city">
+            <div>
+                <ul>
+                    @foreach (var l in sceneryInfos)
+                    {
+                        <li>
+                            <a href="@SceneryTicketHelper.GetSceneryInfoLink(l.SceneryID)" target="_blank" title="@string.Format("{0}{1}门票预定",l.CityName,l.SceneryName)">@l.SceneryName</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+    @if (areas != null && areas.Count > 0)
+    {
+        <div class="hotel_brand_tit2">
+            <h3>城市地标</h3>
+        </div>
+        <div class="hotel_brand_city">
+            <div>
+                <ul>
+                    @foreach (var l in areas)
+                    {
+                        <li>
+                            <a href="@string.Format("hotelsearchlist_{0}/{1}",Model.CityID,l.AreaName)" target="_blank" title="@string.Format("{1}{0}周边酒店预定",l.AreaName,Model.CityName)">@l.AreaName</a>
+                        </li>
+                    }
+
+                    @foreach (var l in tradeareas)
+                    {
+                        <li>
+                            <a href="@string.Format("hotelsearchlist_{0}/{1}",Model.CityID,l.Name)" target="_blank" title="@string.Format("{1}{0}周边酒店预定",l.Name,Model.CityName)">@l.Name</a>
+                        </li>
+                    }
+                    @foreach (var l in schools)
+                    {
+                        <li>
+                            <a href="@string.Format("hotelsearchlist_{0}/{1}",Model.CityID,l.SchoolName)" target="_blank" title="@string.Format("{1}{0}周边酒店预定", l.SchoolName, Model.CityName)">@l.SchoolName</a>
+                        </li>
+                    }
+                </ul>
+
+            </div>
+        </div>
+    }
+</div>

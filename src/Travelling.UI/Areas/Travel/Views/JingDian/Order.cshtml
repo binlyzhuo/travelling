@@ -1,0 +1,149 @@
+﻿@using Travelling.ViewModel.Dto.Ticket
+@using Travelling.OpenApiEntity.Scenery.Module
+
+@{
+    
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+
+    SceneryInfoDetail sceneryInfo = ViewBag.SceneryInfo;
+}
+@model SceneryPolicy
+@section header
+{
+    <link type="text/css" href="~/Content/travel/order_ticket.css" rel="stylesheet" />
+    <link type="text/css" href="~/Content/travel/my_top.css" rel="stylesheet" />
+    <link type="text/css" href="~/Content/travel/order_date_plugin.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Areas/Travel/Js/order_date_ticket.js"></script>
+    <script type="text/javascript" src="~/Areas/Travel/Js/order_ticket.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.9.0.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnSubmitOrder").click(function () {
+                var linkName = $("#link_man").val();
+                var linkPhone = $("#link_phone").val();
+                var startdate = $("#start_time").val();
+                var orderRemark = $("#order_memo").val();
+                var sceneryId = $("#sceneryId").val();
+                var policyid = $("#policyid").val();
+
+                //alert('1234');
+            });
+
+            $("#sceneryOrderForm").submit(function () {
+                //alert('post data');\
+                var linkman = $("#linkman").val();
+                var linktel = $("#linktel").val();
+
+                if ($.trim(linkman) == "") {
+                    $("#linkman").css("border-color","red");
+                    return false;
+                }
+                if ($.trim(linktel) == "") {
+                    $("#linktel").css("border-color", "red");
+                    return false;
+                }
+                return true;
+            });
+        });
+    </script>
+    }
+<div id="MainContent">
+    
+    <div class="ndwz">产品服务提供商：<a href="#">同程旅游</a><i></i></div>
+    <div class="mian">
+        <form id="sceneryOrderForm" method="post" action="/JingDian/Order">
+            <div class="form_con">
+                <input name="policyid" value="@Model.PolicyId" type="hidden">
+                <input name="sceneryId" value="@Model.SceneryId" type="hidden">
+                <div class="tit">
+                    <strong>@sceneryInfo.SceneryName</strong>
+                    <em>订单信息</em>
+                    <a href="/JingDian/SceneryInfo/jq_@sceneryInfo.SceneryID" class="more">重新选择</a>
+                </div>
+                <div class="txt">
+                    <dl>
+                        <dt>门票名称：</dt>
+                        <dd>
+                            <strong class="title">@Model.PolicyName</strong>
+                            <div class="name_pro">
+                                @Model.Remark
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>门票价格：</dt>
+                        <dd>
+                            <span class="price">¥<b>@Model.tcPrice</b></span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>游玩日期：</dt>
+                        <dd>
+                            <input id="today" value="@DateTime.Now.ToString("yyyy-MM-dd")" type="hidden">
+                            <label class="input_order_date J_input_order_date">
+                                <input id="start_time" name="orderdate" data-price="@ViewBag.PriceCollection" data-min_date="@DateTime.Now.ToString("yyyy-MM-dd")" data-max_date="@ViewBag.EndDate" class="cur" value="@DateTime.Now.ToString("yyyy-MM-dd")" type="text">
+                            </label>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>门票数量：</dt>
+                        <dd>
+                            <div class="operate_num  ">
+                                <s class="sub disabled"></s>
+                                <input id="tickit_num_hid" name="ticketcount2" minamt="1" maxamt="100" textnum="tickit_num" sellpriceyuan="@((int)Model.tcPrice)" type="hidden"/>
+                                <input id="total_price" name="total_price" type="hidden"/>
+                                <input class="text text25" onkeyup="this.value=this.value.replace(/\D/g,'');refreshTotal('tickit_num_hid','tickit_num',1,'total_price_s')" onafterpaste="this.value=this.value.replace(/\D/g,'');refreshTotal('tickit_num_hid','tickit_num',1,'total_price_s')" sellprice="20" maxlength="3" id="tickit_num" name="ticketcount" value="1" type="text"/>
+                                <s class="add"></s>
+                            </div>
+                        </dd>
+                    </dl>
+                    <div class="fn-clear"></div>
+                    <div class="line"></div>
+                    <dl class="price_all">
+                        <dt>订单金额：</dt>
+                        <dd>
+                            <span class="price">¥<b id="total_price_s">@Model.tcPrice</b></span>
+                        </dd>
+                    </dl>
+                    <div style="display: none;" class="insert_list"></div>
+                </div>
+            </div>
+            <div class="form_con">
+                <div class="tit">
+                    <strong>取票人信息</strong>
+                    <span>（作为预订与取票凭证，请填写真实信息）</span>
+                </div>
+                <div class="txt">
+                    <dl>
+                        <dt>取票人：<em>*</em></dt>
+                        <dd>
+                            <input class="text" name="linkman" id="linkman" type="text">
+                            <span class="exp">须与所持证件一致</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>手机号码：<em>*</em></dt>
+                        <dd>
+                            <input class="text" name="linktel" id="linktel" type="text">
+                            <span class="exp">接收订单短信或者电子码</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>预订留言：<em> </em></dt>
+                        <dd>
+                            <textarea class="textarea" name="orderremark"></textarea>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="submit_con">
+                    <button id="btnSubmitOrder2" type="submit" class="submit">提交订单</button>
+                    <div class="tip">
+                        <i>◆</i><s>◆</s>订单提交，成功后至景点指定窗口取票游玩。
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@{
+    
+    Layout = "~/Areas/Travel/Views/Shared/_BaseLayoutPage.cshtml";
+}
+@model Tuple<List<SchoolSummaryInfo>, List<SchoolCityInfo>>
+@using Travelling.ViewModel.Travel
+@using Travelling.Web.Helpers
+@section header{
+    <link type="text/css" href="~/Content/travel/hotelbrands.css" rel="stylesheet" />
+    <link type="text/css" href="~/Content/travel/hotel_brand.css" rel="stylesheet" />
+}
+
+<div class="wraper">
+    <div class="hotel_brand_tit2">
+        <h3>国内学校大全</h3>
+    </div>
+    <div class="hotel_brand_city">
+        @foreach (var p in Model.Item2)
+        {
+            <div>
+                <span><a href="#" target="_blank" title="@p.CityName">@p.CityName</a></span>
+                <ul>
+                    @foreach (var c in HotelInfoHelper.GetCitySchools(p.CityId,Model.Item1,100))
+                    {
+                        <li><a href="@HotelUnionHelper.HotelSearchWithKey(c.CityId,c.SchoolName)" target="_blank" title="@string.Format("{0}{1}附近酒店预定",c.CityName,c.SchoolName)">@c.SchoolName</a></li>
+                    }
+                    <li>
+                        <a target="_blank" title="@string.Format("{0}学校大学",p.CityName)" href="@string.Format("/city{0}/schools.html",p.CityId)">更多学校</a>
+                    </li>
+                </ul>
+            </div>
+        }
+
+    </div>
+</div>
